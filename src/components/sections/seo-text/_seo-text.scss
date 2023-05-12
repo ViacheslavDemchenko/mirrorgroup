@@ -1,0 +1,37 @@
+.seo-text {
+  padding: 7.5rem 0 15rem 0;
+
+  &__inner {
+    width: 100%;
+
+    h2 {
+      margin-bottom: 6rem;
+    }
+
+    &-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+      @include InterRegular();
+      font-size: 1.6rem;
+      line-height: 140%;
+      color: var(--gray_2);
+
+      p {
+        max-width: 56rem;
+      }
+    }
+
+    &-img {
+      border-radius: 1rem;
+
+      img {
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+
+
+  

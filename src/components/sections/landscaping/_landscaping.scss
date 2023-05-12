@@ -1,0 +1,82 @@
+.landscaping {
+  padding: 4.3rem 0 7.5rem 0;
+
+  h1 {
+    margin-bottom: 6rem;
+  }
+
+  &__top,
+  &__center,
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__center {
+    justify-content: center;
+
+    img {
+
+      &:nth-of-type(1) {
+        margin-right: 19.7rem;
+      }
+    }
+  }
+
+  &__bottom {
+    height: 27rem;
+
+    img {
+
+      &:nth-of-type(2) {
+        align-self: flex-end;
+      }
+
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__top {
+
+    img {
+      transform: translateY(-2.3rem);
+    }
+
+    &-img {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        transform: translateY(0);
+        filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
+        border-radius: 0.5rem;
+      }
+
+      p {
+        transform: translate(2.5rem, -1.5rem);
+        max-width: 15.8rem;
+        display: inline-block;
+        @include InterMedium();
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        text-align: center;
+        color: var(--black_2);
+      }
+    }
+  }
+
+  &__btn {
+    padding: 1.6rem 4.377rem;
+    @include InterRegular();
+    font-size: 1.6rem;
+    line-height: 100%;
+    color: var(--black_2);
+    border: 0.1rem solid var(--black_2);
+    background: transparent;
+  }
+}

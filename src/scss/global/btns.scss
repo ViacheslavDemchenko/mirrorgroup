@@ -1,0 +1,21 @@
+.btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 2.885rem;
+  @include InterRegular();
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+
+  &--black {
+    color: var(--white_1);
+    background: var(--black_1);
+  }
+
+  &--red {
+    color: var(--white_1);
+    background: var(--red_1);
+  }
+  
+}

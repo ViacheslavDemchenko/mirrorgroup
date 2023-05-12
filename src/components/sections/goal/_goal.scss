@@ -1,0 +1,31 @@
+.goal {
+  padding: 7.5rem 0;
+
+  &__inner {
+    width: 100%;
+
+    &-img {
+      position: relative;
+      border-radius: 1rem;
+
+      img {
+        border-radius: 1rem;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      width: 34rem;
+      @include InterRegular();
+      padding: 2rem 3rem;
+      font-size: 1.6rem;
+      line-height: 130.02%;
+      color: var(--black_1);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(7.5px);
+      border-radius: 0.5rem;
+    }
+  }
+}

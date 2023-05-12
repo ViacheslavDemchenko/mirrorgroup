@@ -1,0 +1,923 @@
+:root {
+  /* COLORS */
+  --red_1: #BF0902;
+  --black_1: #120600;
+  --black_2: #000000;
+  --gray_1: #757575;
+  --gray_2: #666666;
+  --gray_3: #DEDEDE;
+  --gray_4: #D9D9D9;
+  --gray_5: #454545;
+  --gray_6: #9A9A9A;
+  --gray_7: #535353;
+  --white_1: #FFFFFF;
+  --white_2: #F5F5F5;
+  --white_3: #ADADAD;
+  /* FONTS-SIZES */
+}
+
+/* FONTS */
+
+/* Inter */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+input[type=submit],
+button {
+  cursor: pointer;
+}
+
+hr {
+  display: block;
+  height: 0.1em;
+  border: 0;
+  border-top: 0.1em solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter Regular", "Arial", "Tahoma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizelegibility;
+  overflow-x: hidden;
+}
+
+header,
+section,
+footer,
+main {
+  width: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 116rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.red {
+  color: var(--red_1);
+}
+
+h1 {
+  font-family: "Inter Bold";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  font-size: 6.8rem;
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: -0.035em;
+  color: var(--black_1);
+}
+
+h2 {
+  font-family: "Inter SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 4rem;
+  line-height: 120.02%;
+  color: var(--black_1);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 2.885rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+}
+
+.btn--black {
+  color: var(--white_1);
+  background: var(--black_1);
+}
+
+.btn--red {
+  color: var(--white_1);
+  background: var(--red_1);
+}
+
+.header__inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__inner-top {
+  padding: 2rem 0;
+  border-bottom: 0.1rem solid var(--gray_1);
+}
+
+.header__inner-top,
+.header__inner-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__btn {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: var(--black_1);
+  border: 0.1rem solid var(--red_1);
+  background: transparent;
+}
+
+.footer {
+  padding: 8rem 0 2.9rem 0;
+  background: var(--black_1);
+}
+
+.footer__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__inner-left .logo {
+  margin-bottom: 7.8rem;
+}
+
+.footer__inner-left nav {
+  max-width: 77rem;
+  margin-bottom: 8.4rem;
+}
+
+.footer__inner-left nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__inner-left nav ul li {
+  width: 18%;
+  margin-right: 5rem;
+}
+
+.footer__inner-left nav ul li:nth-of-type(1),
+.footer__inner-left nav ul li:nth-of-type(2),
+.footer__inner-left nav ul li:nth-of-type(3),
+.footer__inner-left nav ul li:nth-of-type(4) {
+  margin-bottom: 2rem;
+}
+
+.footer__inner-left nav ul li a {
+  color: var(--gray_6);
+  will-change: color;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer__inner-left nav ul li a:hover,
+.footer__inner-left nav ul li a:focus {
+  color: var(--red_1);
+}
+
+.footer__inner-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer__inner-right .phone {
+  margin-bottom: 8.1rem;
+}
+
+.footer__inner-right span {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: var(--white_1);
+}
+
+.footer__inner-btn {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: var(--red_1);
+  background: transparent;
+  border: 0.1rem solid var(--red_1);
+}
+
+.footer .copyright {
+  width: 100%;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: var(--gray_7);
+}
+
+.nav {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul li a {
+  padding: 0.5rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: var(--black_1);
+}
+
+.card {
+  width: 26rem;
+  padding: 2rem 1.5rem 2rem 2rem;
+  border: 0.1rem solid var(--gray_3);
+  border-radius: 0.5rem;
+}
+
+.card__top {
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card__top span {
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-size: 2.6rem;
+  line-height: 3.1rem;
+  color: var(--black_1);
+}
+
+.card__top,
+.card__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone a {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: var(--white_1);
+}
+
+.landscaping {
+  padding: 4.3rem 0 7.5rem 0;
+}
+
+.landscaping h1 {
+  margin-bottom: 6rem;
+}
+
+.landscaping__top,
+.landscaping__center,
+.landscaping__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landscaping__center {
+  justify-content: center;
+}
+
+.landscaping__center img:nth-of-type(1) {
+  margin-right: 19.7rem;
+}
+
+.landscaping__bottom {
+  height: 27rem;
+}
+
+.landscaping__bottom img:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+.landscaping__bottom img:nth-of-type(1),
+.landscaping__bottom img:nth-of-type(3) {
+  align-self: flex-start;
+}
+
+.landscaping__top img {
+  transform: translateY(-2.3rem);
+}
+
+.landscaping__top-img {
+  display: flex;
+  flex-direction: column;
+}
+
+.landscaping__top-img img {
+  transform: translateY(0);
+  filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
+  border-radius: 0.5rem;
+}
+
+.landscaping__top-img p {
+  transform: translate(2.5rem, -1.5rem);
+  max-width: 15.8rem;
+  display: inline-block;
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-align: center;
+  color: var(--black_2);
+}
+
+.landscaping__btn {
+  padding: 1.6rem 4.377rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: var(--black_2);
+  border: 0.1rem solid var(--black_2);
+  background: transparent;
+}
+
+.landscaping-services {
+  padding: 7.5rem 0;
+}
+
+.landscaping-services__inner {
+  width: 100%;
+}
+
+.landscaping-services__inner-top {
+  margin-bottom: 6rem;
+}
+
+.landscaping-services__inner-top h2 {
+  max-width: 59rem;
+}
+
+.landscaping-services__inner-top,
+.landscaping-services__inner-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.landscaping-services__inner-bottom .service {
+  width: 36rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 3rem 1rem;
+  background: var(--white_2);
+  border-radius: 1rem;
+}
+
+.landscaping-services__inner-bottom .service__img {
+  margin-bottom: 2rem;
+}
+
+.landscaping-services__inner-bottom .service h3 {
+  margin-bottom: 2rem;
+}
+
+.landscaping-services__inner-bottom .service__icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.landscaping-services__inner-bottom .service__icons .service__icon {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--white_1);
+}
+
+.landscaping-services__inner-bottom .service__icons .service__icon:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+.landscaping-services__btn {
+  padding: 2.05rem 3.721rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+
+.goal {
+  padding: 7.5rem 0;
+}
+
+.goal__inner {
+  width: 100%;
+}
+
+.goal__inner-img {
+  position: relative;
+  border-radius: 1rem;
+}
+
+.goal__inner-img img {
+  border-radius: 1rem;
+}
+
+.goal__inner-text {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 34rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--black_1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(7.5px);
+  border-radius: 0.5rem;
+}
+
+.seo-text {
+  padding: 7.5rem 0 15rem 0;
+}
+
+.seo-text__inner {
+  width: 100%;
+}
+
+.seo-text__inner h2 {
+  margin-bottom: 6rem;
+}
+
+.seo-text__inner-text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 140%;
+  color: var(--gray_2);
+}
+
+.seo-text__inner-text p {
+  max-width: 56rem;
+}
+
+.seo-text__inner-img {
+  border-radius: 1rem;
+}
+
+.seo-text__inner-img img {
+  border-radius: 1rem;
+}
+
+.history {
+  padding: 7.5em 0;
+}
+
+.history__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.history__inner-text {
+  max-width: 56rem;
+}
+
+.history__inner-text h2 {
+  max-width: 48.8rem;
+  margin-bottom: 6rem;
+}
+
+.history__inner-text p {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--gray_2);
+}
+
+.history__inner-text p:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.history__inner-text p:last-of-type {
+  margin-bottom: 4rem;
+}
+
+.history__inner-cards {
+  max-width: 56rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.history__inner-cards .card {
+  margin-bottom: 2rem;
+}
+
+.history__inner-cards .card:nth-child(odd) {
+  margin-right: 4rem;
+}
+
+.history__inner-btn {
+  padding: 2.2rem 5.39rem;
+}
+
+.geography {
+  padding: 7.5em 0;
+}
+
+.geography__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.geography__inner-right,
+.geography__inner-left {
+  max-width: 56rem;
+}
+
+.geography__inner-left {
+  margin-right: 4rem;
+}
+
+.geography__inner-right__img {
+  position: relative;
+}
+
+.geography__inner-right__img .location-desc__wrap {
+  position: absolute;
+  top: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22.4rem;
+  height: 26rem;
+  display: none;
+}
+
+.geography__inner-right__img .location-desc__wrap--active {
+  display: block;
+}
+
+.geography__inner-right__img .location-desc__wrap .location-desc__img {
+  position: relative;
+  z-index: 10;
+  width: 22.6rem;
+  height: 17.8rem;
+  overflow: hidden;
+}
+
+.geography__inner-right__img .location-desc__wrap .location-desc__img .location-img {
+  width: 22.6rem;
+  height: 17.8rem;
+}
+
+.geography__inner-right__img .location-desc__wrap .location-desc {
+  position: absolute;
+  z-index: 10;
+  width: 22.4rem;
+  height: 26rem;
+}
+
+.geography__inner-right__img .location-desc__wrap p {
+  position: absolute;
+  z-index: 20;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: var(--white_1);
+}
+
+.geography__inner-right__img .location {
+  position: absolute;
+  z-index: 10;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+.geography__inner-right__img .location-1 {
+  top: 16rem;
+  left: 2rem;
+}
+
+.geography__inner-right__img img:nth-of-type(1) {
+  width: 56rem;
+}
+
+.geography__inner-text h2 {
+  margin-bottom: 4rem;
+}
+
+.geography__inner-text p {
+  margin-bottom: 4rem;
+}
+
+.geography__inner-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
+
+.geography__inner-btn {
+  padding: 2.2rem 7.107rem;
+}
+
+.consult {
+  padding: 7.5rem 0 18.1rem 0;
+}
+
+.consult__inner {
+  width: 100%;
+}
+
+.consult__inner-top {
+  width: 100%;
+}
+
+.consult__inner-top .line {
+  width: 100%;
+  height: 0.4rem;
+  margin-bottom: 6rem;
+  background: var(--gray_3);
+  border-radius: 0.5rem;
+}
+
+.consult__inner-top .tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.consult__inner-top .tabs .tab {
+  width: 36rem;
+  padding: 0.5rem;
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-size: 2rem;
+  line-height: 120%;
+  text-align: center;
+  color: var(--gray_2);
+  cursor: pointer;
+}
+
+.consult__inner-top .tabs .tab--active {
+  position: relative;
+  color: var(--black_2);
+}
+
+.consult__inner-top .tabs .tab--active::after {
+  position: absolute;
+  content: "";
+  bottom: -1.9rem;
+  left: 0;
+  height: 0.4rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: var(--red_1);
+}
+
+.consult__inner-center {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  padding: 6rem 6rem 4.2rem 6rem;
+  background: url("../img/icons/text-bg.svg") 6.3rem 50%/auto no-repeat, var(--white_2);
+  border-radius: 1rem;
+}
+
+.consult__inner-center__text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.consult__inner-center__text h2 {
+  max-width: 47.3rem;
+  margin-right: 6.7rem;
+  font-family: "Inter Bold";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  font-size: 4rem;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: var(--black_2);
+}
+
+.consult__inner-center__text img {
+  position: absolute;
+  top: 19rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+}
+
+.consult__inner-btn {
+  align-self: flex-start;
+  padding: 2.15rem 6.323rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+}
+
+.consult__form {
+  width: 50rem;
+  height: 398px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.3rem 2rem 1.8rem 2rem;
+  background: var(--white_1);
+  border: 0.1rem solid var(--red_1);
+  border-radius: 0.5rem;
+}
+
+.consult__form p {
+  margin-bottom: 1.5rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--gray_5);
+}
+
+.consult__form input {
+  width: 100%;
+  padding: 2.1rem 2.4rem 2.1rem 2rem;
+  margin-bottom: 2rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+  color: var(--gray_4);
+  border: 0.1rem solid var(--white_3);
+  border-radius: 0.5rem;
+}
+
+.consult__form input:-ms-input-placeholder {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+  color: var(--gray_4);
+}
+
+.consult__form input::placeholder {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+  color: var(--gray_4);
+}
+
+@media (min-width: 1024px) {
+  .no-scroll {
+    padding-right: 1.7rem;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input {
+    font-size: 1.6rem !important;
+  }
+}

@@ -1,0 +1,52 @@
+.history {
+  padding: 7.5em 0;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      max-width: 56rem;
+
+      h2 {
+        max-width: 48.8rem;
+        margin-bottom: 6rem;
+      }
+
+      p {
+        @include InterRegular();
+        font-size: 1.6rem;
+        line-height: 130.02%;
+        color: var(--gray_2);
+      }
+
+      p:not(:last-of-type) {
+        margin-bottom: 2rem;
+      }
+
+      p:last-of-type {
+        margin-bottom: 4rem;
+      }
+    }
+
+    &-cards {
+      max-width: 56rem;
+      display: flex;
+      flex-wrap: wrap;
+      
+      .card {
+        margin-bottom: 2rem;
+      }
+
+      .card:nth-child(odd) {
+        margin-right: 4rem;
+      }
+    }
+
+    &-btn {
+      padding: 2.2rem 5.39rem;
+    }
+    
+  }
+}

@@ -1,0 +1,113 @@
+.geography {
+  padding: 7.5em 0;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &-right,
+    &-left {
+      max-width: 56rem;
+    }
+
+    &-left {
+      margin-right: 4rem;
+    }
+
+    &-right {
+
+      &__img {
+        position: relative;
+
+        .location-desc__wrap {
+          position: absolute;
+          top: 1.2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 22.4rem;
+          height: 26rem;
+          display: none;
+
+          &--active {
+            display: block;
+          }
+
+          .location-desc__img {
+            position: relative;
+            z-index: 10;
+            width: 22.6rem;
+            height: 17.8rem;
+            overflow: hidden;
+
+            .location-img {
+              width: 22.6rem;
+              height: 17.8rem;
+            }
+          }
+
+          .location-desc {
+            position: absolute;
+            z-index: 10;
+            width: 22.4rem;
+            height: 26rem;
+          }
+
+          p {
+            position: absolute;
+            z-index: 20;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            @include InterMedium();
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            text-align: center;
+            color: var(--white_1);
+          }
+        }
+
+        .location {
+          position: absolute;
+          z-index: 10;
+          width: 2.4rem;
+          height: 2.4rem;
+          cursor: pointer;
+        }
+
+        .location-1 {
+          top: 16rem;
+          left: 2rem;
+        }
+
+        img {
+
+          &:nth-of-type(1) {
+            width: 56rem;
+          }
+        }
+      }
+    }
+
+    &-text {
+
+      h2 {
+        margin-bottom: 4rem;
+      }
+
+      p {
+        margin-bottom: 4rem;
+      }
+    }
+
+    &-cards {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6rem;
+    }
+
+    &-btn {
+      padding: 2.2rem 7.107rem;
+    }
+  }
+}

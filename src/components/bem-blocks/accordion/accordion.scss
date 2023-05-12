@@ -1,0 +1,147 @@
+.accordion {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+// Блоки аккардиона
+.accordion div {
+  position: relative;
+  max-width: 119rem;
+  padding: 2rem 0 2rem 1rem;
+
+  @media (min-width: 500px) {
+    padding: 2rem 0 2rem 3rem;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 3.4rem 0 0 6rem;
+    margin-bottom: 3rem;
+  }
+
+// Горизонтальные линии между блоками аккардиона
+  &::after,
+  &:last-of-type::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 100%;
+    height: 0.1rem;
+    background: #000;
+
+    @media (min-width: 1024px) {
+      height: 0.3rem;
+    }
+  }
+  
+  &::after {
+    top: 0;
+  }
+
+  &:last-of-type {
+
+    &::before {
+      bottom: 0;
+
+      @media (min-width: 1024px) {
+        bottom: -0.3rem;
+      }
+
+      @media (min-width: 1440px) {
+        bottom: -3.3rem;
+      }
+    }
+  }
+}
+
+// Заголовки аккардиона
+.accordion h3 {
+  position: relative;
+  margin: 0;
+  text-align: left;
+  padding-left: 1.5rem;
+  // @include Roboto-Medium; // Шрифт заголовков аккардиона
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #000;
+
+  @media (min-width: 1440px) {
+    padding-left: 0;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+
+    &::before {
+      left: -2.8rem;
+      transform: translateY(-50%);
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      background: green;
+    }
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+  }
+
+// Крестик, стрелочка или что-то иное меняющееся при открытии аккардиона
+  &::after {
+    left: -1rem;
+    transform: translateY(-50%) rotate(90deg);
+    width: 1.8rem;
+    height: 1.8rem;
+    background: url(../img/icons/cross-green.svg) 100% 100%/cover no-repeat;
+    will-change: transform;
+    transition: transform .5s linear;
+
+    @media (min-width: 500px) {
+      left: -3rem;
+      width: 2.7rem;
+      height: 2.7rem;
+    }
+
+    @media (min-width: 1440px) {
+      left: initial;
+      right: 1rem;
+      width: 4.2rem;
+      height: 4.2rem;
+    }
+  }
+
+}
+
+.accordion div.active h3::after {
+  transform: translateY(-50%) rotate(135deg) !important;
+}
+
+// Текст в блоках аккардиона
+.accordion p {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  padding: 0 1.5rem;
+  // @include Roboto-Regular; // Шрифт текста блоков аккардиона
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: #000;
+  will-change: auto;
+  transition: all .5s ease-out;
+
+  @media (min-width: 1440px) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+}
+
+.accordion p.active {
+  opacity: 1;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+}

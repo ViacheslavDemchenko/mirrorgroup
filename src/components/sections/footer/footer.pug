@@ -1,0 +1,30 @@
+footer.footer
+  .container 
+    .footer__inner
+      .footer__inner-left 
+        .logo
+          a(href="index.html")
+            img(src="assets/img/logo-white.png" width="220" height="12" alt="Логотип MirrorGroup")
+        nav.nav
+          ul(role="menu")
+            li(role="menuitem")
+              a(href="#services") Главная
+            li(role="menuitem")
+              a(href="#price") Статьи 
+            li(role="menuitem")
+              a(href="#reviews") Услуги
+            li(role="menuitem")
+              a(href="#photo") Награды и премии
+            li(role="menuitem")
+              a(href="#services") Проекты
+            li(role="menuitem")
+              a(href="#price") Публикации в сми
+            li(role="menuitem")
+              a(href="#reviews") О компании
+            li(role="menuitem")
+              a(href="#photo") Контакты
+      .footer__inner-right
+        include ./../../bem-blocks/phone/phone.pug
+        span Заказать обратный звонок
+        button.btn.footer__inner-btn Обратный звонок
+    span.copyright © Архитектурная мастерская

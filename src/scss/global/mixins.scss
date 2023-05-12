@@ -1,0 +1,31 @@
+/* FONTS */
+
+/* Inter */
+
+@mixin InterRegular ($font-family: 'Inter Regular', $font-weight: 400, $font-style: normal, $font-display: swap) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: $font-display;
+}
+
+@mixin InterMedium ($font-family: 'Inter Medium', $font-weight: 500, $font-style: normal, $font-display: swap) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-display: $font-display;
+}
+
+@mixin InterSemiBold ($font-family: 'Inter SemiBold', $font-weight: 600, $font-style: normal, $font-display: swap) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-display: $font-display;
+}
+
+@mixin InterBold ($font-family: 'Inter Bold', $font-weight: 700, $font-style: normal, $font-display: swap) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-display: $font-display;
+}

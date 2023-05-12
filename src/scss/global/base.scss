@@ -1,0 +1,105 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter Regular", "Arial", "Tahoma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizelegibility;
+  overflow-x: hidden;
+  // background: #D2D2D2;
+}
+
+header,
+section,
+footer,
+main {
+  width: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(113rem + 3rem); // Максимальная ширина контейнера с учетом паддингов (2 х 1.5rem)
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Запрет скролла
+.no-scroll {
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    padding-right: 1.7rem;
+  }
+}
+
+// Затемняющий фон под модалкми
+// .overlay {
+//   position: fixed;
+//   z-index: 9000;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   display: none;
+//   background: var(--light-gray);
+//   opacity: 0.8;
+//   will-change: display;
+//   transition: display 0.5s ease-out;
+
+//   &--active {
+//       display: block;
+//   }
+// }
+
+// Липкое меню
+// .fixed {
+//   position: fixed !important;
+//   z-index: 200 !important;
+//   top: 0;
+//   left: 0;
+//   background: #fff;
+//   box-shadow: 0 1.2rem .8rem 0rem rgba(34, 60, 80, 0.2);
+//   will-change: auto;
+//   transition: all .5s ease-out;
+
+//   @media (min-width: 1320px) {
+//     width: calc(100% - 17px) !important;
+//   }
+// }
+
+// Обертка липкого меню
+// .fixed-wrap {
+//   width: 100%;
+//   max-width: 1140px;
+//   margin: 0 auto;
+//   will-change: auto;
+//   transition: all .5s ease-out;
+// }

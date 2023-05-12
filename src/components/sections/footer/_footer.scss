@@ -1,0 +1,86 @@
+.footer {
+  padding: 8rem 0 2.9rem 0;
+  background: var(--black_1);
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+
+      .logo {
+        margin-bottom: 7.8rem;
+      }
+
+      nav {
+        max-width: 77rem;
+        margin-bottom: 8.4rem;
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 18%;
+            margin-right: 5rem;
+
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+              margin-bottom: 2rem;
+            }
+
+            a {
+              color: var(--gray_6);
+              will-change: color;
+              transition: color 0.3s ease-in-out;
+
+              &:hover,
+              &:focus {
+                color: var(--red_1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .phone {
+        margin-bottom: 8.1rem;
+      }
+
+      span {
+        display: inline-block;
+        margin-bottom: 1rem;
+        @include InterRegular();
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        color: var(--white_1);
+      }
+    }
+
+    &-btn {
+      @include InterRegular();
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      color: var(--red_1);
+      background: transparent;
+      border: 0.1rem solid var(--red_1);
+    }
+  }
+
+  .copyright {
+    width: 100%;
+    @include InterRegular();
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: var(--gray_7);
+  }
+}

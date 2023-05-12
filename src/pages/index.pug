@@ -1,0 +1,17 @@
+extends ./../layouts/main
+
+block variables
+  - let pageTitle = 'MirrorGroup';
+
+block content
+  .wrapper
+    include ./../components/sections/header/header.pug
+    main
+      include ./../components/sections/landscaping/landscaping.pug
+      include ./../components/sections/landscaping-services/landscaping-services.pug
+      include ./../components/sections/goal/goal.pug
+      include ./../components/sections/history/history.pug
+      include ./../components/sections/geography/geography.pug
+      include ./../components/sections/consult/consult.pug
+      include ./../components/sections/seo-text/seo-text.pug
+    include ./../components/sections/footer/footer.pug
