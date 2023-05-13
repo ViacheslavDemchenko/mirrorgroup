@@ -1,18 +1,19 @@
 .cmn-toggle-switch {
-    position: absolute;
-    z-index: 8000;
-    top: -0.7rem;
-    right: 0rem;
-    transform: translateX(.5rem);
+    // position: absolute;
+    // z-index: 8000;
+    // top: -0.7rem;
+    // right: 0rem;
+    // transform: translateX(.5rem);
     display: block;
     margin: 0;
     padding: 0;
-    width: 4.7rem;
-    height: 4.7rem;
+    width: 2.7rem;
+    height: 2.7rem;
     font-size: 0;
     appearance: none;
     box-shadow: none;
-    border: none;
+    border: 0.1rem solid var(--red_1);
+    border-radius: 5rem;
     cursor: pointer;
     transition: background .3s ease-out;
   
@@ -26,12 +27,12 @@
   
     span {
         position: relative;
-        width: 3.5rem;
+        width: 2.7rem;
         margin: auto;
         display: block;
-        height: .3rem;
+        height: .2rem;
         border-radius: .5rem;
-        background: #fff;
+        background: var(--black_1);
   
         &::before,
         &::after {
@@ -40,28 +41,28 @@
           left: 0;
           display: block;
           width: 100%;
-          height: .3rem;
+          height: .2rem;
           border-radius: .5rem;
-          background: #fff;
+          background: var(--black_1);
         }
   
         &::before {
-          top: 1rem;
+          top: 0.6rem;
         }
   
         &::after {
-          bottom: 1rem;
+          bottom: 0.6rem;
 
         }
     }
 }
   
 .cmn-toggle-switch__htx {
-    width: 4.7rem;
-    height: 4.7rem;
-    background-color: transparent;
-    border-radius: 50%;
-    transition: all 1s ease-out;
+  width: 4.7rem;
+  height: 4.7rem;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: all 1s ease-out;
   
     span {
         transition: background .3s ease-out;
@@ -82,19 +83,19 @@
 }
    
 .cmn-toggle-switch__htx.active {
-    position: absolute;
-    z-index: 8000;
+    // position: absolute;
+    // z-index: 8000;
     width: 4.7rem;
     height: 4.7rem;
 
     span {
         background: none;
         width: 3rem;
-        right: .5rem;
+        right: 0;
   
         &::before,
         &::after {
-            background: #fff;
+            background: var(--black_1);
             transition-delay: .3s;
         }
   

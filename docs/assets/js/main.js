@@ -350,19 +350,20 @@ if (window && window.NodeList && !NodeList.prototype.forEach) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_location__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/location */ "./src/js/modules/location.js");
+/* harmony import */ var _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mobileMenu */ "./src/js/modules/mobileMenu.js");
+/* harmony import */ var _modules_location__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/location */ "./src/js/modules/location.js");
 __webpack_require__(/*! polyfill-nodelist-foreach */ "./node_modules/polyfill-nodelist-foreach/index.js"); // Полифил для поддержки метода forEach в IE11+ и Safari9
 __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // Полифил для поддержки IE11+ и старыми браузерами использования SVG через use 
 
 // import accordion from './modules/accordion.js'; // Аккордион
-// import mobileMenu from './modules/mobileMenu'; // Мобильное меню
+ // Мобильное меню
 // import modal from './modules/modal'; // Модалки
 // import slider from './modules/slider'; // Слайдер
  // Карта на главной
 
-Object(_modules_location__WEBPACK_IMPORTED_MODULE_0__["default"])();
+Object(_modules_location__WEBPACK_IMPORTED_MODULE_1__["default"])();
 // accordion();
-// mobileMenu();
+Object(_modules_mobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"])();
 // modal();
 // slider();
 
@@ -400,6 +401,60 @@ function location() {
       descriptionWrap.classList.remove('location-desc__wrap--active');
     });
   });
+}
+
+/***/ }),
+
+/***/ "./src/js/modules/mobileMenu.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/mobileMenu.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return mobileMenu; });
+function mobileMenu() {
+  if (document.getElementById('menu__button')) {
+    var hamburger = document.getElementById('menu__button');
+    var _mobileMenu = document.querySelector('.nav');
+    var mobileMenuItems = document.querySelectorAll('.nav ul li a');
+    var htmlElement = document.getElementsByTagName('html')[0];
+    var body = document.body;
+    var screenWidth = window.innerWidth;
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('active');
+      _mobileMenu.classList.toggle('nav--active');
+      body.classList.toggle('no-scroll');
+      htmlElement.classList.toggle('no-scroll');
+    });
+    window.addEventListener('resize', function () {
+      screenWidth = window.innerWidth;
+      if (screenWidth < 1024) {
+        linksClick();
+      }
+      if (screenWidth >= 1024) {
+        hamburger.classList.remove('active');
+        _mobileMenu.classList.remove('nav--active');
+        body.classList.remove('no-scroll');
+        htmlElement.classList.remove('no-scroll');
+      }
+    });
+    function linksClick() {
+      mobileMenuItems.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          if (screenWidth < 1024) {
+            hamburger.classList.remove('active');
+            _mobileMenu.classList.remove('nav--active');
+            body.classList.remove('no-scroll');
+            htmlElement.classList.remove('no-scroll');
+          }
+        });
+      });
+    }
+    linksClick();
+  }
 }
 
 /***/ })

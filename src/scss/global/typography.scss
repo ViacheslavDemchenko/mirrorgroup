@@ -4,16 +4,28 @@
 
 h1 {
   @include InterBold();
-  font-size: 6.8rem;
+  font-size: 3.4rem;
   line-height: 110%;
   text-align: center;
   letter-spacing: -0.035em;
   color: var(--black_1);
+
+  @media (min-width: 1024px) {
+    font-size: 6.8rem;
+  }
 }
 
 h2 {
   @include InterSemiBold();
-  font-size: 4rem;
+  font-size: 2.4rem;
   line-height: 120.02%;
   color: var(--black_1);
+
+  @media (min-width: 375px) {
+    font-size: 2.6rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
 }

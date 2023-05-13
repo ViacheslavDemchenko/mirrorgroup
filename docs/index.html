@@ -7,8 +7,8 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
   </head>
   <body>
     <div class="wrapper">
@@ -17,20 +17,22 @@
           <div class="header__inner">
             <div class="header__inner-top">
               <div class="logo"><a href="index.html"><img src="assets/img/logo.png" width="220" height="12" alt="Логотип MirrorGroup"></a></div>
-              <button class="btn header__btn">Обратный звонок</button>
+              <button class="btn header__btn header__btn--desktop">Обратный звонок</button>
+              <button class="cmn-toggle-switch cmn-toggle-switch__htx" id="menu__button"><span>toggle menu</span></button>
             </div>
             <div class="header__inner-bottom">
               <nav class="nav">
                 <ul role="menu">
-                  <li role="menuitem"><a href="#services">Главная</a></li>
-                  <li role="menuitem"><a href="#price">О компании</a></li>
-                  <li role="menuitem"><a href="#reviews">Проекты</a></li>
-                  <li role="menuitem"><a href="#photo">Услуги</a></li>
-                  <li role="menuitem"><a href="#services">Награды и премии</a></li>
-                  <li role="menuitem"><a href="#price">Публикации в сми</a></li>
-                  <li role="menuitem"><a href="#reviews">Статьи</a></li>
-                  <li role="menuitem"><a href="#photo">Контакты</a></li>
+                  <li class="nav__item" role="menuitem"><a class="nav__item-link nav__item-link--active" href="#services">Главная</a></li>
+                  <li class="nav__item" role="menuitem"><a class="nav__item-link" href="#price">О компании</a></li>
+                  <li class="nav__item" role="menuitem"><a class="nav__item-link" href="#reviews">Проекты</a></li>
+                  <li class="nav__item" role="menuitem"><a class="nav__item-link" href="#photo">Услуги</a></li>
+                  <li class="nav__item" role="menuitem"><a class="nav__item-link" href="#services">Награды и премии</a></li>
+                  <li class="nav__item" role="menuitem"><a class="nav__item-link" href="#price">Публикации в сми</a></li>
+                  <li class="nav__item" role="menuitem"><a class="nav__item-link" href="#reviews">Статьи</a></li>
+                  <li class="nav__item" role="menuitem"><a class="nav__item-link" href="#photo">Контакты</a></li>
                 </ul>
+                <button class="btn header__btn header__btn--mobile">Обратный звонок</button>
               </nav>
             </div>
           </div>
@@ -40,14 +42,14 @@
         <section class="landscaping">
           <div class="container"> 
             <h1><span class="red">Благоустройство</span> общественных пространств</h1>
-            <div class="landscaping__top"><img src="assets/img/landscaping_1.png" width="167" height="167" alt="">
+            <div class="landscaping__top"><img src="assets/img/landscaping_1.png" width="226" height="226" alt="">
               <button class="btn landscaping__btn">Галерея проектов</button>
               <div class="landscaping__top-img"><img src="assets/img/landscaping_2.png" width="158" height="206" alt="">
                 <p>Градостроительный анализ</p>
               </div>
             </div>
-            <div class="landscaping__center"><img src="assets/img/landscaping_3.png" width="129" height="183" alt=""><img src="assets/img/landscaping_4.png" width="106" height="150" alt=""></div>
-            <div class="landscaping__bottom"><img src="assets/img/landscaping_5.png" width="177" height="143" alt=""><img src="assets/img/landscaping_6.png" width="210" height="149" alt=""><img src="assets/img/landscaping_7.png" width="115" height="207" alt=""></div>
+            <div class="landscaping__center"><img src="assets/img/landscaping_3.png" width="187" height="265" alt=""><img src="assets/img/landscaping_4.png" width="153" height="217" alt=""></div>
+            <div class="landscaping__bottom"><img src="assets/img/landscaping_5.png" width="256" height="207" alt=""><img src="assets/img/landscaping_6.png" width="304" height="216" alt=""><img src="assets/img/landscaping_7.png" width="167" height="301" alt=""></div>
           </div>
         </section>
         <section class="landscaping-services">
@@ -62,7 +64,7 @@
                   <div class="service__img"><img src="assets/img/service_1.png" width="340" height="200" alt=""></div>
                   <h3>Градостроительный анализ</h3>
                   <ul class="service__icons">
-                    <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt=""></li>
+                    <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt=""><span>Узнать подробнее</span></li>
                     <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt=""></li>
                     <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt=""></li>
                   </ul>
@@ -71,7 +73,7 @@
                   <div class="service__img"> <img src="assets/img/service_2.png" width="340" height="200" alt=""></div>
                   <h3>Инженерные изыскания</h3>
                   <ul class="service__icons">
-                    <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt=""></li>
+                    <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt=""><span>Узнать подробнее</span></li>
                     <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt=""></li>
                     <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt=""></li>
                   </ul>
@@ -80,7 +82,7 @@
                   <div class="service__img"> <img src="assets/img/service_3.png" width="340" height="200" alt=""></div>
                   <h3>Проект благоустройства</h3>
                   <ul class="service__icons">
-                    <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt=""></li>
+                    <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt=""><span>Узнать подробнее</span></li>
                     <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt=""></li>
                     <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt=""></li>
                   </ul>
@@ -92,7 +94,7 @@
         <section class="goal"> 
           <div class="container"> 
             <div class="goal__inner">
-              <div class="goal__inner-img"><img src="assets/img/goal-bg.jpg" width="1160" height="450" alt="">
+              <div class="goal__inner-img">
                 <div class="goal__inner-text">Наша цель – формировать новое качество жизни. Придавать облик современного времени. Дарить положительные эмоции людям.</div>
               </div>
             </div>
@@ -110,30 +112,24 @@
                 <button class="btn btn--black history__inner-btn">Подробнее о компании</button>
               </div>
               <div class="history__inner-cards">
-                <div class="card">
-                  <div class="card__top"><span>10</span><img src="assets/img/icons/history-icon_1.svg" width="40" height="40" alt=""></div>
+                <div class="card"><span>10</span><img src="assets/img/icons/history-icon_1.svg" width="40" height="40" alt="">
                   <div class="card__bottom"><span>
                       лет непрерывного <br>развития</span></div>
                 </div>
-                <div class="card">
-                  <div class="card__top"><span>40</span><img src="assets/img/icons/history-icon_2.svg" width="40" height="40" alt=""></div>
+                <div class="card"><span>40</span><img src="assets/img/icons/history-icon_2.svg" width="40" height="40" alt="">
                   <div class="card__bottom"><span>единомышлеников в составе компании</span></div>
                 </div>
-                <div class="card">
-                  <div class="card__top"><span>20+</span><img src="assets/img/icons/history-icon_3.svg" width="40" height="40" alt=""></div>
+                <div class="card"><span>20+</span><img src="assets/img/icons/history-icon_3.svg" width="40" height="40" alt="">
                   <div class="card__bottom"><span>городов с реализованными проектами</span></div>
                 </div>
-                <div class="card">
-                  <div class="card__top"><span>80+</span><img src="assets/img/icons/history-icon_4.svg" width="40" height="40" alt=""></div>
+                <div class="card"><span>80+</span><img src="assets/img/icons/history-icon_4.svg" width="40" height="40" alt="">
                   <div class="card__bottom"><span>
                       масштабных <br>проектов</span></div>
                 </div>
-                <div class="card">
-                  <div class="card__top"><span>4+</span><img src="assets/img/icons/history-icon_5.svg" width="40" height="40" alt=""></div>
+                <div class="card"><span>4+</span><img src="assets/img/icons/history-icon_5.svg" width="40" height="40" alt="">
                   <div class="card__bottom"><span>млн. ежегодных посещений территорий</span></div>
                 </div>
-                <div class="card">
-                  <div class="card__top"><span>7</span><img src="assets/img/icons/history-icon_6.svg" width="40" height="40" alt=""></div>
+                <div class="card"><span>7</span><img src="assets/img/icons/history-icon_6.svg" width="40" height="40" alt="">
                   <div class="card__bottom"><span>млрд р сумма реализованных проектов</span></div>
                 </div>
               </div>
@@ -150,13 +146,11 @@
                     Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
                 </div>
                 <div class="geography__inner-cards">
-                  <div class="card">
-                    <div class="card__top"><span>500+</span><img src="assets/img/icons/geography-icon_1.svg" width="40" height="40" alt=""></div>
+                  <div class="card"><span>500+</span><img src="assets/img/icons/geography-icon_1.svg" width="40" height="40" alt="">
                     <div class="card__bottom"><span>
                         гектар <br>площадь проектов</span></div>
                   </div>
-                  <div class="card">
-                    <div class="card__top"><span>30</span><img src="assets/img/icons/geography-icon_2.svg" width="40" height="40" alt=""></div>
+                  <div class="card"><span>30</span><img src="assets/img/icons/geography-icon_2.svg" width="40" height="40" alt="">
                     <div class="card__bottom"><span>городов</span></div>
                   </div>
                 </div>
@@ -216,36 +210,36 @@
                   влияние на экономическое и социальное развитие города
                 </p>
               </div>
-              <div class="seo-text__inner-img"><img src="assets/img/goal-bg.jpg" width="1160" height="450" alt=""></div>
+              <div class="seo-text__inner-img"></div>
             </div>
           </div>
         </section>
+        <footer class="footer">
+          <div class="container"> 
+            <div class="footer__inner">
+              <div class="footer__inner-left"> 
+                <div class="logo"><a href="index.html"><img src="assets/img/logo-white.png" width="220" height="12" alt="Логотип MirrorGroup"></a></div>
+                <nav class="nav">
+                  <ul role="menu">
+                    <li role="menuitem"><a href="#services">Главная</a></li>
+                    <li role="menuitem"><a href="#price">Статьи </a></li>
+                    <li role="menuitem"><a href="#reviews">Услуги</a></li>
+                    <li role="menuitem"><a href="#photo">Награды и премии</a></li>
+                    <li role="menuitem"><a href="#services">Проекты</a></li>
+                    <li role="menuitem"><a href="#price">Публикации в сми</a></li>
+                    <li role="menuitem"><a href="#reviews">О компании</a></li>
+                    <li role="menuitem"><a href="#photo">Контакты</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="footer__inner-right">
+                <div class="phone"> <a href="tel:=+79283151515">+7 928 315 15 15</a></div><span>Заказать обратный звонок</span>
+                <button class="btn footer__inner-btn">Обратный звонок</button>
+              </div>
+            </div><span class="copyright">© Архитектурная мастерская</span>
+          </div>
+        </footer>
       </main>
-      <footer class="footer">
-        <div class="container"> 
-          <div class="footer__inner">
-            <div class="footer__inner-left"> 
-              <div class="logo"><a href="index.html"><img src="assets/img/logo-white.png" width="220" height="12" alt="Логотип MirrorGroup"></a></div>
-              <nav class="nav">
-                <ul role="menu">
-                  <li role="menuitem"><a href="#services">Главная</a></li>
-                  <li role="menuitem"><a href="#price">Статьи </a></li>
-                  <li role="menuitem"><a href="#reviews">Услуги</a></li>
-                  <li role="menuitem"><a href="#photo">Награды и премии</a></li>
-                  <li role="menuitem"><a href="#services">Проекты</a></li>
-                  <li role="menuitem"><a href="#price">Публикации в сми</a></li>
-                  <li role="menuitem"><a href="#reviews">О компании</a></li>
-                  <li role="menuitem"><a href="#photo">Контакты</a></li>
-                </ul>
-              </nav>
-            </div>
-            <div class="footer__inner-right">
-              <div class="phone"> <a href="tel:=+79283151515">+7 928 315 15 15</a></div><span>Заказать обратный звонок</span>
-              <button class="btn footer__inner-btn">Обратный звонок</button>
-            </div>
-          </div><span class="copyright">© Архитектурная мастерская</span>
-        </div>
-      </footer>
     </div>
     <script src="/assets/js/main.js"></script>
   </body>

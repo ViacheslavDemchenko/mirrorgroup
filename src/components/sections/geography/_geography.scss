@@ -1,10 +1,22 @@
 .geography {
-  padding: 7.5em 0;
+  padding: 4rem 0 10rem 0;
+
+  @media (min-width: 1024px) {
+    padding: 7.5rem 0;
+  }
 
   &__inner {
+    position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
 
     &-right,
     &-left {
@@ -12,10 +24,37 @@
     }
 
     &-left {
-      margin-right: 4rem;
+      width: 100%;
+
+      @media (min-width: 1024px) {
+        width: 42%;
+      }
+
+      @media (min-width: 1440px) {
+        width: 50%;
+        margin-right: 4rem;
+      }
     }
 
     &-right {
+      position: absolute;
+      top: 23.1rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @media (min-width: 500px) {
+        top: 20rem;
+      }
+
+      @media (min-width: 1024px) {
+        position: static;
+        width: 57%;
+      }
+
+      @media (min-width: 1440px) {
+        width: 50%;
+      }
 
       &__img {
         position: relative;
@@ -70,44 +109,140 @@
         .location {
           position: absolute;
           z-index: 10;
-          width: 2.4rem;
-          height: 2.4rem;
+          width: 1.2rem;
+          height: 1.2rem;
           cursor: pointer;
+
+          @media (min-width: 1024px) {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
         }
 
         .location-1 {
-          top: 16rem;
-          left: 2rem;
+          top: 9rem;
+          left: 1.2rem;
+
+          @media (min-width: 500px) {
+            top: 11rem;
+          }
+
+          @media (min-width: 768px) {
+            top: 13rem;
+            left: 2rem;
+          }
+
+          @media (min-width: 1024px) {
+            top: 17rem;
+            left: 2.5rem;
+          }
         }
 
         img {
 
           &:nth-of-type(1) {
-            width: 56rem;
+            width: 29rem;
+
+            @media (min-width: 500px) {
+              width: 35rem;
+            }
+
+            @media (min-width: 768px) {
+              width: 42rem;
+            }
+
+            @media (min-width: 1024px) {
+              width: 56rem;
+            }
           }
         }
       }
     }
 
     &-text {
+      margin-bottom: 38rem;
+
+      @media (min-width: 500px) {
+        margin-bottom: 43rem;
+      }
+
+      @media (min-width: 600px) {
+        margin-bottom: 42rem;
+      }
+
+      @media (min-width: 768px) {
+        margin-bottom: 50rem;
+      }
+
+      @media (min-width: 1024px) {
+        margin-bottom: 0;
+      }
 
       h2 {
         margin-bottom: 4rem;
       }
 
       p {
+        max-width: 42.4rem;
         margin-bottom: 4rem;
+
+        @media (min-width: 1024px) {
+          max-width: 36rem;
+        }
+
+        @media (min-width: 1200px) {
+          max-width: 100%;
+        }
       }
     }
 
     &-cards {
+      width: 100%;
       display: flex;
-      justify-content: space-between;
-      margin-bottom: 6rem;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4rem;
+
+      @media (min-width: 600px) {
+        flex-direction: row;
+        align-items: initial;
+        justify-content: space-between;
+      }
+
+      @media (min-width: 1024px) {
+        flex-direction: column;
+        margin-bottom: 6rem;
+      }
+
+      @media (min-width: 1440px) {
+        flex-direction: row;
+      }
+
+      .card {
+        margin-bottom: 2rem;
+
+        @media (min-width: 1440px) {
+          margin-bottom: 0;
+        }
+      }
     }
 
     &-btn {
-      padding: 2.2rem 7.107rem;
+      position: absolute;
+      width: 28rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 2.2rem 0;
+
+      @media (min-width: 375px) {
+        width: 30rem;
+      }
+
+      @media (min-width: 1024px) {
+        position: static;
+        transform: translateX(0);
+        padding: 2.2rem 5.39rem;
+      }
     }
   }
 }

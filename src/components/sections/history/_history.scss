@@ -1,17 +1,37 @@
 .history {
-  padding: 7.5em 0;
+  padding: 4rem 0 12rem 0;
+
+  @media (min-width: 1024px) {
+    padding: 7.5rem 0;
+  }
 
   &__inner {
+    position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
 
     &-text {
-      max-width: 56rem;
+      width: 100%;
+
+      @media (min-width: 1024px) {
+        width: 46%;
+      }
 
       h2 {
         max-width: 48.8rem;
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
+
+        @media (min-width: 1024px) {
+          margin-bottom: 6rem;
+        }
       }
 
       p {
@@ -26,27 +46,77 @@
       }
 
       p:last-of-type {
-        margin-bottom: 4rem;
+        margin-bottom: 5.1rem;
+
+        @media (min-width: 1024px) {
+          margin-bottom: 4rem;
+        }
       }
     }
 
     &-cards {
-      max-width: 56rem;
+      width: 100%;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: 650px) {
+        max-width: 61.4rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+      }
+
+      @media (min-width: 900px) {
+        align-items: stretch;
+        justify-content: space-between;
+      }
+  
+      @media (min-width: 1024px) {
+        width: 53%;
+        max-width: 56rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
       
       .card {
         margin-bottom: 2rem;
-      }
 
-      .card:nth-child(odd) {
-        margin-right: 4rem;
+        &:nth-child(odd) {
+
+          @media (min-width: 550px) {
+            margin-right: 0.5rem;
+          }
+  
+          @media (min-width: 900px) {
+            margin-right: 0;
+          }
+  
+          @media (min-width: 1440px) {
+            margin-right: 4rem;
+          }
+        }
       }
     }
 
     &-btn {
-      padding: 2.2rem 5.39rem;
+      position: absolute;
+      bottom: -8rem;
+      width: 28rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 2.2rem 0;
+
+      @media (min-width: 375px) {
+        width: 30rem;
+      }
+
+      @media (min-width: 1024px) {
+        position: static;
+        transform: translateX(0);
+        padding: 2.2rem 5.39rem;
+      }
     }
-    
   }
 }

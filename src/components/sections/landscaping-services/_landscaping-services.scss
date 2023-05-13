@@ -1,5 +1,9 @@
 .landscaping-services {
-  padding: 7.5rem 0;
+  padding: 4rem 0;
+
+  @media (min-width: 1024px) {
+    padding: 7.5rem 0;
+  }
 
   &__inner {
     width: 100%;
@@ -9,6 +13,11 @@
 
       h2 {
         max-width: 59rem;
+        margin-bottom: 4rem;
+
+        @media (min-width: 1024px) {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -17,26 +26,118 @@
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+
+      @media (min-width: 650px)  {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    &-top {
+      align-items: flex-start;
+
+      @media (min-width: 1024px) {
+        align-items: center;
+      }
     }
     
     &-bottom {
 
       .service {
-        width: 36rem;
+        width: 28rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 1rem 1rem 3rem 1rem;
         background: var(--white_2);
         border-radius: 1rem;
+        will-change: background, color;
+        transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+          background: var(--red_1);
+
+          h3 {
+            color: var(--white_1);
+          }
+        }
+
+        &:nth-of-type(1) {
+
+          @media (min-width: 650px) {
+            margin-right: 1rem;
+          }
+
+          @media (min-width: 1024px) {
+            margin-right: 0;
+          }
+        }
+
+        &:nth-of-type(2) {
+
+          @media (min-width: 650px) {
+            margin-left: 1rem;
+          }
+
+          @media (min-width: 1024px) {
+            margin-left: 0;
+          }
+        }
+
+        &:not(:last-of-type) {
+          margin-bottom: 2.5rem;
+
+          @media (min-width: 375px) {
+            margin-bottom: 4rem;
+          }
+
+          @media (min-width: 1024px) {
+            margin-bottom: 0;
+          }
+        }
+
+        @media (min-width: 375px) {
+          width: 30rem;
+        }
+
+        @media (min-width: 1024px) {
+          width: 29.7rem;
+        }
+
+        @media (min-width: 1440px) {
+          width: 36rem;
+        }
 
         &__img {
           margin-bottom: 2rem;
         }
 
         h3 {
+          align-self: flex-start;
           margin-bottom: 2rem;
+          @include InterMedium();
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+          color: var(--black_1);
+
+          @media (min-width: 375px) {
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+          }
+
+          @media (min-width: 1024px) {
+            font-size: 2rem;
+            line-height: 2.4rem;
+          }
         }
 
         &__icons {
@@ -50,11 +151,45 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 50%;
+            border-radius: 5rem;
             background: var(--white_1);
+            cursor: pointer;
 
             &:not(:last-of-type) {
               margin-right: 2rem;
+            }
+
+            &:nth-of-type(1) {
+              display: flex;
+              will-change: width, justify-content;
+              transition: width 0.5s ease-in-out, justify-content 0.5s ease-in-out;
+              
+              &:hover,
+              &:focus {
+                width: 18rem;
+                justify-content: flex-start;
+                padding-left: 0.5rem;
+
+                span {
+                  display: block;
+                }
+              }
+            }
+
+            span {
+              display: inline-block;
+              margin-left: 1rem;
+              display: none;
+              @include InterRegular();
+              font-size: 1.2rem;
+              line-height: 1.6rem;
+              // display: flex;
+              // align-items: center;
+              color: var(--black_1);
+
+              @media (min-width: 375px) {
+                font-size: 1.4rem;
+              }
             }
 
           }
@@ -65,8 +200,12 @@
   }
 
   &__btn {
-    padding: 2.05rem 3.721rem;
+    padding: 1.55rem 3.721rem;
     font-size: 1.6rem;
     line-height: 1.9rem;
+
+    @media (min-width: 1024px) {
+      padding: 2.05rem 3.721rem;
+    }
   }
 }

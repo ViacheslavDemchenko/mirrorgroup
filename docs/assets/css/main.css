@@ -142,7 +142,7 @@ h1 {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  font-size: 6.8rem;
+  font-size: 3.4rem;
   line-height: 110%;
   text-align: center;
   letter-spacing: -0.035em;
@@ -154,14 +154,12 @@ h2 {
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  font-size: 4rem;
+  font-size: 2.4rem;
   line-height: 120.02%;
   color: var(--black_1);
 }
 
 .btn {
-  display: flex;
-  align-items: center;
   text-align: center;
   padding: 1.25rem 2.885rem;
   font-family: "Inter Regular";
@@ -190,8 +188,14 @@ h2 {
 }
 
 .header__inner-top {
-  padding: 2rem 0;
-  border-bottom: 0.1rem solid var(--gray_1);
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 2000;
+  background: var(--white_1);
+}
+
+.header__inner-top .logo {
+  max-width: 16rem;
 }
 
 .header__inner-top,
@@ -202,7 +206,14 @@ h2 {
   align-items: center;
 }
 
-.header__btn {
+.header__btn--desktop {
+  display: none;
+}
+
+.header__btn--mobile {
+  display: block;
+  align-self: center;
+  margin-top: 8.1rem;
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--black_1);
@@ -211,23 +222,25 @@ h2 {
 }
 
 .footer {
-  padding: 8rem 0 2.9rem 0;
+  padding: 5.7rem 0 2.6rem 0;
   background: var(--black_1);
 }
 
 .footer__inner {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .footer__inner-left .logo {
-  margin-bottom: 7.8rem;
+  width: 16rem;
+  margin-bottom: 6rem;
 }
 
 .footer__inner-left nav {
-  max-width: 77rem;
-  margin-bottom: 8.4rem;
+  max-width: 34.5rem;
+  margin-bottom: 4.1rem;
+  background: transparent;
 }
 
 .footer__inner-left nav ul {
@@ -236,14 +249,7 @@ h2 {
 }
 
 .footer__inner-left nav ul li {
-  width: 18%;
-  margin-right: 5rem;
-}
-
-.footer__inner-left nav ul li:nth-of-type(1),
-.footer__inner-left nav ul li:nth-of-type(2),
-.footer__inner-left nav ul li:nth-of-type(3),
-.footer__inner-left nav ul li:nth-of-type(4) {
+  width: 50%;
   margin-bottom: 2rem;
 }
 
@@ -265,7 +271,7 @@ h2 {
 }
 
 .footer__inner-right .phone {
-  margin-bottom: 8.1rem;
+  margin-bottom: 3rem;
 }
 
 .footer__inner-right span {
@@ -281,6 +287,7 @@ h2 {
 }
 
 .footer__inner-btn {
+  margin-bottom: 4rem;
   font-family: "Inter Regular";
   font-weight: 400;
   font-style: normal;
@@ -294,6 +301,8 @@ h2 {
 
 .footer .copyright {
   width: 100%;
+  display: flex;
+  justify-content: center;
   font-family: "Inter Regular";
   font-weight: 400;
   font-style: normal;
@@ -303,19 +312,140 @@ h2 {
   color: var(--gray_7);
 }
 
-.nav {
+.cmn-toggle-switch {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 2.7rem;
+  height: 2.7rem;
+  font-size: 0;
+  appearance: none;
+  box-shadow: none;
+  border: 0.1rem solid var(--red_1);
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: background 0.3s ease-out;
+}
+
+.cmn-toggle-switch:focus {
+  outline: none;
+}
+
+.cmn-toggle-switch span {
+  position: relative;
+  width: 2.7rem;
+  margin: auto;
+  display: block;
+  height: 0.2rem;
+  border-radius: 0.5rem;
+  background: var(--black_1);
+}
+
+.cmn-toggle-switch span::before,
+.cmn-toggle-switch span::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  display: block;
   width: 100%;
-  padding: 2rem 0;
+  height: 0.2rem;
+  border-radius: 0.5rem;
+  background: var(--black_1);
+}
+
+.cmn-toggle-switch span::before {
+  top: 0.6rem;
+}
+
+.cmn-toggle-switch span::after {
+  bottom: 0.6rem;
+}
+
+.cmn-toggle-switch__htx {
+  width: 4.7rem;
+  height: 4.7rem;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: all 1s ease-out;
+}
+
+.cmn-toggle-switch__htx span {
+  transition: background 0.3s ease-out;
+}
+
+.cmn-toggle-switch__htx span::before,
+.cmn-toggle-switch__htx span::after {
+  transition-duration: 0.3s, 0.3s;
+}
+
+.cmn-toggle-switch__htx span::before {
+  transition-property: top, transform;
+}
+
+.cmn-toggle-switch__htx span::after {
+  transition-property: bottom, transform;
+}
+
+.cmn-toggle-switch__htx.active {
+  width: 4.7rem;
+  height: 4.7rem;
+}
+
+.cmn-toggle-switch__htx.active span {
+  background: none;
+  width: 3rem;
+  right: 0;
+}
+
+.cmn-toggle-switch__htx.active span::before,
+.cmn-toggle-switch__htx.active span::after {
+  background: var(--black_1);
+  transition-delay: 0.3s;
+}
+
+.cmn-toggle-switch__htx.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.cmn-toggle-switch__htx.active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.nav {
+  position: absolute;
+  z-index: 1000;
+  left: -100%;
+  transform: translateX(-50%);
+  top: 9rem;
+  width: 100%;
+  height: 100vh;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+  background: var(--white_1);
+  will-change: left;
+  transition: left 0.5s ease-in-out;
+}
+
+.nav--active {
+  left: 50%;
 }
 
 .nav ul {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
-.nav ul li a {
+.nav ul .nav__item:not(:last-of-type) {
+  margin-bottom: 3.1rem;
+}
+
+.nav ul .nav__item .nav__item-link {
   padding: 0.5rem;
   font-family: "Inter Regular";
   font-weight: 400;
@@ -326,19 +456,21 @@ h2 {
   color: var(--black_1);
 }
 
+.nav ul .nav__item .nav__item-link--active {
+  color: var(--red_1);
+}
+
 .card {
-  width: 26rem;
-  padding: 2rem 1.5rem 2rem 2rem;
+  position: relative;
+  width: 29rem;
+  display: flex;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   border: 0.1rem solid var(--gray_3);
   border-radius: 0.5rem;
 }
 
-.card__top {
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.card__top span {
+.card span {
+  width: 30%;
   font-family: "Inter Medium";
   font-weight: 500;
   font-style: normal;
@@ -348,10 +480,24 @@ h2 {
   color: var(--black_1);
 }
 
-.card__top,
+.card img {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.8rem;
+}
+
 .card__bottom {
-  display: flex;
-  justify-content: space-between;
+  width: 14.8rem;
+}
+
+.card__bottom span {
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 130.02%;
+  color: var(--black_1);
 }
 
 .phone a {
@@ -365,11 +511,11 @@ h2 {
 }
 
 .landscaping {
-  padding: 4.3rem 0 7.5rem 0;
+  padding: 4rem 0 0 0;
 }
 
 .landscaping h1 {
-  margin-bottom: 6rem;
+  margin-bottom: 12rem;
 }
 
 .landscaping__top,
@@ -386,7 +532,15 @@ h2 {
 }
 
 .landscaping__center img:nth-of-type(1) {
-  margin-right: 19.7rem;
+  width: 9.5rem;
+  height: 13.5rem;
+  transform: translate(-2rem, -6rem);
+}
+
+.landscaping__center img:nth-of-type(2) {
+  width: 7rem;
+  height: 9.9rem;
+  transform: translateY(4rem);
 }
 
 .landscaping__bottom {
@@ -402,37 +556,69 @@ h2 {
   align-self: flex-start;
 }
 
+.landscaping__bottom img:nth-of-type(1) {
+  width: 9.8rem;
+  height: 7.9rem;
+  transform: translateX(1rem);
+}
+
+.landscaping__bottom img:nth-of-type(2) {
+  width: 14.8rem;
+  height: 10.5rem;
+  transform: translate(-5rem, -5rem);
+}
+
+.landscaping__bottom img:nth-of-type(3) {
+  width: 7.6rem;
+  height: 13.7rem;
+  transform: translate(-5rem, 2rem);
+}
+
+.landscaping__top {
+  position: relative;
+}
+
 .landscaping__top img {
   transform: translateY(-2.3rem);
+  width: 9.6rem;
+  height: 9.6rem;
 }
 
 .landscaping__top-img {
   display: flex;
   flex-direction: column;
+  transform: translate(2rem, 0rem);
 }
 
 .landscaping__top-img img {
-  transform: translateY(0);
+  transform: translateY(1rem);
+  width: 9.7rem;
+  height: 12.7rem;
   filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
   border-radius: 0.5rem;
 }
 
 .landscaping__top-img p {
-  transform: translate(2.5rem, -1.5rem);
-  max-width: 15.8rem;
+  transform: translate(-0.5rem, -0.5rem);
+  max-width: 13.8rem;
   display: inline-block;
   font-family: "Inter Medium";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   text-align: center;
   color: var(--black_2);
 }
 
 .landscaping__btn {
-  padding: 1.6rem 4.377rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16rem;
+  width: 21.7rem;
+  padding: 1.6rem 1.377rem;
   font-family: "Inter Regular";
   font-weight: 400;
   font-style: normal;
@@ -445,7 +631,7 @@ h2 {
 }
 
 .landscaping-services {
-  padding: 7.5rem 0;
+  padding: 4rem 0;
 }
 
 .landscaping-services__inner {
@@ -458,6 +644,7 @@ h2 {
 
 .landscaping-services__inner-top h2 {
   max-width: 59rem;
+  margin-bottom: 4rem;
 }
 
 .landscaping-services__inner-top,
@@ -465,17 +652,37 @@ h2 {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+.landscaping-services__inner-top {
+  align-items: flex-start;
 }
 
 .landscaping-services__inner-bottom .service {
-  width: 36rem;
+  width: 28rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem 1rem 3rem 1rem;
   background: var(--white_2);
   border-radius: 1rem;
+  will-change: background, color;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.landscaping-services__inner-bottom .service:hover,
+.landscaping-services__inner-bottom .service:focus {
+  background: var(--red_1);
+}
+
+.landscaping-services__inner-bottom .service:hover h3,
+.landscaping-services__inner-bottom .service:focus h3 {
+  color: var(--white_1);
+}
+
+.landscaping-services__inner-bottom .service:not(:last-of-type) {
+  margin-bottom: 2.5rem;
 }
 
 .landscaping-services__inner-bottom .service__img {
@@ -483,7 +690,15 @@ h2 {
 }
 
 .landscaping-services__inner-bottom .service h3 {
+  align-self: flex-start;
   margin-bottom: 2rem;
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: var(--black_1);
 }
 
 .landscaping-services__inner-bottom .service__icons {
@@ -498,48 +713,83 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 5rem;
   background: var(--white_1);
+  cursor: pointer;
 }
 
 .landscaping-services__inner-bottom .service__icons .service__icon:not(:last-of-type) {
   margin-right: 2rem;
 }
 
+.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1) {
+  display: flex;
+  will-change: width, justify-content;
+  transition: width 0.5s ease-in-out, justify-content 0.5s ease-in-out;
+}
+
+.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):hover,
+.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):focus {
+  width: 18rem;
+  justify-content: flex-start;
+  padding-left: 0.5rem;
+}
+
+.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):hover span,
+.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):focus span {
+  display: block;
+}
+
+.landscaping-services__inner-bottom .service__icons .service__icon span {
+  display: inline-block;
+  margin-left: 1rem;
+  display: none;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: var(--black_1);
+}
+
 .landscaping-services__btn {
-  padding: 2.05rem 3.721rem;
+  padding: 1.55rem 3.721rem;
   font-size: 1.6rem;
   line-height: 1.9rem;
 }
 
 .goal {
-  padding: 7.5rem 0;
+  padding: 4rem 0 9rem 0;
 }
 
 .goal__inner {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .goal__inner-img {
   position: relative;
-  border-radius: 1rem;
-}
-
-.goal__inner-img img {
+  width: 100%;
+  max-width: 30rem;
+  height: 27.5rem;
+  background: url("../img/goal-bg-sx.jpg") 100% 100%/cover no-repeat;
   border-radius: 1rem;
 }
 
 .goal__inner-text {
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  width: 34rem;
+  bottom: -7rem;
+  right: 50%;
+  transform: translateX(50%);
+  width: 100%;
   font-family: "Inter Regular";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  padding: 2rem 3rem;
-  font-size: 1.6rem;
+  padding: 2rem 1rem;
+  font-size: 1.4rem;
   line-height: 130.02%;
   color: var(--black_1);
   background: rgba(255, 255, 255, 0.7);
@@ -548,21 +798,24 @@ h2 {
 }
 
 .seo-text {
-  padding: 7.5rem 0 15rem 0;
+  padding: 4rem 0 8rem 0;
 }
 
 .seo-text__inner {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .seo-text__inner h2 {
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .seo-text__inner-text {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 4rem;
+  flex-direction: column;
+  align-items: center;
   font-family: "Inter Regular";
   font-weight: 400;
   font-style: normal;
@@ -573,34 +826,44 @@ h2 {
 }
 
 .seo-text__inner-text p {
+  width: 100%;
   max-width: 56rem;
 }
 
-.seo-text__inner-img {
-  border-radius: 1rem;
+.seo-text__inner-text p:not(:last-of-type) {
+  margin-bottom: 2rem;
 }
 
-.seo-text__inner-img img {
+.seo-text__inner-text p:last-of-type {
+  margin-bottom: 8rem;
+}
+
+.seo-text__inner-img {
+  width: 100%;
+  height: 27.5rem;
+  background: url("../img/goal-bg-sx.jpg") 100% 100%/cover no-repeat;
   border-radius: 1rem;
 }
 
 .history {
-  padding: 7.5em 0;
+  padding: 4rem 0 12rem 0;
 }
 
 .history__inner {
+  position: relative;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .history__inner-text {
-  max-width: 56rem;
+  width: 100%;
 }
 
 .history__inner-text h2 {
   max-width: 48.8rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .history__inner-text p {
@@ -618,35 +881,39 @@ h2 {
 }
 
 .history__inner-text p:last-of-type {
-  margin-bottom: 4rem;
+  margin-bottom: 5.1rem;
 }
 
 .history__inner-cards {
-  max-width: 56rem;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 .history__inner-cards .card {
   margin-bottom: 2rem;
 }
 
-.history__inner-cards .card:nth-child(odd) {
-  margin-right: 4rem;
-}
-
 .history__inner-btn {
-  padding: 2.2rem 5.39rem;
+  position: absolute;
+  bottom: -8rem;
+  width: 28rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2.2rem 0;
 }
 
 .geography {
-  padding: 7.5em 0;
+  padding: 4rem 0 10rem 0;
 }
 
 .geography__inner {
+  position: relative;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .geography__inner-right,
@@ -655,7 +922,15 @@ h2 {
 }
 
 .geography__inner-left {
-  margin-right: 4rem;
+  width: 100%;
+}
+
+.geography__inner-right {
+  position: absolute;
+  top: 23.1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .geography__inner-right__img {
@@ -715,18 +990,22 @@ h2 {
 .geography__inner-right__img .location {
   position: absolute;
   z-index: 10;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 1.2rem;
+  height: 1.2rem;
   cursor: pointer;
 }
 
 .geography__inner-right__img .location-1 {
-  top: 16rem;
-  left: 2rem;
+  top: 9rem;
+  left: 1.2rem;
 }
 
 .geography__inner-right__img img:nth-of-type(1) {
-  width: 56rem;
+  width: 29rem;
+}
+
+.geography__inner-text {
+  margin-bottom: 38rem;
 }
 
 .geography__inner-text h2 {
@@ -734,24 +1013,36 @@ h2 {
 }
 
 .geography__inner-text p {
+  max-width: 42.4rem;
   margin-bottom: 4rem;
 }
 
 .geography__inner-cards {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 6rem;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.geography__inner-cards .card {
+  margin-bottom: 2rem;
 }
 
 .geography__inner-btn {
-  padding: 2.2rem 7.107rem;
+  position: absolute;
+  width: 28rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2.2rem 0;
 }
 
 .consult {
-  padding: 7.5rem 0 18.1rem 0;
+  padding: 4rem 0 18.1rem 0;
 }
 
 .consult__inner {
+  position: relative;
   width: 100%;
 }
 
@@ -760,73 +1051,77 @@ h2 {
 }
 
 .consult__inner-top .line {
-  width: 100%;
-  height: 0.4rem;
-  margin-bottom: 6rem;
-  background: var(--gray_3);
-  border-radius: 0.5rem;
+  display: none;
 }
 
 .consult__inner-top .tabs {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  padding-left: 2.2rem;
 }
 
 .consult__inner-top .tabs .tab {
-  width: 36rem;
+  position: relative;
   padding: 0.5rem;
   font-family: "Inter Medium";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 120%;
-  text-align: center;
   color: var(--gray_2);
   cursor: pointer;
 }
 
+.consult__inner-top .tabs .tab::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -1.5rem;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 5rem;
+  border: 0.1rem solid var(--red_1);
+}
+
 .consult__inner-top .tabs .tab--active {
   position: relative;
-  color: var(--black_2);
+  color: var(--red_1);
 }
 
 .consult__inner-top .tabs .tab--active::after {
-  position: absolute;
-  content: "";
-  bottom: -1.9rem;
-  left: 0;
-  height: 0.4rem;
-  width: 100%;
-  border-radius: 0.5rem;
+  display: none;
+}
+
+.consult__inner-top .tabs .tab--active::before {
   background: var(--red_1);
 }
 
 .consult__inner-center {
   width: 100%;
-  height: 500px;
   display: flex;
-  justify-content: space-between;
-  padding: 6rem 6rem 4.2rem 6rem;
-  background: url("../img/icons/text-bg.svg") 6.3rem 50%/auto no-repeat, var(--white_2);
+  flex-direction: column;
+  padding: 6rem 0 26.7rem 0;
+  background: url("../img/icons/text-bg.svg") 0% 81%/132% 4rem no-repeat, var(--white_2);
   border-radius: 1rem;
 }
 
 .consult__inner-center__text {
-  position: relative;
   display: flex;
   flex-direction: column;
 }
 
 .consult__inner-center__text h2 {
-  max-width: 47.3rem;
+  max-width: 35rem;
   margin-right: 6.7rem;
+  margin-bottom: 4rem;
   font-family: "Inter Bold";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  font-size: 4rem;
+  font-size: 3.2rem;
   line-height: 100%;
   text-transform: uppercase;
   color: var(--black_2);
@@ -834,26 +1129,28 @@ h2 {
 
 .consult__inner-center__text img {
   position: absolute;
-  top: 19rem;
+  bottom: -12.5rem;
   left: 50%;
   transform: translateX(-50%);
+  width: 24.4rem;
+  height: 30.1rem;
   border-radius: 1rem;
 }
 
 .consult__inner-btn {
   align-self: flex-start;
-  padding: 2.15rem 6.323rem;
+  padding: 1.66rem 4.323rem;
   font-size: 1.4rem;
   line-height: 1.7rem;
 }
 
 .consult__form {
-  width: 50rem;
-  height: 398px;
+  width: 100%;
+  max-width: 50rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.3rem 2rem 1.8rem 2rem;
+  padding: 2.5rem 1.2rem 2rem 1.2rem;
   background: var(--white_1);
   border: 0.1rem solid var(--red_1);
   border-radius: 0.5rem;
@@ -908,9 +1205,673 @@ h2 {
   color: var(--gray_4);
 }
 
+@media (min-width: 375px) {
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  .card {
+    width: 30rem;
+    padding: 2rem 1.5rem 2rem 2rem;
+  }
+
+  .card__bottom span {
+    font-size: 1.6rem;
+  }
+
+  .landscaping-services__inner-bottom .service:not(:last-of-type) {
+    margin-bottom: 4rem;
+  }
+
+  .landscaping-services__inner-bottom .service {
+    width: 30rem;
+  }
+
+  .landscaping-services__inner-bottom .service h3 {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+
+  .landscaping-services__inner-bottom .service__icons .service__icon span {
+    font-size: 1.4rem;
+  }
+
+  .history__inner-btn {
+    width: 30rem;
+  }
+
+  .geography__inner-btn {
+    width: 30rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .goal__inner-img {
+    max-width: 100%;
+    height: 29rem;
+    background: url("../img/goal-bg-md.jpg") 100% 100%/cover no-repeat;
+  }
+
+  .goal__inner-text {
+    bottom: 1rem;
+    right: 1rem;
+    transform: translateX(0);
+    width: 28rem;
+  }
+
+  .seo-text__inner-img {
+    height: 29rem;
+    background: url("../img/goal-bg-md.jpg") 100% 100%/cover no-repeat;
+  }
+
+  .geography__inner-right {
+    top: 20rem;
+  }
+
+  .geography__inner-right__img .location-1 {
+    top: 11rem;
+  }
+
+  .geography__inner-right__img img:nth-of-type(1) {
+    width: 35rem;
+  }
+
+  .geography__inner-text {
+    margin-bottom: 43rem;
+  }
+
+  .consult__inner-center {
+    background: url("../img/icons/text-bg.svg") 0% 81%/132% 5rem no-repeat, var(--white_2);
+  }
+
+  .consult__inner-center__text img {
+    bottom: -18.5rem;
+    width: 28.6rem;
+    height: 35.4rem;
+  }
+
+  .consult__form {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 550px) {
+  .history__inner-cards .card:nth-child(odd) {
+    margin-right: 0.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .footer__inner {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .geography__inner-text {
+    margin-bottom: 42rem;
+  }
+
+  .geography__inner-cards {
+    flex-direction: row;
+    align-items: initial;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 650px) {
+  .landscaping-services__inner-top,
+  .landscaping-services__inner-bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .landscaping-services__inner-bottom .service:nth-of-type(1) {
+    margin-right: 1rem;
+  }
+
+  .landscaping-services__inner-bottom .service:nth-of-type(2) {
+    margin-left: 1rem;
+  }
+
+  .goal__inner-img {
+    height: 32rem;
+  }
+
+  .seo-text__inner-img {
+    height: 32rem;
+  }
+
+  .history__inner-cards {
+    max-width: 61.4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .consult__inner-center {
+    background: url("../img/icons/text-bg.svg") 0% 81%/132% 7rem no-repeat, var(--white_2);
+  }
+
+  .consult__inner-center__text img {
+    bottom: -18rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .goal__inner-img {
+    height: 35rem;
+  }
+
+  .seo-text__inner-img {
+    height: 35rem;
+  }
+
+  .geography__inner-right__img .location-1 {
+    top: 13rem;
+    left: 2rem;
+  }
+
+  .geography__inner-right__img img:nth-of-type(1) {
+    width: 42rem;
+  }
+
+  .geography__inner-text {
+    margin-bottom: 50rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .history__inner-cards {
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .history__inner-cards .card:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .consult__inner-center {
+    background: url("../img/icons/text-bg.svg") 0% 81%/132% 8rem no-repeat, var(--white_2);
+  }
+
+  .consult__inner-center__text img {
+    bottom: -17.7rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .no-scroll {
     padding-right: 1.7rem;
+  }
+
+  h1 {
+    font-size: 6.8rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  .header__inner-top {
+    position: static;
+    padding: 2rem 0;
+    background: transparent;
+    border-bottom: 0.1rem solid var(--gray_1);
+  }
+
+  .header__btn--desktop {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: var(--black_1);
+    border: 0.1rem solid var(--red_1);
+    background: transparent;
+  }
+
+  .header__btn--mobile {
+    display: none;
+  }
+
+  .footer {
+    padding: 8rem 0 2.9rem 0;
+  }
+
+  .footer__inner-left .logo {
+    width: 100%;
+    margin-bottom: 7.8rem;
+  }
+
+  .footer__inner-left nav {
+    max-width: 77rem;
+    margin-bottom: 8.4rem;
+  }
+
+  .footer__inner-left nav ul li {
+    width: 20%;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  .footer__inner-left nav ul li:nth-of-type(1),
+  .footer__inner-left nav ul li:nth-of-type(2),
+  .footer__inner-left nav ul li:nth-of-type(3),
+  .footer__inner-left nav ul li:nth-of-type(4) {
+    margin-bottom: 2rem;
+  }
+
+  .footer__inner-right .phone {
+    margin-bottom: 8.1rem;
+  }
+
+  .footer__inner-btn {
+    margin-bottom: 0;
+  }
+
+  .footer .copyright {
+    justify-content: flex-start;
+  }
+
+  .cmn-toggle-switch {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    transform: translateX(0);
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .nav ul {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .nav ul .nav__item:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+
+  .card {
+    width: 26rem;
+    display: block;
+  }
+
+  .card__bottom {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .landscaping {
+    padding: 4.3rem 0 26.5rem 0;
+  }
+
+  .landscaping h1 {
+    margin-bottom: 6rem;
+  }
+
+  .landscaping__center img:nth-of-type(1) {
+    width: 18.7rem;
+    height: 26.5rem;
+    margin-right: 19.7rem;
+    transform: translate(0, 0);
+  }
+
+  .landscaping__center img:nth-of-type(2) {
+    width: 15.3rem;
+    height: 21.7rem;
+    transform: translate(0, 8rem);
+  }
+
+  .landscaping__bottom img:nth-of-type(1) {
+    width: 25.6rem;
+    height: 20.7rem;
+    transform: translate(0, 0);
+  }
+
+  .landscaping__bottom img:nth-of-type(2) {
+    width: 30.4rem;
+    height: 21.6rem;
+    transform: translate(0rem, 19rem);
+  }
+
+  .landscaping__bottom img:nth-of-type(3) {
+    width: 16.7rem;
+    height: 30.1rem;
+    transform: translate(0, 0);
+  }
+
+  .landscaping__top {
+    position: static;
+  }
+
+  .landscaping__top img {
+    width: 22.6rem;
+    height: 22.6rem;
+  }
+
+  .landscaping__top-img {
+    transform: translateX(0);
+  }
+
+  .landscaping__top-img img {
+    width: 17.8rem;
+    height: 23.3rem;
+    transform: translate(-2rem, 0);
+  }
+
+  .landscaping__top-img p {
+    transform: translate(2rem, -1.5rem);
+    max-width: 15.8rem;
+    font-size: 1.4rem;
+  }
+
+  .landscaping__btn {
+    position: static;
+    transform: translateX(0);
+    width: auto;
+    align-self: flex-start;
+    margin-top: 4rem;
+    padding: 1.6rem 4.377rem;
+  }
+
+  .landscaping-services {
+    padding: 7.5rem 0;
+  }
+
+  .landscaping-services__inner-top h2 {
+    margin-bottom: 0;
+  }
+
+  .landscaping-services__inner-top,
+  .landscaping-services__inner-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .landscaping-services__inner-top {
+    align-items: center;
+  }
+
+  .landscaping-services__inner-bottom .service:nth-of-type(1) {
+    margin-right: 0;
+  }
+
+  .landscaping-services__inner-bottom .service:nth-of-type(2) {
+    margin-left: 0;
+  }
+
+  .landscaping-services__inner-bottom .service:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+
+  .landscaping-services__inner-bottom .service {
+    width: 29.7rem;
+  }
+
+  .landscaping-services__inner-bottom .service h3 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .landscaping-services__btn {
+    padding: 2.05rem 3.721rem;
+  }
+
+  .goal {
+    padding: 7.5rem 0;
+  }
+
+  .goal__inner-img {
+    height: 45rem;
+    background: url("../img/goal-bg.jpg") 100% 100%/cover no-repeat;
+  }
+
+  .goal__inner-text {
+    bottom: 2rem;
+    right: 2rem;
+    transform: translateX(0);
+    width: 34rem;
+    padding: 2rem 3rem;
+    font-size: 1.6rem;
+  }
+
+  .seo-text {
+    padding: 7.5rem 0 15rem 0;
+  }
+
+  .seo-text__inner {
+    justify-content: center;
+  }
+
+  .seo-text__inner h2 {
+    margin-bottom: 6rem;
+  }
+
+  .seo-text__inner-text {
+    margin-bottom: 4rem;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .seo-text__inner-text p {
+    width: 49%;
+  }
+
+  .seo-text__inner-text p:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+
+  .seo-text__inner-text p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .seo-text__inner-img {
+    height: 45rem;
+    background: url("../img/goal-bg.jpg") 100% 100%/cover no-repeat;
+  }
+
+  .history {
+    padding: 7.5rem 0;
+  }
+
+  .history__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .history__inner-text {
+    width: 46%;
+  }
+
+  .history__inner-text h2 {
+    margin-bottom: 6rem;
+  }
+
+  .history__inner-text p:last-of-type {
+    margin-bottom: 4rem;
+  }
+
+  .history__inner-cards {
+    width: 53%;
+    max-width: 56rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .history__inner-btn {
+    position: static;
+    transform: translateX(0);
+    padding: 2.2rem 5.39rem;
+  }
+
+  .geography {
+    padding: 7.5rem 0;
+  }
+
+  .geography__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .geography__inner-left {
+    width: 42%;
+  }
+
+  .geography__inner-right {
+    position: static;
+    width: 57%;
+  }
+
+  .geography__inner-right__img .location {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .geography__inner-right__img .location-1 {
+    top: 17rem;
+    left: 2.5rem;
+  }
+
+  .geography__inner-right__img img:nth-of-type(1) {
+    width: 56rem;
+  }
+
+  .geography__inner-text {
+    margin-bottom: 0;
+  }
+
+  .geography__inner-text p {
+    max-width: 36rem;
+  }
+
+  .geography__inner-cards {
+    flex-direction: column;
+    margin-bottom: 6rem;
+  }
+
+  .geography__inner-btn {
+    position: static;
+    transform: translateX(0);
+    padding: 2.2rem 5.39rem;
+  }
+
+  .consult {
+    padding: 7.5rem 0 18.1rem 0;
+  }
+
+  .consult__inner-top .line {
+    width: 100%;
+    height: 0.4rem;
+    display: block;
+    margin-bottom: 6rem;
+    background: var(--gray_3);
+    border-radius: 0.5rem;
+  }
+
+  .consult__inner-top .tabs {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+  }
+
+  .consult__inner-top .tabs .tab::before {
+    display: none;
+  }
+
+  .consult__inner-top .tabs .tab {
+    width: 36rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .consult__inner-top .tabs .tab--active {
+    color: var(--black_2);
+  }
+
+  .consult__inner-top .tabs .tab--active::after {
+    position: absolute;
+    content: "";
+    bottom: -1.9rem;
+    left: 0;
+    height: 0.4rem;
+    width: 100%;
+    display: block;
+    border-radius: 0.5rem;
+    background: var(--red_1);
+  }
+
+  .consult__inner-center {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5rem 5rem 4.2rem 5rem;
+    background: url("../img/icons/text-bg.svg") 5rem 50%/73% 8rem no-repeat, var(--white_2);
+  }
+
+  .consult__inner-center__text {
+    position: relative;
+  }
+
+  .consult__inner-center__text h2 {
+    max-width: 52rem;
+    margin-bottom: 0;
+    font-size: 4rem;
+  }
+
+  .consult__inner-center__text img {
+    top: 20.5rem;
+  }
+
+  .consult__form {
+    padding: 2.3rem 2rem 1.8rem 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .geography__inner-text p {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .landscaping-services__inner-bottom .service {
+    width: 36rem;
+  }
+
+  .history__inner-cards .card:nth-child(odd) {
+    margin-right: 4rem;
+  }
+
+  .geography__inner-left {
+    width: 50%;
+    margin-right: 4rem;
+  }
+
+  .geography__inner-right {
+    width: 50%;
+  }
+
+  .geography__inner-cards {
+    flex-direction: row;
+  }
+
+  .geography__inner-cards .card {
+    margin-bottom: 0;
+  }
+
+  .consult__inner-center {
+    background: url("../img/icons/text-bg.svg") 5rem 50%/auto no-repeat, var(--white_2);
+  }
+
+  .consult__inner-btn {
+    padding: 2.15rem 6.323rem;
   }
 }
 

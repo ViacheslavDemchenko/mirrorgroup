@@ -1,35 +1,67 @@
 .footer {
-  padding: 8rem 0 2.9rem 0;
+  padding: 5.7rem 0 2.6rem 0;
   background: var(--black_1);
+
+  @media (min-width: 1024px) {
+    padding: 8rem 0 2.9rem 0;
+  }
 
   &__inner {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
 
     &-left {
 
       .logo {
-        margin-bottom: 7.8rem;
+        width: 16rem;
+        margin-bottom: 6rem;
+
+        @media (min-width: 1024px) {
+          width: 100%;
+          margin-bottom: 7.8rem;
+        }
       }
 
       nav {
-        max-width: 77rem;
-        margin-bottom: 8.4rem;
+        max-width: 34.5rem;
+        margin-bottom: 4.1rem;
+        background: transparent;
+
+        @media (min-width: 1024px) {
+          max-width: 77rem;
+          margin-bottom: 8.4rem;
+        }
 
         ul {
           display: flex;
           flex-wrap: wrap;
 
           li {
-            width: 18%;
-            margin-right: 5rem;
+            width: 50%;
+            margin-bottom: 2rem;
+
+            @media (min-width: 1024px) {
+              width: 20%;
+              margin-right: 1rem;
+              margin-bottom: 0;
+            }
 
             &:nth-of-type(1),
             &:nth-of-type(2),
             &:nth-of-type(3),
             &:nth-of-type(4) {
-              margin-bottom: 2rem;
+
+              @media (min-width: 1024px) {
+                margin-bottom: 2rem;
+              }
+  
             }
 
             a {
@@ -53,7 +85,11 @@
       align-items: flex-end;
 
       .phone {
-        margin-bottom: 8.1rem;
+        margin-bottom: 3rem;
+
+        @media (min-width: 1024px) {
+          margin-bottom: 8.1rem;
+        }
       }
 
       span {
@@ -67,20 +103,31 @@
     }
 
     &-btn {
+      margin-bottom: 4rem;
       @include InterRegular();
       font-size: 1.4rem;
       line-height: 1.7rem;
       color: var(--red_1);
       background: transparent;
       border: 0.1rem solid var(--red_1);
+
+      @media (min-width: 1024px) {
+        margin-bottom: 0;
+      }
     }
   }
 
   .copyright {
     width: 100%;
+    display: flex;
+    justify-content: center;
     @include InterRegular();
     font-size: 1.4rem;
     line-height: 1.7rem;
     color: var(--gray_7);
+
+    @media (min-width: 1024px) {
+      justify-content: flex-start;
+    }
   }
 }

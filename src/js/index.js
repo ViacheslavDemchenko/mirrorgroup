@@ -2,13 +2,13 @@ require('polyfill-nodelist-foreach'); // Полифил для поддержк�
 require('svgxuse'); // Полифил для поддержки IE11+ и старыми браузерами использования SVG через use 
 
 // import accordion from './modules/accordion.js'; // Аккордион
-// import mobileMenu from './modules/mobileMenu'; // Мобильное меню
+import mobileMenu from './modules/mobileMenu'; // Мобильное меню
 // import modal from './modules/modal'; // Модалки
 // import slider from './modules/slider'; // Слайдер
 import location from './modules/location'; // Карта на главной
 
 location();
 // accordion();
-// mobileMenu();
+mobileMenu();
 // modal();
 // slider();

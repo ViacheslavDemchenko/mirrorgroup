@@ -1,31 +1,73 @@
 .goal {
-  padding: 7.5rem 0;
+  padding: 4rem 0 9rem 0;
+
+  @media (min-width: 1024px) {
+    padding: 7.5rem 0;
+  }
 
   &__inner {
     width: 100%;
+    display: flex;
+    justify-content: center;
 
     &-img {
       position: relative;
+      width: 100%;
+      max-width: 30rem;
+      height: 27.5rem;
+      background: url("../img/goal-bg-sx.jpg") 100% 100%/cover no-repeat;
       border-radius: 1rem;
 
-      img {
-        border-radius: 1rem;
+      @media (min-width: 500px) {
+        max-width: 100%;
+        height: 29rem;
+        background: url("../img/goal-bg-md.jpg") 100% 100%/cover no-repeat;
+      }
+
+      @media (min-width: 650px) {
+        height: 32rem;
+      }
+
+      @media (min-width: 768px) {
+        height: 35rem;
+      }
+
+      @media (min-width: 1024px) {
+        height: 45rem;
+        background: url("../img/goal-bg.jpg") 100% 100%/cover no-repeat;
       }
     }
 
     &-text {
       position: absolute;
-      bottom: 2rem;
-      right: 2rem;
-      width: 34rem;
+      bottom: -7rem;
+      right: 50%;
+      transform: translateX(50%);
+      width: 100%;
       @include InterRegular();
-      padding: 2rem 3rem;
-      font-size: 1.6rem;
+      padding: 2rem 1rem;
+      font-size: 1.4rem;
       line-height: 130.02%;
       color: var(--black_1);
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(7.5px);
       border-radius: 0.5rem;
+
+      @media (min-width: 500px) {
+        bottom: 1rem;
+        right: 1rem;
+        transform: translateX(0);
+        width: 28rem;
+      }
+
+      @media (min-width: 1024px) {
+        bottom: 2rem;
+        right: 2rem;
+        transform: translateX(0);
+        width: 34rem;
+        padding: 2rem 3rem;
+        font-size: 1.6rem;
+      }
     }
   }
 }
