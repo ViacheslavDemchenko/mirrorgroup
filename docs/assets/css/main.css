@@ -1293,6 +1293,7 @@ textarea::placeholder {
 
 .geography__inner-right__img .location-desc__wrap {
   position: absolute;
+  z-index: 100;
   top: 1.2rem;
   left: 50%;
   transform: translateX(-50%);
@@ -1305,40 +1306,10 @@ textarea::placeholder {
   display: block;
 }
 
-.geography__inner-right__img .location-desc__wrap .location-desc__img {
-  position: relative;
-  z-index: 10;
-  width: 22.6rem;
-  height: 17.8rem;
-  overflow: hidden;
-}
-
-.geography__inner-right__img .location-desc__wrap .location-desc__img .location-img {
-  width: 22.6rem;
-  height: 17.8rem;
-}
-
 .geography__inner-right__img .location-desc__wrap .location-desc {
   position: absolute;
-  z-index: 10;
   width: 22.4rem;
   height: 26rem;
-}
-
-.geography__inner-right__img .location-desc__wrap p {
-  position: absolute;
-  z-index: 20;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  text-align: center;
-  color: var(--white_1);
 }
 
 .geography__inner-right__img .location {

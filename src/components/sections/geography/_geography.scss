@@ -61,6 +61,7 @@
 
         .location-desc__wrap {
           position: absolute;
+          z-index: 100;
           top: 1.2rem;
           left: 50%;
           transform: translateX(-50%);
@@ -72,38 +73,37 @@
             display: block;
           }
 
-          .location-desc__img {
-            position: relative;
-            z-index: 10;
-            width: 22.6rem;
-            height: 17.8rem;
-            overflow: hidden;
+          // .location-desc__img {
+          //   position: relative;
+          //   z-index: 10;
+          //   width: 22.6rem;
+          //   height: 17.8rem;
+          //   overflow: hidden;
 
-            .location-img {
-              width: 22.6rem;
-              height: 17.8rem;
-            }
-          }
+          //   .location-img {
+          //     width: 22.6rem;
+          //     height: 17.8rem;
+          //   }
+          // }
 
           .location-desc {
             position: absolute;
-            z-index: 10;
             width: 22.4rem;
             height: 26rem;
           }
 
-          p {
-            position: absolute;
-            z-index: 20;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            @include InterMedium();
-            font-size: 1.2rem;
-            line-height: 1.5rem;
-            text-align: center;
-            color: var(--white_1);
-          }
+          // p {
+          //   position: absolute;
+          //   z-index: 20;
+          //   bottom: 3rem;
+          //   left: 50%;
+          //   transform: translateX(-50%);
+          //   @include InterMedium();
+          //   font-size: 1.2rem;
+          //   line-height: 1.5rem;
+          //   text-align: center;
+          //   color: var(--white_1);
+          // }
         }
 
         .location {
@@ -868,3 +868,4 @@
   }
 
 }
+

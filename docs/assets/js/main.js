@@ -403,6 +403,55 @@ var _data_mapData_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__w
 
 function data() {
   console.log(_data_mapData_json__WEBPACK_IMPORTED_MODULE_0__);
+  var locations = document.querySelectorAll('.location');
+  var locationDescWrap = document.querySelector('.location-desc__wrap');
+  var geographyInnerRightImg = document.querySelector('.geography__inner-right__img');
+  locations.forEach(function (location) {
+    location.addEventListener('mouseover', function () {
+      var locationBounds = location.getBoundingClientRect();
+      var geographyInnerRightImgBounds = geographyInnerRightImg.getBoundingClientRect();
+      var x = locationBounds.left - geographyInnerRightImgBounds.left + locationBounds.width / 2;
+      var y = locationBounds.top - geographyInnerRightImgBounds.top + locationBounds.height / 2;
+      locationDescWrap.style.top = y - 260 + 'px';
+      locationDescWrap.style.left = "".concat(x, "px");
+      locationDescWrap.style.display = 'block';
+    });
+
+    // location.addEventListener('mouseout', () => {
+    //   locationDescWrap.style.display = 'none';
+    // });
+  });
+
+  // const locations = document.querySelectorAll('.location'); // получаем все элементы с классом location
+
+  // locations.forEach(location => { // перебираем каждый элемент
+  //   location.addEventListener('mouseover', () => { // вешаем событие на наведение курсора
+  //     const { x, y } = location.getBoundingClientRect(); // получаем координаты элемента
+  //     console.log(`${x}, ${y}`); // выводим координаты в консоль
+
+  //     const locationDesc = document.querySelector('.location-desc__wrap'); // получаем элемент с классом location-desc__wrap
+
+  //     locationDesc.style.display = 'block'; // добавляем ему свойство display: block
+  //     locationDesc.style.top = `${y}px`; // устанавливаем позицию по вертикали
+  //     locationDesc.style.left = `${x}px`; // устанавливаем позицию по горизонтали
+  // });
+
+  // location.addEventListener('mouseout', () => { // вешаем событие на выход курсора
+  //   const locationDesc = document.querySelector('.location-desc__wrap'); // получаем элемент с классом location-desc__wrap
+
+  //   locationDesc.style.display = 'none'; // удаляем свойство display: block
+  // });
+  // });
+
+  // const locations = document.querySelectorAll('.location');
+
+  // locations.forEach(location => {
+  //   location.addEventListener('mouseover', function(event) {
+  //     const x = event.target.offsetLeft;
+  //     const y = event.target.offsetTop;
+  //     console.log(`Координаты: (${x}, ${y})`);
+  //   });
+  // });
 
   //  // Create an empty array to store the JSON elements
   //   const jsonElements = [];
