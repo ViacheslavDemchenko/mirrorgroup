@@ -1293,17 +1293,18 @@ textarea::placeholder {
 
 .geography__inner-right__img .location-desc__wrap {
   position: absolute;
-  z-index: 100;
+  z-index: -1;
   top: 1.2rem;
   left: 50%;
   transform: translateX(-50%);
   width: 22.4rem;
   height: 26rem;
-  display: none;
+  opacity: 0;
 }
 
 .geography__inner-right__img .location-desc__wrap--active {
-  display: block;
+  z-index: 100;
+  opacity: 1;
 }
 
 .geography__inner-right__img .location-desc__wrap .location-desc {
@@ -1317,6 +1318,7 @@ textarea::placeholder {
   z-index: 10;
   width: 1.2rem;
   height: 1.2rem;
+  padding: 0.1rem;
   cursor: pointer;
 }
 

@@ -414,12 +414,11 @@ function data() {
       var y = locationBounds.top - geographyInnerRightImgBounds.top + locationBounds.height / 2;
       locationDescWrap.style.top = y - 260 + 'px';
       locationDescWrap.style.left = "".concat(x, "px");
-      locationDescWrap.style.display = 'block';
+      locationDescWrap.classList.add('location-desc__wrap--active');
     });
-
-    // location.addEventListener('mouseout', () => {
-    //   locationDescWrap.style.display = 'none';
-    // });
+    location.addEventListener('mouseout', function () {
+      locationDescWrap.classList.remove('location-desc__wrap--active');
+    });
   });
 
   // const locations = document.querySelectorAll('.location'); // получаем все элементы с классом location

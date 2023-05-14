@@ -20,12 +20,12 @@ export default function data() {
  
       locationDescWrap.style.top = y - 260 + 'px';
       locationDescWrap.style.left = `${x}px`;
-      locationDescWrap.style.display = 'block';
+      locationDescWrap.classList.add('location-desc__wrap--active');
   });
 
-  // location.addEventListener('mouseout', () => {
-  //   locationDescWrap.style.display = 'none';
-  // });
+  location.addEventListener('mouseout', () => {
+    locationDescWrap.classList.remove('location-desc__wrap--active');
+  });
 });
 
   // const locations = document.querySelectorAll('.location'); // получаем все элементы с классом location
