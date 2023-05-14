@@ -341,6 +341,17 @@ if (window && window.NodeList && !NodeList.prototype.forEach) {
 
 /***/ }),
 
+/***/ "./src/js/data/mapData.json":
+/*!**********************************!*\
+  !*** ./src/js/data/mapData.json ***!
+  \**********************************/
+/*! exports provided: locations, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"locations\":[{\"name\":\"Molecule Man\",\"age\":29,\"secretIdentity\":\"Dan Jukes\"}]}");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -351,56 +362,78 @@ if (window && window.NodeList && !NodeList.prototype.forEach) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mobileMenu */ "./src/js/modules/mobileMenu.js");
-/* harmony import */ var _modules_location__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/location */ "./src/js/modules/location.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+/* harmony import */ var _modules_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/data */ "./src/js/modules/data.js");
 __webpack_require__(/*! polyfill-nodelist-foreach */ "./node_modules/polyfill-nodelist-foreach/index.js"); // Полифил для поддержки метода forEach в IE11+ и Safari9
 __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // Полифил для поддержки IE11+ и старыми браузерами использования SVG через use 
 
 // import accordion from './modules/accordion.js'; // Аккордион
  // Мобильное меню
-// import modal from './modules/modal'; // Модалки
+ // Модалки
 // import slider from './modules/slider'; // Слайдер
- // Карта на главной
+// import location from './modules/location'; // Карта на главной
+ // Табы с формами на главной
+// import strRun from './modules/strRun'; // Бегущая строка кнопка в header
 
-Object(_modules_location__WEBPACK_IMPORTED_MODULE_1__["default"])();
+
+// location();
+Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])();
+Object(_modules_data__WEBPACK_IMPORTED_MODULE_3__["default"])();
+// strRun();
 // accordion();
 Object(_modules_mobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"])();
-// modal();
+Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])();
 // slider();
 
 /***/ }),
 
-/***/ "./src/js/modules/location.js":
-/*!************************************!*\
-  !*** ./src/js/modules/location.js ***!
-  \************************************/
+/***/ "./src/js/modules/data.js":
+/*!********************************!*\
+  !*** ./src/js/modules/data.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return location; });
-function location() {
-  // Get all elements with the location class
-  var locations = document.querySelectorAll('.location');
-  var descriptionWrap = document.querySelector('.location-desc__wrap');
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return data; });
+/* harmony import */ var _data_mapData_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../data/mapData.json */ "./src/js/data/mapData.json");
+var _data_mapData_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./../data/mapData.json */ "./src/js/data/mapData.json", 1);
 
-  // Iterate over each location element
-  locations.forEach(function (location) {
-    // Get the corresponding location-desc__wrap element
-    // const descriptionWrap = location.querySelector('.location-desc__wrap');
+function data() {
+  console.log(_data_mapData_json__WEBPACK_IMPORTED_MODULE_0__);
 
-    // Add event listener for mouseenter (hover)
-    location.addEventListener('mouseenter', function () {
-      // Add the location-desc__wrap--active class
-      descriptionWrap.classList.add('location-desc__wrap--active');
-    });
+  //  // Create an empty array to store the JSON elements
+  //   const jsonElements = [];
 
-    // Add event listener for mouseleave
-    location.addEventListener('mouseleave', function () {
-      // Remove the location-desc__wrap--active class
-      descriptionWrap.classList.remove('location-desc__wrap--active');
-    });
-  });
+  //   // Function to generate a random number between min and max (inclusive)
+  //   function getRandomNumber(min, max) {
+  //     return Math.floor(Math.random() * (max - min + 1)) + min;
+  //   }
+
+  //   // Generate 32 JSON elements
+  //   for (let i = 0; i < 32; i++) {
+  //     const id = i + 1; // Incrementing ID starting from 1
+  //     const imageLink = `./assets/img/location_img_${id}.png`; // Example image link
+  //     const text = `This is element ${id}`; // Example text
+
+  //     // Create the JSON element object
+  //     const element = {
+  //       id: id,
+  //       image: imageLink,
+  //       text: text
+  //     };
+
+  //     // Push the element to the array
+  //     jsonElements.push(element);
+  //   }
+
+  //   // Convert the array to JSON string
+  //   const jsonString = JSON.stringify(jsonElements);
+
+  //   // Print the JSON string
+  //   console.log(jsonString);
 }
 
 /***/ }),
@@ -418,14 +451,14 @@ __webpack_require__.r(__webpack_exports__);
 function mobileMenu() {
   if (document.getElementById('menu__button')) {
     var hamburger = document.getElementById('menu__button');
-    var _mobileMenu = document.querySelector('.nav');
+    var _mobileMenu = document.querySelector('.nav__header');
     var mobileMenuItems = document.querySelectorAll('.nav ul li a');
     var htmlElement = document.getElementsByTagName('html')[0];
     var body = document.body;
     var screenWidth = window.innerWidth;
     hamburger.addEventListener('click', function () {
       hamburger.classList.toggle('active');
-      _mobileMenu.classList.toggle('nav--active');
+      _mobileMenu.classList.toggle('nav__header--active');
       body.classList.toggle('no-scroll');
       htmlElement.classList.toggle('no-scroll');
     });
@@ -436,7 +469,7 @@ function mobileMenu() {
       }
       if (screenWidth >= 1024) {
         hamburger.classList.remove('active');
-        _mobileMenu.classList.remove('nav--active');
+        _mobileMenu.classList.remove('nav__header--active');
         body.classList.remove('no-scroll');
         htmlElement.classList.remove('no-scroll');
       }
@@ -446,7 +479,7 @@ function mobileMenu() {
         link.addEventListener('click', function (e) {
           if (screenWidth < 1024) {
             hamburger.classList.remove('active');
-            _mobileMenu.classList.remove('nav--active');
+            _mobileMenu.classList.remove('nav__header--active');
             body.classList.remove('no-scroll');
             htmlElement.classList.remove('no-scroll');
           }
@@ -455,6 +488,123 @@ function mobileMenu() {
     }
     linksClick();
   }
+}
+
+/***/ }),
+
+/***/ "./src/js/modules/modal.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/modal.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return modal; });
+// import phoneMask from './../modules/phoneMask';
+
+function modal() {
+  // Get the service__icon elements
+  var serviceIcons = document.querySelectorAll('.service__icon');
+
+  // Get the modal elements
+  var modalAsk = document.querySelector('.modal-ask');
+  var modalCall = document.querySelector('.modal-call');
+  var modalWrite = document.querySelector('.modal-write');
+
+  // Get the close elements
+  var closeElements = document.querySelectorAll('.close');
+
+  // Get the wrapper and body elements
+  var wrapper = document.querySelector('.wrapper');
+  var html = document.documentElement;
+
+  // Add event listeners to service__icon elements
+  serviceIcons.forEach(function (icon, index) {
+    icon.addEventListener('click', function () {
+      // Add active class to the corresponding modal element
+      if (index === 0 || index === 3 || index === 6) {
+        modalAsk.classList.add('modal-ask--active');
+      } else if (index === 1 || index === 4 || index === 7) {
+        modalCall.classList.add('modal-call--active');
+      } else if (index === 2 || index === 5 || index === 8) {
+        modalWrite.classList.add('modal-write--active');
+      }
+
+      // Add overlay class to the wrapper element
+      wrapper.classList.add('overlay');
+
+      // Add no-scroll class to the body element
+      html.classList.add('no-scroll');
+    });
+  });
+
+  // Add event listeners to close elements
+  closeElements.forEach(function (close) {
+    close.addEventListener('click', function () {
+      // Remove active classes from modal elements
+      modalAsk.classList.remove('modal-ask--active');
+      modalCall.classList.remove('modal-call--active');
+      modalWrite.classList.remove('modal-write--active');
+
+      // Remove overlay class from the wrapper element
+      wrapper.classList.remove('overlay');
+
+      // Remove no-scroll class from the body element
+      html.classList.remove('no-scroll');
+    });
+  });
+
+  // Add event listener to wrapper element
+  // wrapper.addEventListener('click', () => {
+  //   // Remove overlay class from the wrapper element
+  //   wrapper.classList.remove('overlay');
+
+  //   // Remove no-scroll class from the body element
+  //   body.classList.remove('no-scroll');
+  // });
+}
+
+/***/ }),
+
+/***/ "./src/js/modules/tabs.js":
+/*!********************************!*\
+  !*** ./src/js/modules/tabs.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tabs; });
+function tabs() {
+  // Get all tab elements
+  var tabs = document.querySelectorAll('.tab');
+
+  // Get all consult__inner-center elements
+  var blocks = document.querySelectorAll('.consult__inner-center');
+
+  // Add click event listener to each tab
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener('click', function () {
+      // Remove tab--active class from all tabs
+      tabs.forEach(function (tab) {
+        tab.classList.remove('tab--active');
+      });
+
+      // Remove consult__inner-center--active class from all blocks
+      blocks.forEach(function (block) {
+        block.classList.remove('consult__inner-center--active');
+      });
+
+      // Add tab--active class to the clicked tab
+      tab.classList.add('tab--active');
+
+      // Add consult__inner-center--active class to the corresponding block
+      blocks[index].classList.add('consult__inner-center--active');
+    });
+  });
 }
 
 /***/ })

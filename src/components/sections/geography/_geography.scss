@@ -32,7 +32,7 @@
 
       @media (min-width: 1440px) {
         width: 50%;
-        margin-right: 4rem;
+        // margin-right: 4rem;
       }
     }
 
@@ -116,25 +116,6 @@
           @media (min-width: 1024px) {
             width: 2.4rem;
             height: 2.4rem;
-          }
-        }
-
-        .location-1 {
-          top: 9rem;
-          left: 1.2rem;
-
-          @media (min-width: 500px) {
-            top: 11rem;
-          }
-
-          @media (min-width: 768px) {
-            top: 13rem;
-            left: 2rem;
-          }
-
-          @media (min-width: 1024px) {
-            top: 17rem;
-            left: 2.5rem;
           }
         }
 
@@ -245,4 +226,645 @@
       }
     }
   }
+
+  .location-1 {
+    top: 11rem;
+    left: 5.2rem;
+
+    @media (min-width: 500px) {
+      top: 14rem;
+      left: 6.5rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 17rem;
+      left: 8rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 24rem;
+      left: 12rem;
+    }
+  }
+
+  .location-2 {
+    top: 12.5rem;
+    left: 6.3rem;
+
+    @media (min-width: 500px) {
+      top: 15.2rem;
+      left: 7.8rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 18.5rem;
+      left: 9.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 22rem;
+      left: 9.5rem;
+    }
+  }
+
+  .location-3 {
+    top: 5.4rem;
+    left: 7.8rem;
+
+    @media (min-width: 500px) {
+      top: 6.5rem;
+      left: 9.5rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 8rem;
+      left: 11.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 10rem;
+      left: 15.2rem;
+    }
+  }
+
+  .location-4 {
+    top: 6.8rem;
+    left: 9.9rem;
+
+    @media (min-width: 500px) {
+      top: 8.5rem;
+      left: 12rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 10rem;
+      left: 14.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 13.5rem;
+      left: 19rem;
+    }
+  }
+
+  .location-5 {
+    top: 7.3rem;
+    left: 10.9rem;
+
+    @media (min-width: 500px) {
+      top: 8.8rem;
+      left: 13rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 10.8rem;
+      left: 15.8rem;  
+    }
+
+    @media (min-width: 1024px) {
+      top: 14.3rem;
+      left: 20.9rem;
+    }
+  }
+
+  .location-6 {
+    top: 8rem;
+    left: 9.4rem;
+
+    @media (min-width: 500px) {
+      top: 10rem;
+      left: 11.8rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 11.8rem;
+      left: 14rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 15.6rem;
+      left: 18.2rem;  
+    }
+  }
+
+  .location-7 {
+    top: 8.5rem;
+    left: 10.5rem;
+
+    @media (min-width: 500px) {
+      top: 10.1rem;
+      left: 12.9rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 12.2rem;
+      left: 15.4rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 16.5rem;
+      left: 20.2rem;
+    }
+  }
+
+  .location-8 {
+    top: 10.5rem;
+    left: 10.2rem;
+
+    @media (min-width: 500px) {
+      top: 13rem;
+      left: 12.5rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 16rem;
+      left: 15.2rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 20.5rem;
+      left: 19.8rem;
+    }
+  }
+
+  .location-9 {
+    top: 8.3rem;
+    left: 12.8rem;
+
+    @media (min-width: 500px) {
+      top: 10.2rem;
+      left: 15.6rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 12.5rem;
+      left: 18.8rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 16rem;
+      left: 24.6rem;
+    }
+  }
+
+  .location-10 {
+    top: 3.5rem;
+    left: 15.9rem;
+
+    @media (min-width: 500px) {
+      top: 4.2rem;
+      left: 19rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 5rem;
+      left: 23rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 6.7rem;
+      left: 30.3rem;
+    }
+  }
+
+  .location-11 {
+    top: 5.2rem;
+    left: 16.5rem;
+
+    @media (min-width: 500px) {
+      top: 6.2rem;
+      left: 19.6rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 7rem;
+      left: 23.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 9.7rem;
+      left: 31.2rem;
+    }
+  }
+
+  .location-12 {
+    top: 5.9rem;
+    left: 14.8rem;
+
+    @media (min-width: 500px) {
+      top: 7.2rem;
+      left: 18rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 9rem;
+      left: 21.8rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 11.2rem;
+      left: 28.5rem;
+    }
+  }
+
+  .location-13 {
+    top: 8rem;
+    left: 15.2rem;
+
+    @media (min-width: 500px) {
+      top: 9.9rem;
+      left: 18.3rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 12rem;
+      left: 22.2rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 15.2rem;
+      left: 29rem;
+    }
+  }
+
+  .location-14 {
+    top: 9.8rem;
+    left: 15rem;
+
+    @media (min-width: 500px) {
+      top: 12rem;
+      left: 18.1rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 14.6rem;
+      left: 22rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 18.5rem;
+      left: 28.8rem;
+    }
+  }
+
+  .location-15 {
+    top: 10.1rem;
+    left: 18.2rem;
+
+    @media (min-width: 500px) {
+      top: 12.2rem;
+      left: 22.2rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 14.8rem;
+      left: 26.8rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 19.3rem;
+      left: 35rem;
+    }
+  }
+
+  .location-16 {
+    top: 10.8rem;
+    left: 15.8rem;
+
+    @media (min-width: 500px) {
+      top: 13.1rem;
+      left: 19rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 16rem;
+      left: 23rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 21rem;
+      left: 30.3rem;
+    }
+  }
+
+  .location-17 {
+    top: 13.4rem;
+    left: 15.2rem;
+
+    @media (min-width: 500px) {
+      top: 15.9rem;
+      left: 18.6rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 19.1rem;
+      left: 22.4rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 25.4rem;
+      left: 29.4rem;  
+    }
+  }
+
+  .location-18 {
+    top: 14.3rem;
+    left: 14.4rem;
+
+    @media (min-width: 500px) {
+      top: 16.9rem;
+      left: 17.8rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 20rem;
+      left: 21.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 27.2rem;
+      left: 27.8rem;
+    }
+  }
+
+  .location-19 {
+    top: 12.1rem;
+    left: 16.2rem;
+
+    @media (min-width: 500px) {
+      top: 14.6rem;
+      left: 19.5rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 17.7rem;
+      left: 23.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 23.3rem;
+      left: 31.1rem;
+    }
+  }
+
+  .location-20 {
+    top: 14.2rem;
+    left: 17.5rem;
+
+    @media (min-width: 500px) {
+      top: 17.3rem;
+      left: 21.2rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 21rem;
+      left: 25.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 27rem;
+      left: 33.6rem;
+    }
+  }
+
+  .location-21 {
+    top: 15.3rem;
+    left: 19.4rem;
+
+    @media (min-width: 500px) {
+      top: 18.5rem;
+      left: 23.5rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 22.3rem;
+      left: 28.2rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 29.5rem;
+      left: 37.2rem;
+    }
+  }
+
+  .location-22 {
+    top: 18.3rem;
+    left: 11.3rem;
+
+    @media (min-width: 500px) {
+      top: 22.1rem;
+      left: 13.6rem;  
+    }
+
+    @media (min-width: 768px) {
+      top: 26.5rem;
+      left: 16.4rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 35.5rem;
+      left: 21.8rem;
+    }
+  }
+
+  .location-23 {
+    top: 19.5rem;
+    left: 11.8rem;
+
+    @media (min-width: 500px) {
+      top: 23.4rem;
+      left: 14.3rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 27.8rem;
+      left: 17rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 38rem;
+      left: 22.5rem;
+    }
+  }
+
+  .location-24 {
+    top: 19rem;
+    left: 12.8rem;
+
+    @media (min-width: 500px) {
+      top: 23rem;
+      left: 15.5rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 27.3rem;
+      left: 18.1rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 36.3rem;
+      left: 24.6rem;  
+    }
+  }
+
+  .location-25 {
+    top: 20.2rem;
+    left: 12.8rem;
+
+    @media (min-width: 500px) {
+      top: 24.4rem;
+      left: 15.5rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 29.2rem;
+      left: 18.1rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 38.8rem;
+      left: 24.5rem;
+    }
+  }
+
+  .location-26 {
+    top: 21rem;
+    left: 13.8rem;
+
+    @media (min-width: 500px) {
+      top: 25.5rem;
+      left: 16.8rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 30.5rem;
+      left: 20.3rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 40.3rem;
+      left: 26.5rem;
+    }
+  }
+
+  .location-27 {
+    top: 19.9rem;
+    left: 16rem;
+
+    @media (min-width: 500px) {
+      top: 24.2rem;
+      left: 19.3rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 29.3rem;
+      left: 23.1rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 37.8rem;
+      left: 30.2rem;
+    }
+  }
+
+  .location-28 {
+    top: 21.1rem;
+    left: 17rem;
+
+    @media (min-width: 500px) {
+      top: 25.5rem;
+      left: 21rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 30.5rem;
+      left: 25.3rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 40.8rem;
+      left: 32.8rem;
+    }
+  }
+
+  .location-29 {
+    top: 21.2rem;
+    left: 20.8rem;
+
+    @media (min-width: 500px) {
+      top: 25.6rem;
+      left: 25.2rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 30.7rem;
+      left: 30.2rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 40.8rem;
+      left: 40rem;
+    }
+  }
+
+  .location-30 {
+    top: 22.2rem;
+    left: 20.2rem;
+
+    @media (min-width: 500px) {
+      top: 27rem;
+      left: 24.5rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 32.5rem;
+      left: 29.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 42.8rem;
+      left: 38.8rem;
+    }
+  }
+
+  .location-31 {
+    top: 20.2rem;
+    left: 18.9rem;
+
+    @media (min-width: 500px) {
+      top: 24.5rem;
+      left: 22.7rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 29.5rem;
+      left: 27.3rem;
+    }
+
+    @media (min-width: 1024px) {
+      top: 39rem;
+      left: 36.2rem;  
+    }
+  }
+
+  .location-32 {
+    top: 21.9rem;
+    left: 21.8rem;
+
+    @media (min-width: 500px) {
+      top: 26.5rem;
+      left: 26.3rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 32rem;
+      left: 31.7rem;  
+    }
+
+    @media (min-width: 1024px) {
+      top: 42.5rem;
+      left: 41.5rem;
+    }
+  }
+
 }

@@ -3,7 +3,31 @@ header.header
     .header__inner
       .header__inner-top
         include ../../bem-blocks/logo/logo.pug
-        button.btn.header__btn.header__btn--desktop Обратный звонок
-        include ../../bem-blocks/burger/burger.pug
+        .str-run
+          p.btn.header__btn.header__btn--desktop
+            span Обратный звонок &ensp;
+            span Обратный звонок &ensp;
+            span Обратный звонок &ensp;
+            span Обратный звонок &ensp;
+            span Обратный звонок &ensp;
+            span Обратный звонок &ensp;
+          include ../../bem-blocks/burger/burger.pug
       .header__inner-bottom
-        include ../../bem-blocks/nav/nav.pug
+        nav.nav.nav__header
+          ul(role="menu")
+            li(role="menuitem").nav__item
+              a(href="#services").nav__item-link.nav__item-link--active Главная
+            li(role="menuitem").nav__item
+              a(href="#price").nav__item-link О компании
+            li(role="menuitem").nav__item
+              a(href="#reviews").nav__item-link Проекты
+            li(role="menuitem").nav__item
+              a(href="#photo").nav__item-link Услуги
+            li(role="menuitem").nav__item
+              a(href="#services").nav__item-link Награды и премии
+            li(role="menuitem").nav__item
+              a(href="#price").nav__item-link Публикации в сми
+            li(role="menuitem").nav__item
+              a(href="#reviews").nav__item-link Статьи
+            li(role="menuitem").nav__item
+              a(href="#photo").nav__item-link Контакты

@@ -1,9 +1,10 @@
 .footer {
+  overflow-x: hidden;
   padding: 5.7rem 0 2.6rem 0;
   background: var(--black_1);
 
   @media (min-width: 1024px) {
-    padding: 8rem 0 2.9rem 0;
+    padding: 8rem 0 2rem 0;
   }
 
   &__inner {
@@ -28,55 +29,6 @@
           margin-bottom: 7.8rem;
         }
       }
-
-      nav {
-        max-width: 34.5rem;
-        margin-bottom: 4.1rem;
-        background: transparent;
-
-        @media (min-width: 1024px) {
-          max-width: 77rem;
-          margin-bottom: 8.4rem;
-        }
-
-        ul {
-          display: flex;
-          flex-wrap: wrap;
-
-          li {
-            width: 50%;
-            margin-bottom: 2rem;
-
-            @media (min-width: 1024px) {
-              width: 20%;
-              margin-right: 1rem;
-              margin-bottom: 0;
-            }
-
-            &:nth-of-type(1),
-            &:nth-of-type(2),
-            &:nth-of-type(3),
-            &:nth-of-type(4) {
-
-              @media (min-width: 1024px) {
-                margin-bottom: 2rem;
-              }
-  
-            }
-
-            a {
-              color: var(--gray_6);
-              will-change: color;
-              transition: color 0.3s ease-in-out;
-
-              &:hover,
-              &:focus {
-                color: var(--red_1);
-              }
-            }
-          }
-        }
-      }
     }
 
     &-right {
@@ -85,7 +37,19 @@
       align-items: flex-end;
 
       .phone {
+        position: relative;
         margin-bottom: 3rem;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: -1.5rem;
+          transform: translateY(-50%);
+          width: 1rem;
+          height: 1rem;
+          background: url("../img/icons/phone.svg") 100% 100%/1rem 1rem no-repeat;
+        }
 
         @media (min-width: 1024px) {
           margin-bottom: 8.1rem;

@@ -5,6 +5,8 @@
   padding: 2rem 1.5rem 2rem 1.5rem;
   border: 0.1rem solid var(--gray_3);
   border-radius: 0.5rem;
+  will-change: border;
+  transition: border 0.3s ease-in-out;
 
   @media (min-width: 375px) {
     width: 30rem;
@@ -14,6 +16,11 @@
   @media (min-width: 1024px) {
     width: 26rem;
     display: block;
+  }
+
+  &:hover,
+  &:focus {
+    border: 0.1rem solid var(--red_1);
   }
 
   span {

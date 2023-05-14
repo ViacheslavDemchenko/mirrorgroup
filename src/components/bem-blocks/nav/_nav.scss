@@ -1,48 +1,137 @@
 .nav {
-  position: absolute;
-  z-index: 1000;
-  left: -100%;
-  transform: translateX(-50%);
-  top: 9rem;
-  width: 100%;
-  height: 100vh;
-  overflow-x: auto;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 5rem;
-  background: var(--white_1);
-  will-change: left;
-  transition: left 0.5s ease-in-out;
 
-  @media (min-width: 1024px) {
-    position: static;
-    transform: translateX(0);
-    height: auto;
-    padding: 2rem 0;
-  }
-
-  &--active {
-    left: 50%;
-  }
-
-  ul {
+  &__header {
+    position: absolute;
+    z-index: 1000;
+    left: -100%;
+    transform: translateX(-50%);
+    top: 9rem;
     width: 100%;
+    height: 100vh;
+    overflow-x: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding-bottom: 5rem;
+    background: var(--white_1);
+    will-change: left;
+    transition: left 0.5s ease-in-out;
 
     @media (min-width: 1024px) {
-      justify-content: space-between;
-      flex-direction: row;
+      position: static;
+      transform: translateX(0);
+      height: auto;
+      padding: 2rem 0;
+    }
+  
+    &--active {
+      left: 50%;
+    }
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      @media (min-width: 1024px) {
+        justify-content: space-between;
+        flex-direction: row;
+      }
+  
+      .nav__item {
+  
+        &:not(:last-of-type) {
+          margin-bottom: 3.1rem;
+  
+          @media (min-width: 1024px) {
+            margin-bottom: 0;
+          }
+        }
+  
+        .nav__item-link {
+          padding: 0.5rem;
+          @include InterRegular();
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+          color: var(--black_1);
+  
+          &--active {
+            color: var(--red_1);
+          }
+
+          &:hover,
+          &:focus {
+            color: var(--red_1);
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    max-width: 34.5rem;
+
+    @media (min-width: 1024px) {
+      max-width: 77rem;
+      margin-bottom: 8.4rem;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 6.4rem;
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      
+      &::before {
+        position: absolute;
+        content: "";
+        width: 62.1rem;
+        height: 73.3rem;
+        left: -28rem;
+        bottom: -27rem;
+        background-image: url("../img/icons/footer-bg.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(-90deg);
+        pointer-events: none;
+
+        @media (min-width: 1024px) {
+          left: 0;
+          bottom: -13rem;
+          transform: rotate(0deg);
+          width: 110.5rem;
+          height: 11.3rem;
+        }
+
+        @media (min-width: 1440px) {
+          left: 0;
+          bottom: -10rem;
+          transform: rotate(0deg);
+          width: 131.7rem;
+          height: 14.7rem;
+        }
+      }
     }
 
     .nav__item {
+      width: 50%;
+      margin-bottom: 2rem;
 
+      @media (min-width: 1024px) {
+        width: 20%;
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+  
       &:not(:last-of-type) {
         margin-bottom: 3.1rem;
 
         @media (min-width: 1024px) {
-          margin-bottom: 0;
+          margin-bottom: 2rem;
         }
       }
 
@@ -51,7 +140,14 @@
         @include InterRegular();
         font-size: 1.4rem;
         line-height: 1.7rem;
-        color: var(--black_1);
+        color: var(--gray_6);
+        will-change: color;
+        transition: color 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+          color: var(--red_1);
+        }
 
         &--active {
           color: var(--red_1);
@@ -59,90 +155,13 @@
       }
     }
   }
+
+  // .nav__item-link {
+
+  //   &:hover,
+  //   &:focus {
+  //     color: var(--red_1);
+  //   }
+  // }
+
 }
-
-
-// .nav {
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-
-//     @media (min-width: 1024px) {
-//         flex: 1;
-//     }
-
-//     ul {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         margin-bottom: 2rem;
-
-//         @media (min-width: 1024px) {
-//             width: 100%;
-//             flex-direction: row;
-//             justify-content: space-between;
-//             margin-bottom: 0;
-//             padding: 0 2rem;
-//         }
-
-//         @media (min-width: 1440px) {
-//             padding: 0 3rem;
-//         }
-
-//         li {
-//             position: relative;
-//             display: inline-flex;
-//             text-indent: initial;
-
-//             &::before {
-//                 display: none;
-//             }
-
-//             &::after {
-//                 position: absolute;
-//                 content: "";
-//                 top: 100%;
-//                 left: 0;
-//                 width: 100%;
-//                 height: 0.2rem;
-//                 background: #fff;
-//                 transform: scaleX(0);
-//                 transform-origin: right;
-//                 will-change: transform;
-//                 transition: transform 0.5s ease-out;
-//             }
-
-//             &:not(:last-of-type) {
-//                 margin-bottom: 1rem;
-
-//                 @media (min-width: 1024px) {
-//                     margin-bottom: 0;
-//                 }
-//             }
-
-//             a {
-//                 display: block;
-//                 padding: .5rem;
-//                 // @include Roboto-Regular; // Шрифт пунктов меню
-//                 font-size: 1.4rem;
-//                 line-height: 1.7rem;
-//                 text-transform: uppercase;
-//                 color: #fff;
-
-//                 @media (min-width: 1440px) {
-//                     font-size: 1.8rem;
-//                     line-height: 2.1rem;
-//                 }
-//             }
-
-//             &:hover,
-//             &:focus {
-
-//                 &::after {
-//                     transform: scaleX(1);
-//                     transform-origin: left;
-//                 }
-//             }
-//         }
-//     }
-// }

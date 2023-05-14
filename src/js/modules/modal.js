@@ -1,75 +1,65 @@
-import phoneMask from './../modules/phoneMask';
+// import phoneMask from './../modules/phoneMask';
 
 export default function modal() {
-    // const body = document.getElementsByTagName('body')[0];
-    // const overlay = document.querySelector('.overlay');
-    // const btnCall = document.querySelector('.btn--call');
-    // const modalCall = document.querySelector('.modal--call');
-    // const modalClose = document.querySelector('.close');
-    // const modalCallPhone = document.querySelector('.form-modal__phone');
-    // const modalForm = document.querySelector('#form-modal');
-    // const modalFormBtn = document.querySelector('.btn--form-modal__submit');
+  // Get the service__icon elements
+  const serviceIcons = document.querySelectorAll('.service__icon');
 
-    // btnCall.addEventListener('click', modalShow);
+  // Get the modal elements
+  const modalAsk = document.querySelector('.modal-ask');
+  const modalCall = document.querySelector('.modal-call');
+  const modalWrite = document.querySelector('.modal-write');
 
+  // Get the close elements
+  const closeElements = document.querySelectorAll('.close');
 
-    // function modalShow() {
-    //     modalCall.style.display = 'block';
-    //     setTimeout(() => {
-    //         body.classList.add('no-scroll');
-    //         overlay.classList.add('overlay--active');
-    //         modalCall.classList.add('modal--call-active');
-    //         phoneMask(modalCallPhone);
-    //         formModalSend(modalForm, modalFormBtn);
-    //     }, 300);
-    // }
+  // Get the wrapper and body elements
+  const wrapper = document.querySelector('.wrapper');
+  const html = document.documentElement;
 
-    // function modalHide() {
-    //     modalCall.classList.remove('modal--call-active');
-    //     setTimeout(() => {
-    //         modalCall.style.display = 'none';
-    //     }, 300);
-    // }
+  // Add event listeners to service__icon elements
+  serviceIcons.forEach((icon, index) => {
+    icon.addEventListener('click', () => {
+      // Add active class to the corresponding modal element
+      if (index === 0 || index === 3 || index === 6) {
+        modalAsk.classList.add('modal-ask--active');
+      } else if (index === 1 || index === 4 || index === 7) {
+        modalCall.classList.add('modal-call--active');
+      } else if (index === 2 || index === 5 || index === 8) {
+        modalWrite.classList.add('modal-write--active');
+      }
 
-    // window.addEventListener('keydown', (e) => {
-    //     if (e.code === 'Escape') {
-    //         if (document.querySelector('.modal')) {
-    //             setTimeout(() => {
-    //                 body.classList.remove('no-scroll');
-    //                 overlay.classList.remove('overlay--active');
-    //             }, 500);
-    //             modalHide();
-    //             setTimeout(() => {
-    //                 modalForm.reset();
-    //             }, 500);
-    //         }
-    //     }
-    // });
+      // Add overlay class to the wrapper element
+      wrapper.classList.add('overlay');
 
-    // window.addEventListener('click', (e) => {
+      // Add no-scroll class to the body element
+      html.classList.add('no-scroll');
+    });
+  });
 
-    //     if (document.querySelector('.modal')) {
-    //         if (e.target.closest('.modal')) {
-    //             e.stopPropagation();
-    //         } else if (e.target.closest('.overlay')) {
-    //             setTimeout(() => {
-    //                 body.classList.remove('no-scroll');
-    //                 overlay.classList.remove('overlay--active');
-    //             }, 500);
-    //             modalHide();
-    //         }
-    //     }
-    // });
+  // Add event listeners to close elements
+  closeElements.forEach((close) => {
+    close.addEventListener('click', () => {
+      // Remove active classes from modal elements
+      modalAsk.classList.remove('modal-ask--active');
+      modalCall.classList.remove('modal-call--active');
+      modalWrite.classList.remove('modal-write--active');
 
-    // modalClose.addEventListener('click', () => {
-    //     setTimeout(() => {
-    //         body.classList.remove('no-scroll');
-    //         overlay.classList.remove('overlay--active');
-    //     }, 500);
-    //     modalHide();
-    //     setTimeout(() => {
-    //         modalForm.reset();
-    //     }, 500);
-    // });
+      // Remove overlay class from the wrapper element
+      wrapper.classList.remove('overlay');
+
+      // Remove no-scroll class from the body element
+      html.classList.remove('no-scroll');
+    });
+  });
+
+  // Add event listener to wrapper element
+  // wrapper.addEventListener('click', () => {
+  //   // Remove overlay class from the wrapper element
+  //   wrapper.classList.remove('overlay');
+
+  //   // Remove no-scroll class from the body element
+  //   body.classList.remove('no-scroll');
+  // });
+
 
 }

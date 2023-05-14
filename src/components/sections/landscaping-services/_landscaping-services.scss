@@ -161,8 +161,9 @@
 
             &:nth-of-type(1) {
               display: flex;
+              padding-left: 1.1rem;
               will-change: width, justify-content;
-              transition: width 0.5s ease-in-out, justify-content 0.5s ease-in-out;
+              transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
               
               &:hover,
               &:focus {
@@ -171,21 +172,27 @@
                 padding-left: 0.5rem;
 
                 span {
-                  display: block;
+                  width: auto;
+                  opacity: 1;
+                  // display: block;
                 }
               }
             }
 
             span {
+              width: 0;
               display: inline-block;
               margin-left: 1rem;
-              display: none;
+              opacity: 0;
+              // display: none;
               @include InterRegular();
               font-size: 1.2rem;
               line-height: 1.6rem;
               // display: flex;
               // align-items: center;
               color: var(--black_1);
+              will-change: width, opacity;
+              transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
               @media (min-width: 375px) {
                 font-size: 1.4rem;

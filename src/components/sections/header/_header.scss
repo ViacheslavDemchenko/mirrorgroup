@@ -32,6 +32,59 @@
     }
   }
 
+  .str-run {
+    position: relative;
+    width: 19rem;
+    height: 4.4rem;
+    overflow: hidden;
+    border: 0.1rem solid var(--red_1);
+    border-radius: 5rem;
+    white-space: nowrap;
+    cursor: pointer;
+
+    p {
+      display: block;
+      position: absolute;
+      top: 1.2rem;
+      left: -122%;
+      white-space: nowrap;
+      padding: 0;
+      will-change: left;
+
+      span {
+
+        &:not(:nth-of-type(3)) {
+          opacity: 0;
+        }
+      }
+    }
+
+    &--animationto {
+      p {
+        animation: btnstrin 10s infinite linear;
+      }
+    }
+
+    &--animationback {
+      p {
+        animation: btnstrin 10s infinite linear reverse;
+      }
+    }
+
+    &:hover,
+    &:focus {
+
+      p {
+        animation: moveText 10s infinite linear;
+        transition: transform 0.3s ease-out;
+
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   &__btn--desktop {
     display: none;
 
@@ -40,7 +93,6 @@
       font-size: 1.4rem;
       line-height: 1.7rem;
       color: var(--black_1);
-      border: 0.1rem solid var(--red_1);
       background: transparent;
     }
   }
@@ -58,5 +110,20 @@
     @media (min-width: 1024px) {
       display: none;
     }
+  }
+}
+
+
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20%);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }

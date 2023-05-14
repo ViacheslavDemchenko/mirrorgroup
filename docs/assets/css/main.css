@@ -120,7 +120,7 @@ footer {
 
 .container {
   width: 100%;
-  max-width: 116rem;
+  max-width: 119rem;
   padding: 0 1.5rem;
   margin: 0 auto;
   height: 100%;
@@ -131,6 +131,24 @@ footer {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.overlay {
+  position: relative;
+}
+
+.overlay::before {
+  position: absolute;
+  content: "";
+  z-index: 3000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(18, 6, 0, 0.6);
+  opacity: 0.8;
+  will-change: display;
+  transition: display 0.5s ease-out;
 }
 
 .red {
@@ -181,6 +199,88 @@ h2 {
   background: var(--red_1);
 }
 
+input,
+textarea {
+  width: 100%;
+  padding: 2.1rem 2.4rem 2.1rem 2rem;
+  margin-bottom: 2rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+  color: var(--gray_4);
+  border: 0.1rem solid var(--white_3);
+  border-radius: 0.5rem;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+  color: var(--gray_4);
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+  color: var(--gray_4);
+}
+
+.upload {
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+.upload .btn-tertiary {
+  position: relative;
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  color: var(--black_2);
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  width: 20.8rem;
+  text-align: left;
+  display: block;
+  border: 0.1rem solid var(--red_1);
+}
+
+.upload .btn-tertiary img {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.upload .input-file {
+  width: 0.1rem;
+  height: 0.1rem;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.upload .input-file + .js-labelFile {
+  padding: 2rem 2rem;
+  cursor: pointer;
+}
+
 .header__inner {
   width: 100%;
   display: flex;
@@ -206,6 +306,50 @@ h2 {
   align-items: center;
 }
 
+.header .str-run {
+  position: relative;
+  width: 19rem;
+  height: 4.4rem;
+  overflow: hidden;
+  border: 0.1rem solid var(--red_1);
+  border-radius: 5rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.header .str-run p {
+  display: block;
+  position: absolute;
+  top: 1.2rem;
+  left: -122%;
+  white-space: nowrap;
+  padding: 0;
+  will-change: left;
+}
+
+.header .str-run p span:not(:nth-of-type(3)) {
+  opacity: 0;
+}
+
+.header .str-run--animationto p {
+  animation: btnstrin 10s infinite linear;
+}
+
+.header .str-run--animationback p {
+  animation: btnstrin 10s infinite linear reverse;
+}
+
+.header .str-run:hover p,
+.header .str-run:focus p {
+  animation: moveText 10s infinite linear;
+  transition: transform 0.3s ease-out;
+}
+
+.header .str-run:hover p span,
+.header .str-run:focus p span {
+  opacity: 1;
+}
+
 .header__btn--desktop {
   display: none;
 }
@@ -221,7 +365,22 @@ h2 {
   background: transparent;
 }
 
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .footer {
+  overflow-x: hidden;
   padding: 5.7rem 0 2.6rem 0;
   background: var(--black_1);
 }
@@ -237,33 +396,6 @@ h2 {
   margin-bottom: 6rem;
 }
 
-.footer__inner-left nav {
-  max-width: 34.5rem;
-  margin-bottom: 4.1rem;
-  background: transparent;
-}
-
-.footer__inner-left nav ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.footer__inner-left nav ul li {
-  width: 50%;
-  margin-bottom: 2rem;
-}
-
-.footer__inner-left nav ul li a {
-  color: var(--gray_6);
-  will-change: color;
-  transition: color 0.3s ease-in-out;
-}
-
-.footer__inner-left nav ul li a:hover,
-.footer__inner-left nav ul li a:focus {
-  color: var(--red_1);
-}
-
 .footer__inner-right {
   display: flex;
   flex-direction: column;
@@ -271,7 +403,19 @@ h2 {
 }
 
 .footer__inner-right .phone {
+  position: relative;
   margin-bottom: 3rem;
+}
+
+.footer__inner-right .phone::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -1.5rem;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background: url("../img/icons/phone.svg") 100% 100%/1rem 1rem no-repeat;
 }
 
 .footer__inner-right span {
@@ -413,7 +557,7 @@ h2 {
   transform: rotate(-45deg);
 }
 
-.nav {
+.nav__header {
   position: absolute;
   z-index: 1000;
   left: -100%;
@@ -430,22 +574,22 @@ h2 {
   transition: left 0.5s ease-in-out;
 }
 
-.nav--active {
+.nav__header--active {
   left: 50%;
 }
 
-.nav ul {
+.nav__header ul {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.nav ul .nav__item:not(:last-of-type) {
+.nav__header ul .nav__item:not(:last-of-type) {
   margin-bottom: 3.1rem;
 }
 
-.nav ul .nav__item .nav__item-link {
+.nav__header ul .nav__item .nav__item-link {
   padding: 0.5rem;
   font-family: "Inter Regular";
   font-weight: 400;
@@ -456,7 +600,68 @@ h2 {
   color: var(--black_1);
 }
 
-.nav ul .nav__item .nav__item-link--active {
+.nav__header ul .nav__item .nav__item-link--active {
+  color: var(--red_1);
+}
+
+.nav__header ul .nav__item .nav__item-link:hover,
+.nav__header ul .nav__item .nav__item-link:focus {
+  color: var(--red_1);
+}
+
+.nav__footer {
+  max-width: 34.5rem;
+}
+
+.nav__footer ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav__footer ul::before {
+  position: absolute;
+  content: "";
+  width: 62.1rem;
+  height: 73.3rem;
+  left: -28rem;
+  bottom: -27rem;
+  background-image: url("../img/icons/footer-bg.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.nav__footer .nav__item {
+  width: 50%;
+  margin-bottom: 2rem;
+}
+
+.nav__footer .nav__item:not(:last-of-type) {
+  margin-bottom: 3.1rem;
+}
+
+.nav__footer .nav__item .nav__item-link {
+  padding: 0.5rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: var(--gray_6);
+  will-change: color;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav__footer .nav__item .nav__item-link:hover,
+.nav__footer .nav__item .nav__item-link:focus {
+  color: var(--red_1);
+}
+
+.nav__footer .nav__item .nav__item-link--active {
   color: var(--red_1);
 }
 
@@ -467,6 +672,13 @@ h2 {
   padding: 2rem 1.5rem 2rem 1.5rem;
   border: 0.1rem solid var(--gray_3);
   border-radius: 0.5rem;
+  will-change: border;
+  transition: border 0.3s ease-in-out;
+}
+
+.card:hover,
+.card:focus {
+  border: 0.1rem solid var(--red_1);
 }
 
 .card span {
@@ -508,6 +720,139 @@ h2 {
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--white_1);
+}
+
+.modal {
+  position: fixed;
+  z-index: 4000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 37.5rem;
+  height: 81.2rem;
+  padding: 12.6rem 3.8rem;
+  background: var(--white_1);
+  border-radius: 1rem;
+  background: url("../img/icons/text-bg.svg") 0 9.5rem/103% 4rem no-repeat, var(--white_1);
+  will-change: opacity;
+  transition: opacity 1s ease-out;
+}
+
+.modal-call,
+.modal-write,
+.modal-ask {
+  opacity: 0;
+  display: none;
+}
+
+.modal-call--active,
+.modal-write--active,
+.modal-ask--active {
+  opacity: 1;
+  display: block;
+}
+
+.modal h3 {
+  margin-bottom: 4rem;
+  font-family: "Inter SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.8rem;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: var(--black_2);
+}
+
+.modal p {
+  max-width: 32.5rem;
+  margin-bottom: 4rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.4rem;
+  line-height: 130.02%;
+  color: var(--gray_5);
+}
+
+.modal--active {
+  z-index: 9500;
+  opacity: 1;
+  display: block;
+}
+
+.modal__form {
+  padding: 4rem 1.1rem 2.2rem 1.1rem;
+  border: 0.1rem solid var(--red_1);
+  border-radius: 0.5rem;
+  background: var(--white_1);
+}
+
+.modal__form form p {
+  max-width: 31rem;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.01em;
+  color: var(--black_1);
+  opacity: 0.5;
+}
+
+.modal__form form .inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__form form .inputs input {
+  width: 100%;
+}
+
+.modal__form form .inputs textarea {
+  height: 8.4rem;
+}
+
+.modal__form button {
+  padding: 2.2rem 6.5rem;
+}
+
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1rem solid var(--red_1);
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.close::before,
+.close::after {
+  position: absolute;
+  left: 2rem;
+  content: "";
+  height: 2.6rem;
+  width: 0.3rem;
+  background: var(--black_2);
+  opacity: 0.5;
+}
+
+.close::before {
+  transform: rotate(45deg);
+}
+
+.close::after {
+  transform: rotate(-45deg);
 }
 
 .landscaping {
@@ -571,7 +916,7 @@ h2 {
 .landscaping__bottom img:nth-of-type(3) {
   width: 7.6rem;
   height: 13.7rem;
-  transform: translate(-5rem, 2rem);
+  transform: translate(-2rem, 2rem);
 }
 
 .landscaping__top {
@@ -594,12 +939,16 @@ h2 {
   transform: translateY(1rem);
   width: 9.7rem;
   height: 12.7rem;
-  filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
   border-radius: 0.5rem;
 }
 
+.landscaping__top-img img:hover,
+.landscaping__top-img img:focus {
+  filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
+}
+
 .landscaping__top-img p {
-  transform: translate(-0.5rem, -0.5rem);
+  transform: translate(-2rem, 1rem);
   max-width: 13.8rem;
   display: inline-block;
   font-family: "Inter Medium";
@@ -724,8 +1073,9 @@ h2 {
 
 .landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1) {
   display: flex;
+  padding-left: 1.1rem;
   will-change: width, justify-content;
-  transition: width 0.5s ease-in-out, justify-content 0.5s ease-in-out;
+  transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
 }
 
 .landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):hover,
@@ -737,13 +1087,15 @@ h2 {
 
 .landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):hover span,
 .landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):focus span {
-  display: block;
+  width: auto;
+  opacity: 1;
 }
 
 .landscaping-services__inner-bottom .service__icons .service__icon span {
+  width: 0;
   display: inline-block;
   margin-left: 1rem;
-  display: none;
+  opacity: 0;
   font-family: "Inter Regular";
   font-weight: 400;
   font-style: normal;
@@ -751,6 +1103,8 @@ h2 {
   font-size: 1.2rem;
   line-height: 1.6rem;
   color: var(--black_1);
+  will-change: width, opacity;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .landscaping-services__btn {
@@ -995,11 +1349,6 @@ h2 {
   cursor: pointer;
 }
 
-.geography__inner-right__img .location-1 {
-  top: 9rem;
-  left: 1.2rem;
-}
-
 .geography__inner-right__img img:nth-of-type(1) {
   width: 29rem;
 }
@@ -1035,6 +1384,166 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
   padding: 2.2rem 0;
+}
+
+.geography .location-1 {
+  top: 11rem;
+  left: 5.2rem;
+}
+
+.geography .location-2 {
+  top: 12.5rem;
+  left: 6.3rem;
+}
+
+.geography .location-3 {
+  top: 5.4rem;
+  left: 7.8rem;
+}
+
+.geography .location-4 {
+  top: 6.8rem;
+  left: 9.9rem;
+}
+
+.geography .location-5 {
+  top: 7.3rem;
+  left: 10.9rem;
+}
+
+.geography .location-6 {
+  top: 8rem;
+  left: 9.4rem;
+}
+
+.geography .location-7 {
+  top: 8.5rem;
+  left: 10.5rem;
+}
+
+.geography .location-8 {
+  top: 10.5rem;
+  left: 10.2rem;
+}
+
+.geography .location-9 {
+  top: 8.3rem;
+  left: 12.8rem;
+}
+
+.geography .location-10 {
+  top: 3.5rem;
+  left: 15.9rem;
+}
+
+.geography .location-11 {
+  top: 5.2rem;
+  left: 16.5rem;
+}
+
+.geography .location-12 {
+  top: 5.9rem;
+  left: 14.8rem;
+}
+
+.geography .location-13 {
+  top: 8rem;
+  left: 15.2rem;
+}
+
+.geography .location-14 {
+  top: 9.8rem;
+  left: 15rem;
+}
+
+.geography .location-15 {
+  top: 10.1rem;
+  left: 18.2rem;
+}
+
+.geography .location-16 {
+  top: 10.8rem;
+  left: 15.8rem;
+}
+
+.geography .location-17 {
+  top: 13.4rem;
+  left: 15.2rem;
+}
+
+.geography .location-18 {
+  top: 14.3rem;
+  left: 14.4rem;
+}
+
+.geography .location-19 {
+  top: 12.1rem;
+  left: 16.2rem;
+}
+
+.geography .location-20 {
+  top: 14.2rem;
+  left: 17.5rem;
+}
+
+.geography .location-21 {
+  top: 15.3rem;
+  left: 19.4rem;
+}
+
+.geography .location-22 {
+  top: 18.3rem;
+  left: 11.3rem;
+}
+
+.geography .location-23 {
+  top: 19.5rem;
+  left: 11.8rem;
+}
+
+.geography .location-24 {
+  top: 19rem;
+  left: 12.8rem;
+}
+
+.geography .location-25 {
+  top: 20.2rem;
+  left: 12.8rem;
+}
+
+.geography .location-26 {
+  top: 21rem;
+  left: 13.8rem;
+}
+
+.geography .location-27 {
+  top: 19.9rem;
+  left: 16rem;
+}
+
+.geography .location-28 {
+  top: 21.1rem;
+  left: 17rem;
+}
+
+.geography .location-29 {
+  top: 21.2rem;
+  left: 20.8rem;
+}
+
+.geography .location-30 {
+  top: 22.2rem;
+  left: 20.2rem;
+}
+
+.geography .location-31 {
+  top: 20.2rem;
+  left: 18.9rem;
+}
+
+.geography .location-32 {
+  top: 21.9rem;
+  left: 21.8rem;
 }
 
 .consult {
@@ -1104,8 +1613,13 @@ h2 {
   display: flex;
   flex-direction: column;
   padding: 6rem 0 26.7rem 0;
+  display: none;
   background: url("../img/icons/text-bg.svg") 0% 81%/132% 4rem no-repeat, var(--white_2);
   border-radius: 1rem;
+}
+
+.consult__inner-center--active {
+  display: flex;
 }
 
 .consult__inner-center__text {
@@ -1167,44 +1681,6 @@ h2 {
   color: var(--gray_5);
 }
 
-.consult__form input {
-  width: 100%;
-  padding: 2.1rem 2.4rem 2.1rem 2rem;
-  margin-bottom: 2rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-  text-transform: uppercase;
-  color: var(--gray_4);
-  border: 0.1rem solid var(--white_3);
-  border-radius: 0.5rem;
-}
-
-.consult__form input:-ms-input-placeholder {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-  text-transform: uppercase;
-  color: var(--gray_4);
-}
-
-.consult__form input::placeholder {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-  text-transform: uppercase;
-  color: var(--gray_4);
-}
-
 @media (min-width: 375px) {
   h2 {
     font-size: 2.6rem;
@@ -1216,6 +1692,14 @@ h2 {
   }
 
   .card__bottom span {
+    font-size: 1.6rem;
+  }
+
+  .modal h3 {
+    font-size: 2.6rem;
+  }
+
+  .modal p {
     font-size: 1.6rem;
   }
 
@@ -1268,16 +1752,172 @@ h2 {
     top: 20rem;
   }
 
-  .geography__inner-right__img .location-1 {
-    top: 11rem;
-  }
-
   .geography__inner-right__img img:nth-of-type(1) {
     width: 35rem;
   }
 
   .geography__inner-text {
     margin-bottom: 43rem;
+  }
+
+  .geography .location-1 {
+    top: 14rem;
+    left: 6.5rem;
+  }
+
+  .geography .location-2 {
+    top: 15.2rem;
+    left: 7.8rem;
+  }
+
+  .geography .location-3 {
+    top: 6.5rem;
+    left: 9.5rem;
+  }
+
+  .geography .location-4 {
+    top: 8.5rem;
+    left: 12rem;
+  }
+
+  .geography .location-5 {
+    top: 8.8rem;
+    left: 13rem;
+  }
+
+  .geography .location-6 {
+    top: 10rem;
+    left: 11.8rem;
+  }
+
+  .geography .location-7 {
+    top: 10.1rem;
+    left: 12.9rem;
+  }
+
+  .geography .location-8 {
+    top: 13rem;
+    left: 12.5rem;
+  }
+
+  .geography .location-9 {
+    top: 10.2rem;
+    left: 15.6rem;
+  }
+
+  .geography .location-10 {
+    top: 4.2rem;
+    left: 19rem;
+  }
+
+  .geography .location-11 {
+    top: 6.2rem;
+    left: 19.6rem;
+  }
+
+  .geography .location-12 {
+    top: 7.2rem;
+    left: 18rem;
+  }
+
+  .geography .location-13 {
+    top: 9.9rem;
+    left: 18.3rem;
+  }
+
+  .geography .location-14 {
+    top: 12rem;
+    left: 18.1rem;
+  }
+
+  .geography .location-15 {
+    top: 12.2rem;
+    left: 22.2rem;
+  }
+
+  .geography .location-16 {
+    top: 13.1rem;
+    left: 19rem;
+  }
+
+  .geography .location-17 {
+    top: 15.9rem;
+    left: 18.6rem;
+  }
+
+  .geography .location-18 {
+    top: 16.9rem;
+    left: 17.8rem;
+  }
+
+  .geography .location-19 {
+    top: 14.6rem;
+    left: 19.5rem;
+  }
+
+  .geography .location-20 {
+    top: 17.3rem;
+    left: 21.2rem;
+  }
+
+  .geography .location-21 {
+    top: 18.5rem;
+    left: 23.5rem;
+  }
+
+  .geography .location-22 {
+    top: 22.1rem;
+    left: 13.6rem;
+  }
+
+  .geography .location-23 {
+    top: 23.4rem;
+    left: 14.3rem;
+  }
+
+  .geography .location-24 {
+    top: 23rem;
+    left: 15.5rem;
+  }
+
+  .geography .location-25 {
+    top: 24.4rem;
+    left: 15.5rem;
+  }
+
+  .geography .location-26 {
+    top: 25.5rem;
+    left: 16.8rem;
+  }
+
+  .geography .location-27 {
+    top: 24.2rem;
+    left: 19.3rem;
+  }
+
+  .geography .location-28 {
+    top: 25.5rem;
+    left: 21rem;
+  }
+
+  .geography .location-29 {
+    top: 25.6rem;
+    left: 25.2rem;
+  }
+
+  .geography .location-30 {
+    top: 27rem;
+    left: 24.5rem;
+  }
+
+  .geography .location-31 {
+    top: 24.5rem;
+    left: 22.7rem;
+  }
+
+  .geography .location-32 {
+    top: 26.5rem;
+    left: 26.3rem;
   }
 
   .consult__inner-center {
@@ -1370,17 +2010,172 @@ h2 {
     height: 35rem;
   }
 
-  .geography__inner-right__img .location-1 {
-    top: 13rem;
-    left: 2rem;
-  }
-
   .geography__inner-right__img img:nth-of-type(1) {
     width: 42rem;
   }
 
   .geography__inner-text {
     margin-bottom: 50rem;
+  }
+
+  .geography .location-1 {
+    top: 17rem;
+    left: 8rem;
+  }
+
+  .geography .location-2 {
+    top: 18.5rem;
+    left: 9.5rem;
+  }
+
+  .geography .location-3 {
+    top: 8rem;
+    left: 11.5rem;
+  }
+
+  .geography .location-4 {
+    top: 10rem;
+    left: 14.5rem;
+  }
+
+  .geography .location-5 {
+    top: 10.8rem;
+    left: 15.8rem;
+  }
+
+  .geography .location-6 {
+    top: 11.8rem;
+    left: 14rem;
+  }
+
+  .geography .location-7 {
+    top: 12.2rem;
+    left: 15.4rem;
+  }
+
+  .geography .location-8 {
+    top: 16rem;
+    left: 15.2rem;
+  }
+
+  .geography .location-9 {
+    top: 12.5rem;
+    left: 18.8rem;
+  }
+
+  .geography .location-10 {
+    top: 5rem;
+    left: 23rem;
+  }
+
+  .geography .location-11 {
+    top: 7rem;
+    left: 23.5rem;
+  }
+
+  .geography .location-12 {
+    top: 9rem;
+    left: 21.8rem;
+  }
+
+  .geography .location-13 {
+    top: 12rem;
+    left: 22.2rem;
+  }
+
+  .geography .location-14 {
+    top: 14.6rem;
+    left: 22rem;
+  }
+
+  .geography .location-15 {
+    top: 14.8rem;
+    left: 26.8rem;
+  }
+
+  .geography .location-16 {
+    top: 16rem;
+    left: 23rem;
+  }
+
+  .geography .location-17 {
+    top: 19.1rem;
+    left: 22.4rem;
+  }
+
+  .geography .location-18 {
+    top: 20rem;
+    left: 21.5rem;
+  }
+
+  .geography .location-19 {
+    top: 17.7rem;
+    left: 23.5rem;
+  }
+
+  .geography .location-20 {
+    top: 21rem;
+    left: 25.5rem;
+  }
+
+  .geography .location-21 {
+    top: 22.3rem;
+    left: 28.2rem;
+  }
+
+  .geography .location-22 {
+    top: 26.5rem;
+    left: 16.4rem;
+  }
+
+  .geography .location-23 {
+    top: 27.8rem;
+    left: 17rem;
+  }
+
+  .geography .location-24 {
+    top: 27.3rem;
+    left: 18.1rem;
+  }
+
+  .geography .location-25 {
+    top: 29.2rem;
+    left: 18.1rem;
+  }
+
+  .geography .location-26 {
+    top: 30.5rem;
+    left: 20.3rem;
+  }
+
+  .geography .location-27 {
+    top: 29.3rem;
+    left: 23.1rem;
+  }
+
+  .geography .location-28 {
+    top: 30.5rem;
+    left: 25.3rem;
+  }
+
+  .geography .location-29 {
+    top: 30.7rem;
+    left: 30.2rem;
+  }
+
+  .geography .location-30 {
+    top: 32.5rem;
+    left: 29.5rem;
+  }
+
+  .geography .location-31 {
+    top: 29.5rem;
+    left: 27.3rem;
+  }
+
+  .geography .location-32 {
+    top: 32rem;
+    left: 31.7rem;
   }
 }
 
@@ -1428,7 +2223,6 @@ h2 {
     font-size: 1.4rem;
     line-height: 1.7rem;
     color: var(--black_1);
-    border: 0.1rem solid var(--red_1);
     background: transparent;
   }
 
@@ -1437,30 +2231,12 @@ h2 {
   }
 
   .footer {
-    padding: 8rem 0 2.9rem 0;
+    padding: 8rem 0 2rem 0;
   }
 
   .footer__inner-left .logo {
     width: 100%;
     margin-bottom: 7.8rem;
-  }
-
-  .footer__inner-left nav {
-    max-width: 77rem;
-    margin-bottom: 8.4rem;
-  }
-
-  .footer__inner-left nav ul li {
-    width: 20%;
-    margin-right: 1rem;
-    margin-bottom: 0;
-  }
-
-  .footer__inner-left nav ul li:nth-of-type(1),
-  .footer__inner-left nav ul li:nth-of-type(2),
-  .footer__inner-left nav ul li:nth-of-type(3),
-  .footer__inner-left nav ul li:nth-of-type(4) {
-    margin-bottom: 2rem;
   }
 
   .footer__inner-right .phone {
@@ -1479,20 +2255,47 @@ h2 {
     display: none;
   }
 
-  .nav {
+  .nav__header {
     position: static;
     transform: translateX(0);
     height: auto;
     padding: 2rem 0;
   }
 
-  .nav ul {
+  .nav__header ul {
     justify-content: space-between;
     flex-direction: row;
   }
 
-  .nav ul .nav__item:not(:last-of-type) {
+  .nav__header ul .nav__item:not(:last-of-type) {
     margin-bottom: 0;
+  }
+
+  .nav__footer {
+    max-width: 77rem;
+    margin-bottom: 8.4rem;
+  }
+
+  .nav__footer {
+    margin-bottom: 6.4rem;
+  }
+
+  .nav__footer ul::before {
+    left: 0;
+    bottom: -13rem;
+    transform: rotate(0deg);
+    width: 110.5rem;
+    height: 11.3rem;
+  }
+
+  .nav__footer .nav__item {
+    width: 20%;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  .nav__footer .nav__item:not(:last-of-type) {
+    margin-bottom: 2rem;
   }
 
   .card {
@@ -1503,6 +2306,42 @@ h2 {
   .card__bottom {
     width: 100%;
     margin-top: 1rem;
+  }
+
+  .modal {
+    max-width: 69.7rem;
+    padding: 14.5rem 4rem 3rem 4rem;
+    background: url("../img/icons/text-bg.svg") 0 9rem/103% 7.2rem no-repeat, var(--white_1);
+  }
+
+  .modal h3 {
+    margin-bottom: 2rem;
+  }
+
+  .modal p {
+    margin-bottom: 2.1rem;
+  }
+
+  .modal__form {
+    padding: 4rem 2rem 3rem 2rem;
+  }
+
+  .modal__form form p {
+    margin-top: 1rem;
+  }
+
+  .modal__form form .inputs {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .modal__form form .inputs input {
+    width: 48%;
+  }
+
+  .close {
+    right: 1.2rem;
+    top: 2.6rem;
   }
 
   .landscaping {
@@ -1558,13 +2397,13 @@ h2 {
   }
 
   .landscaping__top-img img {
-    width: 17.8rem;
-    height: 23.3rem;
+    width: 15.8rem;
+    height: 20.6rem;
     transform: translate(-2rem, 0);
   }
 
   .landscaping__top-img p {
-    transform: translate(2rem, -1.5rem);
+    transform: translate(-1.8rem, 0.5rem);
     max-width: 15.8rem;
     font-size: 1.4rem;
   }
@@ -1686,7 +2525,8 @@ h2 {
   }
 
   .history__inner-text {
-    width: 46%;
+    width: 50%;
+    max-width: 56rem;
   }
 
   .history__inner-text h2 {
@@ -1698,7 +2538,7 @@ h2 {
   }
 
   .history__inner-cards {
-    width: 53%;
+    width: 50%;
     max-width: 56rem;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1734,11 +2574,6 @@ h2 {
     height: 2.4rem;
   }
 
-  .geography__inner-right__img .location-1 {
-    top: 17rem;
-    left: 2.5rem;
-  }
-
   .geography__inner-right__img img:nth-of-type(1) {
     width: 56rem;
   }
@@ -1760,6 +2595,166 @@ h2 {
     position: static;
     transform: translateX(0);
     padding: 2.2rem 5.39rem;
+  }
+
+  .geography .location-1 {
+    top: 24rem;
+    left: 12rem;
+  }
+
+  .geography .location-2 {
+    top: 22rem;
+    left: 9.5rem;
+  }
+
+  .geography .location-3 {
+    top: 10rem;
+    left: 15.2rem;
+  }
+
+  .geography .location-4 {
+    top: 13.5rem;
+    left: 19rem;
+  }
+
+  .geography .location-5 {
+    top: 14.3rem;
+    left: 20.9rem;
+  }
+
+  .geography .location-6 {
+    top: 15.6rem;
+    left: 18.2rem;
+  }
+
+  .geography .location-7 {
+    top: 16.5rem;
+    left: 20.2rem;
+  }
+
+  .geography .location-8 {
+    top: 20.5rem;
+    left: 19.8rem;
+  }
+
+  .geography .location-9 {
+    top: 16rem;
+    left: 24.6rem;
+  }
+
+  .geography .location-10 {
+    top: 6.7rem;
+    left: 30.3rem;
+  }
+
+  .geography .location-11 {
+    top: 9.7rem;
+    left: 31.2rem;
+  }
+
+  .geography .location-12 {
+    top: 11.2rem;
+    left: 28.5rem;
+  }
+
+  .geography .location-13 {
+    top: 15.2rem;
+    left: 29rem;
+  }
+
+  .geography .location-14 {
+    top: 18.5rem;
+    left: 28.8rem;
+  }
+
+  .geography .location-15 {
+    top: 19.3rem;
+    left: 35rem;
+  }
+
+  .geography .location-16 {
+    top: 21rem;
+    left: 30.3rem;
+  }
+
+  .geography .location-17 {
+    top: 25.4rem;
+    left: 29.4rem;
+  }
+
+  .geography .location-18 {
+    top: 27.2rem;
+    left: 27.8rem;
+  }
+
+  .geography .location-19 {
+    top: 23.3rem;
+    left: 31.1rem;
+  }
+
+  .geography .location-20 {
+    top: 27rem;
+    left: 33.6rem;
+  }
+
+  .geography .location-21 {
+    top: 29.5rem;
+    left: 37.2rem;
+  }
+
+  .geography .location-22 {
+    top: 35.5rem;
+    left: 21.8rem;
+  }
+
+  .geography .location-23 {
+    top: 38rem;
+    left: 22.5rem;
+  }
+
+  .geography .location-24 {
+    top: 36.3rem;
+    left: 24.6rem;
+  }
+
+  .geography .location-25 {
+    top: 38.8rem;
+    left: 24.5rem;
+  }
+
+  .geography .location-26 {
+    top: 40.3rem;
+    left: 26.5rem;
+  }
+
+  .geography .location-27 {
+    top: 37.8rem;
+    left: 30.2rem;
+  }
+
+  .geography .location-28 {
+    top: 40.8rem;
+    left: 32.8rem;
+  }
+
+  .geography .location-29 {
+    top: 40.8rem;
+    left: 40rem;
+  }
+
+  .geography .location-30 {
+    top: 42.8rem;
+    left: 38.8rem;
+  }
+
+  .geography .location-31 {
+    top: 39rem;
+    left: 36.2rem;
+  }
+
+  .geography .location-32 {
+    top: 42.5rem;
+    left: 41.5rem;
   }
 
   .consult {
@@ -1826,7 +2821,7 @@ h2 {
   }
 
   .consult__inner-center__text img {
-    top: 20.5rem;
+    bottom: -14.7rem;
   }
 
   .consult__form {
@@ -1841,6 +2836,18 @@ h2 {
 }
 
 @media (min-width: 1440px) {
+  .nav__footer ul::before {
+    left: 0;
+    bottom: -10rem;
+    transform: rotate(0deg);
+    width: 131.7rem;
+    height: 14.7rem;
+  }
+
+  .modal {
+    max-width: 83.3rem;
+  }
+
   .landscaping-services__inner-bottom .service {
     width: 36rem;
   }
@@ -1851,7 +2858,6 @@ h2 {
 
   .geography__inner-left {
     width: 50%;
-    margin-right: 4rem;
   }
 
   .geography__inner-right {
@@ -1867,11 +2873,11 @@ h2 {
   }
 
   .consult__inner-center {
-    background: url("../img/icons/text-bg.svg") 5rem 50%/auto no-repeat, var(--white_2);
+    background: url("../img/icons/text-bg.svg") 5rem 20rem/auto no-repeat, var(--white_2);
   }
 
   .consult__inner-btn {
-    padding: 2.15rem 6.323rem;
+    padding: 2.15rem 6.73rem;
   }
 }
 
