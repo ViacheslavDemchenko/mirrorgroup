@@ -19,6 +19,7 @@
     transition: opacity 1s ease-out;
 
     @media (min-width: 1024px) {
+        height: auto;
         max-width: 69.7rem;
         padding: 14.5rem 4rem 3rem 4rem;
         background: url("../img/icons/text-bg.svg") 0 9rem/103% 7.2rem no-repeat, var(--white_1);
