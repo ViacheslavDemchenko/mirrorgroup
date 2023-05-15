@@ -1,0 +1,31 @@
+.activity {
+  padding: 7.5rem 0 15rem 0;
+
+  h2 {
+    align-self: flex-start;
+    margin-bottom: 6rem;
+    @include InterSemiBold();
+    font-size: 4rem;
+    line-height: 120.02%;
+    color: var(--black_2);
+  }
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &-left,
+    &-right {
+      width: 50%;
+      max-width: 56rem;
+
+      p {
+        @include InterRegular();
+        font-size: 1.6rem;
+        line-height: 140%;
+        color: var(--black_1);
+      }
+    }
+  }
+}

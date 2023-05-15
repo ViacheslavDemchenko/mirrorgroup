@@ -112,6 +112,7 @@ footer {
 
 .wrapper {
   width: 100%;
+  min-height: 100vh;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -197,6 +198,12 @@ h2 {
 .btn--red {
   color: var(--white_1);
   background: var(--red_1);
+}
+
+.btn--white {
+  color: var(--black_1);
+  border: 0.1rem solid var(--black_1);
+  background: var(--white_1);
 }
 
 input,
@@ -454,6 +461,87 @@ textarea::placeholder {
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--gray_7);
+}
+
+.accordion {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.accordion__item {
+  position: relative;
+  max-width: 119rem;
+  padding: 2rem 0 2rem 1rem;
+  border: 0.1rem solid var(--gray_4);
+  border-radius: 0.5rem;
+}
+
+.accordion h3 {
+  position: relative;
+  margin: 0;
+  text-align: left;
+  padding-left: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #000;
+}
+
+.accordion h3::after {
+  position: absolute;
+  content: "";
+  transform: translateY(-50%) rotate(1deg);
+  width: 1.2rem;
+  height: 1rem;
+  background: url("../img/icons/arrow.svg") 100% 100%/1.2rem 1rem no-repeat;
+  will-change: transform;
+  transition: transform 0.5s linear;
+}
+
+.accordion__item.active {
+  border: none;
+  background: var(--white_2);
+}
+
+.accordion__item.active h3 {
+  margin-bottom: 2.1rem;
+}
+
+.accordion__item.active h3::after {
+  right: -1.1rem;
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+.accordion__content {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: #000;
+  will-change: auto;
+  transition: all 0.5s ease-out;
+}
+
+.accordion__content img {
+  height: 25.2rem;
+}
+
+.accordion__content p {
+  max-width: 53rem;
+  margin-right: 2rem;
+}
+
+.accordion__content.active {
+  opacity: 1;
 }
 
 .cmn-toggle-switch {
@@ -853,6 +941,40 @@ textarea::placeholder {
 
 .close::after {
   transform: rotate(-45deg);
+}
+
+.breadcrumbs {
+  width: 100%;
+  max-width: 144rem;
+  margin: 5.5rem 0 3rem 0;
+}
+
+.breadcrumbs__item {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--gray_2);
+}
+
+.breadcrumbs__item a {
+  position: relative;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--gray_2);
+}
+
+.breadcrumbs__item .breadcrumbs-slash {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.breadcrumbs__link {
+  position: relative;
+  display: inline-block;
 }
 
 .landscaping {
@@ -1293,24 +1415,23 @@ textarea::placeholder {
 
 .geography__inner-right__img .location-desc__wrap {
   position: absolute;
-  z-index: -1;
+  z-index: 100;
   top: 1.2rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 22.4rem;
-  height: 26rem;
-  opacity: 0;
+  width: 7.4rem;
+  height: 8.6rem;
+  display: none;
 }
 
 .geography__inner-right__img .location-desc__wrap--active {
-  z-index: 100;
-  opacity: 1;
+  display: block;
 }
 
 .geography__inner-right__img .location-desc__wrap .location-desc {
   position: absolute;
-  width: 22.4rem;
-  height: 26rem;
+  width: 7.4rem;
+  height: 8.6rem;
 }
 
 .geography__inner-right__img .location {
@@ -1318,7 +1439,6 @@ textarea::placeholder {
   z-index: 10;
   width: 1.2rem;
   height: 1.2rem;
-  padding: 0.1rem;
   cursor: pointer;
 }
 
@@ -1654,13 +1774,294 @@ textarea::placeholder {
   color: var(--gray_5);
 }
 
+.activity-services h1 {
+  align-self: flex-start;
+  margin-bottom: 6rem;
+  font-family: "Inter SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 4rem;
+  line-height: 100.02%;
+  letter-spacing: -0.045em;
+  color: var(--black_2);
+}
+
+.activity-services__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8.1rem;
+}
+
+.activity-services__inner-left,
+.activity-services__inner-right {
+  width: 50%;
+}
+
+.activity-services__inner-left p,
+.activity-services__inner-right p {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--black_1);
+}
+
+.activity-services__inner-btns {
+  width: 100%;
+  margin-bottom: 6rem;
+}
+
+.activity-services__inner-btns .btn--black {
+  margin-right: 4rem;
+}
+
+.activity-services__inner-btns button {
+  padding: 2.2rem 7.49rem;
+}
+
+.activity-services__inner-btns a {
+  padding: 1.97rem 6.95rem;
+}
+
+.advantages {
+  padding: 10rem 0;
+  background: url("../img/advantages-bg.jpg") 100% 100%/cover no-repeat;
+}
+
+.advantages h2 {
+  font-family: "Inter SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 4rem;
+  line-height: 120.02%;
+  color: var(--white_1);
+}
+
+.advantages__inner {
+  width: 100%;
+}
+
+.advantages__inner-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8.1rem;
+}
+
+.advantages__inner-text__left,
+.advantages__inner-text__right {
+  width: 50%;
+  max-width: 55.1rem;
+}
+
+.advantages__inner-text__left p,
+.advantages__inner-text__right p {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--white_1);
+}
+
+.advantages__inner-blocks {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.advantages__inner-blocks .advantages__inner-block {
+  width: 50%;
+  max-width: 56rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 0.1rem solid var(--gray_4);
+}
+
+.advantages__inner-blocks .advantages__inner-block:nth-of-type(5),
+.advantages__inner-blocks .advantages__inner-block:nth-of-type(6) {
+  border-bottom: 0.1rem solid var(--gray_4);
+}
+
+.advantages__inner-blocks .advantages__inner-block img {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 2rem;
+}
+
+.advantages__inner-blocks .advantages__inner-block p {
+  width: 100%;
+  max-width: 50rem;
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-size: 2rem;
+  line-height: 120%;
+  color: var(--white_1);
+}
+
+.activity {
+  padding: 7.5rem 0 15rem 0;
+}
+
+.activity h2 {
+  align-self: flex-start;
+  margin-bottom: 6rem;
+  font-family: "Inter SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 4rem;
+  line-height: 120.02%;
+  color: var(--black_2);
+}
+
+.activity__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity__inner-left,
+.activity__inner-right {
+  width: 50%;
+  max-width: 56rem;
+}
+
+.activity__inner-left p,
+.activity__inner-right p {
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 140%;
+  color: var(--black_1);
+}
+
+.activity-form h2 {
+  align-self: flex-start;
+  margin-bottom: 6rem;
+  font-family: "Inter SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 4rem;
+  line-height: 120.02%;
+  color: var(--black_2);
+}
+
+.activity-form .consult__inner h3 {
+  margin-bottom: 5.7rem;
+  font-family: "Inter SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 4rem;
+  line-height: 120.02%;
+  color: var(--black_2);
+}
+
+.activity-form .consult__inner-center__form {
+  width: 100%;
+  max-width: 50rem;
+  padding: 2.3rem 2rem;
+  background: var(--white_1);
+  border: 0.1rem solid var(--red_1);
+  border-radius: 0.5rem;
+}
+
+.activity-form .consult__inner-center__form p {
+  margin-bottom: 2rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--gray_5);
+}
+
+.activity-form .consult__inner-center__form a {
+  width: 25rem;
+  padding: 2.04rem 2rem;
+  margin-right: 2rem;
+}
+
+.activity-form .consult__inner-center__form-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-form .consult__inner-center__form-bottom .whatsapp {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-form .consult__inner-center__form-bottom .whatsapp span:nth-of-type(1) {
+  margin-bottom: 0.5rem;
+  font-family: "Inter Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 130.02%;
+  color: var(--gray_5);
+}
+
+.activity-form .consult__inner-center__form-bottom .whatsapp span:nth-of-type(2) {
+  font-family: "Inter Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-size: 2.2rem;
+  line-height: 3rem;
+  color: var(--black_2);
+}
+
+.activity-form .form-title {
+  display: none;
+}
+
+.activity-form .form-title--active {
+  display: block;
+}
+
+.activity-areas {
+  padding: 15rem 0 7.5rem 0;
+}
+
+.activity-areas h2 {
+  align-self: flex-start;
+  margin-bottom: 6rem;
+  font-family: "Inter SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 4rem;
+  line-height: 120.02%;
+  color: var(--black_2);
+}
+
 @media (min-width: 375px) {
   h2 {
     font-size: 2.6rem;
   }
 
   .card {
-    width: 30rem;
+    width: 27.5rem;
     padding: 2rem 1.5rem 2rem 2rem;
   }
 
@@ -1703,6 +2104,15 @@ textarea::placeholder {
 }
 
 @media (min-width: 500px) {
+  .accordion__item {
+    padding: 2rem 0 2rem 3rem;
+  }
+
+  .accordion h3::after {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
   .goal__inner-img {
     max-width: 100%;
     height: 29rem;
@@ -2171,6 +2581,20 @@ textarea::placeholder {
   }
 }
 
+@media (min-width: 950px) {
+  .landscaping-services__inner-bottom {
+    justify-content: space-between !important;
+  }
+
+  .landscaping-services__inner-bottom .service:nth-of-type(1) {
+    margin-right: 0;
+  }
+
+  .landscaping-services__inner-bottom .service:nth-of-type(2) {
+    margin-left: 0;
+  }
+}
+
 @media (min-width: 1024px) {
   .no-scroll {
     padding-right: 1.7rem;
@@ -2224,6 +2648,26 @@ textarea::placeholder {
     justify-content: flex-start;
   }
 
+  .accordion__item {
+    padding: 2rem 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .accordion h3 {
+    padding-left: 0;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  .accordion h3::after {
+    right: 0;
+  }
+
+  .accordion__content {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+
   .cmn-toggle-switch {
     display: none;
   }
@@ -2255,7 +2699,7 @@ textarea::placeholder {
 
   .nav__footer ul::before {
     left: 0;
-    bottom: -13rem;
+    bottom: -10rem;
     transform: rotate(0deg);
     width: 110.5rem;
     height: 11.3rem;
@@ -2409,14 +2853,6 @@ textarea::placeholder {
     align-items: center;
   }
 
-  .landscaping-services__inner-bottom .service:nth-of-type(1) {
-    margin-right: 0;
-  }
-
-  .landscaping-services__inner-bottom .service:nth-of-type(2) {
-    margin-left: 0;
-  }
-
   .landscaping-services__inner-bottom .service:not(:last-of-type) {
     margin-bottom: 0;
   }
@@ -2499,7 +2935,7 @@ textarea::placeholder {
   }
 
   .history__inner-text {
-    width: 50%;
+    width: 46%;
     max-width: 56rem;
   }
 
@@ -2512,7 +2948,7 @@ textarea::placeholder {
   }
 
   .history__inner-cards {
-    width: 50%;
+    width: 53%;
     max-width: 56rem;
     flex-direction: row;
     flex-wrap: wrap;
@@ -2541,6 +2977,16 @@ textarea::placeholder {
   .geography__inner-right {
     position: static;
     width: 57%;
+  }
+
+  .geography__inner-right__img .location-desc__wrap {
+    width: 22.4rem;
+    height: 26rem;
+  }
+
+  .geography__inner-right__img .location-desc__wrap .location-desc {
+    width: 22.4rem;
+    height: 26rem;
   }
 
   .geography__inner-right__img .location {
@@ -2789,7 +3235,7 @@ textarea::placeholder {
   }
 
   .consult__inner-center__text h2 {
-    max-width: 52rem;
+    max-width: 42rem;
     margin-bottom: 0;
     font-size: 4rem;
   }
@@ -2800,6 +3246,26 @@ textarea::placeholder {
 
   .consult__form {
     padding: 2.3rem 2rem 1.8rem 2rem;
+  }
+
+  .activity-services .service--small h3 {
+    font-size: 1.8rem;
+  }
+
+  .activity-services .service--small {
+    width: 26rem;
+    margin-bottom: 4rem !important;
+  }
+
+  .activity-services .landscaping-services__inner-bottom {
+    margin-bottom: 11rem;
+    align-items: stretch;
+  }
+
+  .advantages h2 {
+    align-self: flex-start;
+    margin-bottom: 6rem;
+    font-size: 4rem;
   }
 }
 
@@ -2812,7 +3278,6 @@ textarea::placeholder {
 @media (min-width: 1440px) {
   .nav__footer ul::before {
     left: 0;
-    bottom: -10rem;
     transform: rotate(0deg);
     width: 131.7rem;
     height: 14.7rem;
@@ -2824,6 +3289,15 @@ textarea::placeholder {
 
   .landscaping-services__inner-bottom .service {
     width: 36rem;
+  }
+
+  .history__inner-text {
+    width: 50%;
+    max-width: 56rem;
+  }
+
+  .history__inner-cards {
+    width: 50%;
   }
 
   .history__inner-cards .card:nth-child(odd) {
@@ -2852,6 +3326,10 @@ textarea::placeholder {
 
   .consult__inner-btn {
     padding: 2.15rem 6.73rem;
+  }
+
+  .activity-form .consult__inner-center--last {
+    background: url("../img/icons/text-bg-white.svg") 5rem 18rem/auto no-repeat, var(--white_2) !important;
   }
 }
 

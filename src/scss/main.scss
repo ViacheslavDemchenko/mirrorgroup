@@ -32,13 +32,14 @@
 @import "./../components/sections/footer/_footer";
 
 // БЭМ-блоки
-// @import "./../components/bem-blocks/accordion/accordion"; // Аккордион
+@import "./../components/bem-blocks/accordion/_accordion"; // Аккордион
 @import "./../components/bem-blocks/burger/_burger"; // Бургер
 @import "./../components/bem-blocks/logo/_logo"; // Логотип
 @import "./../components/bem-blocks/nav/_nav"; // Меню
 @import "./../components/bem-blocks/card/_card"; // Карточка с иконкой в правом верхнем углу
 @import "./../components/bem-blocks/phone/_phone"; // Телефон
 @import "./../components/bem-blocks/modal/_modal"; // Модалки
+@import "./../components/bem-blocks/breadcrumbs/_breadcrumbs"; // Хлебные крошки
 
 // Секции
 @import "./../components/sections/landscaping/_landscaping"; // Благоустройство общественных пространств
@@ -48,3 +49,9 @@
 @import "./../components/sections/history/_history"; // Компания Mirror Group берет своё начало в 2011 году
 @import "./../components/sections/geography/_geography"; // География проектов
 @import "./../components/sections/consult/_consult"; // Секция с формой на главной
+
+@import "./../components/sections/activity-services/_activity-services"; // Страница Деятельность секция Услуги по благоустройству городских территорий
+@import "./../components/sections/advantages/_advantages"; // Страница Деятельность секция Преимущества Mirror Group 
+@import "./../components/sections/activity/_activity"; // Страница Деятельность секция Деятельность
+@import "./../components/sections/activity-form/_activity-form"; // Страница Деятельность секция Форма
+@import "./../components/sections/activity-areas/_activity-areas"; // Страница Деятельность секция Направления деятельности

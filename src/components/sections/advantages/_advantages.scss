@@ -1,0 +1,78 @@
+.advantages {
+  padding: 10rem 0;
+  background: url("../img/advantages-bg.jpg") 100% 100%/cover no-repeat;
+
+  h2 {
+    @include InterSemiBold();
+    font-size: 4rem;
+    line-height: 120.02%;
+    color: var(--white_1);
+
+    @media (min-width: 1024px) {
+      align-self: flex-start;
+      margin-bottom: 6rem;
+      font-size: 4rem;
+    }
+  }
+
+  &__inner {
+    width: 100%;
+
+    &-text {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8.1rem;
+
+      &__left,
+      &__right {
+        width: 50%;
+        max-width: 55.1rem;
+
+        p {
+          @include InterRegular();
+          font-size: 1.6rem;
+          line-height: 130.02%;
+          color: var(--white_1);
+        }
+      }
+    }
+
+    &-blocks {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .advantages__inner-block {
+        width: 50%;
+        max-width: 56rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        border-top: 0.1rem solid var(--gray_4);
+        
+        &:nth-of-type(5),
+        &:nth-of-type(6) {
+          border-bottom: 0.1rem solid var(--gray_4);
+        }
+
+        img {
+          width: 4rem;
+          height: 4rem;
+          margin-right: 2rem;
+        }
+
+        p {
+          width: 100%;
+          max-width: 50rem;
+          @include InterMedium();
+          font-size: 2rem;
+          line-height: 120%;
+          color: var(--white_1);
+        }
+      }
+    }
+  }
+}

@@ -23,6 +23,11 @@
 
       @media (min-width: 1024px) {
         // width: 46%;
+        width: 46%;
+        max-width: 56rem;
+      }
+
+      @media (min-width: 1440px) {
         width: 50%;
         max-width: 56rem;
       }
@@ -76,11 +81,15 @@
       }
   
       @media (min-width: 1024px) {
-        // width: 53%;
-        width: 50%;
+        width: 53%;
+        // width: 50%;
         max-width: 56rem;
         flex-direction: row;
         flex-wrap: wrap;
+      }
+
+      @media (min-width: 1440px) {
+        width: 50%;
       }
       
       .card {

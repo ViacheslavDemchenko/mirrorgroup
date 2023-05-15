@@ -9,7 +9,7 @@
   transition: border 0.3s ease-in-out;
 
   @media (min-width: 375px) {
-    width: 30rem;
+    width: 27.5rem;
     padding: 2rem 1.5rem 2rem 2rem;
   }
 
@@ -17,6 +17,10 @@
     width: 26rem;
     display: block;
   }
+
+  // @media (min-width: 1920px) {
+  //   width: 30rem;
+  // }
 
   &:hover,
   &:focus {

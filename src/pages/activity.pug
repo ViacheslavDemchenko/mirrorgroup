@@ -1,0 +1,15 @@
+extends ./../layouts/main
+
+block variables
+  - let pageTitle = 'Деятельность';
+
+block content
+  .wrapper
+    include ./../components/sections/header/header.pug
+    main
+      include ./../components/sections/activity-services/activity-services.pug
+      include ./../components/sections/advantages/advantages.pug
+      include ./../components/sections/activity-areas/activity-areas.pug
+      include ./../components/sections/activity-form/activity-form.pug
+      include ./../components/sections/activity/activity.pug
+      include ./../components/sections/footer/footer.pug

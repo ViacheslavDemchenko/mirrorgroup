@@ -101,7 +101,8 @@
 
         @media (min-width: 1024px) {
           left: 0;
-          bottom: -13rem;
+          // bottom: -13rem;
+          bottom: -10rem;
           transform: rotate(0deg);
           width: 110.5rem;
           height: 11.3rem;
@@ -109,7 +110,7 @@
 
         @media (min-width: 1440px) {
           left: 0;
-          bottom: -10rem;
+          // bottom: -10rem;
           transform: rotate(0deg);
           width: 131.7rem;
           height: 14.7rem;

@@ -61,18 +61,21 @@
 
         .location-desc__wrap {
           position: absolute;
-          // z-index: 100;
-          z-index: -1;
+          z-index: 100;
           top: 1.2rem;
           left: 50%;
           transform: translateX(-50%);
-          width: 22.4rem;
-          height: 26rem;
-          opacity: 0;
+          width: 7.4rem;
+          height: 8.6rem;
+          display: none;
+
+          @media (min-width: 1024px) {
+            width: 22.4rem;
+            height: 26rem;
+          }
 
           &--active {
-            z-index: 100;
-            opacity: 1;
+            display: block;
           }
 
           // .location-desc__img {
@@ -90,8 +93,13 @@
 
           .location-desc {
             position: absolute;
-            width: 22.4rem;
-            height: 26rem;
+            width: 7.4rem;
+            height: 8.6rem;
+
+            @media (min-width: 1024px) {
+              width: 22.4rem;
+              height: 26rem;
+            }
           }
 
           // p {
@@ -108,16 +116,11 @@
           // }
         }
 
-        // .location-desc__wrap-1 {
-        //   display: none;
-        // }
-
         .location {
           position: absolute;
           z-index: 10;
           width: 1.2rem;
           height: 1.2rem;
-          padding: 0.1rem;
           cursor: pointer;
 
           @media (min-width: 1024px) {

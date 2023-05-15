@@ -3,15 +3,15 @@ header.header
     .header__inner
       .header__inner-top
         include ../../bem-blocks/logo/logo.pug
-        .str-run
-          p.btn.header__btn.header__btn--desktop
+        .str-run.header__btn--desktop
+          p.btn.header__btn
             span Обратный звонок &ensp;
             span Обратный звонок &ensp;
             span Обратный звонок &ensp;
             span Обратный звонок &ensp;
             span Обратный звонок &ensp;
             span Обратный звонок &ensp;
-          include ../../bem-blocks/burger/burger.pug
+        include ../../bem-blocks/burger/burger.pug
       .header__inner-bottom
         nav.nav.nav__header
           ul(role="menu")
@@ -31,3 +31,11 @@ header.header
               a(href="#reviews").nav__item-link Статьи
             li(role="menuitem").nav__item
               a(href="#photo").nav__item-link Контакты
+          .str-run.header__btn--mobile
+            p.btn.header__btn 
+              span Обратный звонок &ensp;
+              span Обратный звонок &ensp;
+              span Обратный звонок &ensp;
+              span Обратный звонок &ensp;
+              span Обратный звонок &ensp;
+              span Обратный звонок &ensp;

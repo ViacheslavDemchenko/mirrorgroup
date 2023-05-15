@@ -1,0 +1,73 @@
+.activity-services {
+
+  h1 {
+    align-self: flex-start;
+    margin-bottom: 6rem;
+    @include InterSemiBold();
+    font-size: 4rem;
+    line-height: 100.02%;
+    letter-spacing: -0.045em;
+    color: var(--black_2);
+  }
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8.1rem;
+
+    &-left,
+    &-right {
+      width: 50%;
+
+      p {
+        @include InterRegular();
+        font-size: 1.6rem;
+        line-height: 130.02%;
+        color: var(--black_1);
+      }
+    }
+
+    &-btns {
+      width: 100%;
+      margin-bottom: 6rem;
+
+      .btn--black {
+        margin-right: 4rem;
+      }
+
+      button {
+        padding: 2.2rem 7.49rem;
+      }
+
+      a {
+        padding: 1.97rem 6.95rem;
+      }
+    }
+  }
+
+  .service--small {
+
+    h3 {
+
+      @media (min-width: 1024px) {
+        font-size: 1.8rem;
+      }
+    }
+
+
+    @media (min-width: 1024px) {
+      width: 26rem;
+      margin-bottom: 4rem !important;
+    }
+  }
+
+  .landscaping-services__inner-bottom {
+
+    
+    @media (min-width: 1024px) {
+      margin-bottom: 11rem;
+      align-items: stretch;
+    }
+  }
+}

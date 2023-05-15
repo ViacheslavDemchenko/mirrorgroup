@@ -51,6 +51,10 @@
     
     &-bottom {
 
+      @media (min-width: 950px) {
+        justify-content: space-between !important;
+      }
+
       .service {
         width: 28rem;
         display: flex;
@@ -77,7 +81,7 @@
             margin-right: 1rem;
           }
 
-          @media (min-width: 1024px) {
+          @media (min-width: 950px) {
             margin-right: 0;
           }
         }
@@ -88,7 +92,7 @@
             margin-left: 1rem;
           }
 
-          @media (min-width: 1024px) {
+          @media (min-width: 950px) {
             margin-left: 0;
           }
         }

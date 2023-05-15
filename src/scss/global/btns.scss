@@ -17,5 +17,11 @@
     color: var(--white_1);
     background: var(--red_1);
   }
+
+  &--white {
+    color: var(--black_1);
+    border: 0.1rem solid var(--black_1);
+    background: var(--white_1);
+  }
   
 }

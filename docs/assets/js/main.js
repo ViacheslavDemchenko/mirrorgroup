@@ -341,17 +341,6 @@ if (window && window.NodeList && !NodeList.prototype.forEach) {
 
 /***/ }),
 
-/***/ "./src/js/data/mapData.json":
-/*!**********************************!*\
-  !*** ./src/js/data/mapData.json ***!
-  \**********************************/
-/*! exports provided: locations, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"locations\":[{\"name\":\"Molecule Man\",\"age\":29,\"secretIdentity\":\"Dan Jukes\"}]}");
-
-/***/ }),
-
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -361,14 +350,15 @@ module.exports = JSON.parse("{\"locations\":[{\"name\":\"Molecule Man\",\"age\":
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mobileMenu */ "./src/js/modules/mobileMenu.js");
-/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
-/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
-/* harmony import */ var _modules_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/data */ "./src/js/modules/data.js");
+/* harmony import */ var _modules_accordion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/accordion.js */ "./src/js/modules/accordion.js");
+/* harmony import */ var _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mobileMenu */ "./src/js/modules/mobileMenu.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+/* harmony import */ var _modules_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/data */ "./src/js/modules/data.js");
 __webpack_require__(/*! polyfill-nodelist-foreach */ "./node_modules/polyfill-nodelist-foreach/index.js"); // Полифил для поддержки метода forEach в IE11+ и Safari9
 __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // Полифил для поддержки IE11+ и старыми браузерами использования SVG через use 
 
-// import accordion from './modules/accordion.js'; // Аккордион
+ // Аккордион
  // Мобильное меню
  // Модалки
 // import slider from './modules/slider'; // Слайдер
@@ -378,13 +368,159 @@ __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // По
 
 
 // location();
-Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])();
-Object(_modules_data__WEBPACK_IMPORTED_MODULE_3__["default"])();
+Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_3__["default"])();
+Object(_modules_data__WEBPACK_IMPORTED_MODULE_4__["default"])();
 // strRun();
-// accordion();
-Object(_modules_mobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"])();
-Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])();
+Object(_modules_accordion_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+Object(_modules_mobileMenu__WEBPACK_IMPORTED_MODULE_1__["default"])();
+Object(_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])();
 // slider();
+
+/***/ }),
+
+/***/ "./src/js/libs/accordion-plagin.min.js":
+/*!*********************************************!*\
+  !*** ./src/js/libs/accordion-plagin.min.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var AccordionPlagin = /*#__PURE__*/function () {
+  function AccordionPlagin(t, i, s, e, a) {
+    var c = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : {};
+    _classCallCheck(this, AccordionPlagin);
+    this.accordion = t, this.accordItems = i, this.accordItemsContent = s, this.activeContentClass = e, this.activeTitleClass = a, this.options = c;
+  }
+  _createClass(AccordionPlagin, [{
+    key: "_showText",
+    value: function _showText(t, i) {
+      i ? (t.style.height = t.scrollHeight + this._accordItemsHeight(this.options.itemPaddingTop, this.options.itemPaddingBottom) + "px", t.classList.add(this.activeContentClass), i.classList.add(this.activeTitleClass)) : (t.style.height = t.scrollHeight + this._accordItemsHeight(this.options.itemPaddingTop, this.options.itemPaddingBottom) + "px", t.classList.add(this.activeContentClass));
+    }
+  }, {
+    key: "_hideText",
+    value: function _hideText(t, i) {
+      i ? (t.style.height = "0px", t.classList.remove(this.activeContentClass), i.classList.remove(this.activeTitleClass)) : (t.style.height = "0px", t.classList.remove(this.activeContentClass));
+    }
+  }, {
+    key: "_activeItemsHandler",
+    value: function _activeItemsHandler(t, i, s) {
+      t[i].classList.contains(this.activeContentClass) ? this._hideText(t[i], s) : this._showText(t[i], s);
+    }
+  }, {
+    key: "_accordItemsManyHandler",
+    value: function _accordItemsManyHandler(t, i, s) {
+      var _this = this;
+      i.forEach(function (e, a) {
+        e.addEventListener("click", function () {
+          s || i.forEach(function (i, s) {
+            _this._hideText(t[s], i);
+          }), _this._activeItemsHandler(t, a, e);
+        });
+      });
+    }
+  }, {
+    key: "_accordItemsSingleHandler",
+    value: function _accordItemsSingleHandler(t, i) {
+      var _this2 = this;
+      i.addEventListener("click", function () {
+        t.classList.contains(_this2.activeContentClass) ? _this2._hideText(t, i) : _this2._showText(t, i);
+      });
+    }
+  }, {
+    key: "_accordItemsHeight",
+    value: function _accordItemsHeight(t, i) {
+      return t + i;
+    }
+  }, {
+    key: "accordInit",
+    value: function accordInit() {
+      if (document.querySelector(this.accordion)) {
+        var t, i;
+        if (document.querySelectorAll(this.accordItems).length > 1) {
+          if (t = document.querySelectorAll(this.accordItems), i = document.querySelectorAll(this.accordItemsContent), this.options.initialActiveItem && this.options.initialActiveItemIndex) {
+            if ("number" == typeof this.options.initialActiveItemIndex && (i[this.options.initialActiveItemIndex].classList.add(this.activeContentClass), i[this.options.initialActiveItemIndex].style.height = i[this.options.initialActiveItemIndex].scrollHeight + "px", t[this.options.initialActiveItemIndex].classList.add(this.activeTitleClass)), Array.isArray(this.options.initialActiveItemIndex)) for (var s = 0; s < this.options.initialActiveItemIndex.length; s++) i[this.options.initialActiveItemIndex[s]].classList.add(this.activeContentClass), i[this.options.initialActiveItemIndex[s]].style.height = i[this.options.initialActiveItemIndex[s]].scrollHeight + "px", t[this.options.initialActiveItemIndex[s]].classList.add(this.activeTitleClass);
+          } else i[0].classList.add(this.activeContentClass), t[0].classList.add(this.activeTitleClass), i[0].style.height = i[0].scrollHeight + "px";
+          this.options.anyActiveItems ? this._accordItemsManyHandler(i, t, this.options.anyActiveItems) : this._accordItemsManyHandler(i, t);
+        } else t = document.querySelector(this.accordItems), i = document.querySelector(this.accordItemsContent), this._accordItemsSingleHandler(i, t);
+      }
+    }
+  }]);
+  return AccordionPlagin;
+}();
+/* harmony default export */ __webpack_exports__["default"] = (AccordionPlagin);
+
+/***/ }),
+
+/***/ "./src/js/modules/accordion.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/accordion.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return accordion; });
+/* harmony import */ var _libs_accordion_plagin_min_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../libs/accordion-plagin.min.js */ "./src/js/libs/accordion-plagin.min.js");
+
+function accordion() {
+  // const accordion = new AccordionPlagin('.accordion', '.accordion__item', '.accordion__content', 'active', 'active', {
+  //     initialActiveItem: true,
+  //     initialActiveItemIndex: 0,
+  //     anyActiveItems: false,
+  //     itemPaddingTop: 10,
+  //     itemPaddingBottom: 20
+  // });
+
+  // accordion.accordInit();
+
+  // Получаем все элементы с классом accordion__item
+  var accordionItems = document.querySelectorAll('.accordion__item');
+
+  // Перебираем каждый элемент accordion__item
+  accordionItems.forEach(function (item, index) {
+    // Получаем дочерний элемент с классом accordion__content
+    var content = item.querySelector('.accordion__content');
+
+    // Добавляем обработчик события клика
+    item.addEventListener('click', function () {
+      // Проверяем, есть ли класс active у текущего элемента и его дочернего элемента
+      var isActive = item.classList.contains('active');
+      var isContentActive = content.classList.contains('active');
+
+      // Удаляем класс active у всех элементов с классом accordion__item и accordion__content
+      accordionItems.forEach(function (item) {
+        return item.classList.remove('active');
+      });
+      document.querySelectorAll('.accordion__content').forEach(function (content) {
+        content.classList.remove('active');
+        content.style.height = 0;
+      });
+
+      // Добавляем или удаляем класс active в зависимости от наличия у текущего элемента и его дочернего элемента
+      if (!isActive) {
+        item.classList.add('active');
+        content.classList.add('active');
+        content.style.height = "".concat(content.scrollHeight, "px"); // Устанавливаем плавную высоту элемента через scrollHeight
+      }
+    });
+
+    // Изначально первый элемент аккордеона активен
+    if (index === 0) {
+      item.classList.add('active');
+      content.classList.add('active');
+      content.style.height = "".concat(content.scrollHeight, "px"); // Устанавливаем плавную высоту элемента через scrollHeight
+    }
+  });
+}
 
 /***/ }),
 
@@ -398,90 +534,42 @@ Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return data; });
-/* harmony import */ var _data_mapData_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../data/mapData.json */ "./src/js/data/mapData.json");
-var _data_mapData_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./../data/mapData.json */ "./src/js/data/mapData.json", 1);
-
 function data() {
-  console.log(_data_mapData_json__WEBPACK_IMPORTED_MODULE_0__);
-  var locations = document.querySelectorAll('.location');
-  var locationDescWrap = document.querySelector('.location-desc__wrap');
-  var geographyInnerRightImg = document.querySelector('.geography__inner-right__img');
-  locations.forEach(function (location) {
-    location.addEventListener('mouseover', function () {
-      var locationBounds = location.getBoundingClientRect();
-      var geographyInnerRightImgBounds = geographyInnerRightImg.getBoundingClientRect();
-      var x = locationBounds.left - geographyInnerRightImgBounds.left + locationBounds.width / 2;
-      var y = locationBounds.top - geographyInnerRightImgBounds.top + locationBounds.height / 2;
-      locationDescWrap.style.top = y - 260 + 'px';
-      locationDescWrap.style.left = "".concat(x, "px");
-      locationDescWrap.classList.add('location-desc__wrap--active');
+  if (document.querySelector('.geography__inner-right__img')) {
+    var locations = document.querySelectorAll('.location');
+    var locationDescWrap = document.querySelector('.location-desc__wrap');
+    var geographyInnerRightImg = document.querySelector('.geography__inner-right__img');
+    var currentImg = document.querySelector('.location-desc');
+    console.log(currentImg.src);
+    geographyInnerRightImg.addEventListener('mouseover', function () {
+      locations.forEach(function (location, i) {
+        location.addEventListener('mouseover', function (e) {
+          var number = e.target.getAttribute('data-number');
+          var newSrc = location.src;
+          newSrc = newSrc.replace('icons/location_1', 'geography_' + number);
+          newSrc = newSrc.replace('svg', 'png');
+          currentImg.src = newSrc;
+          console.log(newSrc);
+          var locationBounds = location.getBoundingClientRect();
+          var geographyInnerRightImgBounds = geographyInnerRightImg.getBoundingClientRect();
+          var x = locationBounds.left - geographyInnerRightImgBounds.left + locationBounds.width / 2;
+          var y = locationBounds.top - geographyInnerRightImgBounds.top + locationBounds.height / 2;
+          var screenW = window.screen.width;
+          if (screenW < 1024) {
+            locationDescWrap.style.top = y - 86 + 'px';
+          } else if (screenW >= 1024) {
+            locationDescWrap.style.top = y - 260 + 'px';
+          }
+          locationDescWrap.style.left = "".concat(x, "px");
+          locationDescWrap.style.display = 'block';
+        });
+      });
     });
-    location.addEventListener('mouseout', function () {
-      locationDescWrap.classList.remove('location-desc__wrap--active');
+    geographyInnerRightImg.addEventListener('mouseleave', function () {
+      locationDescWrap.style.display = 'none';
+      currentImg.src = ' ';
     });
-  });
-
-  // const locations = document.querySelectorAll('.location'); // получаем все элементы с классом location
-
-  // locations.forEach(location => { // перебираем каждый элемент
-  //   location.addEventListener('mouseover', () => { // вешаем событие на наведение курсора
-  //     const { x, y } = location.getBoundingClientRect(); // получаем координаты элемента
-  //     console.log(`${x}, ${y}`); // выводим координаты в консоль
-
-  //     const locationDesc = document.querySelector('.location-desc__wrap'); // получаем элемент с классом location-desc__wrap
-
-  //     locationDesc.style.display = 'block'; // добавляем ему свойство display: block
-  //     locationDesc.style.top = `${y}px`; // устанавливаем позицию по вертикали
-  //     locationDesc.style.left = `${x}px`; // устанавливаем позицию по горизонтали
-  // });
-
-  // location.addEventListener('mouseout', () => { // вешаем событие на выход курсора
-  //   const locationDesc = document.querySelector('.location-desc__wrap'); // получаем элемент с классом location-desc__wrap
-
-  //   locationDesc.style.display = 'none'; // удаляем свойство display: block
-  // });
-  // });
-
-  // const locations = document.querySelectorAll('.location');
-
-  // locations.forEach(location => {
-  //   location.addEventListener('mouseover', function(event) {
-  //     const x = event.target.offsetLeft;
-  //     const y = event.target.offsetTop;
-  //     console.log(`Координаты: (${x}, ${y})`);
-  //   });
-  // });
-
-  //  // Create an empty array to store the JSON elements
-  //   const jsonElements = [];
-
-  //   // Function to generate a random number between min and max (inclusive)
-  //   function getRandomNumber(min, max) {
-  //     return Math.floor(Math.random() * (max - min + 1)) + min;
-  //   }
-
-  //   // Generate 32 JSON elements
-  //   for (let i = 0; i < 32; i++) {
-  //     const id = i + 1; // Incrementing ID starting from 1
-  //     const imageLink = `./assets/img/location_img_${id}.png`; // Example image link
-  //     const text = `This is element ${id}`; // Example text
-
-  //     // Create the JSON element object
-  //     const element = {
-  //       id: id,
-  //       image: imageLink,
-  //       text: text
-  //     };
-
-  //     // Push the element to the array
-  //     jsonElements.push(element);
-  //   }
-
-  //   // Convert the array to JSON string
-  //   const jsonString = JSON.stringify(jsonElements);
-
-  //   // Print the JSON string
-  //   console.log(jsonString);
+  }
 }
 
 /***/ }),
@@ -627,32 +715,45 @@ function modal() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tabs; });
 function tabs() {
-  // Get all tab elements
-  var tabs = document.querySelectorAll('.tab');
+  if (document.querySelector('.consult')) {
+    var count = 0;
 
-  // Get all consult__inner-center elements
-  var blocks = document.querySelectorAll('.consult__inner-center');
+    // Get all tab elements
+    var _tabs = document.querySelectorAll('.tab');
 
-  // Add click event listener to each tab
-  tabs.forEach(function (tab, index) {
-    tab.addEventListener('click', function () {
-      // Remove tab--active class from all tabs
-      tabs.forEach(function (tab) {
-        tab.classList.remove('tab--active');
+    // Get all consult__inner-center elements
+    var blocks = document.querySelectorAll('.consult__inner-center');
+
+    // Add click event listener to each tab
+    _tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        // Remove tab--active class from all tabs
+        _tabs.forEach(function (tab) {
+          tab.classList.remove('tab--active');
+        });
+
+        // Remove consult__inner-center--active class from all blocks
+        blocks.forEach(function (block, i) {
+          block.classList.remove('consult__inner-center--active');
+        });
+
+        // Add tab--active class to the clicked tab
+        tab.classList.add('tab--active');
+
+        // Add consult__inner-center--active class to the corresponding block
+        blocks[index].classList.add('consult__inner-center--active');
+        if (document.querySelector('.activity-form')) {
+          var titles = document.querySelectorAll('.form-title');
+          var titlesTexts = ['Предложить участие в проекте', 'Запросить портфолио', 'Рассчитать стоимость проекта', 'Задать вопрос в WhatsApp'];
+          titles.forEach(function (title) {
+            title.classList.remove('form-title--active');
+          });
+          titles[index].classList.add('form-title--active');
+          titles[index].textContent = titlesTexts[i];
+        }
       });
-
-      // Remove consult__inner-center--active class from all blocks
-      blocks.forEach(function (block) {
-        block.classList.remove('consult__inner-center--active');
-      });
-
-      // Add tab--active class to the clicked tab
-      tab.classList.add('tab--active');
-
-      // Add consult__inner-center--active class to the corresponding block
-      blocks[index].classList.add('consult__inner-center--active');
     });
-  });
+  }
 }
 
 /***/ })
