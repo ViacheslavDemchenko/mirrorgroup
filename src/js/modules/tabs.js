@@ -2,6 +2,7 @@ export default function tabs() {
 
   if (document.querySelector('.consult')) {
     let count = 0;
+
     
     // Get all tab elements
     const tabs = document.querySelectorAll('.tab');
@@ -9,8 +10,10 @@ export default function tabs() {
     // Get all consult__inner-center elements
     const blocks = document.querySelectorAll('.consult__inner-center');
 
+
     // Add click event listener to each tab
     tabs.forEach((tab, index) => {
+
       tab.addEventListener('click', () => {
         // Remove tab--active class from all tabs
         tabs.forEach((tab) => {
@@ -39,10 +42,11 @@ export default function tabs() {
           
           titles.forEach(title => {
             title.classList.remove('form-title--active');
+            console.log(title);
           });
 
           titles[index].classList.add('form-title--active');
-          titles[index].textContent = titlesTexts[i];
+          titles[index].textContent = titlesTexts[index];
         }
       });
     });

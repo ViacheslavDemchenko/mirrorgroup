@@ -1,7 +1,11 @@
 .breadcrumbs {
   width: 100%;
   max-width: 144rem;
-  margin: 5.5rem 0 3rem 0;
+  margin: 4rem 0;
+
+  @media (min-width: 1024px) {
+    margin: 5.5rem 0 3rem 0;
+  }
 
   &__item {
     @include InterRegular();

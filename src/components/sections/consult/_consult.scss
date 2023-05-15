@@ -159,6 +159,9 @@
           @media (min-width: 1024px) {
             max-width: 42rem;
             margin-bottom: 0;
+          }
+
+          @media (min-width: 1440px) {
             font-size: 4rem;
           }
         }
@@ -199,8 +202,12 @@
       font-size: 1.4rem;
       line-height: 1.7rem;
 
+      @media (min-width: 1024px) {
+        padding: 2.15rem 6.723rem;
+      }
+
       @media (min-width: 1440px) {
-        padding: 2.15rem 6.73rem;
+        padding: 2.15rem 6.73rem; 
       }
     }
   }

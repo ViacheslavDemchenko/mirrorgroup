@@ -29,18 +29,26 @@ textarea {
   position: relative;
   @include InterMedium();
   color: var(--black_2);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.9rem;
   width: 20.8rem;
   text-align: left;
   display: block;
   border: 0.1rem solid var(--red_1);
 
+  @media (min-width: 1024px) {
+    font-size: 1.6rem;
+  }
+
   img {
     position: absolute;
-    right: 2rem;
+    right: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
+
+    @media (min-width: 1024px) {
+      right: 2rem;
+    }
   }
 }
 
@@ -53,6 +61,12 @@ textarea {
   z-index: -1;
 }
 .upload .input-file + .js-labelFile {
-  padding: 2rem 2rem;
+  width: 16rem;
+  padding: 1.45rem 1rem;
   cursor: pointer;
+
+  @media (min-width: 1024px) {
+    width: auto;
+    padding: 1.9rem 5.15rem 2rem 1.5rem;
+  }
 }

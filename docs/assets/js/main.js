@@ -747,9 +747,10 @@ function tabs() {
           var titlesTexts = ['Предложить участие в проекте', 'Запросить портфолио', 'Рассчитать стоимость проекта', 'Задать вопрос в WhatsApp'];
           titles.forEach(function (title) {
             title.classList.remove('form-title--active');
+            console.log(title);
           });
           titles[index].classList.add('form-title--active');
-          titles[index].textContent = titlesTexts[i];
+          titles[index].textContent = titlesTexts[index];
         }
       });
     });

@@ -1,24 +1,62 @@
 .activity {
-  padding: 7.5rem 0 15rem 0;
+  padding: 4rem 0 8rem 0;
+
+  @media (min-width: 1024px) {
+    padding: 7.5rem 0 15rem 0;
+  }
 
   h2 {
     align-self: flex-start;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     @include InterSemiBold();
-    font-size: 4rem;
+    font-size: 3.2rem;
     line-height: 120.02%;
     color: var(--black_2);
+
+    @media (min-width: 600px) {
+      max-width: 100%;
+      align-self: center;
+    }
+
+    @media (min-width: 1024px) {
+      align-self: flex-start;
+      margin-bottom: 6rem;
+      font-size: 4rem;
+    }
   }
 
   &__inner {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      align-items: initial;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-left {
+      margin-bottom: 2rem;
+
+      @media (min-width: 1024px) {
+        margin-bottom: 0;
+      }
+    }
 
     &-left,
     &-right {
-      width: 50%;
+      width: 100%;
       max-width: 56rem;
+
+      @media (min-width: 1024px) {
+        width: 48%;
+      }
+
+      @media (min-width: 1440px) {
+        width: 50%;
+      }
 
       p {
         @include InterRegular();

@@ -50,9 +50,35 @@
     }
     
     &-bottom {
+      width: 100%;
+      max-width: 34.5rem;
 
-      @media (min-width: 950px) {
-        justify-content: space-between !important;
+      @media (min-width: 375px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch !important;
+        flex-wrap: wrap;
+      }
+
+      @media (min-width: 500px) {
+        max-width: 45rem;
+      }
+
+      @media (min-width: 600px) {
+        max-width: 55rem;
+      }
+
+      @media (min-width: 650px) {
+        justify-content: space-between;
+      }
+
+      @media (min-width: 1024px) {
+        max-width: 95rem;
+      }
+
+      @media (min-width: 1440px) {
+        max-width: 100%;
       }
 
       .service {
@@ -66,6 +92,32 @@
         will-change: background, color;
         transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 
+        @media (min-width: 375px) {
+          // width: 50%;
+          width: 14rem !important;
+          margin-bottom: 3rem !important;
+        }
+
+        @media (min-width: 500px) {
+          // width: 50%;
+          width: 20rem !important;
+        }
+
+        @media (min-width: 650px) {
+          // width: 50%;
+          width: 25rem !important;
+        }
+
+        @media (min-width: 1024px) {
+          // width: 50%;
+          width: 21.3rem !important;
+        }
+
+        @media (min-width: 1440px) {
+          // width: 50%;
+          width: 26rem !important;
+        }
+
         &:hover,
         &:focus {
           background: var(--red_1);
@@ -77,24 +129,24 @@
 
         &:nth-of-type(1) {
 
-          @media (min-width: 650px) {
-            margin-right: 1rem;
-          }
+          // @media (min-width: 650px) {
+          //   margin-right: 1rem;
+          // }
 
-          @media (min-width: 950px) {
-            margin-right: 0;
-          }
+          // @media (min-width: 950px) {
+          //   margin-right: 0;
+          // }
         }
 
         &:nth-of-type(2) {
 
-          @media (min-width: 650px) {
-            margin-left: 1rem;
-          }
+          // @media (min-width: 650px) {
+          //   margin-left: 1rem;
+          // }
 
-          @media (min-width: 950px) {
-            margin-left: 0;
-          }
+          // @media (min-width: 950px) {
+          //   margin-left: 0;
+          // }
         }
 
         &:not(:last-of-type) {

@@ -161,7 +161,7 @@ h1 {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  font-size: 3.4rem;
+  font-size: 3.2rem;
   line-height: 110%;
   text-align: center;
   letter-spacing: -0.035em;
@@ -259,7 +259,7 @@ textarea::placeholder {
   font-style: normal;
   font-display: swap;
   color: var(--black_2);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.9rem;
   width: 20.8rem;
   text-align: left;
@@ -269,7 +269,7 @@ textarea::placeholder {
 
 .upload .btn-tertiary img {
   position: absolute;
-  right: 2rem;
+  right: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -284,7 +284,8 @@ textarea::placeholder {
 }
 
 .upload .input-file + .js-labelFile {
-  padding: 2rem 2rem;
+  width: 16rem;
+  padding: 1.45rem 1rem;
   cursor: pointer;
 }
 
@@ -476,30 +477,32 @@ textarea::placeholder {
 .accordion__item {
   position: relative;
   max-width: 119rem;
-  padding: 2rem 0 2rem 1rem;
+  padding: 2rem 1rem 2rem 1rem;
   border: 0.1rem solid var(--gray_4);
   border-radius: 0.5rem;
 }
 
-.accordion h3 {
-  position: relative;
-  margin: 0;
-  text-align: left;
-  padding-left: 1.5rem;
-  font-size: 1.6rem;
-  line-height: 2rem;
-  color: #000;
-}
-
-.accordion h3::after {
+.accordion__item::after {
   position: absolute;
   content: "";
   transform: translateY(-50%) rotate(1deg);
+  top: 3rem;
+  right: 3rem;
   width: 1.2rem;
   height: 1rem;
   background: url("../img/icons/arrow.svg") 100% 100%/1.2rem 1rem no-repeat;
   will-change: transform;
   transition: transform 0.5s linear;
+}
+
+.accordion h3 {
+  max-width: 20.3rem;
+  position: relative;
+  margin: 0;
+  text-align: left;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #000;
 }
 
 .accordion__item.active {
@@ -523,7 +526,7 @@ textarea::placeholder {
   opacity: 0;
   margin: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   font-size: 1.4rem;
   line-height: 1.8rem;
   color: #000;
@@ -532,12 +535,12 @@ textarea::placeholder {
 }
 
 .accordion__content img {
-  height: 25.2rem;
+  height: 19.5rem;
 }
 
 .accordion__content p {
   max-width: 53rem;
-  margin-right: 2rem;
+  margin-bottom: 10.3rem;
 }
 
 .accordion__content.active {
@@ -946,7 +949,7 @@ textarea::placeholder {
 .breadcrumbs {
   width: 100%;
   max-width: 144rem;
-  margin: 5.5rem 0 3rem 0;
+  margin: 4rem 0;
 }
 
 .breadcrumbs__item {
@@ -1128,6 +1131,11 @@ textarea::placeholder {
 
 .landscaping-services__inner-top {
   align-items: flex-start;
+}
+
+.landscaping-services__inner-bottom {
+  width: 100%;
+  max-width: 34.5rem;
 }
 
 .landscaping-services__inner-bottom .service {
@@ -1774,29 +1782,30 @@ textarea::placeholder {
   color: var(--gray_5);
 }
 
+.activity-services {
+  padding-bottom: 8rem;
+}
+
 .activity-services h1 {
   align-self: flex-start;
   margin-bottom: 6rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  font-size: 4rem;
-  line-height: 100.02%;
-  letter-spacing: -0.045em;
-  color: var(--black_2);
 }
 
 .activity-services__inner {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 8.1rem;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4.2rem;
+}
+
+.activity-services__inner-left {
+  margin-bottom: 2rem;
 }
 
 .activity-services__inner-left,
 .activity-services__inner-right {
-  width: 50%;
+  width: 100%;
 }
 
 .activity-services__inner-left p,
@@ -1812,50 +1821,60 @@ textarea::placeholder {
 
 .activity-services__inner-btns {
   width: 100%;
+  max-width: 31rem;
   margin-bottom: 6rem;
-}
-
-.activity-services__inner-btns .btn--black {
-  margin-right: 4rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .activity-services__inner-btns button {
-  padding: 2.2rem 7.49rem;
+  padding: 2.2rem 1.1rem;
 }
 
 .activity-services__inner-btns a {
-  padding: 1.97rem 6.95rem;
+  padding: 1.9rem 0.55rem;
 }
 
 .advantages {
-  padding: 10rem 0;
-  background: url("../img/advantages-bg.jpg") 100% 100%/cover no-repeat;
+  padding: 8rem 0;
+  background: url("../img/advantages-bg.jpg") top left/cover no-repeat;
 }
 
 .advantages h2 {
+  max-width: 28.2rem;
+  align-self: flex-start;
+  margin-bottom: 4rem;
   font-family: "Inter SemiBold";
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  font-size: 4rem;
+  font-size: 2.6rem;
   line-height: 120.02%;
   color: var(--white_1);
 }
 
 .advantages__inner {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .advantages__inner-text {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 8.1rem;
+}
+
+.advantages__inner-text__left {
+  margin-bottom: 4.1rem;
 }
 
 .advantages__inner-text__left,
 .advantages__inner-text__right {
-  width: 50%;
+  width: 100%;
   max-width: 55.1rem;
 }
 
@@ -1873,12 +1892,12 @@ textarea::placeholder {
 .advantages__inner-blocks {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 .advantages__inner-blocks .advantages__inner-block {
-  width: 50%;
+  width: 100%;
   max-width: 56rem;
   display: flex;
   justify-content: space-between;
@@ -1911,17 +1930,17 @@ textarea::placeholder {
 }
 
 .activity {
-  padding: 7.5rem 0 15rem 0;
+  padding: 4rem 0 8rem 0;
 }
 
 .activity h2 {
   align-self: flex-start;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   font-family: "Inter SemiBold";
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  font-size: 4rem;
+  font-size: 3.2rem;
   line-height: 120.02%;
   color: var(--black_2);
 }
@@ -1929,12 +1948,17 @@ textarea::placeholder {
 .activity__inner {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activity__inner-left {
+  margin-bottom: 2rem;
 }
 
 .activity__inner-left,
 .activity__inner-right {
-  width: 50%;
+  width: 100%;
   max-width: 56rem;
 }
 
@@ -1950,26 +1974,20 @@ textarea::placeholder {
 }
 
 .activity-form h2 {
+  max-width: 35rem;
   align-self: flex-start;
   margin-bottom: 6rem;
   font-family: "Inter SemiBold";
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  font-size: 4rem;
+  font-size: 3.2rem;
   line-height: 120.02%;
   color: var(--black_2);
 }
 
-.activity-form .consult__inner h3 {
-  margin-bottom: 5.7rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  font-size: 4rem;
-  line-height: 120.02%;
-  color: var(--black_2);
+.activity-form .consult__inner-center--last {
+  background: url("../img/icons/text-bg-white.svg") 0% 81%/132% 4rem no-repeat, var(--white_2);
 }
 
 .activity-form .consult__inner-center__form {
@@ -2001,12 +2019,18 @@ textarea::placeholder {
 .activity-form .consult__inner-center__form-bottom {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+}
+
+.activity-form .consult__inner-center__form-bottom a {
+  margin-bottom: 2rem;
+  margin-right: 0;
 }
 
 .activity-form .consult__inner-center__form-bottom .whatsapp {
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -2077,6 +2101,19 @@ textarea::placeholder {
     font-size: 1.6rem;
   }
 
+  .landscaping-services__inner-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch !important;
+    flex-wrap: wrap;
+  }
+
+  .landscaping-services__inner-bottom .service {
+    width: 14rem !important;
+    margin-bottom: 3rem !important;
+  }
+
   .landscaping-services__inner-bottom .service:not(:last-of-type) {
     margin-bottom: 4rem;
   }
@@ -2101,16 +2138,32 @@ textarea::placeholder {
   .geography__inner-btn {
     width: 30rem;
   }
+
+  .activity-services__inner-btns button {
+    padding: 2.2rem 1.5rem;
+  }
+
+  .activity-services__inner-btns a {
+    padding: 1.9rem 0.91rem;
+  }
 }
 
 @media (min-width: 500px) {
   .accordion__item {
-    padding: 2rem 0 2rem 3rem;
+    padding: 2rem 1.5rem;
   }
 
-  .accordion h3::after {
+  .accordion__item::after {
     width: 2.7rem;
     height: 2.7rem;
+  }
+
+  .landscaping-services__inner-bottom {
+    max-width: 45rem;
+  }
+
+  .landscaping-services__inner-bottom .service {
+    width: 20rem !important;
   }
 
   .goal__inner-img {
@@ -2316,6 +2369,14 @@ textarea::placeholder {
   .consult__form {
     margin: 0 auto;
   }
+
+  .activity-form .consult__inner-center--last {
+    background: url("../img/icons/text-bg-white.svg") 0% 81%/132% 5rem no-repeat, var(--white_2);
+  }
+
+  .activity-form .consult__inner-center__form {
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 550px) {
@@ -2331,6 +2392,10 @@ textarea::placeholder {
     justify-content: space-between;
   }
 
+  .landscaping-services__inner-bottom {
+    max-width: 55rem;
+  }
+
   .geography__inner-text {
     margin-bottom: 42rem;
   }
@@ -2339,6 +2404,21 @@ textarea::placeholder {
     flex-direction: row;
     align-items: initial;
     justify-content: space-between;
+  }
+
+  .advantages h2 {
+    max-width: 100%;
+    align-self: center;
+  }
+
+  .activity h2 {
+    max-width: 100%;
+    align-self: center;
+  }
+
+  .activity-form h2 {
+    max-width: 100%;
+    align-self: center;
   }
 }
 
@@ -2351,12 +2431,12 @@ textarea::placeholder {
     align-items: flex-start;
   }
 
-  .landscaping-services__inner-bottom .service:nth-of-type(1) {
-    margin-right: 1rem;
+  .landscaping-services__inner-bottom {
+    justify-content: space-between;
   }
 
-  .landscaping-services__inner-bottom .service:nth-of-type(2) {
-    margin-left: 1rem;
+  .landscaping-services__inner-bottom .service {
+    width: 25rem !important;
   }
 
   .goal__inner-img {
@@ -2381,6 +2461,10 @@ textarea::placeholder {
 
   .consult__inner-center__text img {
     bottom: -18rem;
+  }
+
+  .activity-form .consult__inner-center--last {
+    background: url("../img/icons/text-bg-white.svg") 0% 81%/132% 7rem no-repeat, var(--white_2);
   }
 }
 
@@ -2579,19 +2663,9 @@ textarea::placeholder {
   .consult__inner-center__text img {
     bottom: -17.7rem;
   }
-}
 
-@media (min-width: 950px) {
-  .landscaping-services__inner-bottom {
-    justify-content: space-between !important;
-  }
-
-  .landscaping-services__inner-bottom .service:nth-of-type(1) {
-    margin-right: 0;
-  }
-
-  .landscaping-services__inner-bottom .service:nth-of-type(2) {
-    margin-left: 0;
+  .activity-form .consult__inner-center--last {
+    background: url("../img/icons/text-bg-white.svg") 0% 81%/132% 8rem no-repeat, var(--white_2);
   }
 }
 
@@ -2606,6 +2680,19 @@ textarea::placeholder {
 
   h2 {
     font-size: 4rem;
+  }
+
+  .upload .btn-tertiary {
+    font-size: 1.6rem;
+  }
+
+  .upload .btn-tertiary img {
+    right: 2rem;
+  }
+
+  .upload .input-file + .js-labelFile {
+    width: auto;
+    padding: 1.9rem 5.15rem 2rem 1.5rem;
   }
 
   .header__inner-top {
@@ -2654,18 +2741,25 @@ textarea::placeholder {
   }
 
   .accordion h3 {
-    padding-left: 0;
+    max-width: 100%;
     font-size: 2.4rem;
     line-height: 2.8rem;
   }
 
-  .accordion h3::after {
-    right: 0;
-  }
-
   .accordion__content {
+    flex-direction: row;
+    justify-content: space-between;
     font-size: 2.2rem;
     line-height: 2.6rem;
+  }
+
+  .accordion__content img {
+    height: 25.2rem;
+  }
+
+  .accordion__content p {
+    margin-right: 2rem;
+    margin-bottom: 0;
   }
 
   .cmn-toggle-switch {
@@ -2762,6 +2856,10 @@ textarea::placeholder {
     top: 2.6rem;
   }
 
+  .breadcrumbs {
+    margin: 5.5rem 0 3rem 0;
+  }
+
   .landscaping {
     padding: 4.3rem 0 26.5rem 0;
   }
@@ -2851,6 +2949,14 @@ textarea::placeholder {
 
   .landscaping-services__inner-top {
     align-items: center;
+  }
+
+  .landscaping-services__inner-bottom {
+    max-width: 95rem;
+  }
+
+  .landscaping-services__inner-bottom .service {
+    width: 21.3rem !important;
   }
 
   .landscaping-services__inner-bottom .service:not(:last-of-type) {
@@ -3237,15 +3343,59 @@ textarea::placeholder {
   .consult__inner-center__text h2 {
     max-width: 42rem;
     margin-bottom: 0;
-    font-size: 4rem;
   }
 
   .consult__inner-center__text img {
     bottom: -14.7rem;
   }
 
+  .consult__inner-btn {
+    padding: 2.15rem 6.723rem;
+  }
+
   .consult__form {
     padding: 2.3rem 2rem 1.8rem 2rem;
+  }
+
+  .activity-services {
+    padding-bottom: 11rem;
+  }
+
+  .activity-services h1 {
+    text-align: left;
+  }
+
+  .activity-services__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: initial;
+    margin-bottom: 8.1rem;
+  }
+
+  .activity-services__inner-left {
+    margin-bottom: 0;
+  }
+
+  .activity-services__inner-left,
+  .activity-services__inner-right {
+    width: 50%;
+  }
+
+  .activity-services__inner-btns {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+
+  .activity-services__inner-btns .btn--black {
+    margin-right: 4rem;
+  }
+
+  .activity-services__inner-btns button {
+    padding: 2.2rem 7.49rem;
+  }
+
+  .activity-services__inner-btns a {
+    padding: 1.97rem 6.95rem;
   }
 
   .activity-services .service--small h3 {
@@ -3258,8 +3408,11 @@ textarea::placeholder {
   }
 
   .activity-services .landscaping-services__inner-bottom {
-    margin-bottom: 11rem;
     align-items: stretch;
+  }
+
+  .advantages {
+    padding: 10rem 0;
   }
 
   .advantages h2 {
@@ -3267,11 +3420,96 @@ textarea::placeholder {
     margin-bottom: 6rem;
     font-size: 4rem;
   }
+
+  .advantages__inner-text {
+    flex-direction: row;
+    align-items: initial;
+    justify-content: space-between;
+  }
+
+  .advantages__inner-text__left {
+    margin-bottom: 0;
+  }
+
+  .advantages__inner-text__left,
+  .advantages__inner-text__right {
+    width: 48%;
+  }
+
+  .advantages__inner-blocks {
+    flex-direction: row;
+    align-items: initial;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .advantages__inner-blocks .advantages__inner-block {
+    width: 48%;
+  }
+
+  .activity {
+    padding: 7.5rem 0 15rem 0;
+  }
+
+  .activity h2 {
+    align-self: flex-start;
+    margin-bottom: 6rem;
+    font-size: 4rem;
+  }
+
+  .activity__inner {
+    align-items: initial;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .activity__inner-left {
+    margin-bottom: 0;
+  }
+
+  .activity__inner-left,
+  .activity__inner-right {
+    width: 48%;
+  }
+
+  .activity-form h2 {
+    align-self: flex-start;
+    margin-bottom: 6rem;
+    font-size: 4rem;
+  }
+
+  .activity-form .consult__inner-center--last {
+    background: url("../img/icons/text-bg-white.svg") 5rem 22rem/73% 8rem no-repeat, var(--white_2);
+  }
+
+  .activity-form .consult__inner-center__form-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .activity-form .consult__inner-center__form-bottom a {
+    margin-bottom: 0;
+  }
+
+  .activity-form .form-title {
+    margin-bottom: 5.7rem;
+    font-family: "Inter SemiBold";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    font-size: 4rem;
+    line-height: 120.02%;
+    color: var(--black_2);
+  }
 }
 
 @media (min-width: 1200px) {
   .geography__inner-text p {
     max-width: 100%;
+  }
+
+  .activity-form .consult__inner-center--last {
+    background: url("../img/icons/text-bg-white.svg") 5rem 19rem/auto no-repeat, var(--white_2) !important;
   }
 }
 
@@ -3285,6 +3523,14 @@ textarea::placeholder {
 
   .modal {
     max-width: 83.3rem;
+  }
+
+  .landscaping-services__inner-bottom {
+    max-width: 100%;
+  }
+
+  .landscaping-services__inner-bottom .service {
+    width: 26rem !important;
   }
 
   .landscaping-services__inner-bottom .service {
@@ -3324,12 +3570,30 @@ textarea::placeholder {
     background: url("../img/icons/text-bg.svg") 5rem 20rem/auto no-repeat, var(--white_2);
   }
 
+  .consult__inner-center__text h2 {
+    font-size: 4rem;
+  }
+
   .consult__inner-btn {
     padding: 2.15rem 6.73rem;
   }
 
-  .activity-form .consult__inner-center--last {
-    background: url("../img/icons/text-bg-white.svg") 5rem 18rem/auto no-repeat, var(--white_2) !important;
+  .activity-services h1 {
+    font-size: 4rem;
+  }
+
+  .advantages__inner-text__left,
+  .advantages__inner-text__right {
+    width: 50%;
+  }
+
+  .advantages__inner-blocks .advantages__inner-block {
+    width: 50%;
+  }
+
+  .activity__inner-left,
+  .activity__inner-right {
+    width: 50%;
   }
 }
 
