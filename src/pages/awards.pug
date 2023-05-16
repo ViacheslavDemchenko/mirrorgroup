@@ -1,0 +1,12 @@
+extends ./../layouts/main
+
+block variables
+  - let pageTitle = 'Награды и премии';
+
+block content
+  .wrapper
+    include ./../components/sections/header/header.pug
+    main
+      include ./../components/sections/awards-top/awards-top.pug
+      include ./../components/sections/awards-center/awards-center.pug
+      include ./../components/sections/footer/footer.pug

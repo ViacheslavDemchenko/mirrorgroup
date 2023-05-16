@@ -11,9 +11,13 @@
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 
   @media (min-width: 1024px) {
-    width: 36rem;
+    width: 30rem;
     justify-content: flex-start;
     margin-bottom: 8rem;
+  }
+
+  @media (min-width: 1440px) {
+    width: 36rem;
   }
 
   &:not(:last-of-type) {

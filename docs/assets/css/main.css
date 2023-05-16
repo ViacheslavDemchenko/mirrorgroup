@@ -2200,7 +2200,7 @@ textarea::placeholder {
 .blog-center__inner-tabs .blog-center__inner-tab {
   width: 48%;
   max-width: 13rem;
-  padding: 1.7rem 2.33rem;
+  padding: 1.6rem 2.33rem;
   margin-bottom: 2rem;
   color: var(--black_1);
   background: var(--white_1);
@@ -2222,6 +2222,12 @@ textarea::placeholder {
 
 .blog-center__inner-tabs .blog-center__inner-tab__news {
   width: 9.2rem;
+}
+
+.blog-center__inner-news .blog-center__inner-tabs .blog-center__inner-tab:nth-child(1),
+.blog-center__inner-news .blog-center__inner-tabs .blog-center__inner-tab:nth-child(2) {
+  width: 48%;
+  max-width: 14.1rem;
 }
 
 .articles__inner {
@@ -2641,6 +2647,11 @@ textarea::placeholder {
     width: 10rem;
   }
 
+  .blog-center__inner-news .blog-center__inner-tabs .blog-center__inner-tab:nth-child(1),
+  .blog-center__inner-news .blog-center__inner-tabs .blog-center__inner-tab:nth-child(2) {
+    width: 10rem;
+  }
+
   .articles__inner {
     flex-direction: row;
     justify-content: space-between;
@@ -3041,7 +3052,7 @@ textarea::placeholder {
   }
 
   .blog-article {
-    width: 36rem;
+    width: 30rem;
     justify-content: flex-start;
     margin-bottom: 8rem;
   }
@@ -3742,6 +3753,10 @@ textarea::placeholder {
 
   .modal {
     max-width: 83.3rem;
+  }
+
+  .blog-article {
+    width: 36rem;
   }
 
   .landscaping-services__inner-bottom {
