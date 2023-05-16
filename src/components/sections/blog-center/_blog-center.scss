@@ -61,6 +61,37 @@
             width: 10rem;
           }
         }
+
+        &__awards {
+          width: 9.2rem;
+          padding: 1.082rem 1rem;
+          margin-bottom: 2rem !important;
+          @include InterSemiBold();
+          font-size: 2.2rem;
+          line-height: 120%;
+          color: var(--black_2);
+          background: var(--white_1);
+
+          @media (min-width: 1024px) {
+            width: 16rem;
+            padding: 1rem 1rem 1.8rem 1rem;
+            border: none;
+            font-size: 2rem;
+          }
+
+          &:hover,
+          &:focus {
+            color: var(--black_2);
+            background: var(--white_1);
+            // color: var(--red_1);
+            // background: var(--white_1);
+
+            @media (min-width: 1024px) {
+              border: none;
+            }
+          }
+
+        }
       }
     }
 
@@ -82,7 +113,77 @@
         }
       }
     }
+
+    &-awards {
+
+      .blog-center__inner-tabs {
+        margin: 0 0 6rem 0;
+
+        @media (min-width: 650px) {
+          justify-content: flex-start;
+        }
+
+        @media (min-width: 1024px) {
+          justify-content: space-between;
+          margin: 0;
+        }
+
+
+        .blog-center__inner-tab {
+          margin-bottom: 0;
+          margin-right: 0;
+
+          @media (min-width: 650px) {
+            margin-right: 2rem;
+          }
+
+          @media (min-width: 1024px) {
+            margin-right: 0;
+            margin-bottom: 0 !important;
+          }
+
+          @media (min-width: 1440px) {
+            margin-right: 2rem;
+          }
+
+          &--active {
+            position: relative;
+            color: var(--red_1);
+
+            @media (min-width: 1024px) {
+              &::after {
+                position: absolute;
+                content: "";
+                height: 0.4rem;
+                width: 100%;
+                bottom: -0.3rem;
+                left: 0;
+                border-radius: 0.5rem;
+                border-bottom: 0.4rem solid var(--red_1);
+              }
+            }
+
+          }
+
+        }
+      }
+    }
   }
+
+  .line {
+    display: none;
+
+    @media (min-width: 1024px) {
+      width: 100%;
+      display: block;
+      height: 0.4rem;
+      background: var(--gray_3);
+      border-radius: 0.5rem;
+      margin-bottom: 6rem;
+    }
+
+  }
+
 }
 
 .articles {

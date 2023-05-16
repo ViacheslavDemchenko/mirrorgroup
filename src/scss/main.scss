@@ -41,6 +41,8 @@
 @import "./../components/bem-blocks/modal/_modal"; // Модалки
 @import "./../components/bem-blocks/breadcrumbs/_breadcrumbs"; // Хлебные крошки
 @import "./../components/bem-blocks/blog-card/_blog-card"; // Карточка страниц Статьи и Публикации в СМИ
+@import "./../components/bem-blocks/awards-card/_awards-card"; // Блок страницы Наши награды и премии
+
 
 // Секции
 @import "./../components/sections/landscaping/_landscaping"; // Благоустройство общественных пространств
@@ -60,3 +62,4 @@
 @import "./../components/sections/activity-areas/_activity-areas"; // Страница Деятельность секция Направления деятельности
 @import "./../components/sections/blog-top/_blog-top"; // Верхняя секция страниц Статьи и Публикации в СМИ
 @import "./../components/sections/blog-center/_blog-center"; // Основная секция страниц Статьи и Публикации в СМИ
+@import "./../components/sections/awards-center/_awards-center"; // Секция под табами (годами) на странице Наши награды и премии
