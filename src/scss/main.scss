@@ -40,6 +40,7 @@
 @import "./../components/bem-blocks/phone/_phone"; // Телефон
 @import "./../components/bem-blocks/modal/_modal"; // Модалки
 @import "./../components/bem-blocks/breadcrumbs/_breadcrumbs"; // Хлебные крошки
+@import "./../components/bem-blocks/blog-card/_blog-card"; // Карточка страниц Статьи и Публикации в СМИ
 
 // Секции
 @import "./../components/sections/landscaping/_landscaping"; // Благоустройство общественных пространств
@@ -50,8 +51,12 @@
 @import "./../components/sections/geography/_geography"; // География проектов
 @import "./../components/sections/consult/_consult"; // Секция с формой на главной
 
+
+
 @import "./../components/sections/activity-services/_activity-services"; // Страница Деятельность секция Услуги по благоустройству городских территорий
 @import "./../components/sections/advantages/_advantages"; // Страница Деятельность секция Преимущества Mirror Group 
 @import "./../components/sections/activity/_activity"; // Страница Деятельность секция Деятельность
 @import "./../components/sections/activity-form/_activity-form"; // Страница Деятельность секция Форма
 @import "./../components/sections/activity-areas/_activity-areas"; // Страница Деятельность секция Направления деятельности
+@import "./../components/sections/blog-top/_blog-top"; // Верхняя секция страниц Статьи и Публикации в СМИ
+@import "./../components/sections/blog-center/_blog-center"; // Основная секция страниц Статьи и Публикации в СМИ

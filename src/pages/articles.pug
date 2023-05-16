@@ -1,0 +1,12 @@
+extends ./../layouts/main
+
+block variables
+  - let pageTitle = 'Статьи';
+
+block content
+  .wrapper
+    include ./../components/sections/header/header.pug
+    main
+      include ./../components/sections/blog-top/blog-top.pug
+      include ./../components/sections/blog-center/blog-center.pug
+      include ./../components/sections/footer/footer.pug

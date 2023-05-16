@@ -1,0 +1,12 @@
+extends ./../layouts/main
+
+block variables
+  - let pageTitle = 'Публикации в СМИ';
+
+block content
+  .wrapper
+    include ./../components/sections/header/header.pug
+    main
+      include ./../components/sections/news-top/news-top.pug
+      include ./../components/sections/news-center/news-center.pug
+      include ./../components/sections/footer/footer.pug
