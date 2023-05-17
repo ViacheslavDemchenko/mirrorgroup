@@ -2,18 +2,18 @@
   color: var(--red_1);
 }
 
-h1 {
-  @include InterBold();
-  font-size: 3.2rem;
-  line-height: 110%;
-  text-align: center;
-  letter-spacing: -0.035em;
-  color: var(--black_1);
+// h1 {
+//   @include InterBold();
+//   font-size: 3.2rem;
+//   line-height: 110%;
+//   text-align: center;
+//   letter-spacing: -0.035em;
+//   color: var(--black_1);
 
-  @media (min-width: 1024px) {
-    font-size: 6.8rem;
-  }
-}
+//   @media (min-width: 1024px) {
+//     font-size: 6.8rem;
+//   }
+// }
 
 h2 {
   @include InterSemiBold();

@@ -354,7 +354,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mobileMenu */ "./src/js/modules/mobileMenu.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
-/* harmony import */ var _modules_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/data */ "./src/js/modules/data.js");
+/* harmony import */ var _modules_tabs_blog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/tabs-blog */ "./src/js/modules/tabs-blog.js");
+/* harmony import */ var _modules_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/data */ "./src/js/modules/data.js");
 __webpack_require__(/*! polyfill-nodelist-foreach */ "./node_modules/polyfill-nodelist-foreach/index.js"); // Полифил для поддержки метода forEach в IE11+ и Safari9
 __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // Полифил для поддержки IE11+ и старыми браузерами использования SVG через use 
 
@@ -364,16 +365,18 @@ __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // По
 // import slider from './modules/slider'; // Слайдер
 // import location from './modules/location'; // Карта на главной
  // Табы с формами на главной
+ // Табы страниц блога
 // import strRun from './modules/strRun'; // Бегущая строка кнопка в header
 
 
 // location();
 Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_3__["default"])();
-Object(_modules_data__WEBPACK_IMPORTED_MODULE_4__["default"])();
+Object(_modules_data__WEBPACK_IMPORTED_MODULE_5__["default"])();
 // strRun();
 Object(_modules_accordion_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
 Object(_modules_mobileMenu__WEBPACK_IMPORTED_MODULE_1__["default"])();
 Object(_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])();
+Object(_modules_tabs_blog__WEBPACK_IMPORTED_MODULE_4__["default"])();
 // slider();
 
 /***/ }),
@@ -700,6 +703,42 @@ function modal() {
   //   // Remove no-scroll class from the body element
   //   body.classList.remove('no-scroll');
   // });
+}
+
+/***/ }),
+
+/***/ "./src/js/modules/tabs-blog.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/tabs-blog.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tabsBlog; });
+function tabsBlog() {
+  if (document.querySelector('.blog-center')) {
+    var tabButtons = document.querySelectorAll('.blog-center__inner-tab');
+    var tabContents = document.querySelectorAll('.tab-content');
+
+    // Add click event listener to each tab button
+    tabButtons.forEach(function (button, index) {
+      button.addEventListener('click', function () {
+        // Remove active class from all tab buttons and contents
+        tabButtons.forEach(function (btn) {
+          return btn.classList.remove('blog-center__inner-tab--active');
+        });
+        tabContents.forEach(function (content) {
+          return content.classList.remove('tab-content--active');
+        });
+
+        // Add active class to the clicked tab button and corresponding content
+        button.classList.add('blog-center__inner-tab--active');
+        tabContents[index].classList.add('tab-content--active');
+      });
+    });
+  }
 }
 
 /***/ }),

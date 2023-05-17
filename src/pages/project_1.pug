@@ -1,0 +1,16 @@
+extends ./../layouts/main
+
+block variables
+  - let pageTitle = 'Проект';
+
+block content
+  .wrapper
+    include ./../components/sections/header/header.pug
+    main
+      include ./../components/sections/project-top/project-top.pug
+      include ./../components/sections/project-info/project-info.pug
+      include ./../components/sections/project-desc/project-desc.pug
+      include ./../components/sections/project-history/project-history.pug
+      include ./../components/sections/project-visualization/project-visualization.pug
+      //- include ./../components/sections/other-projects/other-projects.pug
+      include ./../components/sections/footer/footer.pug
