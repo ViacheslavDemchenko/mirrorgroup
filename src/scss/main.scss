@@ -23,7 +23,7 @@
 @import "./../scss/global/sections";
 
 // Плагины
-// @import "./../scss/libs/swiper-bundle.min"; // Слайдер
+@import "./../scss/libs/swiper-bundle.min"; // Слайдер
 
 // Хедер
 @import "./../components/sections/header/_header";
@@ -69,3 +69,8 @@
 @import "./../components/sections/project-history/_project-history"; // Секция История места страницы Проект
 @import "./../components/sections/project-visualization/_project-visualization"; // Секция визуализация проекта страницы Проект
 @import "./../components/sections/other-projects/_other-projects"; // Секция Другие проекты страницы Проект
+@import "./../components/sections/project-2-top/_project-2-top"; // Первая секция страницы Проект-2
+@import "./../components/sections/project-2-info/_project-2-info"; //  Блок с фоновой картинкой страницы Проект-2
+@import "./../components/sections/project-2-desc/_project-2-desc"; // Секция Описание проекта страницы Проект-2
+@import "./../components/sections/project-offers/_project-offers"; // Секция Проектные предложения страницы Проект-2
+@import "./../components/sections/fragments-plan/_fragments-plan"; // Секция Фрагменты концептуального генерального плана страницы Проект-2

@@ -4,7 +4,7 @@ require('svgxuse'); // Полифил для поддержки IE11+ и ста�
 import accordion from './modules/accordion.js'; // Аккордион
 import mobileMenu from './modules/mobileMenu'; // Мобильное меню
 import modal from './modules/modal'; // Модалки
-// import slider from './modules/slider'; // Слайдер
+import slider from './modules/slider'; // Слайдер
 // import location from './modules/location'; // Карта на главной
 import tabs from './modules/tabs'; // Табы с формами на главной
 import tabsBlog from './modules/tabs-blog'; // Табы страниц блога
@@ -19,4 +19,4 @@ accordion();
 mobileMenu();
 modal();
 tabsBlog();
-// slider();
+slider();
