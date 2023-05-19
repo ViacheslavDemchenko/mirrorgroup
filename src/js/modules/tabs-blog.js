@@ -1,19 +1,33 @@
 export default function tabsBlog() {
 
-  if (document.querySelector('.blog-center')) {
-    const tabButtons = document.querySelectorAll('.blog-center__inner-tab');
-    const tabContents = document.querySelectorAll('.tab-content');
+  if (document.querySelector('.tabs')) {
+    // Get all tab elements
+    const tabs = document.querySelectorAll('.tab');
 
-    // Add click event listener to each tab button
-    tabButtons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-        // Remove active class from all tab buttons and contents
-        tabButtons.forEach(btn => btn.classList.remove('blog-center__inner-tab--active'));
-        tabContents.forEach(content => content.classList.remove('tab-content--active'));
+    // Get all consult__inner-center elements
+    const blocks = document.querySelectorAll('.tab-content');
 
-        // Add active class to the clicked tab button and corresponding content
-        button.classList.add('blog-center__inner-tab--active');
-        tabContents[index].classList.add('tab-content--active');
+
+    // Add click event listener to each tab
+    tabs.forEach((tab, index) => {
+
+      tab.addEventListener('click', () => {
+        // Remove tab--active class from all tabs
+        tabs.forEach((tab) => {
+          tab.classList.remove('tab--active');
+        });
+
+        // Remove consult__inner-center--active class from all blocks
+        blocks.forEach((block, i) => {
+          block.classList.remove('tab-content--active');
+        });
+
+        // Add tab--active class to the clicked tab
+        tab.classList.add('tab--active');
+
+        // Add consult__inner-center--active class to the corresponding block
+        blocks[index].classList.add('tab-content--active');
+
       });
     });
     

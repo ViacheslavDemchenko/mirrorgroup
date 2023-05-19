@@ -42,7 +42,7 @@
 @import "./../components/bem-blocks/breadcrumbs/_breadcrumbs"; // Хлебные крошки
 @import "./../components/bem-blocks/blog-card/_blog-card"; // Карточка страниц Статьи и Публикации в СМИ
 @import "./../components/bem-blocks/awards-card/_awards-card"; // Блок страницы Наши награды и премии
-
+@import "./../components/bem-blocks/tabs/_tabs"; // Табы
 
 // Секции
 @import "./../components/sections/landscaping/_landscaping"; // Благоустройство общественных пространств
@@ -74,3 +74,9 @@
 @import "./../components/sections/project-2-desc/_project-2-desc"; // Секция Описание проекта страницы Проект-2
 @import "./../components/sections/project-offers/_project-offers"; // Секция Проектные предложения страницы Проект-2
 @import "./../components/sections/fragments-plan/_fragments-plan"; // Секция Фрагменты концептуального генерального плана страницы Проект-2
+@import "./../components/sections/services-top/_services-top"; // Первая секция страницы Услуги
+@import "./../components/sections/services-img/_services-img"; // Секция с картинкой страницы Услуги 
+@import "./../components/sections/services-stages/_services-stages"; // Секция этапа анализа страницы Услуги 
+@import "./../components/sections/services-analysis/_services-analysis"; // Секция анализа страницы Услуги
+@import "./../components/sections/services-form/_services-form"; // Секция формы страницы Услуги
+@import "./../components/sections/services-documentation/_services-documentation"; // Секция проектной документации страницы Услуги

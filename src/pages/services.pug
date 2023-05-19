@@ -1,0 +1,16 @@
+extends ./../layouts/main
+
+block variables
+  - let pageTitle = 'Услуги';
+
+block content
+  .wrapper
+    include ./../components/sections/header/header.pug
+    main
+      include ./../components/sections/services-top/services-top.pug
+      include ./../components/sections/services-img/services-img.pug
+      include ./../components/sections/services-stages/services-stages.pug
+      include ./../components/sections/services-analysis/services-analysis.pug
+      include ./../components/sections/services-form/services-form.pug
+      include ./../components/sections/services-documentation/services-documentation.pug
+      include ./../components/sections/footer/footer.pug

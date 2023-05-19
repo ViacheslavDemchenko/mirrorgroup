@@ -1,7 +1,7 @@
 input,
 textarea {
   width: 100%;
-  padding: 2.1rem 2.4rem 2.1rem 2rem;
+  padding: 1.55rem 2.4rem 1.55rem 2rem;
   margin-bottom: 2rem;
   @include InterRegular();
   font-size: 1.4rem;
@@ -10,6 +10,10 @@ textarea {
   color: var(--gray_4);
   border: 0.1rem solid var(--white_3);
   border-radius: 0.5rem;
+
+  @media (min-width: 1024px) {
+    padding: 2.1rem 2.4rem 2.1rem 2rem;
+  }
 
   &::placeholder {
     @include InterRegular();

@@ -24,6 +24,13 @@
     margin-bottom: 4rem;
   }
 
+  &:last-of-type {
+
+    @media (min-width: 1024px) {
+      margin-bottom: 4rem;
+    }
+  }
+
   &:hover,
   &:focus {
     background: var(--red_1);
@@ -31,6 +38,10 @@
     h3,
     p {
       color: var(--white_1);
+    }
+
+    img {
+      transform: scale(1.2);
     }
   }
 
@@ -59,9 +70,9 @@
     will-change: transform;
     transition: transform 0.3s ease-in-out;
     
-    &:hover,
-    &:focus {
-      transform: scale(1.2);
-    }
+    // &:hover,
+    // &:focus {
+    //   transform: scale(1.2);
+    // }
   }
 }

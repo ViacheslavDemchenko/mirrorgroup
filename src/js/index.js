@@ -10,11 +10,15 @@ import tabs from './modules/tabs'; // Табы с формами на главн
 import tabsBlog from './modules/tabs-blog'; // Табы страниц блога
 // import strRun from './modules/strRun'; // Бегущая строка кнопка в header
 import data from './modules/data'; 
+import stages from './modules/stages'; 
+import tabsVisualization from './modules/tabs-visualization'; 
 
 // location();
 tabs();
 data();
 // strRun();
+tabsVisualization();
+stages();
 accordion();
 mobileMenu();
 modal();

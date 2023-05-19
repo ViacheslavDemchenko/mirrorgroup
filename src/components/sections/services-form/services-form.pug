@@ -1,0 +1,18 @@
+section.services-form
+  .container 
+    .services-form__inner
+      .services-form__inner-left
+        h2 #[span.red Заказать] градостроительный аудит
+        p Стоимость рассчитывается из трёх ключевых параметров:
+        ul 
+          li Тип объекта.
+          li Площадь территории.
+          li Расположение участка.
+        p Срок проведения исследований составляет от 30 до 90 рабочих дней.
+      .consult__inner-center__form
+        form.consult__form(action="#" name="consult__form" method="post")
+          p Чтобы получить дополнительную информацию, заполните форму.
+          input(type="text" placeholder="ФИО" name="name")
+          input(type="text" placeholder="phone" name="phone")
+          input(type="text" placeholder="email" name="email")
+          button.btn.btn--red.consult__inner-btn Отправить

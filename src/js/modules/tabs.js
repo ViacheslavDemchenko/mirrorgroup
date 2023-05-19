@@ -1,7 +1,7 @@
 export default function tabs() {
 
   if (document.querySelector('.consult')) {
-    let count = 0;
+    // let count = 0;
 
     
     // Get all tab elements

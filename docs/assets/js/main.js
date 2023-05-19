@@ -357,6 +357,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
 /* harmony import */ var _modules_tabs_blog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/tabs-blog */ "./src/js/modules/tabs-blog.js");
 /* harmony import */ var _modules_data__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/data */ "./src/js/modules/data.js");
+/* harmony import */ var _modules_stages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/stages */ "./src/js/modules/stages.js");
+/* harmony import */ var _modules_tabs_visualization__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/tabs-visualization */ "./src/js/modules/tabs-visualization.js");
 __webpack_require__(/*! polyfill-nodelist-foreach */ "./node_modules/polyfill-nodelist-foreach/index.js"); // Полифил для поддержки метода forEach в IE11+ и Safari9
 __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // Полифил для поддержки IE11+ и старыми браузерами использования SVG через use 
 
@@ -370,10 +372,14 @@ __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // По
 // import strRun from './modules/strRun'; // Бегущая строка кнопка в header
 
 
+
+
 // location();
 Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_4__["default"])();
 Object(_modules_data__WEBPACK_IMPORTED_MODULE_6__["default"])();
 // strRun();
+Object(_modules_tabs_visualization__WEBPACK_IMPORTED_MODULE_8__["default"])();
+Object(_modules_stages__WEBPACK_IMPORTED_MODULE_7__["default"])();
 Object(_modules_accordion_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
 Object(_modules_mobileMenu__WEBPACK_IMPORTED_MODULE_1__["default"])();
 Object(_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])();
@@ -5030,11 +5036,11 @@ function slider() {
       slidesPerView: 3,
       loopedSlides: 1,
       autoHeight: true,
-      loop: true,
-      // navigation: {
-      //   nextEl: '.swiper-button-next--reviews',
-      //   prevEl: '.swiper-button-prev--reviews',
-      // },
+      // loop: true,
+      navigation: {
+        nextEl: '.arrow__left',
+        prevEl: '.arrow__right'
+      },
       breakpoints: {
         320: {
           slidesPerView: 1,
@@ -5063,6 +5069,100 @@ function slider() {
 
 /***/ }),
 
+/***/ "./src/js/modules/stages.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/stages.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return stages; });
+/* harmony import */ var _libs_accordion_plagin_min_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../libs/accordion-plagin.min.js */ "./src/js/libs/accordion-plagin.min.js");
+
+function stages() {
+  // const accordion = new AccordionPlagin('.accordion', '.accordion__item', '.accordion__content', 'active', 'active', {
+  //     initialActiveItem: true,
+  //     initialActiveItemIndex: 0,
+  //     anyActiveItems: false,
+  //     itemPaddingTop: 10,
+  //     itemPaddingBottom: 20  
+  // });
+
+  // accordion.accordInit(); 
+
+  // Using JavaScript
+  var cardWraps = document.getElementsByClassName("services-stages__card-wrap");
+  Array.from(cardWraps).forEach(function (cardWrap) {
+    cardWrap.addEventListener("click", function () {
+      // Remove active classes from all elements
+      Array.from(cardWraps).forEach(function (element) {
+        element.classList.remove("services-stages__card-wrap--active");
+        element.querySelector(".services-stages__card-text").classList.remove("services-stages__card-text--active");
+        element.querySelector(".services-stages__card-txt").classList.remove("services-stages__card-txt--active");
+      });
+
+      // Add active classes to the clicked element
+      cardWrap.classList.add("services-stages__card-wrap--active");
+      cardWrap.querySelector(".services-stages__card-text").classList.add("services-stages__card-text--active");
+      cardWrap.querySelector(".services-stages__card-txt").classList.add("services-stages__card-txt--active");
+    });
+  });
+  document.addEventListener("click", function (event) {
+    var target = event.target;
+    var isCardWrap = target.classList.contains("services-stages__card-wrap");
+    if (!isCardWrap) {
+      // Remove active classes from all elements
+      Array.from(cardWraps).forEach(function (element) {
+        element.classList.remove("services-stages__card-wrap--active");
+        element.querySelector(".services-stages__card-text").classList.remove("services-stages__card-text--active");
+        element.querySelector(".services-stages__card-txt").classList.remove("services-stages__card-txt--active");
+      });
+    }
+  });
+}
+
+// export default function stages() {
+//   // // Get all the blocks with the services-stages__card-wrap class
+//   // const cardWraps = document.querySelectorAll('.services-stages__card-wrap');
+
+//   // // Function to close all open blocks and remove '--active' classes
+//   // function closeAllBlocks() {
+//   //   cardWraps.forEach((wrap) => {
+//   //     wrap.classList.remove('services-stages__card-wrap--active');
+//   //     const cardText = wrap.querySelector('.services-stages__card-text');
+//   //     const cardTxt = wrap.querySelector('.services-stages__card-txt');
+//   //     if (cardText && cardTxt) {
+//   //       cardText.classList.remove('services-stages__card-text--active');
+//   //       cardTxt.classList.remove('services-stages__card-txt--active');
+//   //     }
+//   //   });
+//   // }
+
+//   // // Attach click event listeners to each block
+//   // cardWraps.forEach((cardWrap) => {
+//   //   cardWrap.addEventListener('click', () => {
+//   //     closeAllBlocks();
+
+//   //     // Activate the clicked block
+//   //     cardWrap.classList.add('services-stages__card-wrap--active');
+//   //     const clickedCardText = cardWrap.querySelector('.services-stages__card-text');
+//   //     const clickedCardTxt = cardWrap.querySelector('.services-stages__card-txt');
+//   //     if (clickedCardText && clickedCardTxt) {
+//   //       clickedCardText.classList.add('services-stages__card-text--active');
+//   //       clickedCardTxt.classList.add('services-stages__card-txt--active');
+//   //     }
+//   //   });
+//   // });
+
+//   // // Attach mouseleave event listener to the document to close all blocks when cursor is moved outside
+//   // document.addEventListener('mouseleave', closeAllBlocks);
+
+// }
+
+/***/ }),
+
 /***/ "./src/js/modules/tabs-blog.js":
 /*!*************************************!*\
   !*** ./src/js/modules/tabs-blog.js ***!
@@ -5074,24 +5174,74 @@ function slider() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tabsBlog; });
 function tabsBlog() {
-  if (document.querySelector('.blog-center')) {
-    var tabButtons = document.querySelectorAll('.blog-center__inner-tab');
-    var tabContents = document.querySelectorAll('.tab-content');
+  if (document.querySelector('.tabs')) {
+    // Get all tab elements
+    var tabs = document.querySelectorAll('.tab');
 
-    // Add click event listener to each tab button
-    tabButtons.forEach(function (button, index) {
-      button.addEventListener('click', function () {
-        // Remove active class from all tab buttons and contents
-        tabButtons.forEach(function (btn) {
-          return btn.classList.remove('blog-center__inner-tab--active');
-        });
-        tabContents.forEach(function (content) {
-          return content.classList.remove('tab-content--active');
+    // Get all consult__inner-center elements
+    var blocks = document.querySelectorAll('.tab-content');
+
+    // Add click event listener to each tab
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        // Remove tab--active class from all tabs
+        tabs.forEach(function (tab) {
+          tab.classList.remove('tab--active');
         });
 
-        // Add active class to the clicked tab button and corresponding content
-        button.classList.add('blog-center__inner-tab--active');
-        tabContents[index].classList.add('tab-content--active');
+        // Remove consult__inner-center--active class from all blocks
+        blocks.forEach(function (block, i) {
+          block.classList.remove('tab-content--active');
+        });
+
+        // Add tab--active class to the clicked tab
+        tab.classList.add('tab--active');
+
+        // Add consult__inner-center--active class to the corresponding block
+        blocks[index].classList.add('tab-content--active');
+      });
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/modules/tabs-visualization.js":
+/*!**********************************************!*\
+  !*** ./src/js/modules/tabs-visualization.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tabsVisualization; });
+function tabsVisualization() {
+  if (document.querySelector('.tabs-visualization')) {
+    // Get all tab elements
+    var tabs = document.querySelectorAll('.tab-visualization');
+
+    // Get all consult__inner-center elements
+    var blocks = document.querySelectorAll('.tab-visualization-content');
+
+    // Add click event listener to each tab
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        // Remove tab--active class from all tabs
+        tabs.forEach(function (tab) {
+          tab.classList.remove('tab-visualization--active');
+        });
+
+        // Remove consult__inner-center--active class from all blocks
+        blocks.forEach(function (block, i) {
+          block.classList.remove('tab-visualization-content--active');
+        });
+
+        // Add tab--active class to the clicked tab
+        tab.classList.add('tab-visualization--active');
+
+        // Add consult__inner-center--active class to the corresponding block
+        blocks[index].classList.add('tab-visualization-content--active');
       });
     });
   }
@@ -5111,7 +5261,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tabs; });
 function tabs() {
   if (document.querySelector('.consult')) {
-    var count = 0;
+    // let count = 0;
 
     // Get all tab elements
     var _tabs = document.querySelectorAll('.tab');
