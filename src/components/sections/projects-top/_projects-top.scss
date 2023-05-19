@@ -1,0 +1,31 @@
+.projects-top {
+  margin-bottom: 6rem;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    h1 {
+      align-self: flex-start;
+      max-width: 25rem;
+      margin-bottom: 4rem;
+
+      @media (min-width: 500px) {
+        max-width: 100%;
+      }
+    }
+
+    p {
+      width: 100%;
+      max-width: 56rem;
+    }
+  }
+}
