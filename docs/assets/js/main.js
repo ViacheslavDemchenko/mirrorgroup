@@ -359,6 +359,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_data__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/data */ "./src/js/modules/data.js");
 /* harmony import */ var _modules_stages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/stages */ "./src/js/modules/stages.js");
 /* harmony import */ var _modules_tabs_visualization__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/tabs-visualization */ "./src/js/modules/tabs-visualization.js");
+/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/services */ "./src/js/modules/services.js");
 __webpack_require__(/*! polyfill-nodelist-foreach */ "./node_modules/polyfill-nodelist-foreach/index.js"); // Полифил для поддержки метода forEach в IE11+ и Safari9
 __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // Полифил для поддержки IE11+ и старыми браузерами использования SVG через use 
 
@@ -374,10 +375,12 @@ __webpack_require__(/*! svgxuse */ "./node_modules/svgxuse/svgxuse.js"); // По
 
 
 
+
 // location();
 Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_4__["default"])();
 Object(_modules_data__WEBPACK_IMPORTED_MODULE_6__["default"])();
 // strRun();
+Object(_modules_services__WEBPACK_IMPORTED_MODULE_9__["default"])();
 Object(_modules_tabs_visualization__WEBPACK_IMPORTED_MODULE_8__["default"])();
 Object(_modules_stages__WEBPACK_IMPORTED_MODULE_7__["default"])();
 Object(_modules_accordion_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
@@ -4780,7 +4783,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return accordion; });
-/* harmony import */ var _libs_accordion_plagin_min_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../libs/accordion-plagin.min.js */ "./src/js/libs/accordion-plagin.min.js");
+// import AccordionPlagin from './../libs/accordion-plagin.min.js';
 
 function accordion() {
   // const accordion = new AccordionPlagin('.accordion', '.accordion__item', '.accordion__content', 'active', 'active', {
@@ -5011,6 +5014,76 @@ function modal() {
   //   // Remove no-scroll class from the body element
   //   body.classList.remove('no-scroll');
   // });
+}
+
+/***/ }),
+
+/***/ "./src/js/modules/services.js":
+/*!************************************!*\
+  !*** ./src/js/modules/services.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return services; });
+// import AccordionPlagin from './../libs/accordion-plagin.min.js';
+
+function services() {
+  // const accordion = new AccordionPlagin('.accordion', '.accordion__item', '.accordion__content', 'active', 'active', {
+  //     initialActiveItem: true,
+  //     initialActiveItemIndex: 0,
+  //     anyActiveItems: false,
+  //     itemPaddingTop: 10,
+  //     itemPaddingBottom: 20
+  // });
+
+  if (document.querySelectorAll('.accordion__stage')) {
+    // Get all elements with the accordion__stage class
+    var accordionStages = document.querySelectorAll('.accordion__stage');
+    var p = document.createElement('p');
+
+    // Add event listeners to each accordion__stage element
+    accordionStages.forEach(function (accordionStage) {
+      accordionStage.addEventListener('mouseenter', function () {
+        // Add click event listener to each accordion__stage element
+        accordionStages.forEach(function (accordionStage) {
+          accordionStage.addEventListener('click', function () {
+            // Get the child element with the accordion__stage-content class
+            var accordionContent = accordionStage.querySelector('.accordion__stage-content');
+
+            // Get the height of the accordion__stage-text element of the child
+            var textHeight = accordionStage.querySelector('.accordion__stage-text').clientHeight;
+            var text = accordionStage.querySelector('.accordion__stage-text').textContent;
+            p.textContent = text;
+            accordionContent.appendChild(p);
+            // console.log(text);
+
+            // Toggle the accordion__stage-content-active class
+            accordionContent.classList.toggle('accordion__stage-content--active');
+            if (accordionContent.classList.contains('accordion__stage-content--active')) {
+              // Set the height to the corresponding text height
+              accordionContent.style.height = textHeight + 30 + 'px';
+            } else {
+              // Remove the height style
+              accordionContent.style.height = null;
+            }
+          });
+        });
+        accordionStage.addEventListener('mouseleave', function () {
+          // Code to execute when cursor leaves the accordion__stage element
+          accordionStages.forEach(function (accordionStage) {
+            var accordionContent = accordionStage.querySelector('.accordion__stage-content');
+            accordionContent.classList.remove('accordion__stage-content--active');
+            accordionContent.style.height = null;
+            accordionContent.removeChild(p);
+            p.textContent = ' ';
+          });
+        });
+      });
+    });
+  }
 }
 
 /***/ }),

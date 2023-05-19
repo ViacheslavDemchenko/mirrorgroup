@@ -12,11 +12,14 @@ import tabsBlog from './modules/tabs-blog'; // Табы страниц блог�
 import data from './modules/data'; 
 import stages from './modules/stages'; 
 import tabsVisualization from './modules/tabs-visualization'; 
+import services from './modules/services'; 
+
 
 // location();
 tabs();
 data();
 // strRun();
+services();
 tabsVisualization();
 stages();
 accordion();

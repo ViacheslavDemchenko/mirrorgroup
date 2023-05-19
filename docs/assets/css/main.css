@@ -1276,18 +1276,22 @@ button.swiper-pagination-bullet {
   left: 50%;
 }
 
-.nav__header ul {
+.nav__header .menu {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.nav__header ul .nav__item:not(:last-of-type) {
+.nav__header .menu-item {
+  position: relative;
+}
+
+.nav__header .menu-item:not(:last-of-type) {
   margin-bottom: 3.1rem;
 }
 
-.nav__header ul .nav__item .nav__item-link {
+.nav__header .menu-item a {
   padding: 0.5rem;
   font-family: "Inter Regular";
   font-weight: 400;
@@ -1298,13 +1302,41 @@ button.swiper-pagination-bullet {
   color: var(--black_1);
 }
 
-.nav__header ul .nav__item .nav__item-link--active {
+.nav__header .menu-item a--active {
   color: var(--red_1);
 }
 
-.nav__header ul .nav__item .nav__item-link:hover,
-.nav__header ul .nav__item .nav__item-link:focus {
+.nav__header .menu-item a:hover,
+.nav__header .menu-item a:focus {
   color: var(--red_1);
+}
+
+.nav__header .menu-item .sub-menu {
+  padding: 1rem 0 0 2rem;
+}
+
+.nav__header .menu-item .sub-menu li a {
+  font-size: 1.4rem;
+  color: var(--black-primary);
+}
+
+.nav__header .menu-item .sub-menu li a::after,
+.nav__header .menu-item .sub-menu li a::before {
+  display: none;
+}
+
+.nav .sub-menu {
+  padding: 1rem 0 0 2rem;
+}
+
+.nav .sub-menu li a {
+  font-size: 1.4rem;
+  color: var(--black-primary);
+}
+
+.nav .sub-menu li a::after,
+.nav .sub-menu li a::before {
+  display: none;
 }
 
 .nav__footer {
@@ -1333,6 +1365,7 @@ button.swiper-pagination-bullet {
 }
 
 .nav__footer .nav__item {
+  position: relative;
   width: 50%;
   margin-bottom: 2rem;
 }
@@ -3665,47 +3698,24 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.services-stages__cards {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.accordion__stages {
   counter-reset: number 0;
 }
 
-.services-stages__cards .services-stages__card-wrap {
+.accordion__stage {
   position: relative;
-  overflow: hidden;
   counter-increment: number 1;
-  width: 36rem;
-  height: 23rem;
-  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 36rem;
+  min-height: 23px;
+  padding: 2rem 2rem 8.3rem 2rem;
   background: var(--white_2);
   border-radius: 0.5rem;
+  margin-bottom: 4rem;
   cursor: pointer;
 }
 
-.services-stages__cards .services-stages__card-wrap::before {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  transform: translateY(-50%) rotate(1deg);
-  bottom: 0;
-  right: 1.5rem;
-  width: 1.2rem;
-  height: 1rem;
-  color: #fff;
-  background: url("../img/icons/arrow.svg") 100% 100%/1.2rem 1rem no-repeat;
-  will-change: transform;
-  transition: transform 0.5s linear;
-}
-
-.services-stages__cards .services-stages__card-wrap--active {
-  height: 100%;
-  overflow: auto;
-}
-
-.services-stages__cards .services-stages__card-wrap::after {
+.accordion__stage::after {
   position: absolute;
   z-index: 10;
   top: 1.5rem;
@@ -3723,30 +3733,11 @@ button.swiper-pagination-bullet {
   font-size: 2.1rem;
   line-height: 2.5rem;
   color: var(--black_2);
-  background: var(--white_2);
   border-radius: 50%;
   will-change: color, background;
 }
 
-.services-stages__cards .services-stages__card-wrap .services-stages__car-img {
-  display: none;
-}
-
-.services-stages__cards .services-stages__card-wrap .services-stages__card-text {
-  height: 0;
-  background: var(--white_2);
-  border-radius: 0.5rem;
-}
-
-.services-stages__cards .services-stages__card-wrap .services-stages__card-text--active {
-  height: auto;
-}
-
-.services-stages__cards .services-stages__card-wrap .services-stages__card-text h3 {
-  position: absolute;
-  z-index: 10;
-  top: 2rem;
-  left: 1.5rem;
+.accordion__stage-title {
   width: 67%;
   margin-bottom: 1.5rem;
   font-family: "Inter Medium";
@@ -3757,16 +3748,9 @@ button.swiper-pagination-bullet {
   line-height: 120%;
   color: var(--black_2);
   will-change: color;
-  transition: color 0.3s ease-in-out;
 }
 
-.services-stages__cards .services-stages__card-wrap .services-stages__card-text .services-stages__card-txt {
-  position: relative;
-  position: relative;
-  transform: translateY(41%);
-  z-index: 1;
-  width: 31rem;
-  padding: 1.5rem 1rem 6rem 1.5rem;
+.accordion__stage-text {
   font-family: "Inter Regular";
   font-weight: 400;
   font-style: normal;
@@ -3776,30 +3760,39 @@ button.swiper-pagination-bullet {
   color: var(--black_1);
 }
 
-.services-stages__cards .services-stages__card-wrap .services-stages__card-text .services-stages__card-txt--active {
-  z-index: 0;
-  transform: translateY(0);
+.accordion__stage:hover,
+.accordion__stage:focus {
+  height: 22.8rem;
+  background: url("../img/stage.jpg") 100% 100%/cover no-repeat;
 }
 
-.services-stages__cards .services-stages__card-wrap:hover::before,
-.services-stages__cards .services-stages__card-wrap:focus::before {
-  z-index: 10;
-}
-
-.services-stages__cards .services-stages__card-wrap:hover::after,
-.services-stages__cards .services-stages__card-wrap:focus::after {
+.accordion__stage:hover::after,
+.accordion__stage:focus::after {
   color: var(--white_1);
   background: var(--red_1);
 }
 
-.services-stages__cards .services-stages__card-wrap:hover .services-stages__card-text h3,
-.services-stages__cards .services-stages__card-wrap:focus .services-stages__card-text h3 {
+.accordion__stage:hover .accordion__stage-title,
+.accordion__stage:focus .accordion__stage-title {
   color: var(--white_1);
 }
 
-.services-stages__cards .services-stages__card-wrap:hover .services-stages__car-img,
-.services-stages__cards .services-stages__card-wrap:focus .services-stages__car-img {
-  display: block;
+.accordion__stage:hover .accordion__stage-text,
+.accordion__stage:focus .accordion__stage-text {
+  opacity: 0;
+}
+
+.accordion__stage-content--active {
+  width: 36rem;
+  background: var(--white_2);
+  position: relative;
+  right: 2rem;
+  padding: 1rem 1rem 1rem 2rem;
+  bottom: -7.5rem;
+}
+
+.accordion__stage-content--active p {
+  width: 31rem;
 }
 
 .services-analysis {
@@ -4418,11 +4411,6 @@ button.swiper-pagination-bullet {
     background: url("../img/project-bg-md.jpg") 100% 100%/cover no-repeat;
   }
 
-  .services-stages__cards .services-stages__card-wrap::before {
-    width: 2.7rem;
-    height: 2.7rem;
-  }
-
   .projects-top__inner h1 {
     max-width: 100%;
   }
@@ -4938,12 +4926,13 @@ button.swiper-pagination-bullet {
     background: url("../img/project-bg-md.jpg") 100% 100%/cover no-repeat;
   }
 
-  .services-stages__cards {
-    width: 73.8rem;
+  .services-stages__inner {
+    width: 100%;
+    max-width: 73.8rem;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: initial;
   }
 }
 
@@ -5170,13 +5159,61 @@ button.swiper-pagination-bullet {
     padding: 2rem 0;
   }
 
-  .nav__header ul {
+  .nav__header .menu {
     justify-content: space-between;
     flex-direction: row;
   }
 
-  .nav__header ul .nav__item:not(:last-of-type) {
+  .nav__header .menu-item:not(:last-of-type) {
     margin-bottom: 0;
+  }
+
+  .nav__header .menu-item .sub-menu {
+    position: absolute;
+    z-index: -100;
+    top: 85%;
+    left: 0;
+    overflow: hidden;
+    width: max-content;
+    opacity: 0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--white_1);
+    border: 0.1rem solid var(--gray_4);
+    border-radius: 0.5rem;
+    pointer-events: none;
+    will-change: opacity, left;
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+
+  .nav__header .menu-item .sub-menu:hover::after,
+  .nav__header .menu-item .sub-menu:focus::after {
+    top: 0.8rem;
+    transform: rotate(180deg);
+  }
+
+  .nav .sub-menu {
+    position: absolute;
+    z-index: -100;
+    top: 85%;
+    left: 0;
+    overflow: hidden;
+    width: max-content;
+    opacity: 0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--white_1);
+    border: 0.1rem solid var(--gray_4);
+    border-radius: 0.5rem;
+    pointer-events: none;
+    will-change: opacity, left;
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+
+  .nav .sub-menu:hover::after,
+  .nav .sub-menu:focus::after {
+    top: 0.8rem;
+    transform: rotate(180deg);
   }
 
   .nav__footer {
@@ -6249,9 +6286,8 @@ button.swiper-pagination-bullet {
     max-width: 100%;
   }
 
-  .services-stages__cards .services-stages__card-wrap {
-    max-width: 36rem;
-    margin-bottom: 4rem;
+  .accordion__stage {
+    max-width: 34rem;
   }
 
   .services-analysis h2 {
@@ -6363,10 +6399,6 @@ button.swiper-pagination-bullet {
     max-width: 56rem;
   }
 
-  .services-stages__cards {
-    width: 110.8rem;
-  }
-
   .services-analysis__inner p {
     width: 50%;
   }
@@ -6391,10 +6423,6 @@ button.swiper-pagination-bullet {
     width: 36rem;
     font-size: 2.4rem;
     line-height: 3rem;
-  }
-
-  .services-stages__cards {
-    width: 100%;
   }
 }
 
@@ -6550,6 +6578,10 @@ button.swiper-pagination-bullet {
 
   .services-top__inner-map {
     max-width: 56rem;
+  }
+
+  .accordion__stage {
+    max-width: 36rem;
   }
 
   .services-form__inner-left h2 {

@@ -1,4 +1,4 @@
-import AccordionPlagin from './../libs/accordion-plagin.min.js';
+// import AccordionPlagin from './../libs/accordion-plagin.min.js';
 
 export default function accordion() {
     // const accordion = new AccordionPlagin('.accordion', '.accordion__item', '.accordion__content', 'active', 'active', {

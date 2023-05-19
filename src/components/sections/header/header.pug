@@ -14,23 +14,28 @@ header.header
         include ../../bem-blocks/burger/burger.pug
       .header__inner-bottom
         nav.nav.nav__header
-          ul(role="menu")
-            li(role="menuitem").nav__item
-              a(href="index.html").nav__item-link.nav__item-link--active Главная
-            li(role="menuitem").nav__item
-              a(href="#price").nav__item-link О компании
-            li(role="menuitem").nav__item
-              a(href="projects.html").nav__item-link Проекты
-            li(role="menuitem").nav__item
-              a(href="services.html").nav__item-link Услуги
-            li(role="menuitem").nav__item
-              a(href="awards.html").nav__item-link Награды и премии
-            li(role="menuitem").nav__item
-              a(href="news.html").nav__item-link Публикации в сми
-            li(role="menuitem").nav__item
-              a(href="articles.html").nav__item-link Статьи
-            li(role="menuitem").nav__item
-              a(href="#photo").nav__item-link Контакты
+          ul(role="menu").menu
+            li(role="menuitem").menu-item 
+              a(href="index.html").menu-item-link.menu-item-link--active Главная
+            li(role="menuitem").menu-item 
+              a(href="#price").menu-item-link О компании
+            li(role="menuitem").menu-item 
+              a(href="projects.html").menu-item-link Проекты
+            li(role="menuitem").menu-item 
+              a(href="services.html").menu-item-link Услуги
+              ul.sub-menu
+                li
+                  a(href="production-structure.html") Проектирование
+                li
+                  a(href="production-process.html") Строительство
+            li(role="menuitem").menu-item 
+              a(href="awards.html").menu-item-link Награды и премии
+            li(role="menuitem").menu-item 
+              a(href="news.html").menu-item-link Публикации в сми
+            li(role="menuitem").menu-item 
+              a(href="articles.html").menu-item-link Статьи
+            li(role="menuitem").menu-item 
+              a(href="#photo").menu-item-link Контакты
           .str-run.header__btn--mobile
             p.btn.header__btn 
               span Обратный звонок &ensp;
