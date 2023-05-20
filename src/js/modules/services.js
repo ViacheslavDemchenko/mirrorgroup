@@ -10,52 +10,51 @@ export default function services() {
     // });
 
   if ( document.querySelectorAll('.accordion__stage')) {
-      // Get all elements with the accordion__stage class
-      const accordionStages = document.querySelectorAll('.accordion__stage');
-      const p = document.createElement('p');
+    // Get all elements with the accordion__stage class
+    const stages = document.querySelectorAll('.accordion__stage');
 
-    // Add event listeners to each accordion__stage element
-    accordionStages.forEach(accordionStage => {
-      accordionStage.addEventListener('mouseenter', () => {
-          // Add click event listener to each accordion__stage element
-        accordionStages.forEach(accordionStage => {
-          accordionStage.addEventListener('click', () => {
-            // Get the child element with the accordion__stage-content class
-            const accordionContent = accordionStage.querySelector('.accordion__stage-content');
-
-            // Get the height of the accordion__stage-text element of the child
-            const textHeight = accordionStage.querySelector('.accordion__stage-text').clientHeight;
-            
-            const text = accordionStage.querySelector('.accordion__stage-text').textContent;
-            p.textContent = text;
-            accordionContent.appendChild(p);
-            // console.log(text);
-
-            // Toggle the accordion__stage-content-active class
-            accordionContent.classList.toggle('accordion__stage-content--active');
-
-            if (accordionContent.classList.contains('accordion__stage-content--active')) {
-              // Set the height to the corresponding text height
-              accordionContent.style.height = textHeight + 30 + 'px';
-            } else {
-              // Remove the height style
-              accordionContent.style.height = null;
-            }
-          });
-        });
-        accordionStage.addEventListener('mouseleave', () => {
-          // Code to execute when cursor leaves the accordion__stage element
-          accordionStages.forEach(accordionStage => {
-            const accordionContent = accordionStage.querySelector('.accordion__stage-content');
-            accordionContent.classList.remove('accordion__stage-content--active');
-            accordionContent.style.height = null;
-            accordionContent.removeChild(p);
-            p.textContent = ' ';
-          });
-        });
-
-      });
+    // Add event listeners to each accordion stage
+    stages.forEach(stage => {
+      stage.addEventListener('click', handleClick);
+      stage.addEventListener('mouseleave', handleMouseLeave);
     });
+
+    function handleClick(event) {
+      const stage = event.currentTarget;
+      const content = stage.querySelector('.accordion__stage-content');
+
+      // Toggle accordion__stage--active class
+      stage.classList.toggle('accordion__stage--active');
+
+      // Toggle accordion__stage-content--active class
+      if (content) {
+        content.classList.toggle('accordion__stage-content--active');
+      }
+
+      // Adjust margin-bottom of all accordion__stage elements
+      stages.forEach(stage => {
+        const contentHeight = stage.querySelector('.accordion__stage-content').clientHeight;
+        // stage.style.marginBottom = contentHeight + 'px';
+      });
+    }
+
+    function handleMouseLeave() {
+      // Remove accordion__stage--active class from all stages
+      stages.forEach(stage => {
+        stage.classList.remove('accordion__stage--active');
+      });
+
+      // Remove accordion__stage-content--active class from all contents
+      const contents = document.querySelectorAll('.accordion__stage-content');
+      contents.forEach(content => {
+        content.classList.remove('accordion__stage-content--active');
+      });
+
+      // Reset margin-bottom of all accordion__stage elements to 4rem
+      // stages.forEach(stage => {
+      //   stage.style.marginBottom = '4rem';
+      // });
+    }
 
   }
 

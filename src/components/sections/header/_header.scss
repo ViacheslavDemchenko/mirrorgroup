@@ -36,11 +36,16 @@
     position: relative;
     width: 19rem;
     height: 4.4rem;
+    margin: -1rem auto 0 auto;
     overflow: hidden;
     border: 0.1rem solid var(--red_1);
     border-radius: 5rem;
     white-space: nowrap;
     cursor: pointer;
+
+    @media (min-width: 1024px) {
+      margin: 0;
+    }
 
     p {
       display: block;

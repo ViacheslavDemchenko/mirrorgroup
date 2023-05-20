@@ -13,34 +13,35 @@ header.header
             span Обратный звонок &ensp;
         include ../../bem-blocks/burger/burger.pug
       .header__inner-bottom
-        nav.nav.nav__header
-          ul(role="menu").menu
-            li(role="menuitem").menu-item 
-              a(href="index.html").menu-item-link.menu-item-link--active Главная
-            li(role="menuitem").menu-item 
-              a(href="#price").menu-item-link О компании
-            li(role="menuitem").menu-item 
-              a(href="projects.html").menu-item-link Проекты
-            li(role="menuitem").menu-item 
-              a(href="services.html").menu-item-link Услуги
-              ul.sub-menu
-                li
-                  a(href="production-structure.html") Проектирование
-                li
-                  a(href="production-process.html") Строительство
-            li(role="menuitem").menu-item 
-              a(href="awards.html").menu-item-link Награды и премии
-            li(role="menuitem").menu-item 
-              a(href="news.html").menu-item-link Публикации в сми
-            li(role="menuitem").menu-item 
-              a(href="articles.html").menu-item-link Статьи
-            li(role="menuitem").menu-item 
-              a(href="#photo").menu-item-link Контакты
-          .str-run.header__btn--mobile
-            p.btn.header__btn 
-              span Обратный звонок &ensp;
-              span Обратный звонок &ensp;
-              span Обратный звонок &ensp;
-              span Обратный звонок &ensp;
-              span Обратный звонок &ensp;
-              span Обратный звонок &ensp;
+        .nav-wrap
+          nav.nav.nav__header
+            ul(role="menu").menu-header
+              li(role="menuitem").menu-header-item
+                a(href="index.html").menu-header-item-link.menu-header-item-link--active Главная
+              li(role="menuitem").menu-header-item  
+                a(href="#price").menu-header-item-link О компании
+              li(role="menuitem").menu-header-item  
+                a(href="projects.html").menu-header-item-link Проекты
+              li(role="menuitem").menu-header-item  
+                a(href="services.html").menu-header-item-link Услуги
+                ul.sub-menu
+                  li
+                    a(href="production-structure.html") Проектирование
+                  li
+                    a(href="production-process.html") Строительство
+              li(role="menuitem").menu-header-item  
+                a(href="awards.html").menu-header-item-link Награды и премии
+              li(role="menuitem").menu-header-item  
+                a(href="news.html").menu-header-item-link Публикации в сми
+              li(role="menuitem").menu-header-item  
+                a(href="articles.html").menu-header-item-link Статьи
+              li(role="menuitem").menu-header-item  
+                a(href="#photo").menu-header-item-link Контакты
+            .str-run.header__btn--mobile
+              p.btn.header__btn 
+                span Обратный звонок &ensp;
+                span Обратный звонок &ensp;
+                span Обратный звонок &ensp;
+                span Обратный звонок &ensp;
+                span Обратный звонок &ensp;
+                span Обратный звонок &ensp;

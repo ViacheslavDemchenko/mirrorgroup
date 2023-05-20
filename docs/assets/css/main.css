@@ -925,6 +925,7 @@ button.swiper-pagination-bullet {
   position: relative;
   width: 19rem;
   height: 4.4rem;
+  margin: -1rem auto 0 auto;
   overflow: hidden;
   border: 0.1rem solid var(--red_1);
   border-radius: 5rem;
@@ -1155,6 +1156,8 @@ button.swiper-pagination-bullet {
 }
 
 .cmn-toggle-switch {
+  position: relative;
+  z-index: 2000;
   display: block;
   margin: 0;
   padding: 0;
@@ -1255,43 +1258,69 @@ button.swiper-pagination-bullet {
   transform: rotate(-45deg);
 }
 
-.nav__header {
+.nav-wrap {
   position: absolute;
   z-index: 1000;
+  top: 7rem;
+  bottom: 0;
   left: -100%;
-  transform: translateX(-50%);
-  top: 9rem;
   width: 100%;
   height: 100vh;
-  overflow-x: auto;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 5rem;
+  padding: 3rem 0 2rem 0;
+  overflow-Y: auto;
+  overflow-X: hidden;
   background: var(--white_1);
   will-change: left;
-  transition: left 0.5s ease-in-out;
+  transition: left 0.3s ease-in-out;
 }
 
-.nav__header--active {
-  left: 50%;
+.nav-wrap--active {
+  left: 0;
 }
 
-.nav__header .menu {
+.menu-header {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.nav__header .menu-item {
-  position: relative;
+.menu-header .sub-menu {
+  padding: 1rem 0 0 2rem;
 }
 
-.nav__header .menu-item:not(:last-of-type) {
+.menu-header .sub-menu li {
+  margin-bottom: 1rem;
+}
+
+.menu-header .sub-menu li a {
+  font-size: 1.4rem;
+  color: var(--black_1);
+}
+
+.menu-header .sub-menu li a:hover,
+.menu-header .sub-menu li a:focus {
+  color: var(--red_1);
+}
+
+.menu-header .sub-menu li a::after,
+.menu-header .sub-menu li a::before {
+  display: none;
+}
+
+.menu-header-item {
+  position: relative;
   margin-bottom: 3.1rem;
 }
 
-.nav__header .menu-item a {
+.menu-header-item:hover .sub-menu,
+.menu-header-item:focus .sub-menu {
+  z-index: 10;
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.menu-header-item-link {
   padding: 0.5rem;
   font-family: "Inter Regular";
   font-weight: 400;
@@ -1302,54 +1331,22 @@ button.swiper-pagination-bullet {
   color: var(--black_1);
 }
 
-.nav__header .menu-item a--active {
+.menu-header-item-link--active {
   color: var(--red_1);
-}
-
-.nav__header .menu-item a:hover,
-.nav__header .menu-item a:focus {
-  color: var(--red_1);
-}
-
-.nav__header .menu-item .sub-menu {
-  padding: 1rem 0 0 2rem;
-}
-
-.nav__header .menu-item .sub-menu li a {
-  font-size: 1.4rem;
-  color: var(--black-primary);
-}
-
-.nav__header .menu-item .sub-menu li a::after,
-.nav__header .menu-item .sub-menu li a::before {
-  display: none;
-}
-
-.nav .sub-menu {
-  padding: 1rem 0 0 2rem;
-}
-
-.nav .sub-menu li a {
-  font-size: 1.4rem;
-  color: var(--black-primary);
-}
-
-.nav .sub-menu li a::after,
-.nav .sub-menu li a::before {
-  display: none;
 }
 
 .nav__footer {
   max-width: 34.5rem;
 }
 
-.nav__footer ul {
+.menu-footer {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 4.1rem;
 }
 
-.nav__footer ul::before {
+.menu-footer::before {
   position: absolute;
   content: "";
   width: 62.1rem;
@@ -1364,17 +1361,12 @@ button.swiper-pagination-bullet {
   pointer-events: none;
 }
 
-.nav__footer .nav__item {
-  position: relative;
+.menu-footer-item {
   width: 50%;
   margin-bottom: 2rem;
 }
 
-.nav__footer .nav__item:not(:last-of-type) {
-  margin-bottom: 3.1rem;
-}
-
-.nav__footer .nav__item .nav__item-link {
+.menu-footer-item-link {
   padding: 0.5rem;
   font-family: "Inter Regular";
   font-weight: 400;
@@ -1383,16 +1375,9 @@ button.swiper-pagination-bullet {
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--gray_6);
-  will-change: color;
-  transition: color 0.3s ease-in-out;
 }
 
-.nav__footer .nav__item .nav__item-link:hover,
-.nav__footer .nav__item .nav__item-link:focus {
-  color: var(--red_1);
-}
-
-.nav__footer .nav__item .nav__item-link--active {
+.menu-footer-item-link--active {
   color: var(--red_1);
 }
 
@@ -3698,21 +3683,48 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
+.services-stages__cards {
+  width: 100%;
+  max-width: 70rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+}
+
 .accordion__stages {
-  counter-reset: number 0;
+  counter-reset: number;
 }
 
 .accordion__stage {
   position: relative;
-  counter-increment: number 1;
   width: 100%;
+  counter-increment: number;
   max-width: 36rem;
-  min-height: 23px;
-  padding: 2rem 2rem 8.3rem 2rem;
-  background: var(--white_2);
+  padding: 2rem 2rem 4.462rem 2rem;
+  background: url("../img/stage.jpg") left top/100% 23rem no-repeat;
   border-radius: 0.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   cursor: pointer;
+}
+
+.accordion__stage--active {
+  padding: 2rem 2rem 8.462rem 2rem;
+  margin-bottom: 10rem;
+}
+
+.accordion__stage::before {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  transform: rotate(45deg);
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-style: solid;
+  border-color: var(--white_1);
+  border-width: 0 0.3rem 0.3rem 0;
 }
 
 .accordion__stage::after {
@@ -3732,12 +3744,13 @@ button.swiper-pagination-bullet {
   font-display: swap;
   font-size: 2.1rem;
   line-height: 2.5rem;
-  color: var(--black_2);
+  color: var(--white_1);
+  background: var(--red_1);
   border-radius: 50%;
   will-change: color, background;
 }
 
-.accordion__stage-title {
+.accordion__stage h3 {
   width: 67%;
   margin-bottom: 1.5rem;
   font-family: "Inter Medium";
@@ -3746,11 +3759,11 @@ button.swiper-pagination-bullet {
   font-display: swap;
   font-size: 2rem;
   line-height: 120%;
-  color: var(--black_2);
+  color: var(--white_1);
   will-change: color;
 }
 
-.accordion__stage-text {
+.accordion__stage p {
   font-family: "Inter Regular";
   font-weight: 400;
   font-style: normal;
@@ -3758,12 +3771,13 @@ button.swiper-pagination-bullet {
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
+  margin-bottom: 0;
+  opacity: 0;
 }
 
 .accordion__stage:hover,
 .accordion__stage:focus {
-  height: 22.8rem;
-  background: url("../img/stage.jpg") 100% 100%/cover no-repeat;
+  background: url("../img/stage.jpg") left top/100% 23rem no-repeat;
 }
 
 .accordion__stage:hover::after,
@@ -3772,23 +3786,49 @@ button.swiper-pagination-bullet {
   background: var(--red_1);
 }
 
-.accordion__stage:hover .accordion__stage-title,
-.accordion__stage:focus .accordion__stage-title {
+.accordion__stage:hover h3,
+.accordion__stage:focus h3 {
   color: var(--white_1);
 }
 
-.accordion__stage:hover .accordion__stage-text,
-.accordion__stage:focus .accordion__stage-text {
+.accordion__stage:hover p,
+.accordion__stage:focus p {
   opacity: 0;
 }
 
-.accordion__stage-content--active {
-  width: 36rem;
-  background: var(--white_2);
+.accordion__stage-content {
   position: relative;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.accordion__stage-content::before {
+  position: absolute;
   right: 2rem;
-  padding: 1rem 1rem 1rem 2rem;
-  bottom: -7.5rem;
+  bottom: 2rem;
+  transform: rotate(225deg);
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-style: solid;
+  border-color: var(--black_2);
+  border-width: 0 0.3rem 0.3rem 0;
+}
+
+.accordion__stage-content--active {
+  position: absolute;
+  height: 13rem;
+  bottom: -10rem;
+  background: #F5F5F5;
+  width: 100%;
+  left: 0;
+  opacity: 1;
+  overflow: auto;
+  padding: 1rem 4rem 3.8rem 2rem;
+  margin-bottom: 4rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .accordion__stage-content--active p {
@@ -4155,6 +4195,10 @@ button.swiper-pagination-bullet {
 
   .project-desc__concept-text p {
     font-size: 1.6rem;
+  }
+
+  .accordion__stage {
+    padding: 2rem 2rem 6.462rem 2rem;
   }
 
   .services-form__inner-left h2 {
@@ -4934,6 +4978,11 @@ button.swiper-pagination-bullet {
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  .services-stages__cards {
+    max-width: 75rem;
+    justify-content: space-between;
+  }
 }
 
 @media (min-width: 900px) {
@@ -5088,6 +5137,10 @@ button.swiper-pagination-bullet {
     border-bottom: 0.1rem solid var(--gray_1);
   }
 
+  .header .str-run {
+    margin: 0;
+  }
+
   .header__btn--desktop {
     display: block;
     font-size: 1.4rem;
@@ -5102,6 +5155,10 @@ button.swiper-pagination-bullet {
 
   .footer {
     padding: 8rem 0 2rem 0;
+  }
+
+  .footer__inner {
+    margin-bottom: 8.4rem;
   }
 
   .footer__inner-left .logo {
@@ -5152,80 +5209,60 @@ button.swiper-pagination-bullet {
     display: none;
   }
 
-  .nav__header {
+  .nav-wrap {
     position: static;
-    transform: translateX(0);
+    width: 100%;
     height: auto;
+    display: flex;
     padding: 2rem 0;
+    margin-left: -0.5rem;
+    overflow-Y: unset;
+    overflow-X: unset;
+    background: none;
   }
 
-  .nav__header .menu {
-    justify-content: space-between;
+  .nav__header {
+    width: 100%;
+  }
+
+  .menu-header {
     flex-direction: row;
+    justify-content: space-between;
   }
 
-  .nav__header .menu-item:not(:last-of-type) {
+  .menu-header .sub-menu {
+    position: absolute;
+    z-index: -100;
+    top: 2.5rem;
+    left: 0;
+    overflow: hidden;
+    width: max-content;
+    opacity: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: var(--white_1);
+    border: 0.1rem solid var(--gray_4);
+    border-radius: 0.5rem;
+    pointer-events: none;
+    will-change: opacity, left;
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+
+  .menu-header .sub-menu:hover::after,
+  .menu-header .sub-menu:focus::after {
+    top: 0.8rem;
+    transform: rotate(180deg);
+  }
+
+  .nav__footer {
+    max-width: 56rem;
+  }
+
+  .menu-footer {
     margin-bottom: 0;
   }
 
-  .nav__header .menu-item .sub-menu {
-    position: absolute;
-    z-index: -100;
-    top: 85%;
-    left: 0;
-    overflow: hidden;
-    width: max-content;
-    opacity: 0;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background: var(--white_1);
-    border: 0.1rem solid var(--gray_4);
-    border-radius: 0.5rem;
-    pointer-events: none;
-    will-change: opacity, left;
-    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
-  }
-
-  .nav__header .menu-item .sub-menu:hover::after,
-  .nav__header .menu-item .sub-menu:focus::after {
-    top: 0.8rem;
-    transform: rotate(180deg);
-  }
-
-  .nav .sub-menu {
-    position: absolute;
-    z-index: -100;
-    top: 85%;
-    left: 0;
-    overflow: hidden;
-    width: max-content;
-    opacity: 0;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background: var(--white_1);
-    border: 0.1rem solid var(--gray_4);
-    border-radius: 0.5rem;
-    pointer-events: none;
-    will-change: opacity, left;
-    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
-  }
-
-  .nav .sub-menu:hover::after,
-  .nav .sub-menu:focus::after {
-    top: 0.8rem;
-    transform: rotate(180deg);
-  }
-
-  .nav__footer {
-    max-width: 77rem;
-    margin-bottom: 8.4rem;
-  }
-
-  .nav__footer {
-    margin-bottom: 6.4rem;
-  }
-
-  .nav__footer ul::before {
+  .menu-footer::before {
     left: 0;
     bottom: -10rem;
     transform: rotate(0deg);
@@ -5233,14 +5270,8 @@ button.swiper-pagination-bullet {
     height: 11.3rem;
   }
 
-  .nav__footer .nav__item {
-    width: 20%;
-    margin-right: 1rem;
-    margin-bottom: 0;
-  }
-
-  .nav__footer .nav__item:not(:last-of-type) {
-    margin-bottom: 2rem;
+  .menu-footer-item {
+    width: 25%;
   }
 
   .card {
@@ -6286,8 +6317,33 @@ button.swiper-pagination-bullet {
     max-width: 100%;
   }
 
+  .services-stages__cards {
+    max-width: 100%;
+  }
+
   .accordion__stage {
     max-width: 34rem;
+    max-width: 32rem;
+    padding: 2rem 2rem 8.462rem 2rem;
+    margin-bottom: 14rem;
+    background: var(--white_2);
+  }
+
+  .accordion__stage::after {
+    color: var(--black_2);
+    background: none;
+  }
+
+  .accordion__stage h3 {
+    color: var(--black_2);
+  }
+
+  .accordion__stage p {
+    opacity: 1;
+  }
+
+  .accordion__stage-content--active {
+    bottom: -13rem;
   }
 
   .services-analysis h2 {
@@ -6399,6 +6455,10 @@ button.swiper-pagination-bullet {
     max-width: 56rem;
   }
 
+  .accordion__stage {
+    max-width: 36rem;
+  }
+
   .services-analysis__inner p {
     width: 50%;
   }
@@ -6427,7 +6487,7 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 1440px) {
-  .nav__footer ul::before {
+  .menu-footer::before {
     left: 0;
     transform: rotate(0deg);
     width: 131.7rem;
@@ -6578,10 +6638,6 @@ button.swiper-pagination-bullet {
 
   .services-top__inner-map {
     max-width: 56rem;
-  }
-
-  .accordion__stage {
-    max-width: 36rem;
   }
 
   .services-form__inner-left h2 {

@@ -6,7 +6,7 @@ export default function data() {
     const geographyInnerRightImg = document.querySelector('.geography__inner-right__img');
     const currentImg = document.querySelector('.location-desc');
 
-    console.log(currentImg.src);
+    // console.log(currentImg.src);
 
     geographyInnerRightImg.addEventListener('mouseover', () => {
       

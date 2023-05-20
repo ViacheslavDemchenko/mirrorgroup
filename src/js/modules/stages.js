@@ -12,37 +12,37 @@ export default function stages() {
   // accordion.accordInit(); 
 
  // Using JavaScript
-var cardWraps = document.getElementsByClassName("services-stages__card-wrap");
+// var cardWraps = document.getElementsByClassName("services-stages__card-wrap");
 
-Array.from(cardWraps).forEach(function(cardWrap) {
-  cardWrap.addEventListener("click", function() {
-    // Remove active classes from all elements
-    Array.from(cardWraps).forEach(function(element) {
-      element.classList.remove("services-stages__card-wrap--active");
-      element.querySelector(".services-stages__card-text").classList.remove("services-stages__card-text--active");
-      element.querySelector(".services-stages__card-txt").classList.remove("services-stages__card-txt--active");
-    });
+// Array.from(cardWraps).forEach(function(cardWrap) {
+//   cardWrap.addEventListener("click", function() {
+//     // Remove active classes from all elements
+//     Array.from(cardWraps).forEach(function(element) {
+//       element.classList.remove("services-stages__card-wrap--active");
+//       element.querySelector(".services-stages__card-text").classList.remove("services-stages__card-text--active");
+//       element.querySelector(".services-stages__card-txt").classList.remove("services-stages__card-txt--active");
+//     });
 
-    // Add active classes to the clicked element
-    cardWrap.classList.add("services-stages__card-wrap--active");
-    cardWrap.querySelector(".services-stages__card-text").classList.add("services-stages__card-text--active");
-    cardWrap.querySelector(".services-stages__card-txt").classList.add("services-stages__card-txt--active");
-  });
-});
+//     // Add active classes to the clicked element
+//     cardWrap.classList.add("services-stages__card-wrap--active");
+//     cardWrap.querySelector(".services-stages__card-text").classList.add("services-stages__card-text--active");
+//     cardWrap.querySelector(".services-stages__card-txt").classList.add("services-stages__card-txt--active");
+//   });
+// });
 
-document.addEventListener("click", function(event) {
-  var target = event.target;
-  var isCardWrap = target.classList.contains("services-stages__card-wrap");
+// document.addEventListener("click", function(event) {
+//   var target = event.target;
+//   var isCardWrap = target.classList.contains("services-stages__card-wrap");
 
-  if (!isCardWrap) {
-    // Remove active classes from all elements
-    Array.from(cardWraps).forEach(function(element) {
-      element.classList.remove("services-stages__card-wrap--active");
-      element.querySelector(".services-stages__card-text").classList.remove("services-stages__card-text--active");
-      element.querySelector(".services-stages__card-txt").classList.remove("services-stages__card-txt--active");
-    });
-  }
-});
+//   if (!isCardWrap) {
+//     // Remove active classes from all elements
+//     Array.from(cardWraps).forEach(function(element) {
+//       element.classList.remove("services-stages__card-wrap--active");
+//       element.querySelector(".services-stages__card-text").classList.remove("services-stages__card-text--active");
+//       element.querySelector(".services-stages__card-txt").classList.remove("services-stages__card-txt--active");
+//     });
+//   }
+// });
 
 
 
