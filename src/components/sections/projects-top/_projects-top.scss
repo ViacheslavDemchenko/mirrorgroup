@@ -1,5 +1,10 @@
 .projects-top {
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 6rem;
+  }
+
 
   &__inner {
     width: 100%;
@@ -8,12 +13,13 @@
     align-items: center;
 
     @media (min-width: 1024px) {
-      flex-direction: row;
+      // flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
     }
 
     h1 {
+      text-align: left;
       align-self: flex-start;
       max-width: 25rem;
       margin-bottom: 4rem;

@@ -84,14 +84,14 @@
 
       &-title {
         margin-bottom: 0.5rem;
-        @include InterMedium();
+        // @include InterMedium();
         font-size: 1.6rem;
         line-height: 130.02%;
         color: var(--white_1);
       }
 
       &-desc {
-        @include InterRegular();
+        // @include InterRegular();
         font-size: 1.2rem;
         line-height: 130.02%;
         color: var(--gray_6);

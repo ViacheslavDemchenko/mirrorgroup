@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2rem;
 
     @media (min-width: 1024px) {
       flex-direction: row;
@@ -33,19 +34,24 @@
       }
 
       h2 {
-        max-width: 48.8rem;
+        max-width: 29.8rem;
         margin-bottom: 4rem;
 
+        // @media (min-width: 375px) {
+        //   max-width: 48.8rem;
+        // }
+
         @media (min-width: 1024px) {
+          max-width: 48.8rem;
           margin-bottom: 6rem;
         }
       }
 
       p {
-        @include InterRegular();
+        // @include InterRegular();
         font-size: 1.6rem;
         line-height: 130.02%;
-        color: var(--gray_2);
+        color: var(--black_1);
       }
 
       p:not(:last-of-type) {
@@ -117,6 +123,8 @@
       bottom: -8rem;
       width: 28rem;
       left: 50%;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
       transform: translateX(-50%);
       padding: 2.2rem 0;
 

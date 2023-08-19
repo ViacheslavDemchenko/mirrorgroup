@@ -5,12 +5,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 
     @media (min-width: 1024px) {
       flex-direction: row;
       justify-content: space-between;
       align-items: initial;
+      // margin-bottom: 6rem;
     }
 
     // &-tabs {
@@ -107,6 +108,7 @@
           &:nth-child(2) {
             width: 48%;
             max-width: 14.1rem;
+  
 
             @media (min-width: 650px) {
               width: 10rem;

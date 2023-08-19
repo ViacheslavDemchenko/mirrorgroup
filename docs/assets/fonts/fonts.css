@@ -1,37 +1,28 @@
 /* FONTS */
 
 @font-face {
-  font-family: 'Inter Regular';
-  src: url('../fonts/Inter-Regular.woff2') format('woff2'),
-      url('../fonts/Inter-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter Medium';
-  src: url('../fonts/Inter-Medium.woff2') format('woff2'),
-      url('../fonts/Inter-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter SemiBold';
-  src: url('../fonts/Inter-SemiBold.woff2') format('woff2'),
-      url('../fonts/Inter-SemiBold.ttf') format('truetype');
+  font-family: 'LytigaPro SemiBold';
+  src: url('../fonts/LytigaPro-SemiBold.woff2') format('woff2'),
+      url('../fonts/LytigaPro-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter Bold';
-  src: url('../fonts/Inter-Bold.woff2') format('woff2'),
-      url('../fonts/Inter-Bold.ttf') format('truetype');
-  font-weight: 700;
+  font-family: 'Roboto Condensed Bold';
+  src: url('../fonts/RobotoCondensed-Bold.woff2') format('woff2'),
+      url('../fonts/RobotoCondensed-Bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed Regular';
+  src: url('../fonts/RobotoCondensed-Regular.woff2') format('woff2'),
+      url('../fonts/RobotoCondensed-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

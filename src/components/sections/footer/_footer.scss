@@ -63,7 +63,7 @@
       span {
         display: inline-block;
         margin-bottom: 1rem;
-        @include InterRegular();
+        // @include InterRegular();
         font-size: 1.4rem;
         line-height: 1.7rem;
         color: var(--white_1);
@@ -72,7 +72,7 @@
 
     &-btn {
       margin-bottom: 4rem;
-      @include InterRegular();
+      // @include InterRegular();
       font-size: 1.4rem;
       line-height: 1.7rem;
       color: var(--red_1);
@@ -89,7 +89,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    @include InterRegular();
+    // @include InterRegular();
     font-size: 1.4rem;
     line-height: 1.7rem;
     color: var(--gray_7);

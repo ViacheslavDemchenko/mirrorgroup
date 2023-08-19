@@ -1,8 +1,8 @@
 section.services-form
-  .container 
+  .container.container--no-padding.br-gray
     .services-form__inner
       .services-form__inner-left
-        h2 #[span.red Заказать] градостроительный аудит
+        h2 Заказать градостроительный аудит
         p Стоимость рассчитывается из трёх ключевых параметров:
         ul 
           li Тип объекта.
@@ -13,6 +13,6 @@ section.services-form
         form.consult__form(action="#" name="consult__form" method="post")
           p Чтобы получить дополнительную информацию, заполните форму.
           input(type="text" placeholder="ФИО" name="name")
-          input(type="text" placeholder="phone" name="phone")
+          input(type="text" class="phone phone-mask" placeholder="phone" name="phone")
           input(type="text" placeholder="email" name="email")
           button.btn.btn--red.consult__inner-btn Отправить

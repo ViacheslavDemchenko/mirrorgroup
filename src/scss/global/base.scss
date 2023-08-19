@@ -9,7 +9,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter Regular", "Arial", "Tahoma", sans-serif;
+  font-family: "Roboto Condensed Regular", "Arial", "Tahoma", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-rendering: optimizelegibility;
@@ -50,6 +50,14 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &--no-padding {
+    padding: 0;
+
+    @media (min-width: 1024px) {
+      padding: 0 1.5rem;
+    }
+  }
 }
 
 // Запрет скролла
@@ -112,3 +120,20 @@ footer {
 //   will-change: auto;
 //   transition: all .5s ease-out;
 // }
+
+.tab-content {
+  // height: 0;
+  will-change: auto;
+  transition: all 0.5s ease-in-out;
+  opacity: 0 !important;
+  display: none !important;
+  // transform: translateX(-200%);
+  // transition: transform 1s ease; 
+
+  &--active {
+    height: auto;
+    opacity: 1 !important;
+    display: flex !important;
+    // transform: translateX(0);
+  }
+}

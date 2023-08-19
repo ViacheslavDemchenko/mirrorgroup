@@ -29,7 +29,7 @@
                     <li class="menu-header-item" role="menuitem"><a class="menu-header-item-link menu-header-item-link--active" href="index.html">Главная</a></li>
                     <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="#price">О компании</a></li>
                     <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="projects.html">Проекты</a></li>
-                    <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="services.html">Услуги</a>
+                    <li class="menu-header-item menu-header-item__submenu" role="menuitem"><a class="menu-header-item-link menu-header-item-link__submenu" href="services.html">Услуги</a>
                       <ul class="sub-menu">
                         <li><a href="production-structure.html">Проектирование</a></li>
                         <li><a href="production-process.html">Строительство</a></li>
@@ -54,9 +54,8 @@
           <div class="container"> 
             <h1><span class="red">Благоустройство</span> общественных пространств</h1>
             <div class="landscaping__top"><a href="#!"><img src="assets/img/landscaping_1.png" width="226" height="226" alt="" loading="lazy"></a>
-              <button class="btn landscaping__btn">Галерея проектов</button>
-              <div class="landscaping__top-img"><a href="#!"><img src="assets/img/landscaping_2.png" width="158" height="206" alt="" loading="lazy">
-                  <p>Градостроительный анализ</p></a></div>
+              <button class="btn landscaping__btn">Галерея проектов</button><a class="landscaping__top-img" href="#!"><img src="assets/img/landscaping_2.png" width="158" height="206" alt="" loading="lazy">
+                <p>Градостроительный анализ</p></a>
             </div>
             <div class="landscaping__center"><a href="#!"><img src="assets/img/landscaping_3.png" width="187" height="265" alt="" loading="lazy"></a><a href="#!"> <img src="assets/img/landscaping_4.png" width="153" height="217" alt="" loading="lazy"></a></div>
             <div class="landscaping__bottom"><a href="#!"><img src="assets/img/landscaping_5.png" width="256" height="207" alt="" loading="lazy"></a><a href="#!"><img src="assets/img/landscaping_6.png" width="304" height="216" alt="" loading="lazy"></a><a href="#!"><img src="assets/img/landscaping_7.png" width="167" height="301" alt="" loading="lazy"></a></div>
@@ -75,8 +74,8 @@
                   <h3>Градостроительный анализ</h3>
                   <ul class="service__icons">
                     <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt="" loading="lazy"><span>Узнать подробнее</span></li>
-                    <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt="" loading="lazy"></li>
-                    <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt="" loading="lazy"></li>
+                    <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt="" loading="lazy"><span>Заказать звонок</span></li>
+                    <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt="" loading="lazy"><span>Запросить КП</span></li>
                   </ul>
                 </div>
                 <div class="service">
@@ -84,8 +83,8 @@
                   <h3>Инженерные изыскания</h3>
                   <ul class="service__icons">
                     <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt="" loading="lazy"><span>Узнать подробнее</span></li>
-                    <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt="" loading="lazy"></li>
-                    <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt="" loading="lazy"></li>
+                    <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt="" loading="lazy"><span>Заказать звонок</span></li>
+                    <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt="" loading="lazy"><span>Запросить КП</span></li>
                   </ul>
                 </div>
                 <div class="service">
@@ -93,8 +92,8 @@
                   <h3>Проект благоустройства</h3>
                   <ul class="service__icons">
                     <li class="service__icon"><img src="assets/img/icons/message-question.svg" width="30" height="30" alt="" loading="lazy"><span>Узнать подробнее</span></li>
-                    <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt="" loading="lazy"></li>
-                    <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt="" loading="lazy"></li>
+                    <li class="service__icon"><img src="assets/img/icons/call-calling.svg" width="30" height="30" alt="" loading="lazy"><span>Заказать звонок</span></li>
+                    <li class="service__icon"><img src="assets/img/icons/receipt-edit.svg" width="30" height="30" alt="" loading="lazy"><span>Запросить КП</span></li>
                   </ul>
                 </div>
               </div>
@@ -110,7 +109,6 @@
                   <input class="form-modal__name" type="text" name="form-modal__name" placeholder="name">
                   <input class="form-modal__phone" type="text" name="form-modal__phone" placeholder="phone">
                 </div>
-                <textarea name="message" placeholder="comment"></textarea>
                 <button class="btn btn--red btn--form-modal__submit" type="submit">Отправить</button>
                 <p>Нажимая на кнопку «Отправить», вы принимаете условия обработки персональных данных</p>
               </form>
@@ -169,25 +167,25 @@
                   Мы освоили новые направления, среди них разработка проектов капитального строительства коммерческих площадей и объектов социального назначения. В этом же году начали появляться первые проекты по благоустройству.</p>
                 <button class="btn btn--black history__inner-btn">Подробнее о компании</button>
               </div>
-              <div class="history__inner-cards">
-                <div class="card"><span>10</span><img src="assets/img/icons/history-icon_1.svg" width="40" height="40" alt="" loading="lazy">
+              <div class="history__inner-cards" id="counter">
+                <div class="card"><span class="count" data-context="10">0</span><img src="assets/img/icons/history-icon_1.svg" width="40" height="40" alt="" loading="lazy">
                   <div class="card__bottom"><span>
                       лет непрерывного <br>развития</span></div>
                 </div>
-                <div class="card"><span>40</span><img src="assets/img/icons/history-icon_2.svg" width="40" height="40" alt="" loading="lazy">
+                <div class="card"><span class="count" data-context="40">0</span><img src="assets/img/icons/history-icon_2.svg" width="40" height="40" alt="" loading="lazy">
                   <div class="card__bottom"><span>единомышлеников в составе компании</span></div>
                 </div>
-                <div class="card"><span>20+</span><img src="assets/img/icons/history-icon_3.svg" width="40" height="40" alt="" loading="lazy">
+                <div class="card"><span class="count" data-context="20">0</span><span>+</span><img src="assets/img/icons/history-icon_3.svg" width="40" height="40" alt="" loading="lazy">
                   <div class="card__bottom"><span>городов с реализованными проектами</span></div>
                 </div>
-                <div class="card"><span>80+</span><img src="assets/img/icons/history-icon_4.svg" width="40" height="40" alt="" loading="lazy">
+                <div class="card"><span class="count" data-context="80">0</span><span>+</span><img src="assets/img/icons/history-icon_4.svg" width="40" height="40" alt="" loading="lazy">
                   <div class="card__bottom"><span>
                       масштабных <br>проектов</span></div>
                 </div>
-                <div class="card"><span>4+</span><img src="assets/img/icons/history-icon_5.svg" width="40" height="40" alt="" loading="lazy">
+                <div class="card"><span class="count" data-context="4">0</span><span>+</span><img src="assets/img/icons/history-icon_5.svg" width="40" height="40" alt="" loading="lazy">
                   <div class="card__bottom"><span>млн. ежегодных посещений территорий</span></div>
                 </div>
-                <div class="card"><span>7</span><img src="assets/img/icons/history-icon_6.svg" width="40" height="40" alt="" loading="lazy">
+                <div class="card"><span class="count" data-context="7">0</span><img src="assets/img/icons/history-icon_6.svg" width="40" height="40" alt="" loading="lazy">
                   <div class="card__bottom"><span>млрд р сумма реализованных проектов</span></div>
                 </div>
               </div>
@@ -203,12 +201,12 @@
                   <p>
                     Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
                 </div>
-                <div class="geography__inner-cards">
-                  <div class="card"><span>500+</span><img src="assets/img/icons/geography-icon_1.svg" width="40" height="40" alt="" loading="lazy">
+                <div class="geography__inner-cards" id="counter">
+                  <div class="card"><span class="count" data-context="500">0</span><span>+</span><img src="assets/img/icons/geography-icon_1.svg" width="40" height="40" alt="" loading="lazy">
                     <div class="card__bottom"><span>
                         гектар <br>площадь проектов</span></div>
                   </div>
-                  <div class="card"><span>30</span><img src="assets/img/icons/geography-icon_2.svg" width="40" height="40" alt="" loading="lazy">
+                  <div class="card"><span class="count" data-context="30">0</span><img src="assets/img/icons/geography-icon_2.svg" width="40" height="40" alt="" loading="lazy">
                     <div class="card__bottom"><span>городов</span></div>
                   </div>
                 </div>
@@ -223,7 +221,7 @@
           </div>
         </section>
         <section class="consult"> 
-          <div class="container"> 
+          <div class="container">
             <div class="consult__inner"> 
               <div class="consult__inner-top">
                 <ul class="tabs"> 
@@ -233,60 +231,62 @@
                 </ul>
                 <div class="line"></div>
               </div>
-              <div class="consult__inner-center-wrap">
-                <div class="consult__inner-center consult__inner-center--active">
-                  <div class="consult__inner-center__text">
-                    <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
-                  </div>
-                  <div class="consult__inner-center__form">
-                    <form class="consult__form" action="#" name="consult__form" method="post">
-                      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
-                      <input type="text" placeholder="name" name="name">
-                      <input type="text" placeholder="phone" name="phone">
-                      <input type="text" placeholder="email" name="email">
-                      <button class="btn btn--red consult__inner-btn">Отправить</button>
-                    </form>
-                  </div>
+            </div>
+          </div>
+          <div class="container container--no-padding">
+            <div class="consult__inner-center-wrap">
+              <div class="consult__inner-center consult__inner-center--active">
+                <div class="consult__inner-center__text">
+                  <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
+                </div>
+                <div class="consult__inner-center__form">
+                  <form class="consult__form" action="#" name="consult__form" method="post">
+                    <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
+                    <input type="text" placeholder="name" name="name">
+                    <input class="phone phone-mask" type="text" placeholder="phone" name="phone">
+                    <input type="text" placeholder="email" name="email">
+                    <button class="btn btn--red consult__inner-btn">Отправить</button>
+                  </form>
                 </div>
               </div>
-              <div class="consult__inner-center-wrap">
-                <div class="consult__inner-center">
-                  <div class="consult__inner-center__text">
-                    <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
-                  </div>
-                  <div class="consult__inner-center__form">
-                    <form class="consult__form" action="#" name="consult__form" method="post">
-                      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
-                      <input type="text" placeholder="ФИО" name="name">
-                      <input type="text" placeholder="phone" name="phone">
-                      <input type="text" placeholder="email" name="email">
-                      <textarea name="message" cols="30" rows="10" placeholder="Комментарий"></textarea>
-                      <div class="upload">
-                        <div class="form-group">
-                          <input class="input-file" id="file_third" type="file" name="file_third">
-                          <label class="btn btn-tertiary js-labelFile" for="file_third"><span class="js-fileName">Прикрепить файл</span><img src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy"></label>
-                        </div>
+            </div>
+            <div class="consult__inner-center-wrap">
+              <div class="consult__inner-center">
+                <div class="consult__inner-center__text">
+                  <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
+                </div>
+                <div class="consult__inner-center__form">
+                  <form class="consult__form" action="#" name="consult__form" method="post">
+                    <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
+                    <input type="text" placeholder="ФИО" name="name">
+                    <input class="phone phone-mask" type="text" placeholder="phone" name="phone">
+                    <input type="text" placeholder="email" name="email">
+                    <textarea name="message" cols="30" rows="10" placeholder="Комментарий"></textarea>
+                    <div class="upload">
+                      <div class="form-group">
+                        <input class="input-file" id="file_third" type="file" name="file_third">
+                        <label class="btn btn-tertiary js-labelFile" for="file_third"><span class="js-fileName">Прикрепить файл</span><img src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy"></label>
                       </div>
-                      <button class="btn btn--red consult__inner-btn">Отправить</button>
-                    </form>
-                  </div>
+                    </div>
+                    <button class="btn btn--red consult__inner-btn">Отправить</button>
+                  </form>
                 </div>
               </div>
-              <div class="consult__inner-center-wrap">
-                <div class="consult__inner-center">
-                  <div class="consult__inner-center__text">
-                    <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
-                  </div>
-                  <div class="consult__inner-center__form">
-                    <form class="consult__form" action="#" name="consult__form" method="post">
-                      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
-                      <input type="text" placeholder="ФИО" name="name">
-                      <input type="text" placeholder="phone" name="phone">
-                      <input type="text" placeholder="email" name="email">
-                      <textarea name="message" cols="30" rows="10" placeholder="Комментарий"></textarea>
-                      <button class="btn btn--red consult__inner-btn">Отправить</button>
-                    </form>
-                  </div>
+            </div>
+            <div class="consult__inner-center-wrap">
+              <div class="consult__inner-center">
+                <div class="consult__inner-center__text">
+                  <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
+                </div>
+                <div class="consult__inner-center__form">
+                  <form class="consult__form" action="#" name="consult__form" method="post">
+                    <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
+                    <input type="text" placeholder="ФИО" name="name">
+                    <input class="phone phone-mask" type="text" placeholder="phone" name="phone">
+                    <input type="text" placeholder="email" name="email">
+                    <textarea name="message" cols="30" rows="10" placeholder="Комментарий"></textarea>
+                    <button class="btn btn--red consult__inner-btn">Отправить</button>
+                  </form>
                 </div>
               </div>
             </div>

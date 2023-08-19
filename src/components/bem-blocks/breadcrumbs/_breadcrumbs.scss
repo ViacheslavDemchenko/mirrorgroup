@@ -8,7 +8,7 @@
   }
 
   &__item {
-    @include InterRegular();
+    // @include InterRegular();
     font-size: 1.2rem;
     line-height: 130.02%;
     color: var(--gray_2);

@@ -30,6 +30,29 @@ export default function tabsBlog() {
 
       });
     });
+
+//     const tabs = document.querySelectorAll('.tab');
+// const blocks = document.querySelectorAll('.tab-content');
+
+// tabs.forEach((tab, index) => {
+//   tab.addEventListener('click', () => {
+//     tabs.forEach((tab) => {
+//       tab.classList.remove('tab--active');
+//     });
+
+//     blocks.forEach((block, i) => {
+//       block.classList.remove('tab-content--active');
+//     });
+
+//     tab.classList.add('tab--active');
+
+//     // Добавляем класс через setTimeout для начала анимации
+//     setTimeout(() => {
+//       blocks[index].classList.add('tab-content--active');
+//     }, 100); // Произвольная задержка, чтобы начать анимацию
+
+//   });
+// });
     
   }
 }

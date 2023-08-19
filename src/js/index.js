@@ -13,7 +13,11 @@ import data from './modules/data';
 import stages from './modules/stages'; 
 import tabsVisualization from './modules/tabs-visualization'; 
 import services from './modules/services'; 
+import phoneMask from './modules/phoneMask'; 
+import servicesSlider from './modules/services-slider'; 
+import counter from './modules/counter'; 
 
+const phones = document.querySelectorAll('.phone-mask');
 
 // location();
 tabs();
@@ -27,3 +31,9 @@ mobileMenu();
 modal();
 tabsBlog();
 slider();
+servicesSlider();
+counter();
+
+phones.forEach(phone => {
+  phoneMask(phone);
+})

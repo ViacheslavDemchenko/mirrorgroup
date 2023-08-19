@@ -41,14 +41,14 @@
         border: 0.2rem solid var(--black_2);
         border-radius: 50%;
         cursor: pointer;
-        will-change: background, color;
-        transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+        // will-change: background, color;
+        // transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 
-        &:hover,
-        &:focus {
-          color: var(--white_1);
-          background: var(--black_2);
-        }
+        // &:hover,
+        // &:focus {
+        //   color: var(--white_1);
+        //   background: var(--black_2);
+        // }
       }
 
       .arrow__left {
@@ -107,7 +107,7 @@
 
     &-item {
       display: flex;
-      @include InterRegular();
+      // @include InterRegular();
       font-size: 1.6rem;
       line-height: 120.02%;
       color: var(--gray_8);
@@ -139,4 +139,30 @@
   @media (min-width: 1440px) {
     max-width: 100%;
   }
+}
+
+.swiper-button-disabled {
+  cursor: default !important;
+  color: var(--white_1) !important;
+  background: var(--black_2) !important;
+}
+
+.swiper-pagination {
+  margin-top: 3rem;
+  bottom: unset;
+}
+
+.swiper-pagination-bullet {
+  width: 0.7rem;
+  height: 0.7rem;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #BF0902;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: unset !important;
 }

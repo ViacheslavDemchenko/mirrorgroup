@@ -90,7 +90,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter Regular", "Arial", "Tahoma", sans-serif;
+  font-family: "Roboto Condensed Regular", "Arial", "Tahoma", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-rendering: optimizelegibility;
@@ -132,6 +132,10 @@ footer {
   align-items: center;
 }
 
+.container--no-padding {
+  padding: 0;
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -154,12 +158,38 @@ footer {
   transition: display 0.5s ease-out;
 }
 
+.tab-content {
+  will-change: auto;
+  transition: all 0.5s ease-in-out;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+.tab-content--active {
+  height: auto;
+  opacity: 1 !important;
+  display: flex !important;
+}
+
 .red {
   color: var(--red_1);
 }
 
+h1 {
+  font-family: "LytigaPro SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  font-size: 3.2rem;
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: -0.035em;
+  color: var(--black_1);
+}
+
 h2 {
-  font-family: "Inter SemiBold";
+  text-align: left;
+  font-family: "LytigaPro SemiBold";
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -168,16 +198,23 @@ h2 {
   color: var(--black_1);
 }
 
-.btn {
-  text-align: center;
-  padding: 1.25rem 2.885rem;
-  font-family: "Inter Regular";
+p {
+  font-family: "Roboto Condensed Regular";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+.btn {
+  text-align: center;
+  padding: 1.25rem 2.885rem;
   outline: none;
   border: none;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   border-radius: 5rem;
+  will-change: background, color;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .btn--black {
@@ -190,10 +227,22 @@ h2 {
   background: var(--red_1);
 }
 
+.btn--red:focus,
+.btn--red:hover {
+  background: #000 !important;
+  color: #fff !important;
+}
+
 .btn--white {
   color: var(--black_1);
   border: 0.1rem solid var(--black_1);
   background: var(--white_1);
+}
+
+.btn:focus,
+.btn:hover {
+  background: #BF0902;
+  color: #FFFFFF;
 }
 
 input,
@@ -201,10 +250,6 @@ textarea {
   width: 100%;
   padding: 1.55rem 2.4rem 1.55rem 2rem;
   margin-bottom: 2rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   text-transform: uppercase;
@@ -215,10 +260,6 @@ textarea {
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   text-transform: uppercase;
@@ -227,10 +268,6 @@ textarea:-ms-input-placeholder {
 
 input::placeholder,
 textarea::placeholder {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   text-transform: uppercase;
@@ -244,10 +281,6 @@ textarea::placeholder {
 
 .upload .btn-tertiary {
   position: relative;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   color: var(--black_2);
   font-size: 1.4rem;
   line-height: 1.9rem;
@@ -937,14 +970,16 @@ button.swiper-pagination-bullet {
   display: block;
   position: absolute;
   top: 1.2rem;
-  left: -122%;
+  left: -98%;
   white-space: nowrap;
   padding: 0;
   will-change: left;
+  animation: moveText 10s infinite linear;
+  transition: transform 0.3s ease-out;
 }
 
-.header .str-run p span:not(:nth-of-type(3)) {
-  opacity: 0;
+.header .str-run p span {
+  opacity: 1;
 }
 
 .header .str-run--animationto p {
@@ -953,17 +988,6 @@ button.swiper-pagination-bullet {
 
 .header .str-run--animationback p {
   animation: btnstrin 10s infinite linear reverse;
-}
-
-.header .str-run:hover p,
-.header .str-run:focus p {
-  animation: moveText 10s infinite linear;
-  transition: transform 0.3s ease-out;
-}
-
-.header .str-run:hover p span,
-.header .str-run:focus p span {
-  opacity: 1;
 }
 
 .header__btn--desktop {
@@ -1037,10 +1061,6 @@ button.swiper-pagination-bullet {
 .footer__inner-right span {
   display: inline-block;
   margin-bottom: 1rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--white_1);
@@ -1048,10 +1068,6 @@ button.swiper-pagination-bullet {
 
 .footer__inner-btn {
   margin-bottom: 4rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--red_1);
@@ -1063,10 +1079,6 @@ button.swiper-pagination-bullet {
   width: 100%;
   display: flex;
   justify-content: center;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--gray_7);
@@ -1122,8 +1134,7 @@ button.swiper-pagination-bullet {
   margin-bottom: 2.1rem;
 }
 
-.accordion__item.active h3::after {
-  right: -1.1rem;
+.accordion__item.active::after {
   transform: translateY(-50%) rotate(180deg) !important;
 }
 
@@ -1286,7 +1297,11 @@ button.swiper-pagination-bullet {
 }
 
 .menu-header .sub-menu {
-  padding: 1rem 0 0 2rem;
+  display: none;
+  padding: 1.5rem 2.4rem;
+  margin-bottom: 3rem;
+  border: 0.1rem solid var(--gray_4);
+  border-radius: 0.5rem;
 }
 
 .menu-header .sub-menu li {
@@ -1308,6 +1323,10 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
+.menu-header .sub-menu--active {
+  display: block;
+}
+
 .menu-header-item {
   position: relative;
   margin-bottom: 3.1rem;
@@ -1320,13 +1339,20 @@ button.swiper-pagination-bullet {
   pointer-events: initial;
 }
 
+.menu-header-item__submenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.menu-header-item__submenu a {
+  margin-bottom: 3.1rem;
+}
+
 .menu-header-item-link {
   padding: 0.5rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 1.7rem;
   color: var(--black_1);
 }
@@ -1368,10 +1394,6 @@ button.swiper-pagination-bullet {
 
 .menu-footer-item-link {
   padding: 0.5rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--gray_6);
@@ -1379,6 +1401,30 @@ button.swiper-pagination-bullet {
 
 .menu-footer-item-link--active {
   color: var(--red_1);
+}
+
+.menu-header-item__submenu a {
+  position: relative;
+}
+
+.menu-header-item__submenu a::after {
+  position: absolute;
+  content: "";
+  right: -1.8rem;
+  top: 48%;
+  transform: translateY(-50%) rotate(132deg);
+  width: 0.6rem;
+  height: 0.6rem;
+  display: block;
+  border-top: 0.2rem solid var(--black_2);
+  border-right: 0.2rem solid var(--black_2);
+  will-change: top, transform;
+  transition: top 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.menu-header-item__submenu--active a::after {
+  top: 54%;
+  transform: translateY(-50%) rotate(315deg);
 }
 
 .card {
@@ -1397,9 +1443,9 @@ button.swiper-pagination-bullet {
   border: 0.1rem solid var(--red_1);
 }
 
-.card span {
-  width: 30%;
-  font-family: "Inter Medium";
+.card .count {
+  width: 25%;
+  font-family: "Roboto Condensed Bold";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -1419,8 +1465,8 @@ button.swiper-pagination-bullet {
 }
 
 .card__bottom span {
-  font-family: "Inter Medium";
-  font-weight: 500;
+  font-family: "Roboto Condensed Regular";
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
   font-size: 1.4rem;
@@ -1429,10 +1475,6 @@ button.swiper-pagination-bullet {
 }
 
 .phone a {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--white_1);
@@ -1471,10 +1513,6 @@ button.swiper-pagination-bullet {
 
 .modal h3 {
   margin-bottom: 4rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.8rem;
   line-height: 100%;
   text-transform: uppercase;
@@ -1484,10 +1522,6 @@ button.swiper-pagination-bullet {
 .modal p {
   max-width: 32.5rem;
   margin-bottom: 4rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 130.02%;
   color: var(--gray_5);
@@ -1510,10 +1544,6 @@ button.swiper-pagination-bullet {
   max-width: 31rem;
   margin-top: 3rem;
   margin-bottom: 0;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.2rem;
   line-height: 1.4rem;
   letter-spacing: 0.01em;
@@ -1536,6 +1566,12 @@ button.swiper-pagination-bullet {
 
 .modal__form button {
   padding: 2.2rem 6.5rem;
+  font-family: "Roboto Condensed Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 }
 
 .close {
@@ -1578,10 +1614,6 @@ button.swiper-pagination-bullet {
 }
 
 .breadcrumbs__item {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.2rem;
   line-height: 130.02%;
   color: var(--gray_2);
@@ -1611,7 +1643,7 @@ button.swiper-pagination-bullet {
   justify-content: center;
   flex-wrap: wrap;
   overflow: hidden;
-  padding: 2rem 0.8rem;
+  padding: 4rem 1.6rem;
   background: var(--white_2);
   border-radius: 0.5rem;
   will-change: background, color;
@@ -1641,10 +1673,6 @@ button.swiper-pagination-bullet {
 
 .blog-article h3 {
   margin-bottom: 2.1rem;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.8rem;
   line-height: 2.3rem;
   color: var(--black_1);
@@ -1652,10 +1680,6 @@ button.swiper-pagination-bullet {
 
 .blog-article p {
   margin-bottom: 4.1rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -1683,10 +1707,6 @@ button.swiper-pagination-bullet {
 }
 
 .awards-card__inner p {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(-black_1);
@@ -1700,6 +1720,8 @@ button.swiper-pagination-bullet {
 }
 
 .tabs .tab {
+  width: 14rem;
+  height: 5rem;
   margin: 0 0 2rem 0;
   will-change: color, background;
   transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
@@ -1717,10 +1739,6 @@ button.swiper-pagination-bullet {
 }
 
 .tabs .tab-awards {
-  font-family: "Inter Bold";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
   font-size: 2.2rem;
   line-height: 120%;
   color: var(--black_1);
@@ -1735,6 +1753,7 @@ button.swiper-pagination-bullet {
 
 .tabs .tab--large {
   width: 14.1rem;
+  height: 5rem;
 }
 
 .tabs .tab--big {
@@ -1754,29 +1773,13 @@ button.swiper-pagination-bullet {
   color: var(--red_1);
 }
 
-.tab-content {
-  display: none !important;
-}
-
-.tab-content--active {
-  display: flex !important;
-}
-
-.project-visualization .tab-content {
-  display: none !important;
-}
-
-.project-visualization .tab-content--active {
-  display: block !important;
-}
-
 .project-desc__tabs .tabs .tab {
   width: 30rem;
   padding: 2rem;
   margin-bottom: 2rem;
   text-align: left;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
+  font-family: "Roboto Condensed Bold";
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
   font-size: 1.6rem;
@@ -1847,6 +1850,16 @@ button.swiper-pagination-bullet {
   margin-bottom: 12rem;
 }
 
+.landscaping a {
+  will-change: box-shadow;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.landscaping a:hover,
+.landscaping a:focus {
+  box-shadow: 0px 0px 66px -12px rgba(34, 60, 80, 0.2);
+}
+
 .landscaping__top,
 .landscaping__center,
 .landscaping__bottom {
@@ -1857,16 +1870,16 @@ button.swiper-pagination-bullet {
 }
 
 .landscaping__center {
-  justify-content: center;
+  max-width: 17rem;
 }
 
-.landscaping__center img:nth-of-type(1) {
+.landscaping__center a:nth-of-type(1) {
   width: 9.5rem;
   height: 13.5rem;
-  transform: translate(-2rem, -6rem);
+  transform: translate(0rem, -4rem);
 }
 
-.landscaping__center img:nth-of-type(2) {
+.landscaping__center a:nth-of-type(2) {
   width: 7rem;
   height: 9.9rem;
   transform: translateY(4rem);
@@ -1876,28 +1889,28 @@ button.swiper-pagination-bullet {
   height: 27rem;
 }
 
-.landscaping__bottom img:nth-of-type(2) {
+.landscaping__bottom a:nth-of-type(2) {
   align-self: flex-end;
 }
 
-.landscaping__bottom img:nth-of-type(1),
-.landscaping__bottom img:nth-of-type(3) {
+.landscaping__bottom a:nth-of-type(1),
+.landscaping__bottom a:nth-of-type(3) {
   align-self: flex-start;
 }
 
-.landscaping__bottom img:nth-of-type(1) {
+.landscaping__bottom a:nth-of-type(1) {
   width: 9.8rem;
   height: 7.9rem;
   transform: translateX(1rem);
 }
 
-.landscaping__bottom img:nth-of-type(2) {
+.landscaping__bottom a:nth-of-type(2) {
   width: 14.8rem;
   height: 10.5rem;
   transform: translate(-5rem, -5rem);
 }
 
-.landscaping__bottom img:nth-of-type(3) {
+.landscaping__bottom a:nth-of-type(3) {
   width: 7.6rem;
   height: 13.7rem;
   transform: translate(-2rem, 2rem);
@@ -1907,39 +1920,25 @@ button.swiper-pagination-bullet {
   position: relative;
 }
 
-.landscaping__top img {
+.landscaping__top a {
   transform: translateY(-2.3rem);
   width: 9.6rem;
-  height: 9.6rem;
+  height: 12.5rem;
+}
+
+.landscaping__top-img a {
+  transform: translate(-1.3rem, -3rem);
 }
 
 .landscaping__top-img {
-  display: flex;
-  flex-direction: column;
   transform: translate(2rem, 0rem);
 }
 
-.landscaping__top-img img {
-  transform: translateY(1rem);
-  width: 9.7rem;
-  height: 12.7rem;
-  border-radius: 0.5rem;
-}
-
-.landscaping__top-img img:hover,
-.landscaping__top-img img:focus {
-  filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
-}
-
 .landscaping__top-img p {
-  transform: translate(-2rem, 1rem);
+  transform: translate(-1rem, 1rem);
   max-width: 13.8rem;
   display: inline-block;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.7rem;
   text-align: center;
   color: var(--black_2);
@@ -1952,15 +1951,20 @@ button.swiper-pagination-bullet {
   bottom: 16rem;
   width: 21.7rem;
   padding: 1.6rem 1.377rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 100%;
   color: var(--black_2);
   border: 0.1rem solid var(--black_2);
   background: transparent;
+  will-change: background, color;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.landscaping__btn:focus,
+.landscaping__btn:hover {
+  background: #BF0902;
+  color: #FFFFFF;
+  border: 0.1rem solid #BF0902;
 }
 
 .landscaping-services {
@@ -1989,7 +1993,7 @@ button.swiper-pagination-bullet {
 }
 
 .landscaping-services__inner-top {
-  align-items: center;
+  align-items: flex-start;
 }
 
 .landscaping-services__inner-bottom {
@@ -2017,6 +2021,7 @@ button.swiper-pagination-bullet {
   border-radius: 1rem;
   will-change: background, color;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  will-change: background, color;
 }
 
 .landscaping-services__inner-bottom .service:hover,
@@ -2040,10 +2045,6 @@ button.swiper-pagination-bullet {
 .landscaping-services__inner-bottom .service h3 {
   align-self: flex-start;
   margin-bottom: 2rem;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: var(--black_1);
@@ -2064,52 +2065,46 @@ button.swiper-pagination-bullet {
   border-radius: 5rem;
   background: var(--white_1);
   cursor: pointer;
+  will-change: width, justify-content;
+  transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
 }
 
 .landscaping-services__inner-bottom .service__icons .service__icon:not(:last-of-type) {
   margin-right: 2rem;
 }
 
-.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1) {
-  display: flex;
-  padding-left: 1.1rem;
-  will-change: width, justify-content;
-  transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
+.landscaping-services__inner-bottom .service__icons .service__icon span {
+  min-width: 10.5rem;
+  display: inline-block;
+  margin-left: 1rem;
+  white-space: nowrap;
+  opacity: 0;
+  display: none;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: var(--black_1);
+  will-change: opacity, display;
+  transition: opacity 1.2s ease-in-out, display 2s ease-in-out;
 }
 
-.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):hover,
-.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):focus {
+.landscaping-services__inner-bottom .service__icons .service__icon:hover,
+.landscaping-services__inner-bottom .service__icons .service__icon:focus {
   width: 18rem;
   justify-content: flex-start;
   padding-left: 0.5rem;
 }
 
-.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):hover span,
-.landscaping-services__inner-bottom .service__icons .service__icon:nth-of-type(1):focus span {
-  width: auto;
+.landscaping-services__inner-bottom .service__icons .service__icon:hover span,
+.landscaping-services__inner-bottom .service__icons .service__icon:focus span {
   opacity: 1;
-}
-
-.landscaping-services__inner-bottom .service__icons .service__icon span {
-  width: 0;
-  display: inline-block;
-  margin-left: 1rem;
-  opacity: 0;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  color: var(--black_1);
-  will-change: width, opacity;
-  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  display: block;
 }
 
 .landscaping-services__inner-bottom .service--small {
   width: 50%;
   max-width: 14rem;
   margin-bottom: 3rem;
+  padding: 1rem 1.5rem 3rem 1.5rem;
 }
 
 .landscaping-services__btn {
@@ -2119,7 +2114,7 @@ button.swiper-pagination-bullet {
 }
 
 .goal {
-  padding: 4rem 0 9rem 0;
+  padding: 4rem 0 2rem 0;
 }
 
 .goal__inner {
@@ -2131,22 +2126,18 @@ button.swiper-pagination-bullet {
 .goal__inner-img {
   position: relative;
   width: 100%;
-  max-width: 30rem;
   height: 27.5rem;
   background: url("../img/goal-bg-sx.jpg") 100% 100%/cover no-repeat;
   border-radius: 1rem;
+  background-attachment: fixed;
 }
 
 .goal__inner-text {
   position: absolute;
-  bottom: -7rem;
+  bottom: -3rem;
   right: 50%;
   transform: translateX(50%);
   width: 100%;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   padding: 2rem 1rem;
   font-size: 1.4rem;
   line-height: 130.02%;
@@ -2175,13 +2166,9 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 140%;
-  color: var(--gray_2);
+  color: var(--black_1);
 }
 
 .seo-text__inner-text p {
@@ -2201,6 +2188,7 @@ button.swiper-pagination-bullet {
   width: 100%;
   height: 27.5rem;
   background: url("../img/goal-bg-sx.jpg") 100% 100%/cover no-repeat;
+  background-attachment: fixed;
   border-radius: 1rem;
 }
 
@@ -2214,6 +2202,7 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
 }
 
 .history__inner-text {
@@ -2221,18 +2210,14 @@ button.swiper-pagination-bullet {
 }
 
 .history__inner-text h2 {
-  max-width: 48.8rem;
+  max-width: 29.8rem;
   margin-bottom: 4rem;
 }
 
 .history__inner-text p {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
-  color: var(--gray_2);
+  color: var(--black_1);
 }
 
 .history__inner-text p:not(:last-of-type) {
@@ -2259,6 +2244,8 @@ button.swiper-pagination-bullet {
   bottom: -8rem;
   width: 28rem;
   left: 50%;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   transform: translateX(-50%);
   padding: 2.2rem 0;
 }
@@ -2302,8 +2289,8 @@ button.swiper-pagination-bullet {
   top: 1.2rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 7.4rem;
-  height: 8.6rem;
+  width: 14rem;
+  height: 16rem;
   display: none;
 }
 
@@ -2313,8 +2300,8 @@ button.swiper-pagination-bullet {
 
 .geography__inner-right__img .location-desc__wrap .location-desc {
   position: absolute;
-  width: 7.4rem;
-  height: 8.6rem;
+  width: 13.8rem;
+  height: 16rem;
 }
 
 .geography__inner-right__img .location {
@@ -2523,7 +2510,7 @@ button.swiper-pagination-bullet {
 }
 
 .consult {
-  padding: 4rem 0 18.1rem 0;
+  padding: 4rem 0 13rem 0;
 }
 
 .consult__inner {
@@ -2533,6 +2520,8 @@ button.swiper-pagination-bullet {
 
 .consult__inner-top {
   width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
 }
 
 .consult__inner-top .line {
@@ -2544,18 +2533,22 @@ button.swiper-pagination-bullet {
   flex-direction: column;
   margin-bottom: 4rem;
   padding-left: 2.2rem;
+  font-family: "Roboto Condensed Bold";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 .consult__inner-top .tabs .tab {
   position: relative;
   padding: 0.5rem;
-  font-family: "Inter Medium";
+  font-family: "Roboto Condensed Bold";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
   font-size: 1.6rem;
   line-height: 120%;
-  color: var(--gray_2);
+  color: var(--black_2);
   cursor: pointer;
 }
 
@@ -2574,6 +2567,7 @@ button.swiper-pagination-bullet {
 .consult__inner-top .tabs .tab--active {
   position: relative;
   color: var(--red_1);
+  background: none;
 }
 
 .consult__inner-top .tabs .tab--active::after {
@@ -2584,13 +2578,26 @@ button.swiper-pagination-bullet {
   background: var(--red_1);
 }
 
+.consult__inner-top .tabs .tab:hover,
+.consult__inner-top .tabs .tab:focus {
+  background: none;
+}
+
+.consult__inner-center-wrap {
+  display: flex;
+  justify-content: center;
+  background: var(--white_2);
+}
+
 .consult__inner-center {
+  position: relative;
   width: 100%;
+  max-width: 28rem;
   display: flex;
   flex-direction: column;
   padding: 6rem 0 26.7rem 0;
   display: none;
-  background: url("../img/icons/text-bg.svg") 0% 81%/132% 4rem no-repeat, var(--white_2);
+  background: url("../img/icons/text-bg.svg") 0% 80%/174% 4rem no-repeat;
   border-radius: 1rem;
 }
 
@@ -2607,10 +2614,6 @@ button.swiper-pagination-bullet {
   max-width: 35rem;
   margin-right: 6.7rem;
   margin-bottom: 4rem;
-  font-family: "Inter Bold";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
   font-size: 3.2rem;
   line-height: 100%;
   text-transform: uppercase;
@@ -2627,11 +2630,15 @@ button.swiper-pagination-bullet {
   border-radius: 1rem;
 }
 
+.consult__inner-center-wrap {
+  width: 100%;
+}
+
 .consult__inner-btn {
   align-self: flex-start;
   padding: 1.66rem 4.323rem;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 }
 
 .consult__form {
@@ -2648,10 +2655,6 @@ button.swiper-pagination-bullet {
 
 .consult__form p {
   margin-bottom: 1.5rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--gray_5);
@@ -2662,6 +2665,7 @@ button.swiper-pagination-bullet {
 }
 
 .activity-services h1 {
+  text-align: left;
   align-self: flex-start;
   margin-bottom: 6rem;
 }
@@ -2685,10 +2689,6 @@ button.swiper-pagination-bullet {
 
 .activity-services__inner-left p,
 .activity-services__inner-right p {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -2703,7 +2703,7 @@ button.swiper-pagination-bullet {
 }
 
 .activity-services__inner-btns button {
-  padding: 2.2rem 1.1rem;
+  padding: 2.05rem 0.84rem;
 }
 
 .activity-services__inner-btns a {
@@ -2719,10 +2719,6 @@ button.swiper-pagination-bullet {
   max-width: 28.2rem;
   align-self: flex-start;
   margin-bottom: 4rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
   font-size: 2.6rem;
   line-height: 120.02%;
   color: var(--white_1);
@@ -2755,10 +2751,6 @@ button.swiper-pagination-bullet {
 
 .advantages__inner-text__left p,
 .advantages__inner-text__right p {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--white_1);
@@ -2795,11 +2787,11 @@ button.swiper-pagination-bullet {
 .advantages__inner-blocks .advantages__inner-block p {
   width: 100%;
   max-width: 50rem;
-  font-family: "Inter Medium";
+  font-family: "Roboto Condensed Bold";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 120%;
   color: var(--white_1);
 }
@@ -2811,10 +2803,6 @@ button.swiper-pagination-bullet {
 .activity h2 {
   align-self: flex-start;
   margin-bottom: 4rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
   font-size: 3.2rem;
   line-height: 120.02%;
   color: var(--black_2);
@@ -2839,36 +2827,45 @@ button.swiper-pagination-bullet {
 
 .activity__inner-left p,
 .activity__inner-right p {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 140%;
   color: var(--black_1);
 }
 
+.activity-form h3 {
+  align-self: flex-start;
+  margin-bottom: 3rem;
+  margin-left: 0.8rem;
+}
+
 .activity-form h2 {
   max-width: 35rem;
-  align-self: flex-start;
-  margin-bottom: 6rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+  align-self: center;
+  margin-bottom: 3rem;
   font-size: 3.2rem;
   line-height: 120.02%;
   color: var(--black_2);
 }
 
+.activity-form .consult__inner h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.activity-form .consult__inner-top {
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
 .activity-form .consult__inner-center--last {
+  align-items: flex-start;
   background: url("../img/icons/text-bg-white.svg") 0% 81%/132% 4rem no-repeat, var(--white_2);
 }
 
 .activity-form .consult__inner-center__form {
   width: 100%;
   max-width: 50rem;
-  padding: 2.3rem 2rem;
+  padding: 2.3rem 2rem 1.8rem 2rem;
   background: var(--white_1);
   border: 0.1rem solid var(--red_1);
   border-radius: 0.5rem;
@@ -2876,10 +2873,6 @@ button.swiper-pagination-bullet {
 
 .activity-form .consult__inner-center__form p {
   margin-bottom: 2rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--gray_5);
@@ -2905,23 +2898,18 @@ button.swiper-pagination-bullet {
 
 .activity-form .consult__inner-center__form-bottom .whatsapp {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 
 .activity-form .consult__inner-center__form-bottom .whatsapp span:nth-of-type(1) {
   margin-bottom: 0.5rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--gray_5);
 }
 
 .activity-form .consult__inner-center__form-bottom .whatsapp span:nth-of-type(2) {
-  font-family: "Inter Medium";
+  font-family: "Roboto Condensed Bold";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -2938,24 +2926,29 @@ button.swiper-pagination-bullet {
   display: block;
 }
 
+#tabs-activity .tab {
+  width: 100%;
+  height: auto;
+}
+
+.consult__form--activity {
+  border: none;
+}
+
 .activity-areas {
-  padding: 15rem 0 7.5rem 0;
+  padding: 15rem 0 1rem 0;
 }
 
 .activity-areas h2 {
   align-self: flex-start;
   margin-bottom: 6rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
   font-size: 4rem;
   line-height: 120.02%;
   color: var(--black_2);
 }
 
 .blog-top {
-  margin-bottom: 8.1rem;
+  margin-bottom: 4rem;
 }
 
 .blog-top__inner {
@@ -2973,6 +2966,7 @@ button.swiper-pagination-bullet {
 }
 
 .blog-top h1 {
+  text-align: left;
   align-self: flex-start;
   margin-bottom: 3.2rem;
 }
@@ -2981,10 +2975,6 @@ button.swiper-pagination-bullet {
   width: 100%;
   max-width: 56.5rem;
   align-self: flex-start;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -2999,7 +2989,7 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 
 .blog-center__inner-news .blog-center__inner-tabs .blog-center__inner-tab:nth-child(1),
@@ -3043,6 +3033,13 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.tab-awards {
+  font-family: "Roboto Condensed Bold";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 .goal__inner-img__project {
@@ -3092,27 +3089,19 @@ button.swiper-pagination-bullet {
 
 .goal__inner-img__project-info .goal__inner-img__project-block .block__content-title {
   margin-bottom: 0.5rem;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--white_1);
 }
 
 .goal__inner-img__project-info .goal__inner-img__project-block .block__content-desc {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.2rem;
   line-height: 130.02%;
   color: var(--gray_6);
 }
 
 .project-desc {
-  padding: 7.5rem 0 0 0;
+  padding: 1rem 0 0 0;
 }
 
 .project-desc__inner {
@@ -3138,10 +3127,6 @@ button.swiper-pagination-bullet {
 
 .project-desc__inner-text-subtitle {
   margin-bottom: 4rem;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.8rem;
   line-height: 130.02%;
   color: var(--black_2);
@@ -3157,10 +3142,6 @@ button.swiper-pagination-bullet {
 .project-desc__inner-text-blocks p {
   width: 100%;
   max-width: 36rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -3191,20 +3172,12 @@ button.swiper-pagination-bullet {
 
 .project-desc__concept-text h3 {
   margin-bottom: 2rem;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 3rem;
   color: var(--black_2);
 }
 
 .project-desc__concept-text p {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -3230,7 +3203,7 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 21.3rem;
+  margin-bottom: 2rem;
 }
 
 .project-history__content-text {
@@ -3240,10 +3213,6 @@ button.swiper-pagination-bullet {
 
 .project-history__content-text p {
   margin-bottom: 2rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -3259,6 +3228,16 @@ button.swiper-pagination-bullet {
   height: 25.4rem;
   order: -1;
   margin-bottom: 2rem;
+}
+
+.tabs-history {
+  display: flex;
+  justify-content: space-around;
+  width: 100% !important;
+}
+
+.tabs-history .tab--big {
+  width: 19rem;
 }
 
 .project-visualization {
@@ -3311,10 +3290,6 @@ button.swiper-pagination-bullet {
   bottom: -10rem;
   transform: translateX(50%);
   padding: 2rem 1rem 2rem 1.5rem;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -3333,6 +3308,14 @@ button.swiper-pagination-bullet {
   height: 27.1rem;
   width: 100%;
   margin-bottom: 2rem;
+}
+
+.tab-visualization-content {
+  display: none;
+}
+
+.tab-visualization-content--active {
+  display: block;
 }
 
 .other-projects {
@@ -3373,16 +3356,6 @@ button.swiper-pagination-bullet {
   border: 0.2rem solid var(--black_2);
   border-radius: 50%;
   cursor: pointer;
-  will-change: background, color;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.other-projects__top .swiper-slider-arrows .arrow__left:hover,
-.other-projects__top .swiper-slider-arrows .arrow__left:focus,
-.other-projects__top .swiper-slider-arrows .arrow__right:hover,
-.other-projects__top .swiper-slider-arrows .arrow__right:focus {
-  color: var(--white_1);
-  background: var(--black_2);
 }
 
 .other-projects__top .swiper-slider-arrows .arrow__left {
@@ -3431,10 +3404,6 @@ button.swiper-pagination-bullet {
 
 .swiper-slide__info-item {
   display: flex;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 120.02%;
   color: var(--gray_8);
@@ -3451,6 +3420,34 @@ button.swiper-pagination-bullet {
   max-width: 36rem;
   height: 36.5rem;
   overflow: hidden;
+}
+
+.swiper-button-disabled {
+  cursor: default !important;
+  color: var(--white_1) !important;
+  background: var(--black_2) !important;
+}
+
+.swiper-pagination {
+  margin-top: 3rem;
+  bottom: unset;
+}
+
+.swiper-pagination-bullet {
+  width: 0.7rem;
+  height: 0.7rem;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #BF0902;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: unset !important;
 }
 
 .goal__inner-img__project-2 {
@@ -3493,10 +3490,6 @@ button.swiper-pagination-bullet {
   width: 30rem;
   padding: 2rem;
   margin-bottom: 2rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 1.9rem;
   color: var(--black_2);
@@ -3519,10 +3512,6 @@ button.swiper-pagination-bullet {
 }
 
 .project-desc__text-offer P {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 1.9rem;
   color: var(--black_2);
@@ -3563,10 +3552,6 @@ button.swiper-pagination-bullet {
 }
 
 .fragments-plan__images span {
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 2.1rem;
   color: var(--black_2);
@@ -3598,10 +3583,6 @@ button.swiper-pagination-bullet {
 }
 
 .services-top__inner-content p {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -3632,10 +3613,6 @@ button.swiper-pagination-bullet {
 
 .services-top__inner-cards .services-top__inner-card p {
   margin-bottom: 0;
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -3738,10 +3715,6 @@ button.swiper-pagination-bullet {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 2.1rem;
   line-height: 2.5rem;
   color: var(--white_1);
@@ -3753,10 +3726,6 @@ button.swiper-pagination-bullet {
 .accordion__stage h3 {
   width: 67%;
   margin-bottom: 1.5rem;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 2rem;
   line-height: 120%;
   color: var(--white_1);
@@ -3764,10 +3733,6 @@ button.swiper-pagination-bullet {
 }
 
 .accordion__stage p {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -3803,6 +3768,10 @@ button.swiper-pagination-bullet {
   opacity: 0;
 }
 
+.accordion__stage-content::-webkit-scrollbar {
+  width: 0;
+}
+
 .accordion__stage-content::before {
   position: absolute;
   right: 2rem;
@@ -3836,7 +3805,7 @@ button.swiper-pagination-bullet {
 }
 
 .services-analysis {
-  margin: 7.5rem 0 10rem 0;
+  margin: 1rem 0 10rem 0;
 }
 
 .services-analysis h2 {
@@ -3868,12 +3837,13 @@ button.swiper-pagination-bullet {
 .services-form__inner {
   position: relative;
   width: 100%;
+  max-width: 28rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 6rem 0 6rem 0;
   border-radius: 1rem;
-  background: url("../img/icons/text-white.svg") 100% 0%/9.8rem 100% no-repeat, var(--white_2);
+  background: url("../img/icons/text-white.svg") 100% 0%/9.8rem 100% no-repeat;
 }
 
 .services-form__inner-left {
@@ -3883,10 +3853,6 @@ button.swiper-pagination-bullet {
 .services-form__inner-left h2 {
   max-width: 30rem;
   margin-bottom: 4rem;
-  font-family: "Inter SemiBold";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
   font-size: 2.2rem;
   line-height: 100%;
   text-transform: uppercase;
@@ -3894,10 +3860,6 @@ button.swiper-pagination-bullet {
 
 .services-form__inner-left p,
 .services-form__inner-left ul {
-  font-family: "Inter Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 130.02%;
   color: var(--black_1);
@@ -3921,6 +3883,10 @@ button.swiper-pagination-bullet {
   max-width: 35rem;
 }
 
+.br-gray {
+  background: var(--white_2);
+}
+
 .services-documentation {
   margin: 6.6rem 0 8rem 0;
 }
@@ -3933,7 +3899,7 @@ button.swiper-pagination-bullet {
 }
 
 .services-documentation__inner .services-documentation__card {
-  max-width: 30rem;
+  width: 26rem !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3952,17 +3918,27 @@ button.swiper-pagination-bullet {
 }
 
 .services-documentation__inner .services-documentation__card h3 {
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  align-self: flex-start;
   font-size: 1.6rem;
   line-height: 120%;
   color: var(--black_2);
 }
 
+.services-documentation .swiper-button-disabled {
+  cursor: default !important;
+  color: var(--white_1) !important;
+  background: var(--black_2) !important;
+}
+
+.services-documentation .swiper {
+  width: 100%;
+  max-width: 26rem;
+  height: 36.5rem;
+  overflow: hidden;
+}
+
 .projects-top {
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
 }
 
 .projects-top__inner {
@@ -3973,6 +3949,7 @@ button.swiper-pagination-bullet {
 }
 
 .projects-top__inner h1 {
+  text-align: left;
   align-self: flex-start;
   max-width: 25rem;
   margin-bottom: 4rem;
@@ -3996,6 +3973,17 @@ button.swiper-pagination-bullet {
   display: flex;
 }
 
+.projects-center .tabs {
+  width: 100%;
+}
+
+.projects-center .tab {
+  margin-right: 0.5rem;
+  width: 14rem;
+  height: 5rem;
+  padding: 1.25rem 1.885rem;
+}
+
 .projects-center__inner {
   width: 100%;
   margin: 4.2rem 0 0 0;
@@ -4005,6 +3993,10 @@ button.swiper-pagination-bullet {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.projects-center__inner-row .project {
+  position: relative;
 }
 
 .projects-center__inner-row:nth-of-type(1) {
@@ -4029,7 +4021,16 @@ button.swiper-pagination-bullet {
   padding: 1rem 1rem 2rem 1rem;
   background: var(--white_4);
   border-radius: 0.5rem;
+  border: 0.1rem solid var(--white_4);
   margin: 0 auto 2rem auto;
+  will-change: all;
+  transition: border 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.projects-center__inner-row .project:hover,
+.projects-center__inner-row .project:focus {
+  border: 0.1rem solid var(--red_1);
+  transform: scale(1.05);
 }
 
 .projects-center__inner-row .project--large {
@@ -4059,10 +4060,6 @@ button.swiper-pagination-bullet {
   max-width: 35rem;
   align-self: flex-start;
   margin-bottom: 2.2rem;
-  font-family: "Inter Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 1.9rem;
   color: var(--black_1);
@@ -4102,18 +4099,18 @@ button.swiper-pagination-bullet {
   color: var(--black_1);
 }
 
+.projects-center__inner-row .project--small:hover,
+.projects-center__inner-row .project--small:focus {
+  transform: ranslate(unset) scale(1.05);
+}
+
 @media (min-width: 375px) {
   h2 {
     font-size: 2.6rem;
   }
 
   .card {
-    width: 27.5rem;
     padding: 2rem 1.5rem 2rem 2rem;
-  }
-
-  .card__bottom span {
-    font-size: 1.6rem;
   }
 
   .modal h3 {
@@ -4134,6 +4131,14 @@ button.swiper-pagination-bullet {
 
   .blog-article h3 {
     font-size: 2rem;
+  }
+
+  .landscaping__center {
+    max-width: 25rem;
+  }
+
+  .landscaping__top-img p {
+    font-size: 1.2rem;
   }
 
   .landscaping-services__inner-bottom {
@@ -4177,8 +4182,8 @@ button.swiper-pagination-bullet {
     width: 30rem;
   }
 
-  .activity-services__inner-btns button {
-    padding: 2.2rem 1.5rem;
+  .consult__inner-center {
+    max-width: 30rem;
   }
 
   .activity-services__inner-btns a {
@@ -4201,8 +4206,18 @@ button.swiper-pagination-bullet {
     padding: 2rem 2rem 6.462rem 2rem;
   }
 
+  .services-form__inner {
+    max-width: 30rem;
+  }
+
   .services-form__inner-left h2 {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
+  }
+
+  .projects-center .tab {
+    width: 16rem;
+    height: 5rem;
+    margin-right: 1rem;
   }
 }
 
@@ -4228,6 +4243,7 @@ button.swiper-pagination-bullet {
     max-width: 100%;
     height: 29rem;
     background: url("../img/goal-bg-md.jpg") 100% 100%/cover no-repeat;
+    background-attachment: fixed;
   }
 
   .goal__inner-text {
@@ -4240,6 +4256,7 @@ button.swiper-pagination-bullet {
   .seo-text__inner-img {
     height: 29rem;
     background: url("../img/goal-bg-md.jpg") 100% 100%/cover no-repeat;
+    background-attachment: fixed;
   }
 
   .geography__inner-right {
@@ -4415,7 +4432,8 @@ button.swiper-pagination-bullet {
   }
 
   .consult__inner-center {
-    background: url("../img/icons/text-bg.svg") 0% 81%/132% 5rem no-repeat, var(--white_2);
+    max-width: 40rem;
+    background: url("../img/icons/text-bg.svg") 0% 81%/132% 5rem no-repeat;
   }
 
   .consult__inner-center__text img {
@@ -4433,7 +4451,7 @@ button.swiper-pagination-bullet {
   }
 
   .activity-form .consult__inner-center__form {
-    margin: 0 auto;
+    margin: 0;
   }
 
   .goal__inner-img__project {
@@ -4455,6 +4473,14 @@ button.swiper-pagination-bullet {
     background: url("../img/project-bg-md.jpg") 100% 100%/cover no-repeat;
   }
 
+  .services-form__inner {
+    max-width: 40rem;
+  }
+
+  .services-form__inner-left h2 {
+    font-size: 3.2rem;
+  }
+
   .projects-top__inner h1 {
     max-width: 100%;
   }
@@ -4463,6 +4489,12 @@ button.swiper-pagination-bullet {
 @media (min-width: 550px) {
   .history__inner-cards .card:nth-child(odd) {
     margin-right: 0.5rem;
+  }
+}
+
+@media (min-width: 570px) {
+  .services-documentation .swiper {
+    max-width: 54rem;
   }
 }
 
@@ -4630,10 +4662,12 @@ button.swiper-pagination-bullet {
 
   .goal__inner-img {
     height: 32rem;
+    background-attachment: fixed;
   }
 
   .seo-text__inner-img {
     height: 32rem;
+    background-attachment: fixed;
   }
 
   .history__inner-cards {
@@ -4645,7 +4679,8 @@ button.swiper-pagination-bullet {
   }
 
   .consult__inner-center {
-    background: url("../img/icons/text-bg.svg") 0% 81%/132% 7rem no-repeat, var(--white_2);
+    max-width: 50rem;
+    background: url("../img/icons/text-bg.svg") 0% 81%/132% 7rem no-repeat;
   }
 
   .consult__inner-center__text img {
@@ -4703,12 +4738,22 @@ button.swiper-pagination-bullet {
     background: url("../img/project-bg-md.jpg") 100% 100%/cover no-repeat;
   }
 
+  .services-form__inner {
+    max-width: 50rem;
+  }
+
   .services-documentation__inner {
-    max-width: 62rem;
+    max-width: 84rem;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: initial;
+  }
+}
+
+@media (min-width: 700px) {
+  .landscaping__center {
+    max-width: 35rem;
   }
 }
 
@@ -4727,10 +4772,12 @@ button.swiper-pagination-bullet {
 
   .goal__inner-img {
     height: 35rem;
+    background-attachment: fixed;
   }
 
   .seo-text__inner-img {
     height: 35rem;
+    background-attachment: fixed;
   }
 
   .geography__inner-right__img img:nth-of-type(1) {
@@ -4907,7 +4954,6 @@ button.swiper-pagination-bullet {
   }
 
   .project-desc__inner {
-    max-width: 73.8rem;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 11.2rem;
@@ -4918,7 +4964,6 @@ button.swiper-pagination-bullet {
   }
 
   .project-desc__concept {
-    max-width: 73.8rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: initial;
@@ -4996,7 +5041,7 @@ button.swiper-pagination-bullet {
   }
 
   .consult__inner-center {
-    background: url("../img/icons/text-bg.svg") 0% 81%/132% 8rem no-repeat, var(--white_2);
+    background: url("../img/icons/text-bg.svg") 0% 81%/132% 8rem no-repeat;
   }
 
   .consult__inner-center__text img {
@@ -5005,6 +5050,10 @@ button.swiper-pagination-bullet {
 
   .activity-form .consult__inner-center--last {
     background: url("../img/icons/text-bg-white.svg") 0% 81%/132% 8rem no-repeat, var(--white_2);
+  }
+
+  .services-documentation .swiper {
+    max-width: 84rem;
   }
 
   .projects-center__inner {
@@ -5038,15 +5087,15 @@ button.swiper-pagination-bullet {
   }
 
   .projects-center__inner-row:nth-of-type(1) .project:nth-of-type(2) {
-    transform: translateY(-6rem);
+    top: -6rem;
   }
 
   .projects-center__inner-row:nth-of-type(2) .project:nth-of-type(1) {
-    transform: translateY(10rem);
+    top: 10rem;
   }
 
   .projects-center__inner-row:nth-of-type(2) .project:nth-of-type(3) {
-    transform: translateY(-16rem);
+    top: -16rem;
   }
 
   .projects-center__inner-row:nth-of-type(3) {
@@ -5055,16 +5104,16 @@ button.swiper-pagination-bullet {
   }
 
   .projects-center__inner-row:nth-of-type(3) .project:nth-of-type(1) {
-    transform: translateY(-6rem);
+    top: -6rem;
     margin-right: 8rem;
   }
 
   .projects-center__inner-row:nth-of-type(4) .project:nth-of-type(2) {
-    transform: translateY(8rem);
+    top: 8rem;
   }
 
   .projects-center__inner-row:nth-of-type(4) .project:nth-of-type(3) {
-    transform: translateY(38rem);
+    top: 38rem;
   }
 
   .projects-center__inner-row:nth-of-type(5) {
@@ -5078,7 +5127,7 @@ button.swiper-pagination-bullet {
   }
 
   .projects-center__inner-row:nth-of-type(5) .project:nth-of-type(2) {
-    transform: translateY(9rem);
+    top: 9rem;
   }
 
   .projects-center__inner-row .project {
@@ -5104,8 +5153,16 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 1024px) {
+  .container--no-padding {
+    padding: 0 1.5rem;
+  }
+
   .no-scroll {
     padding-right: 1.7rem;
+  }
+
+  h1 {
+    font-size: 6.8rem;
   }
 
   h2 {
@@ -5233,11 +5290,12 @@ button.swiper-pagination-bullet {
   .menu-header .sub-menu {
     position: absolute;
     z-index: -100;
-    top: 2.5rem;
+    top: 2rem;
     left: 0;
     overflow: hidden;
     width: max-content;
     opacity: 0;
+    display: block;
     padding: 1rem;
     border-radius: 0.5rem;
     background: var(--white_1);
@@ -5254,24 +5312,44 @@ button.swiper-pagination-bullet {
     transform: rotate(180deg);
   }
 
+  .menu-header .sub-menu li {
+    margin-bottom: 1rem;
+  }
+
+  .menu-header-item__submenu {
+    display: block;
+    margin-bottom: 3.1rem;
+  }
+
+  .menu-header-item__submenu a {
+    margin-bottom: 0;
+  }
+
   .nav__footer {
     max-width: 56rem;
   }
 
   .menu-footer {
     margin-bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(5rem, max-content));
+    column-gap: 4rem;
   }
 
   .menu-footer::before {
     left: 0;
-    bottom: -10rem;
+    bottom: 2rem;
     transform: rotate(0deg);
     width: 110.5rem;
     height: 11.3rem;
   }
 
   .menu-footer-item {
-    width: 25%;
+    width: 100%;
+  }
+
+  .menu-header-item__submenu a::after {
+    display: none;
   }
 
   .card {
@@ -5363,32 +5441,36 @@ button.swiper-pagination-bullet {
     margin-bottom: 6rem;
   }
 
-  .landscaping__center img:nth-of-type(1) {
+  .landscaping__center {
+    max-width: 53rem;
+  }
+
+  .landscaping__center a:nth-of-type(1) {
     width: 18.7rem;
     height: 26.5rem;
     margin-right: 19.7rem;
-    transform: translate(0, 0);
+    transform: translateY(6rem);
   }
 
-  .landscaping__center img:nth-of-type(2) {
+  .landscaping__center a:nth-of-type(2) {
     width: 15.3rem;
     height: 21.7rem;
-    transform: translate(0, 8rem);
+    transform: translate(0rem, 14rem);
   }
 
-  .landscaping__bottom img:nth-of-type(1) {
+  .landscaping__bottom a:nth-of-type(1) {
     width: 25.6rem;
     height: 20.7rem;
     transform: translate(0, 0);
   }
 
-  .landscaping__bottom img:nth-of-type(2) {
+  .landscaping__bottom a:nth-of-type(2) {
     width: 30.4rem;
     height: 21.6rem;
     transform: translate(0rem, 19rem);
   }
 
-  .landscaping__bottom img:nth-of-type(3) {
+  .landscaping__bottom a:nth-of-type(3) {
     width: 16.7rem;
     height: 30.1rem;
     transform: translate(0, 0);
@@ -5398,23 +5480,17 @@ button.swiper-pagination-bullet {
     position: static;
   }
 
-  .landscaping__top img {
-    width: 22.6rem;
-    height: 22.6rem;
+  .landscaping__top a {
+    width: 15.8rem;
+    height: 20.6rem;
   }
 
   .landscaping__top-img {
     transform: translateX(0);
   }
 
-  .landscaping__top-img img {
-    width: 15.8rem;
-    height: 20.6rem;
-    transform: translate(-2rem, 0);
-  }
-
   .landscaping__top-img p {
-    transform: translate(-1.8rem, 0.5rem);
+    transform: translate(0, 0.5rem);
     max-width: 15.8rem;
     font-size: 1.4rem;
   }
@@ -5483,6 +5559,7 @@ button.swiper-pagination-bullet {
   .goal__inner-img {
     height: 45rem;
     background: url("../img/goal-bg.jpg") 100% 100%/cover no-repeat;
+    background-attachment: fixed;
   }
 
   .goal__inner-text {
@@ -5528,6 +5605,7 @@ button.swiper-pagination-bullet {
   .seo-text__inner-img {
     height: 45rem;
     background: url("../img/goal-bg.jpg") 100% 100%/cover no-repeat;
+    background-attachment: fixed;
   }
 
   .history {
@@ -5546,6 +5624,7 @@ button.swiper-pagination-bullet {
   }
 
   .history__inner-text h2 {
+    max-width: 48.8rem;
     margin-bottom: 6rem;
   }
 
@@ -5784,7 +5863,13 @@ button.swiper-pagination-bullet {
   }
 
   .consult {
+    max-width: 102.4rem;
+    margin: 0 auto;
     padding: 7.5rem 0 18.1rem 0;
+  }
+
+  .consult__inner-top {
+    max-width: 100%;
   }
 
   .consult__inner-top .line {
@@ -5808,13 +5893,10 @@ button.swiper-pagination-bullet {
   }
 
   .consult__inner-top .tabs .tab {
-    width: 36rem;
+    width: 30%;
     text-align: center;
     font-size: 2rem;
-  }
-
-  .consult__inner-top .tabs .tab--active {
-    color: var(--black_2);
+    margin: 0 0 0 0;
   }
 
   .consult__inner-top .tabs .tab--active::after {
@@ -5830,10 +5912,11 @@ button.swiper-pagination-bullet {
   }
 
   .consult__inner-center {
+    max-width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5rem 5rem 4.2rem 5rem;
-    background: url("../img/icons/text-bg.svg") 5rem 50%/73% 8rem no-repeat, var(--white_2);
+    padding: 5rem 5rem 4.2rem 6rem;
+    background: url("../img/icons/text-bg.svg") 5rem 50%/87.5% 8rem no-repeat;
   }
 
   .consult__inner-center__text {
@@ -5859,10 +5942,6 @@ button.swiper-pagination-bullet {
 
   .activity-services {
     padding-bottom: 11rem;
-  }
-
-  .activity-services h1 {
-    text-align: left;
   }
 
   .activity-services__inner {
@@ -5972,14 +6051,26 @@ button.swiper-pagination-bullet {
     width: 48%;
   }
 
+  .activity-form h3 {
+    margin: 0;
+  }
+
   .activity-form h2 {
     align-self: flex-start;
     margin-bottom: 6rem;
     font-size: 4rem;
   }
 
+  .activity-form .consult__inner h3 {
+    text-align: left;
+  }
+
+  .activity-form .consult__inner-top {
+    max-width: 100%;
+  }
+
   .activity-form .consult__inner-center--last {
-    background: url("../img/icons/text-bg-white.svg") 5rem 22rem/73% 8rem no-repeat, var(--white_2);
+    background: url("../img/icons/text-bg-white.svg") 6rem 20rem/73% 8rem no-repeat, var(--white_2);
   }
 
   .activity-form .consult__inner-center__form-bottom {
@@ -5993,13 +6084,13 @@ button.swiper-pagination-bullet {
 
   .activity-form .form-title {
     margin-bottom: 5.7rem;
-    font-family: "Inter SemiBold";
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
     font-size: 4rem;
     line-height: 120.02%;
     color: var(--black_2);
+  }
+
+  #tabs-activity .tab {
+    width: 19% !important;
   }
 
   .blog-top__inner {
@@ -6015,7 +6106,6 @@ button.swiper-pagination-bullet {
   }
 
   .blog-top h1 {
-    text-align: left;
     font-size: 4rem;
     margin-bottom: 6rem;
   }
@@ -6073,6 +6163,10 @@ button.swiper-pagination-bullet {
 
   .goal__inner-img__project-info .goal__inner-img__project-block img {
     transform: translateY(-1.5rem);
+  }
+
+  .project-desc {
+    padding: 7.5rem 0 0 0;
   }
 
   .project-desc__inner {
@@ -6329,6 +6423,10 @@ button.swiper-pagination-bullet {
     background: var(--white_2);
   }
 
+  .accordion__stage::before {
+    display: none;
+  }
+
   .accordion__stage::after {
     color: var(--black_2);
     background: none;
@@ -6370,15 +6468,17 @@ button.swiper-pagination-bullet {
   }
 
   .services-form__inner {
+    max-width: 100%;
     flex-direction: row;
     align-items: initial;
     justify-content: space-between;
     padding: 6rem 6rem 4.2rem 6rem;
-    background: url("../img/icons/text-white-horizontal.svg") 6rem 97%/73% 8rem no-repeat, var(--white_2);
+    background: url("../img/icons/text-white-horizontal.svg") 6rem 97%/73% 8rem no-repeat;
   }
 
   .services-form__inner-left {
     margin-bottom: 0;
+    margin-right: 2rem;
   }
 
   .services-form__inner-left h2 {
@@ -6389,14 +6489,6 @@ button.swiper-pagination-bullet {
     margin: 12.8rem 0 15rem 0;
   }
 
-  .services-documentation__inner {
-    max-width: 100%;
-  }
-
-  .services-documentation__inner .services-documentation__card {
-    max-width: 24rem;
-  }
-
   .services-documentation__inner .services-documentation__card:not(:last-of-type) {
     margin-bottom: 0;
   }
@@ -6405,8 +6497,11 @@ button.swiper-pagination-bullet {
     width: 100%;
   }
 
+  .projects-top {
+    margin-bottom: 6rem;
+  }
+
   .projects-top__inner {
-    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -6437,8 +6532,12 @@ button.swiper-pagination-bullet {
     max-width: 100%;
   }
 
+  .consult {
+    max-width: 104rem;
+  }
+
   .activity-form .consult__inner-center--last {
-    background: url("../img/icons/text-bg-white.svg") 5rem 19rem/auto no-repeat, var(--white_2) !important;
+    background: url("../img/icons/text-bg-white.svg") 6rem 17rem/auto no-repeat, var(--white_2) !important;
   }
 
   .blog-center .line--awards {
@@ -6463,12 +6562,17 @@ button.swiper-pagination-bullet {
     width: 50%;
   }
 
-  .services-documentation__inner .services-documentation__card {
-    max-width: 26rem;
+  .services-documentation__inner {
+    max-width: 113rem;
   }
 
   .services-documentation__inner .services-documentation__card h3 {
     font-size: 1.8rem;
+  }
+
+  .services-documentation .swiper {
+    max-width: 113rem;
+    padding: 0 0 15rem 0;
   }
 }
 
@@ -6489,6 +6593,7 @@ button.swiper-pagination-bullet {
 @media (min-width: 1440px) {
   .menu-footer::before {
     left: 0;
+    bottom: -1rem;
     transform: rotate(0deg);
     width: 131.7rem;
     height: 14.7rem;
@@ -6500,6 +6605,10 @@ button.swiper-pagination-bullet {
 
   .blog-article {
     width: 36rem;
+  }
+
+  .landscaping__center a:nth-of-type(2) {
+    transform: translate(0, 12rem);
   }
 
   .landscaping-services__inner-bottom {
@@ -6543,8 +6652,12 @@ button.swiper-pagination-bullet {
     margin-bottom: 0;
   }
 
+  .consult {
+    max-width: 100%;
+  }
+
   .consult__inner-center {
-    background: url("../img/icons/text-bg.svg") 5rem 20rem/auto no-repeat, var(--white_2);
+    background: url("../img/icons/text-bg.svg") 4rem 20rem/99.4% 8rem no-repeat;
   }
 
   .consult__inner-center__text h2 {
@@ -6571,6 +6684,10 @@ button.swiper-pagination-bullet {
   .activity__inner-left,
   .activity__inner-right {
     width: 50%;
+  }
+
+  #tabs-activity .tab {
+    width: 16% !important;
   }
 
   .blog-top p {

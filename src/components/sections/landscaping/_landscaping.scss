@@ -14,6 +14,30 @@
     }
   }
 
+  a {
+    // transform: translateY(1rem);
+    // width: 9.7rem;
+    // height: 12.7rem;
+    // border-radius: 0.5rem;
+
+    // @media (min-width: 1024px) {
+    //   // width: 17.8rem;
+    //   width: 15.8rem;
+    //   // height: 23.3rem;
+    //   height: 20.6rem;
+    //   transform: translate(-2rem, 0);
+    // }
+
+    will-change: box-shadow;
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      // filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
+      box-shadow: 0px 0px 66px -12px rgba(34, 60, 80, 0.2);
+    }
+  }
+
   &__top,
   &__center,
   &__bottom {
@@ -24,20 +48,35 @@
   }
 
   &__center {
-    justify-content: center;
+    max-width: 17rem;
+    // justify-content: center;
 
-    img {
+    @media (min-width: 375px) {
+      max-width: 25rem;
+    }
+
+    @media (min-width: 700px) {
+      max-width: 35rem;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 53rem;
+    }
+
+    a {
 
       &:nth-of-type(1) {
         width: 9.5rem;
         height: 13.5rem;
-        transform: translate(-2rem, -6rem);
+        transform: translate(0rem, -4rem);
+        // transform: translate(-2rem, -6rem);
 
         @media (min-width: 1024px) {
           width: 18.7rem;
           height: 26.5rem;
           margin-right: 19.7rem;
-          transform: translate(0, 0);
+          transform: translateY(6rem);
+          // transform: translate(0, 0);
         }
       }
 
@@ -49,7 +88,12 @@
         @media (min-width: 1024px) {
           width: 15.3rem;
           height: 21.7rem;
-          transform: translate(0, 8rem);
+          // transform: translate(0, 8rem);
+          transform: translate(0rem, 14rem);
+        }
+
+        @media (min-width: 1440px) {
+          transform: translate(0, 12rem);
         }
       }
     }
@@ -58,7 +102,7 @@
   &__bottom {
     height: 27rem;
 
-    img {
+    a {
 
       &:nth-of-type(2) {
         align-self: flex-end;
@@ -115,15 +159,21 @@
       position: static;
     }
 
-    img  {
+    a  {
       transform: translateY(-2.3rem);
       width: 9.6rem;
-      height: 9.6rem;
+      height: 12.5rem;
 
       @media (min-width: 1024px) {
-        width: 22.6rem;
-        height: 22.6rem;  
+        // width: 22.6rem;
+        // height: 22.6rem;  
+        width: 15.8rem;
+        height: 20.6rem;  
       }
+    }
+
+    &-img a {
+      transform: translate(-1.3rem, -3rem);
     }
 
     // img {
@@ -162,50 +212,55 @@
     // }
 
     &-img {
-      display: flex;
-      flex-direction: column;
+      // display: flex;
+      // flex-direction: column;
       transform: translate(2rem, 0rem);
 
-      // transform: translateX(2rem);
+
 
       @media (min-width: 1024px) {
         transform: translateX(0);
       }
 
-      img {
-        transform: translateY(1rem);
-        width: 9.7rem;
-        height: 12.7rem;
-        border-radius: 0.5rem;
+      // img a {
+      //   transform: translateY(1rem);
+      //   width: 9.7rem;
+      //   height: 12.7rem;
+      //   border-radius: 0.5rem;
 
-        @media (min-width: 1024px) {
-          // width: 17.8rem;
-          width: 15.8rem;
-          // height: 23.3rem;
-          height: 20.6rem;
-          transform: translate(-2rem, 0);
-        }
+      //   @media (min-width: 1024px) {
+      //     // width: 17.8rem;
+      //     width: 15.8rem;
+      //     // height: 23.3rem;
+      //     height: 20.6rem;
+      //     transform: translate(-2rem, 0);
+      //   }
 
-        &:hover,
-        &:focus {
-          filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
-        }
-      }
+      //   &:hover,
+      //   &:focus {
+      //     filter: drop-shadow(-61px 11px 25px rgba(122, 122, 122, 0.01)) drop-shadow(-35px 6px 21px rgba(122, 122, 122, 0.05)) drop-shadow(-15px 3px 16px rgba(122, 122, 122, 0.09)) drop-shadow(-4px 1px 9px rgba(122, 122, 122, 0.1)) drop-shadow(0px 0px 0px rgba(122, 122, 122, 0.1));
+      //   }
+      // }
 
       p {
         // transform: translate(-0.5rem, -0.5rem);
-        transform: translate(-2rem, 1rem);
+        // transform: translate(-2rem, 1rem);
+        transform: translate(-1rem, 1rem);
         max-width: 13.8rem;
         display: inline-block;
-        @include InterMedium();
-        font-size: 1.2rem;
+        // @include InterMedium();
+        font-size: 1.1rem;
         line-height: 1.7rem;
         text-align: center;
         color: var(--black_2);
 
+        @media (min-width: 375px) {
+          font-size: 1.2rem;
+        }
+
         @media (min-width: 1024px) {
           // transform: translate(2rem, -1.5rem);
-          transform: translate(-1.8rem, 0.5rem);
+          transform: translate(0, 0.5rem);
           max-width: 15.8rem;
           font-size: 1.4rem;
         }
@@ -220,12 +275,14 @@
     bottom: 16rem;
     width: 21.7rem;
     padding: 1.6rem 1.377rem;
-    @include InterRegular();
+    // @include InterRegular();
     font-size: 1.6rem;
     line-height: 100%;
     color: var(--black_2);
     border: 0.1rem solid var(--black_2);
     background: transparent;
+    will-change: background, color;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 
     @media (min-width: 1024px) {
       position: static;
@@ -236,5 +293,23 @@
       padding: 1.6rem 4.377rem;
       // font-size: 6.8rem;
     }
+
+    &:focus,
+    &:hover {
+      background: #BF0902;
+      color: #FFFFFF;
+      border: 0.1rem solid #BF0902;
+    }
   }
 }
+
+// .tab {
+//   will-change: background, color;
+//   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+//   &:focus,
+//   &:hover {
+//     background: #BF0902;
+//     color: #FFFFFF;
+//   }
+// }

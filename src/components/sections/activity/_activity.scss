@@ -8,7 +8,7 @@
   h2 {
     align-self: flex-start;
     margin-bottom: 4rem;
-    @include InterSemiBold();
+    // @include InterSemiBold();
     font-size: 3.2rem;
     line-height: 120.02%;
     color: var(--black_2);
@@ -59,7 +59,7 @@
       }
 
       p {
-        @include InterRegular();
+        // @include InterRegular();
         font-size: 1.6rem;
         line-height: 140%;
         color: var(--black_1);

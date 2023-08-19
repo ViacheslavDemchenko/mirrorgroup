@@ -42,7 +42,6 @@ export default function tabs() {
           
           titles.forEach(title => {
             title.classList.remove('form-title--active');
-            console.log(title);
           });
 
           titles[index].classList.add('form-title--active');

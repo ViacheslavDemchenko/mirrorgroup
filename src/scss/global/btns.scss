@@ -3,10 +3,14 @@
   // align-items: center;
   text-align: center;
   padding: 1.25rem 2.885rem;
-  @include InterRegular();
+  // @include InterRegular();
   outline: none;
   border: none;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   border-radius: 5rem;
+  will-change: background, color;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &--black {
     color: var(--white_1);
@@ -16,6 +20,12 @@
   &--red {
     color: var(--white_1);
     background: var(--red_1);
+
+    &:focus,
+    &:hover {
+      background: #000 !important;
+      color: #fff !important;
+    }
   }
 
   &--white {
@@ -24,4 +34,9 @@
     background: var(--white_1);
   }
   
+  &:focus,
+  &:hover {
+    background: #BF0902;
+    color: #FFFFFF;
+  }
 }

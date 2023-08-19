@@ -65,8 +65,10 @@
           top: 1.2rem;
           left: 50%;
           transform: translateX(-50%);
-          width: 7.4rem;
-          height: 8.6rem;
+          // width: 7.4rem;
+          // height: 8.6rem;
+          width: 14rem;
+          height: 16rem;
           display: none;
 
           @media (min-width: 1024px) {
@@ -93,8 +95,10 @@
 
           .location-desc {
             position: absolute;
-            width: 7.4rem;
-            height: 8.6rem;
+            // width: 7.4rem;
+            // height: 8.6rem;
+            width: 13.8rem;
+            height: 16rem;
 
             @media (min-width: 1024px) {
               width: 22.4rem;

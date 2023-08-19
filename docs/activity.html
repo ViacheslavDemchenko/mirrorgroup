@@ -29,7 +29,7 @@
                     <li class="menu-header-item" role="menuitem"><a class="menu-header-item-link menu-header-item-link--active" href="index.html">Главная</a></li>
                     <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="#price">О компании</a></li>
                     <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="projects.html">Проекты</a></li>
-                    <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="services.html">Услуги</a>
+                    <li class="menu-header-item menu-header-item__submenu" role="menuitem"><a class="menu-header-item-link menu-header-item-link__submenu" href="services.html">Услуги</a>
                       <ul class="sub-menu">
                         <li><a href="production-structure.html">Проектирование</a></li>
                         <li><a href="production-process.html">Строительство</a></li>
@@ -209,11 +209,15 @@
         </section>
         <section class="activity-form">
           <div class="consult"> 
-            <div class="container"> 
+            <div class="container container--no-padding">
               <h2>Форма</h2>
+              <h3 class="form-title form-title--active">Предложить участие в проекте</h3>
+              <h3 class="form-title">Запросить портфолио</h3>
+              <h3 class="form-title">Рассчитать стоимость проекта</h3>
+              <h3 class="form-title">Задать вопрос в WhatsApp</h3>
               <div class="consult__inner"> 
                 <div class="consult__inner-top">
-                  <ul class="tabs"> 
+                  <ul class="tabs" id="tabs-activity"> 
                     <li class="tab tab--active">Предложить участие в проекте</li>
                     <li class="tab">Запросить портфолио</li>
                     <li class="tab">Рассчитать стоимость проекта</li>
@@ -221,73 +225,77 @@
                   </ul>
                   <div class="line"></div>
                 </div>
-                <h3 class="form-title form-title--active">Предложить участие в проекте</h3>
-                <div class="consult__inner-center consult__inner-center--active">
-                  <div class="consult__inner-center__text">
-                    <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
-                  </div>
-                  <div class="consult__inner-center__form">
-                    <form class="consult__form" action="#" name="consult__form" method="post">
-                      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
-                      <input type="text" placeholder="name" name="name">
-                      <input type="text" placeholder="phone" name="phone">
-                      <input type="text" placeholder="email" name="email">
-                      <button class="btn btn--red consult__inner-btn">Отправить</button>
-                    </form>
+                <div class="consult__inner-center-wrap">
+                  <div class="consult__inner-center consult__inner-center--active">
+                    <div class="consult__inner-center__text">
+                      <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
+                    </div>
+                    <div class="consult__inner-center__form">
+                      <form class="consult__form consult__form--activity" action="#" name="consult__form" method="post">
+                        <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
+                        <input type="text" placeholder="name" name="name">
+                        <input class="phone phone-mask" type="text" placeholder="phone" name="phone">
+                        <input type="text" placeholder="email" name="email">
+                        <button class="btn btn--red consult__inner-btn">Отправить</button>
+                      </form>
+                    </div>
                   </div>
                 </div>
-                <h3 class="form-title">Запросить портфолио</h3>
-                <div class="consult__inner-center">
-                  <div class="consult__inner-center__text">
-                    <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
-                  </div>
-                  <div class="consult__inner-center__form">
-                    <form class="consult__form" action="#" name="consult__form" method="post">
-                      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
-                      <input type="text" placeholder="ФИО" name="name">
-                      <input type="text" placeholder="phone" name="phone">
-                      <input type="text" placeholder="email" name="email">
-                      <div class="upload">
-                        <div class="form-group">
-                          <input class="input-file" id="file_first" type="file" name="file_first">
-                          <label class="btn btn-tertiary js-labelFile" for="file_first"><span class="js-fileName">Прикрепить файл</span><img src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy"></label>
+                <div class="consult__inner-center-wrap">
+                  <div class="consult__inner-center">
+                    <div class="consult__inner-center__text">
+                      <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
+                    </div>
+                    <div class="consult__inner-center__form">
+                      <form class="consult__form consult__form--activity" action="#" name="consult__form" method="post">
+                        <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
+                        <input type="text" placeholder="ФИО" name="name">
+                        <input class="phone phone-mask" type="text" placeholder="phone" name="phone">
+                        <input type="text" placeholder="email" name="email">
+                        <div class="upload">
+                          <div class="form-group">
+                            <input class="input-file" id="file_first" type="file" name="file_first">
+                            <label class="btn btn-tertiary js-labelFile" for="file_first"><span class="js-fileName">Прикрепить файл</span><img src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy"></label>
+                          </div>
                         </div>
-                      </div>
-                      <button class="btn btn--red consult__inner-btn">Отправить</button>
-                    </form>
+                        <button class="btn btn--red consult__inner-btn">Отправить</button>
+                      </form>
+                    </div>
                   </div>
                 </div>
-                <h3 class="form-title">Рассчитать стоимость проекта</h3>
-                <div class="consult__inner-center">
-                  <div class="consult__inner-center__text">
-                    <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
-                  </div>
-                  <div class="consult__inner-center__form">
-                    <form class="consult__form" action="#" name="consult__form" method="post">
-                      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
-                      <input type="text" placeholder="ФИО" name="name">
-                      <input type="text" placeholder="phone" name="phone">
-                      <input type="text" placeholder="email" name="email">
-                      <textarea name="message" cols="30" rows="10" placeholder="Комментарий"></textarea>
-                      <div class="upload">
-                        <div class="form-group">
-                          <input class="input-file" id="file_second" type="file" name="file_second">
-                          <label class="btn btn-tertiary js-labelFile" for="file_second"><span class="js-fileName">Прикрепить файл</span><img src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy"></label>
+                <div class="consult__inner-center-wrap">
+                  <div class="consult__inner-center">
+                    <div class="consult__inner-center__text">
+                      <h2>Amet minim mollit non Amet minim</h2><img src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy">
+                    </div>
+                    <div class="consult__inner-center__form">
+                      <form class="consult__form consult__form--activity" action="#" name="consult__form" method="post">
+                        <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
+                        <input type="text" placeholder="ФИО" name="name">
+                        <input class="phone phone-mask" type="text" placeholder="phone" name="phone">
+                        <input type="text" placeholder="email" name="email">
+                        <textarea name="message" cols="30" rows="10" placeholder="Комментарий"></textarea>
+                        <div class="upload">
+                          <div class="form-group">
+                            <input class="input-file" id="file_second" type="file" name="file_second">
+                            <label class="btn btn-tertiary js-labelFile" for="file_second"><span class="js-fileName">Прикрепить файл</span><img src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy"></label>
+                          </div>
                         </div>
-                      </div>
-                      <button class="btn btn--red consult__inner-btn">Отправить</button>
-                    </form>
+                        <button class="btn btn--red consult__inner-btn">Отправить</button>
+                      </form>
+                    </div>
                   </div>
                 </div>
-                <h3 class="form-title">Задать вопрос в WhatsApp</h3>
-                <div class="consult__inner-center consult__inner-center--last">
-                  <div class="consult__inner-center__text">
-                    <h2>Amet minim mollit non Amet minim</h2>
-                  </div>
-                  <div class="consult__inner-center__form">
-                    <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
-                    <div class="consult__inner-center__form-bottom"> <a class="btn btn--red" href="https://www.whatsapp.com/" target="_blank" rel="external">Написать в WhatsApp</a>
-                      <div class="whatsapp"> <span>Номер WhatsApp</span><span>+7 928 315 15 15</span></div>
+                <div class="consult__inner-center-wrap">
+                  <div class="consult__inner-center consult__inner-center--last">
+                    <div class="consult__inner-center__text">
+                      <h2>Amet minim mollit non Amet minim</h2>
+                    </div>
+                    <div class="consult__inner-center__form">
+                      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</p>
+                      <div class="consult__inner-center__form-bottom"> <a class="btn btn--red" href="https://www.whatsapp.com/" target="_blank" rel="external">Написать в WhatsApp</a>
+                        <div class="whatsapp"> <span>Номер WhatsApp</span><span>+7 928 315 15 15</span></div>
+                      </div>
                     </div>
                   </div>
                 </div>

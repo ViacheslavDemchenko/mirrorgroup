@@ -1,81 +1,85 @@
 section.activity-form
   .consult 
-    .container 
+    .container.container--no-padding
       h2 Форма
+      h3.form-title.form-title--active Предложить участие в проекте
+      h3.form-title Запросить портфолио
+      h3.form-title Рассчитать стоимость проекта
+      h3.form-title Задать вопрос в WhatsApp
       .consult__inner 
         .consult__inner-top
-          ul.tabs 
+          ul#tabs-activity.tabs 
             li.tab.tab--active Предложить участие в проекте
             li.tab Запросить портфолио
             li.tab Рассчитать стоимость проекта
             li.tab Задать вопрос в WhatsApp
           .line
-        h3.form-title.form-title--active Предложить участие в проекте
-        .consult__inner-center.consult__inner-center--active
-          .consult__inner-center__text
-            h2 Amet minim mollit non Amet minim
-            img(src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy")
-          .consult__inner-center__form
-            form.consult__form(action="#" name="consult__form" method="post")
+        .consult__inner-center-wrap
+          .consult__inner-center.consult__inner-center--active
+            .consult__inner-center__text
+              h2 Amet minim mollit non Amet minim
+              img(src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy")
+            .consult__inner-center__form
+              form.consult__form.consult__form--activity(action="#" name="consult__form" method="post")
+                p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
+                input(type="text" placeholder="name" name="name")
+                input(type="text" class="phone phone-mask" placeholder="phone" name="phone")
+                input(type="text" placeholder="email" name="email")
+                button.btn.btn--red.consult__inner-btn Отправить
+        .consult__inner-center-wrap
+          .consult__inner-center
+            .consult__inner-center__text
+              h2 Amet minim mollit non Amet minim
+              img(src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy")
+            .consult__inner-center__form
+              form.consult__form.consult__form--activity(action="#" name="consult__form" method="post")
+                p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
+                input(type="text" placeholder="ФИО" name="name")
+                input(type="text" class="phone phone-mask" placeholder="phone" name="phone")
+                input(type="text" placeholder="email" name="email")
+                //- textarea(name="message" cols="30" rows="10" placeholder="Комментарий")
+                .upload
+                  .form-group
+                    input#file_first.input-file(type="file" name="file_first")
+                    label.btn.btn-tertiary.js-labelFile(for="file_first")
+                      span.js-fileName Прикрепить файл
+                      img(src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy")
+                button.btn.btn--red.consult__inner-btn Отправить
+        .consult__inner-center-wrap
+          .consult__inner-center
+            .consult__inner-center__text
+              h2 Amet minim mollit non Amet minim
+              img(src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy")
+            .consult__inner-center__form
+              form.consult__form.consult__form--activity(action="#" name="consult__form" method="post")
+                p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
+                input(type="text" placeholder="ФИО" name="name")
+                input(type="text" class="phone phone-mask" placeholder="phone" name="phone")
+                input(type="text" placeholder="email" name="email")
+                textarea(name="message" cols="30" rows="10" placeholder="Комментарий")
+                .upload
+                  .form-group
+                    input#file_second.input-file(type="file" name="file_second")
+                    label.btn.btn-tertiary.js-labelFile(for="file_second")
+                      span.js-fileName Прикрепить файл
+                      img(src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy")
+                button.btn.btn--red.consult__inner-btn Отправить
+        .consult__inner-center-wrap
+          .consult__inner-center.consult__inner-center--last
+            .consult__inner-center__text
+              h2 Amet minim mollit non Amet minim
+              //- img(src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy")
+            .consult__inner-center__form
               p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
-              input(type="text" placeholder="name" name="name")
-              input(type="text" placeholder="phone" name="phone")
-              input(type="text" placeholder="email" name="email")
-              button.btn.btn--red.consult__inner-btn Отправить
-        h3.form-title Запросить портфолио
-        .consult__inner-center
-          .consult__inner-center__text
-            h2 Amet minim mollit non Amet minim
-            img(src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy")
-          .consult__inner-center__form
-            form.consult__form(action="#" name="consult__form" method="post")
-              p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
-              input(type="text" placeholder="ФИО" name="name")
-              input(type="text" placeholder="phone" name="phone")
-              input(type="text" placeholder="email" name="email")
-              //- textarea(name="message" cols="30" rows="10" placeholder="Комментарий")
-              .upload
-                .form-group
-                  input#file_first.input-file(type="file" name="file_first")
-                  label.btn.btn-tertiary.js-labelFile(for="file_first")
-                    span.js-fileName Прикрепить файл
-                    img(src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy")
-              button.btn.btn--red.consult__inner-btn Отправить
-        h3.form-title Рассчитать стоимость проекта
-        .consult__inner-center
-          .consult__inner-center__text
-            h2 Amet minim mollit non Amet minim
-            img(src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy")
-          .consult__inner-center__form
-            form.consult__form(action="#" name="consult__form" method="post")
-              p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
-              input(type="text" placeholder="ФИО" name="name")
-              input(type="text" placeholder="phone" name="phone")
-              input(type="text" placeholder="email" name="email")
-              textarea(name="message" cols="30" rows="10" placeholder="Комментарий")
-              .upload
-                .form-group
-                  input#file_second.input-file(type="file" name="file_second")
-                  label.btn.btn-tertiary.js-labelFile(for="file_second")
-                    span.js-fileName Прикрепить файл
-                    img(src="assets/img/icons/upload.svg" width="20" height="20" alt="" loading="lazy")
-              button.btn.btn--red.consult__inner-btn Отправить
-        h3.form-title Задать вопрос в WhatsApp
-        .consult__inner-center.consult__inner-center--last
-          .consult__inner-center__text
-            h2 Amet minim mollit non Amet minim
-            //- img(src="assets/img/form-img.jpg" width="286" height="354" alt="" loading="lazy")
-          .consult__inner-center__form
-            p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
-            .consult__inner-center__form-bottom 
-              a(href="https://www.whatsapp.com/" target="_blank" rel="external").btn.btn--red Написать в WhatsApp
-              .whatsapp 
-                span Номер WhatsApp
-                span +7 928 315 15 15
-            //- form.consult__form(action="#" name="consult__form" method="post")
-            //-   p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
-            //-   input(type="text" placeholder="ФИО" name="name")
-            //-   input(type="text" placeholder="phone" name="phone")
-            //-   input(type="text" placeholder="email" name="email")
-            //-   textarea(name="message" cols="30" rows="10" placeholder="Комментарий")
-            //-   button.btn.btn--red.consult__inner-btn Отправить
+              .consult__inner-center__form-bottom 
+                a(href="https://www.whatsapp.com/" target="_blank" rel="external").btn.btn--red Написать в WhatsApp
+                .whatsapp 
+                  span Номер WhatsApp
+                  span +7 928 315 15 15
+              //- form.consult__form(action="#" name="consult__form" method="post")
+              //-   p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне
+              //-   input(type="text" placeholder="ФИО" name="name")
+              //-   input(type="text" placeholder="phone" name="phone")
+              //-   input(type="text" placeholder="email" name="email")
+              //-   textarea(name="message" cols="30" rows="10" placeholder="Комментарий")
+              //-   button.btn.btn--red.consult__inner-btn Отправить

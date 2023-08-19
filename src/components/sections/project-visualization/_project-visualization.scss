@@ -84,7 +84,7 @@
         bottom: -10rem;
         transform: translateX(50%);
         padding: 2rem 1rem 2rem 1.5rem;
-        @include InterRegular();
+        // @include InterRegular();
         font-size: 1.6rem;
         line-height: 130.02%;
         color: var(--black_1);
@@ -134,5 +134,13 @@
       }
 
     }
+  }
+}
+
+.tab-visualization-content {
+  display: none;
+
+  &--active {
+    display: block;
   }
 }

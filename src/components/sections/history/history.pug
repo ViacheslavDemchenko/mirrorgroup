@@ -8,9 +8,9 @@ section.history
         p Мы освоили новые направления, среди них разработка проектов капитального строительства коммерческих площадей и объектов 
           | социального назначения. В этом же году начали появляться первые проекты по благоустройству.
         button.btn.btn--black.history__inner-btn Подробнее о компании
-      .history__inner-cards
+      #counter.history__inner-cards
         .card
-          span 10
+          span.count(data-context="10") 0
           img(src="assets/img/icons/history-icon_1.svg" width="40" height="40" alt="" loading="lazy") 
           .card__bottom
             span лет непрерывного 
@@ -18,17 +18,19 @@ section.history
               br
               | развития
         .card
-          span 40
+          span.count(data-context="40") 0
           img(src="assets/img/icons/history-icon_2.svg" width="40" height="40" alt="" loading="lazy") 
           .card__bottom
             span единомышлеников в составе компании
         .card
-          span 20+
+          span.count(data-context="20") 0
+          span +
           img(src="assets/img/icons/history-icon_3.svg" width="40" height="40" alt="" loading="lazy") 
           .card__bottom
             span городов с реализованными проектами
         .card
-          span 80+
+          span.count(data-context="80") 0
+          span +
           img(src="assets/img/icons/history-icon_4.svg" width="40" height="40" alt="" loading="lazy") 
           .card__bottom
             span масштабных 
@@ -36,12 +38,13 @@ section.history
               br
               | проектов
         .card
-          span 4+
+          span.count(data-context="4") 0
+          span +
           img(src="assets/img/icons/history-icon_5.svg" width="40" height="40" alt="" loading="lazy") 
           .card__bottom
             span млн. ежегодных посещений территорий
         .card
-          span 7
+          span.count(data-context="7") 0
           img(src="assets/img/icons/history-icon_6.svg" width="40" height="40" alt="" loading="lazy") 
           .card__bottom
             span млрд р сумма реализованных проектов

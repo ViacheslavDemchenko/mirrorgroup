@@ -43,8 +43,8 @@
     }
 
     &-top {
-      // align-items: flex-start;
-      align-items: center;
+      align-items: flex-start;
+      // align-items: center;
 
       @media (min-width: 1024px) {
         align-items: center;
@@ -117,7 +117,7 @@
 
         @media (min-width: 375px) {
           width: 30rem;
-        }
+        }will-change: background, color;
 
         @media (min-width: 1024px) {
           width: 29.7rem;
@@ -166,7 +166,7 @@
         h3 {
           align-self: flex-start;
           margin-bottom: 2rem;
-          @include InterMedium();
+          // @include InterMedium();
           font-size: 1.4rem;
           line-height: 1.7rem;
           color: var(--black_1);
@@ -194,52 +194,94 @@
             justify-content: center;
             align-items: center;
             border-radius: 5rem;
+            // opacity: 0;
             background: var(--white_1);
             cursor: pointer;
+            will-change: width, justify-content;
+            transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
 
             &:not(:last-of-type) {
               margin-right: 2rem;
             }
 
-            &:nth-of-type(1) {
-              display: flex;
-              padding-left: 1.1rem;
-              will-change: width, justify-content;
-              transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
-              
-              &:hover,
-              &:focus {
-                width: 18rem;
-                justify-content: flex-start;
-                padding-left: 0.5rem;
-
-                span {
-                  width: auto;
-                  opacity: 1;
-                  // display: block;
-                }
-              }
-            }
-
             span {
-              width: 0;
+              // width: 0;
+              min-width: 10.5rem;
               display: inline-block;
               margin-left: 1rem;
+              white-space: nowrap;
               opacity: 0;
-              // display: none;
-              @include InterRegular();
+              display: none;
+              // @include InterRegular();
               font-size: 1.2rem;
               line-height: 1.6rem;
               // display: flex;
               // align-items: center;
               color: var(--black_1);
-              will-change: width, opacity;
-              transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+              will-change: opacity, display;
+              transition: opacity 1.2s ease-in-out, display 2s ease-in-out;
 
               @media (min-width: 375px) {
                 font-size: 1.4rem;
               }
             }
+
+
+            &:hover,
+            &:focus {
+              width: 18rem;
+              justify-content: flex-start;
+              padding-left: 0.5rem;
+              // opacity: 1;
+
+              span {
+                // width: auto;
+                opacity: 1;
+                display: block;
+              }
+            }
+
+            // &:nth-of-type(1) {
+            //   display: flex;
+            //   // opacity: 0;
+            //   will-change: width, justify-content;
+            //   transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
+              
+            //   &:hover,
+            //   &:focus {
+            //     width: 18rem;
+            //     justify-content: flex-start;
+            //     padding-left: 0.5rem;
+            //     // opacity: 1;
+
+            //     // span {
+            //     //   // width: auto;
+            //     //   opacity: 1;
+            //     //   display: block;
+            //     // }
+            //   }
+            // }
+
+            // span {
+            //   // width: 0;
+            //   min-width: 10.5rem;
+            //   display: inline-block;
+            //   margin-left: 1rem;
+            //   // opacity: 0;
+            //   display: none;
+            //   // @include InterRegular();
+            //   font-size: 1.2rem;
+            //   line-height: 1.6rem;
+            //   // display: flex;
+            //   // align-items: center;
+            //   color: var(--black_1);
+            //   will-change: opacity, display;
+            //   transition: opacity 0.8s ease-in-out, display 0.8s ease-in-out;
+
+            //   @media (min-width: 375px) {
+            //     font-size: 1.4rem;
+            //   }
+            // }
 
           }
         }
@@ -248,6 +290,7 @@
           width: 50%;
           max-width: 14rem;
           margin-bottom: 3rem;
+          padding: 1rem 1.5rem 3rem 1.5rem;
 
           @media (min-width: 500px) {
             max-width: 20rem;

@@ -6,9 +6,10 @@ section.geography
           h2 География #[span.red проектов]
           p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" 
             | для текстов на латинице с начала XVI века.
-        .geography__inner-cards
+        #counter.geography__inner-cards
           .card
-            span 500+
+            span.count(data-context="500") 0
+            span +
             img(src="assets/img/icons/geography-icon_1.svg" width="40" height="40" alt="" loading="lazy") 
             .card__bottom
               span гектар 
@@ -16,7 +17,7 @@ section.geography
                 br
                 | площадь проектов
           .card
-            span 30
+            span.count(data-context="30") 0
             img(src="assets/img/icons/geography-icon_2.svg" width="40" height="40" alt="" loading="lazy") 
             .card__bottom
               span городов

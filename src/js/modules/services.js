@@ -15,7 +15,7 @@ export default function services() {
 
     // Add event listeners to each accordion stage
     stages.forEach(stage => {
-      stage.addEventListener('click', handleClick);
+      stage.addEventListener('mouseenter', handleClick);
       stage.addEventListener('mouseleave', handleMouseLeave);
     });
 
@@ -23,19 +23,24 @@ export default function services() {
       const stage = event.currentTarget;
       const content = stage.querySelector('.accordion__stage-content');
 
-      // Toggle accordion__stage--active class
-      stage.classList.toggle('accordion__stage--active');
+      let screenWidth = window.innerWidth;
 
-      // Toggle accordion__stage-content--active class
-      if (content) {
-        content.classList.toggle('accordion__stage-content--active');
+      if (screenWidth < 1024) {
+        // Toggle accordion__stage--active class
+        stage.classList.toggle('accordion__stage--active');
+
+        // Toggle accordion__stage-content--active class
+        if (content) {
+          content.classList.toggle('accordion__stage-content--active');
+        }
+
+        // Adjust margin-bottom of all accordion__stage elements
+        stages.forEach(stage => {
+          const contentHeight = stage.querySelector('.accordion__stage-content').clientHeight;
+          // stage.style.marginBottom = contentHeight + 'px';
+        });
       }
 
-      // Adjust margin-bottom of all accordion__stage elements
-      stages.forEach(stage => {
-        const contentHeight = stage.querySelector('.accordion__stage-content').clientHeight;
-        // stage.style.marginBottom = contentHeight + 'px';
-      });
     }
 
     function handleMouseLeave() {

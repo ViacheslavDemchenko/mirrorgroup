@@ -29,7 +29,7 @@
                     <li class="menu-header-item" role="menuitem"><a class="menu-header-item-link menu-header-item-link--active" href="index.html">Главная</a></li>
                     <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="#price">О компании</a></li>
                     <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="projects.html">Проекты</a></li>
-                    <li class="menu-header-item" role="menuitem"> <a class="menu-header-item-link" href="services.html">Услуги</a>
+                    <li class="menu-header-item menu-header-item__submenu" role="menuitem"><a class="menu-header-item-link menu-header-item-link__submenu" href="services.html">Услуги</a>
                       <ul class="sub-menu">
                         <li><a href="production-structure.html">Проектирование</a></li>
                         <li><a href="production-process.html">Строительство</a></li>
@@ -153,10 +153,10 @@
           </div>
         </section>
         <section class="services-form">
-          <div class="container"> 
+          <div class="container container--no-padding br-gray">
             <div class="services-form__inner">
               <div class="services-form__inner-left">
-                <h2><span class="red">Заказать</span> градостроительный аудит</h2>
+                <h2>Заказать градостроительный аудит</h2>
                 <p>Стоимость рассчитывается из трёх ключевых параметров:</p>
                 <ul> 
                   <li>Тип объекта.</li>
@@ -169,7 +169,7 @@
                 <form class="consult__form" action="#" name="consult__form" method="post">
                   <p>Чтобы получить дополнительную информацию, заполните форму.</p>
                   <input type="text" placeholder="ФИО" name="name">
-                  <input type="text" placeholder="phone" name="phone">
+                  <input class="phone phone-mask" type="text" placeholder="phone" name="phone">
                   <input type="text" placeholder="email" name="email">
                   <button class="btn btn--red consult__inner-btn">Отправить</button>
                 </form>
@@ -180,17 +180,40 @@
         <section class="services-documentation">
           <div class="container"> 
             <div class="services-documentation__inner">
-              <div class="services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
-                <h3>Согласование проектно-сметной документации</h3>
-              </div>
-              <div class="services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
-                <h3>Инженерные изыскания</h3>
-              </div>
-              <div class="services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
-                <h3>Согласование проектно-сметной документации</h3>
-              </div>
-              <div class="services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
-                <h3>Инженерные изыскания</h3>
+              <div class="swiper documentationSlider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                  <div class="swiper-slide services-documentation__card"><img src="assets/img/map-small.png" width="230" height="145" alt="" loading="lazy">
+                    <h3>Согласование проектно-сметной документации</h3>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
           </div>

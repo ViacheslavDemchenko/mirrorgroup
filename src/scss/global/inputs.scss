@@ -3,7 +3,7 @@ textarea {
   width: 100%;
   padding: 1.55rem 2.4rem 1.55rem 2rem;
   margin-bottom: 2rem;
-  @include InterRegular();
+  // @include InterRegular();
   font-size: 1.4rem;
   line-height: 1.7rem;
   text-transform: uppercase;
@@ -16,7 +16,7 @@ textarea {
   }
 
   &::placeholder {
-    @include InterRegular();
+    // @include InterRegular();
     font-size: 1.4rem;
     line-height: 1.7rem;
     text-transform: uppercase;
@@ -31,7 +31,7 @@ textarea {
 
 .upload .btn-tertiary {
   position: relative;
-  @include InterMedium();
+  // @include InterMedium();
   color: var(--black_2);
   font-size: 1.4rem;
   line-height: 1.9rem;

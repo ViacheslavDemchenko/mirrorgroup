@@ -70,7 +70,7 @@
     }
 
     span {
-      @include InterMedium();
+      // @include InterMedium();
       font-size: 1.6rem;
       line-height: 2.1rem;
       color: var(--black_2);

@@ -10,7 +10,7 @@
     max-width: 28.2rem;
     align-self: flex-start;
     margin-bottom: 4rem;
-    @include InterSemiBold();
+    // @include InterSemiBold();
     font-size: 2.6rem;
     line-height: 120.02%;
     color: var(--white_1);
@@ -69,7 +69,7 @@
         }
 
         p {
-          @include InterRegular();
+          // @include InterRegular();
           font-size: 1.6rem;
           line-height: 130.02%;
           color: var(--white_1);
@@ -122,8 +122,8 @@
         p {
           width: 100%;
           max-width: 50rem;
-          @include InterMedium();
-          font-size: 2rem;
+          @include RobotoCondensedBold();
+          font-size: 1.6rem;
           line-height: 120%;
           color: var(--white_1);
         }

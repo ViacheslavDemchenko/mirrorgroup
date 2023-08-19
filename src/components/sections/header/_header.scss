@@ -51,16 +51,20 @@
       display: block;
       position: absolute;
       top: 1.2rem;
-      left: -122%;
+      // left: -122%;
+      left: -98%;
       white-space: nowrap;
       padding: 0;
       will-change: left;
+      animation: moveText 10s infinite linear;
+      transition: transform 0.3s ease-out;
 
       span {
+        opacity: 1;
 
-        &:not(:nth-of-type(3)) {
-          opacity: 0;
-        }
+        // &:not(:nth-of-type(3)) {
+        //   opacity: 0;
+        // }
       }
     }
 
@@ -76,18 +80,27 @@
       }
     }
 
-    &:hover,
-    &:focus {
+    // p {
+    //   animation: moveText 10s infinite linear;
+    //   transition: transform 0.3s ease-out;
 
-      p {
-        animation: moveText 10s infinite linear;
-        transition: transform 0.3s ease-out;
+    //   span {
+    //     opacity: 1;
+    //   }
+    // }
 
-        span {
-          opacity: 1;
-        }
-      }
-    }
+    // &:hover,
+    // &:focus {
+
+    //   p {
+    //     animation: moveText 10s infinite linear;
+    //     transition: transform 0.3s ease-out;
+
+    //     span {
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
   }
 
   &__btn--desktop {
@@ -132,3 +145,4 @@
     transform: translateX(0);
   }
 }
+

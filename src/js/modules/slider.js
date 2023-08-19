@@ -7,11 +7,15 @@ export default function slider() {
       slidesPerView: 3,
       loopedSlides: 1,
       autoHeight: true,
-      // loop: true,
-      navigation: {
-        nextEl: '.arrow__left',
-        prevEl: '.arrow__right',
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
+      // loop: true,
+      // navigation: {
+      //   nextEl: '.arrow__left',
+      //   prevEl: '.arrow__right',
+      // },
       breakpoints: {
         320: {
           slidesPerView: 1,

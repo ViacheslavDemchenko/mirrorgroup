@@ -7,12 +7,13 @@
 
 
   h1 {
+    text-align: left;
     align-self: flex-start;
     margin-bottom: 6rem;
 
-    @media (min-width: 1024px) {
-      text-align: left;
-    }
+    // @media (min-width: 1024px) {
+    //   text-align: left;
+    // }
 
     @media (min-width: 1440px) {
       font-size: 4rem;
@@ -50,7 +51,7 @@
       }
 
       p {
-        @include InterRegular();
+        // @include InterRegular();
         font-size: 1.6rem;
         line-height: 130.02%;
         color: var(--black_1);
@@ -77,11 +78,11 @@
       }
 
       button {
-        padding: 2.2rem 1.1rem;
+        padding: 2.05rem 0.84rem;
 
-        @media (min-width: 375px) {
-          padding: 2.2rem 1.5rem;
-        }
+        // @media (min-width: 375px) {
+        //   padding: 2.05rem 0.84rem;
+        // }
 
         @media (min-width: 1024px) {
           padding: 2.2rem 7.49rem;
